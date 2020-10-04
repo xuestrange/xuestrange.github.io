@@ -1,0 +1,182 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>统计分布 | WU Li's Blog</title><meta name="keywords" content="Scipy"><meta name="author"><meta name="copyright"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="概念概率分布函数$$ F(x_*)&#x3D;P{x\leq x_*} $$ 对于离散型随机变量： $$ F(x_n)&#x3D;\sum_{i&#x3D;1}^n P{x_i} $$ 对于连续型随机变量： $$ F(x)&#x3D;\int_{-\infty}^x f(x)dx $$ 其中，$f(x)$为概率密度函数，$F(x)$也叫作累积概率密度函数 概率密度函数连续型随机变量的概率密度函数在某一区间上的积分，表示取值在这一区间以内">
+<meta property="og:type" content="article">
+<meta property="og:title" content="统计分布">
+<meta property="og:url" content="https://xuestrange.github.io/2020/07/02/%E7%BB%9F%E8%AE%A1%E5%88%86%E5%B8%83/index.html">
+<meta property="og:site_name" content="WU Li&#39;s Blog">
+<meta property="og:description" content="概念概率分布函数$$ F(x_*)&#x3D;P{x\leq x_*} $$ 对于离散型随机变量： $$ F(x_n)&#x3D;\sum_{i&#x3D;1}^n P{x_i} $$ 对于连续型随机变量： $$ F(x)&#x3D;\int_{-\infty}^x f(x)dx $$ 其中，$f(x)$为概率密度函数，$F(x)$也叫作累积概率密度函数 概率密度函数连续型随机变量的概率密度函数在某一区间上的积分，表示取值在这一区间以内">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://tva3.sinaimg.cn/large/006z5e4Qgy1ggo6whxpjyj31hc0zh16x.jpg">
+<meta property="article:published_time" content="2020-07-01T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-09-12T04:44:40.605Z">
+<meta property="article:tag" content="Scipy">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tva3.sinaimg.cn/large/006z5e4Qgy1ggo6whxpjyj31hc0zh16x.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://xuestrange.github.io/2020/07/02/%E7%BB%9F%E8%AE%A1%E5%88%86%E5%B8%83/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  hexoversion: '5.2.0',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isSidebar: true,
+  postUpdate: '2020-09-12 12:44:40'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {
+  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }
+})()</script><meta name="generator" content="Hexo 5.2.0"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/null" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">12</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">15</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">5</div></a></div></div></div><hr/></div></div><div id="body-wrap"><div id="sidebar"><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-number">1.</span> <span class="toc-text">概念</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83%E5%87%BD%E6%95%B0"><span class="toc-number">1.1.</span> <span class="toc-text">概率分布函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E7%8E%87%E5%AF%86%E5%BA%A6%E5%87%BD%E6%95%B0"><span class="toc-number">1.2.</span> <span class="toc-text">概率密度函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A6%BB%E6%95%A3%E5%9E%8B%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F"><span class="toc-number">2.</span> <span class="toc-text">离散型随机变量</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Bernoulli-Distribution-0-1%E5%88%86%E5%B8%83%EF%BC%8C%E4%B8%A4%E7%82%B9%E5%88%86%E5%B8%83"><span class="toc-number">2.1.</span> <span class="toc-text">Bernoulli Distribution(0-1分布，两点分布)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Binomial-Distribution-%E4%BA%8C%E9%A1%B9%E5%88%86%E5%B8%83"><span class="toc-number">2.2.</span> <span class="toc-text">Binomial Distribution(二项分布)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Possion-Distribution-%E6%B3%8A%E6%9D%BE%E5%88%86%E5%B8%83"><span class="toc-number">2.3.</span> <span class="toc-text">Possion Distribution(泊松分布)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%9E%E7%BB%AD%E5%9E%8B%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F"><span class="toc-number">3.</span> <span class="toc-text">连续型随机变量</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Uniform-Distribution-%E5%9D%87%E5%8C%80%E5%88%86%E5%B8%83"><span class="toc-number">3.1.</span> <span class="toc-text">Uniform Distribution(均匀分布)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Exponential-Distribution-%E6%8C%87%E6%95%B0%E5%88%86%E5%B8%83%EF%BC%8C%E8%B4%9F%E6%8C%87%E6%95%B0%E5%88%86%E5%B8%83"><span class="toc-number">3.2.</span> <span class="toc-text">Exponential Distribution(指数分布，负指数分布)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Normal-Distribution-%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83%EF%BC%8C%E5%8F%88%E5%8F%AB%E5%81%9AGassian-Distribution"><span class="toc-number">3.3.</span> <span class="toc-text">Normal Distribution(正态分布，又叫做Gassian Distribution)</span></a></li></ol></li></ol></div></div></div><header class="post-bg" id="page-header" style="background-image: url(https://tva3.sinaimg.cn/large/006z5e4Qgy1ggo6whxpjyj31hc0zh16x.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">WU Li's Blog</a></span><span id="menus"><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">统计分布</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-07-01T16:00:00.000Z" title="发表于 2020-07-02 00:00:00">2020-07-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-09-12T04:44:40.605Z" title="更新于 2020-09-12 12:44:40">2020-09-12</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%95%B0%E5%AD%A6/">数学</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><h2 id="概率分布函数"><a href="#概率分布函数" class="headerlink" title="概率分布函数"></a>概率分布函数</h2><p>$$ F(x_*)=P{x\leq x_*} $$</p>
+<p>对于离散型随机变量：</p>
+<p>$$ F(x_n)=\sum_{i=1}^n P{x_i} $$</p>
+<p>对于连续型随机变量：</p>
+<p>$$ F(x)=\int_{-\infty}^x f(x)dx $$</p>
+<p>其中，$f(x)$为概率密度函数，$F(x)$也叫作累积概率密度函数</p>
+<h2 id="概率密度函数"><a href="#概率密度函数" class="headerlink" title="概率密度函数"></a>概率密度函数</h2><p>连续型随机变量的概率密度函数在某一区间上的积分，表示取值在这一区间以内的概率，但是$f(x_0)$并不表示$x_0$这一点的概率，<strong>！！！</strong>。</p>
+<h1 id="离散型随机变量"><a href="#离散型随机变量" class="headerlink" title="离散型随机变量"></a>离散型随机变量</h1><h2 id="Bernoulli-Distribution-0-1分布，两点分布"><a href="#Bernoulli-Distribution-0-1分布，两点分布" class="headerlink" title="Bernoulli Distribution(0-1分布，两点分布)"></a>Bernoulli Distribution(0-1分布，两点分布)</h2><p>$$p{x=k}=p^k*(1-p)^{1-k},k=0,1$$</p>
+<p>一个实验只有两种可能的结果，如抛一个硬币，非正即反，这也叫做1重伯努利实验。</p>
+<h2 id="Binomial-Distribution-二项分布"><a href="#Binomial-Distribution-二项分布" class="headerlink" title="Binomial Distribution(二项分布)"></a>Binomial Distribution(二项分布)</h2><!-- ====================================== -->
+<!-- \sim表示波浪线 -->
+<!-- space+space手动弹出代码提示 -->
+<!-- ====================================== -->
+
+<p>$$p{x=k}=C_n^kp^k*(1-p)^{n-k},k=0,1,2,\dots$$</p>
+<p>将伯努利试验重复$n$次，例：抛$n$的硬币，出现$1,2,\dots,k$次正面朝上的的概率服从二项分布，简写为：</p>
+<p>$$X \sim b(n,k)$$</p>
+<p>当 $ n=1 $时，二项分布就是伯努利分布。</p>
+<p><strong>均值：$ E(X)=np $ 方差：$ D(X)=np(1-p) $</strong></p>
+<h2 id="Possion-Distribution-泊松分布"><a href="#Possion-Distribution-泊松分布" class="headerlink" title="Possion Distribution(泊松分布)"></a>Possion Distribution(泊松分布)</h2><p>$$ P{x=k}=\frac{e^{-\lambda}\lambda^k}{k!},k=0,1,2,\dots$$</p>
+<p>记为：</p>
+<p>$$ X \sim \pi(\lambda) $$</p>
+<blockquote>
+<p>Poisson分布主要用于描述在单位时间(空间)中稀有事件的发生数，例如：</p>
+<ol>
+<li>放射性物质在单位时间内的放射次数；</li>
+<li>野外单位空间中的某种昆虫数等。</li>
+</ol>
+</blockquote>
+<p><strong>均值：$ E(X)=\lambda $ 方差：$ D(X)=\lambda $</strong></p>
+<p>在二项分布的 $ n $ 次伯努利试验中，如果试验次数 $ n $ 很大，二项分布的概率 $ p $ 很小，且乘积 $\lambda=np$ 比较适中，则事件出现的次数的概率可以用泊松分布来逼近。</p>
+<h1 id="连续型随机变量"><a href="#连续型随机变量" class="headerlink" title="连续型随机变量"></a>连续型随机变量</h1><h2 id="Uniform-Distribution-均匀分布"><a href="#Uniform-Distribution-均匀分布" class="headerlink" title="Uniform Distribution(均匀分布)"></a>Uniform Distribution(均匀分布)</h2><p>$$ f(x)=\left{<br>\begin{array}{lc}<br>\frac{1}{b-a} &amp; a&lt;x&lt;b \<br>0 &amp; else\<br>\end{array}<br>\right.<br> $$</p>
+<p>$$ X\sim U(a,b) $$</p>
+<h2 id="Exponential-Distribution-指数分布，负指数分布"><a href="#Exponential-Distribution-指数分布，负指数分布" class="headerlink" title="Exponential Distribution(指数分布，负指数分布)"></a>Exponential Distribution(指数分布，负指数分布)</h2><p>$$ f(x)=\left{<br>\begin{array}{lc}<br>\frac{1}{\theta}e^{-x/\theta} &amp; x&gt;0 \<br>0 &amp; else\<br>\end{array}<br>\right.<br> $$</p>
+<p>指数分布具有无记忆性<br>$ \theta &gt;0 $为常数</p>
+<h2 id="Normal-Distribution-正态分布，又叫做Gassian-Distribution"><a href="#Normal-Distribution-正态分布，又叫做Gassian-Distribution" class="headerlink" title="Normal Distribution(正态分布，又叫做Gassian Distribution)"></a>Normal Distribution(正态分布，又叫做Gassian Distribution)</h2><p>$$ f(x)=\frac{1}{\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}},-\infty&lt;x&lt; \infty $$</p>
+<p>$$ X\sim N(\mu,\sigma^2) $$</p>
+<p>$3\sigma$原则：<br>$ 1\sigma \quad 0.6826$<br>$ 2\sigma \quad 0.9544$<br>$ 3\sigma \quad 0.9974$<br>尽管正态变量的取值是$ ( -\infty,\infty ) $，但是它的值落在 $(\mu-3\sigma,\mu+3\sigma)$内几乎是肯定的事。</p>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined"></a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://xuestrange.github.io/2020/07/02/%E7%BB%9F%E8%AE%A1%E5%88%86%E5%B8%83/">https://xuestrange.github.io/2020/07/02/%E7%BB%9F%E8%AE%A1%E5%88%86%E5%B8%83/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://xuestrange.github.io" target="_blank">WU Li's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Scipy/">Scipy</a></div><div class="post_share"><div class="social-share" data-image="https://tva3.sinaimg.cn/large/006z5e4Qgy1ggo6whxpjyj31hc0zh16x.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/07/08/%E7%88%AC%E8%99%AB/"><img class="prev-cover" src="https://tva3.sinaimg.cn/large/006z5e4Qgy1ggo6ycf8ywj31hc0zk7ak.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">爬虫</div></div></a></div><div class="next-post pull-right"><a href="/2020/06/17/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"><img class="next-cover" src="https://tvax1.sinaimg.cn/large/006z5e4Qgy1ggnzes5tg9j31hc0u01gu.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">正则表达式</div></div></a></div></nav></article></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 By null</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><div class="js-pjax"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></div></body></html>

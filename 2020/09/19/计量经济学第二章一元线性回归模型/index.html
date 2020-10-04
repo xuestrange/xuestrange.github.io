@@ -1,0 +1,231 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>计量经济学第二章一元线性回归模型 | WU Li's Blog</title><meta name="keywords" content="计量经济学"><meta name="author"><meta name="copyright"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="一般形式假设总体中变量之间关系服从： $$ y&#x3D; \beta_0+\beta_1 x+u $$  $ y $ named dependent variable, explained variable, response $ x $ named independent variable,explainatory variable, predictor $ \beta_0 $ intercept pa">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计量经济学第二章一元线性回归模型">
+<meta property="og:url" content="https://xuestrange.github.io/2020/09/19/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6%E7%AC%AC%E4%BA%8C%E7%AB%A0%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/index.html">
+<meta property="og:site_name" content="WU Li&#39;s Blog">
+<meta property="og:description" content="一般形式假设总体中变量之间关系服从： $$ y&#x3D; \beta_0+\beta_1 x+u $$  $ y $ named dependent variable, explained variable, response $ x $ named independent variable,explainatory variable, predictor $ \beta_0 $ intercept pa">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://tvax4.sinaimg.cn/large/006z5e4Qly1gitleofq0vj318g0tmwlc.jpg">
+<meta property="article:published_time" content="2020-09-18T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-09-21T11:37:25.343Z">
+<meta property="article:tag" content="计量经济学">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tvax4.sinaimg.cn/large/006z5e4Qly1gitleofq0vj318g0tmwlc.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://xuestrange.github.io/2020/09/19/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6%E7%AC%AC%E4%BA%8C%E7%AB%A0%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  hexoversion: '5.2.0',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isSidebar: true,
+  postUpdate: '2020-09-21 19:37:25'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {
+  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }
+})()</script><meta name="generator" content="Hexo 5.2.0"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/null" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">12</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">15</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">5</div></a></div></div></div><hr/></div></div><div id="body-wrap"><div id="sidebar"><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E8%88%AC%E5%BD%A2%E5%BC%8F"><span class="toc-number">1.</span> <span class="toc-text">一般形式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%81%87%E8%AE%BE"><span class="toc-number">2.</span> <span class="toc-text">假设</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E6%B1%82%E8%A7%A3%E6%96%B9%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text">参数求解方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#OLS"><span class="toc-number">3.1.</span> <span class="toc-text">OLS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OLS-%E7%9A%84%E4%BB%A3%E6%95%B0%E6%80%A7%E8%B4%A8"><span class="toc-number">3.2.</span> <span class="toc-text">OLS 的代数性质</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ML-Maximum-Likilihood"><span class="toc-number">3.3.</span> <span class="toc-text">ML ( Maximum Likilihood)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8B%9F%E5%90%88%E4%BC%98%E5%BA%A6"><span class="toc-number">3.4.</span> <span class="toc-text">拟合优度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OLS%E4%BC%B0%E8%AE%A1%E9%87%8F%E7%9A%84%E6%9C%9F%E6%9C%9B%E5%80%BC%E5%92%8C%E6%96%B9%E5%B7%AE"><span class="toc-number">3.5.</span> <span class="toc-text">OLS估计量的期望值和方差</span></a></li></ol></li></ol></div></div></div><header class="post-bg" id="page-header" style="background-image: url(https://tvax4.sinaimg.cn/large/006z5e4Qly1gitleofq0vj318g0tmwlc.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">WU Li's Blog</a></span><span id="menus"><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">计量经济学第二章一元线性回归模型</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-09-18T16:00:00.000Z" title="发表于 2020-09-19 00:00:00">2020-09-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-09-21T11:37:25.343Z" title="更新于 2020-09-21 19:37:25">2020-09-21</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%8E%9F%E5%88%9B/">原创</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h1 id="一般形式"><a href="#一般形式" class="headerlink" title="一般形式"></a>一般形式</h1><p>假设总体中变量之间关系服从：</p>
+<p>$$ y= \beta_0+\beta_1 x+u $$</p>
+<ul>
+<li>$ y $ named dependent variable, explained variable, response</li>
+<li>$ x $ named independent variable,explainatory variable, predictor</li>
+<li>$ \beta_0 $ intercept parameter，截距</li>
+<li>$ \beta_1 $ slope parameter，斜率</li>
+<li>$ u $ error term， disturbance, 误差项</li>
+</ul>
+<p>现在我们得到了一些样本(Sample) $ {x_i,y_i} $来估计模型中的参数，在估计之前，需要对模型做出若干假设，假设如下：</p>
+<p>$$ E(u)=0 $$</p>
+<p>$ u $与 $ x $不相关(不存在线性关系)，即给定 $ x $, $ u $的均值与 $ x $无关，即 <strong>零条件均值假设</strong></p>
+<p>$$ E(u|x)=E(u) $$</p>
+<p>根据以上两条假设，可以推导出 <strong>总体回归函数</strong>(Population Regression Function, PRF),</p>
+<p>$$ E(y|x)=\beta_0+\beta_1 x $$</p>
+<h1 id="假设"><a href="#假设" class="headerlink" title="假设"></a>假设</h1><ol>
+<li><p>回归模型是正确设定的<br>总体服从以下关系， $ x,y $都是随机变量<br>$$ y=\beta_0+\beta_1 x+u $$</p>
+<ul>
+<li>模型选择了正确的变量</li>
+<li>模型选择了正确的函数形式(设立的一元线性回归模型与经济理论一致)</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>当该假设满足时，就说明模型没有 <strong>设定偏误(Specification error)</strong></p>
+</blockquote>
+<ol start="2">
+<li>随机抽样<br>容量为 $ n $的 随机样本{(x_i,y_i)}是从总体随机抽样得到的</li>
+<li>解释变量的样本有变异<br>$$ {x_i,i=1,2,\dots,n} $$ 不是一样的</li>
+</ol>
+<ol start="4">
+<li>随机误差项 $ u $ 具有在给定 $ X $条件下的零均值、同方差、不序列相关性</li>
+</ol>
+<p>$$ E(u|x)=0 $$<br>$$ Var(u|x)=\sigma^2 $$</p>
+<p>以上四条假设成为 <strong>高斯—马尔科夫假设</strong></p>
+<ol start="5">
+<li>随机误差项与解释变量间不相关</li>
+</ol>
+<p>$$ Cov(x,u)=E(xu)-E(x)E(u)=E(xu)=0 $$</p>
+<ol start="6">
+<li>随机误差项服从均值为0，方差为 $ \sigma^2 $的正态分布</li>
+</ol>
+<p>$$ u \sim N(0，\sigma^2) $$</p>
+<blockquote>
+<p>假设6在小样本时很重要，大样本时反而让没有那么重要(<strong>中心极限定理</strong>)</p>
+</blockquote>
+<h1 id="参数求解方法"><a href="#参数求解方法" class="headerlink" title="参数求解方法"></a>参数求解方法</h1><h2 id="OLS"><a href="#OLS" class="headerlink" title="OLS"></a>OLS</h2><p>零条件均值假设表明 $ x $, $ u $之间的不存在线性关系，即协方差为0，则有：</p>
+<p>$$ Cov(x,u)=E(xu)-E(x)E(u)=0 $$</p>
+<p>即：</p>
+<p>$$ E(xu)=0 $$</p>
+<p>再联合 $ E(u)=0 $可以推导出 $ \beta_0, \beta_1$的估计值 $ \hat{\beta_0}, \hat{\beta_1} $（这两个式子实际上是残差平方和分别求偏导等于0时的结果，因此最小化了残差平方和）, 他们也叫作普通最小二乘估计值(OLS), 得到的拟合值 $ \hat{y} $为：</p>
+<p>$$ \hat{y}=\hat{\beta_0}+\hat{\beta_1} x $$</p>
+<p>它也被叫做<strong>OLS回归线</strong>(OLS Regression Line)或 <strong>样本回归函数</strong>(Sample Regression Function, SRF)：</p>
+<p>残差(residual)为：</p>
+<p>$$ \hat{u}=y-\hat{y} \text{ for each observations}$$</p>
+<h2 id="OLS-的代数性质"><a href="#OLS-的代数性质" class="headerlink" title="OLS 的代数性质"></a>OLS 的代数性质</h2><p>(1) 残差之和和残差均值为0</p>
+<p>$$ E(\hat{u})=0 $$</p>
+<p>$$ \sum_{i=1}^{n}\hat{u}_i=0 $$</p>
+<p>(2) 自变量的样本 $ x_1,x_2,\dots,x_n $与残差 $ u_1,u_2,\dots,u_n $协方差为0，相关系数为0</p>
+<p>(3) 点 $ (\bar{x},\bar{y}) $总在OSL回归线上。</p>
+<h2 id="ML-Maximum-Likilihood"><a href="#ML-Maximum-Likilihood" class="headerlink" title="ML ( Maximum Likilihood)"></a>ML ( Maximum Likilihood)</h2><p>原理</p>
+<blockquote>
+<p>当从模型总体随机抽取 $ n $组样本观测值后，最合理的参数估计量应该使得从模型中抽取 $ n $组样本观测值的概率最大。样本观测值的概率密度函数的乘积 — 联合概率密度函数就叫做 <strong>似然函数</strong></p>
+</blockquote>
+<p>在满足一系列基本假设的情况下，模型结构参数的最大似然估计量和普通最小二乘法的最大似然估计量是相同的。</p>
+<h2 id="拟合优度"><a href="#拟合优度" class="headerlink" title="拟合优度"></a>拟合优度</h2><ul>
+<li>总平方和(Total sum of squares,TSS)</li>
+<li>解释平方和(Explained sum of squares, SSE)</li>
+<li>残差平方和(Residual sum of squares, SSR)</li>
+</ul>
+<p>$$ TSS=\sum_{i=1}^{n}(y_i-\bar{y})^2 $$</p>
+<p>$$ SSE=\sum_{i=1}^{n}(\hat{y}_i-bar{y})^2 $$</p>
+<p>$$ SSR=\sum_{i=1}^{n}(y_i-\hat{y_i})^2 $$</p>
+<p>关系：</p>
+<p>$$ TSS=SSE+SSR $$</p>
+<p>拟合优度 $ R^2 $:</p>
+<p>$$ R^2=\frac{SSE}{TSS}=1-\frac{SSR}{TSS} $$</p>
+<p>$ R^2 $越大，表示拟合优度约好。</p>
+<p>$ R^2 $与变量的单位无关。</p>
+<h2 id="OLS估计量的期望值和方差"><a href="#OLS估计量的期望值和方差" class="headerlink" title="OLS估计量的期望值和方差"></a>OLS估计量的期望值和方差</h2><blockquote>
+<p>根据以上四条假设可以得到OLS的无偏性，即：</p>
+</blockquote>
+<p>$$ E(\hat \beta_0)=\beta_0 $$<br>$$ E(\hat \beta_1)=\beta_1 $$</p>
+<blockquote>
+<p>根据以上五条假设可以得到 $ \sigma^2 $的无偏性<br>$$ E(\hat \sigma^2)=\sigma^2 $$</p>
+</blockquote>
+<p><font color='red'> 以上五条假设又叫做简单线性回归的高斯-马尔科夫假定 </font></p>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined"></a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://xuestrange.github.io/2020/09/19/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6%E7%AC%AC%E4%BA%8C%E7%AB%A0%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/">https://xuestrange.github.io/2020/09/19/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6%E7%AC%AC%E4%BA%8C%E7%AB%A0%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://xuestrange.github.io" target="_blank">WU Li's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6/">计量经济学</a></div><div class="post_share"><div class="social-share" data-image="https://tvax4.sinaimg.cn/large/006z5e4Qly1gitleofq0vj318g0tmwlc.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/09/20/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6%E7%AC%AC%E4%B8%80%E7%AB%A0%E7%BB%AA%E8%AE%BA/"><img class="prev-cover" src="https://tva4.sinaimg.cn/large/006z5e4Qly1giwvm8lke3j310p0p075u.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">计量经济学第一章绪论</div></div></a></div><div class="next-post pull-right"><a href="/2020/08/01/ISL/"><img class="next-cover" src="https://tvax2.sinaimg.cn/large/006z5e4Qgy1ghbop2ey9rj315o0qrgry.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">An Introduction to Statistical Learning</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2020/09/20/计量经济学第一章绪论/" title="计量经济学第一章绪论"><img class="cover" src="https://tva4.sinaimg.cn/large/006z5e4Qly1giwvm8lke3j310p0p075u.jpg"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-09-20</div><div class="title">计量经济学第一章绪论</div></div></a></div></div></div></article></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 By null</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><div class="js-pjax"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></div></body></html>
