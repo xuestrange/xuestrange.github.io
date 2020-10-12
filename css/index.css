@@ -1489,7 +1489,7 @@ body {
   min-height: 100%;
   background: var(--global-bg);
   color: var(--font-color);
-  font-size: 18pt;
+  font-size: 16pt;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Lato, Roboto, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   line-height: 2;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
@@ -1818,7 +1818,7 @@ blockquote footer cite:before {
 }
 #article-container pre,
 #article-container code {
-  font-size: 18pt;
+  font-size: 16pt;
   font-family: consolas, Menlo, 'PingFang SC', 'Microsoft YaHei', sans-serif !important;
 }
 #article-container code {
@@ -1849,7 +1849,7 @@ blockquote footer cite:before {
 #article-container figure.highlight figcaption,
 #article-container figure.highlight .caption {
   padding: 0.3rem 0 0.1rem 0.7rem;
-  font-size: 18pt;
+  font-size: 16pt;
   line-height: 1em;
 }
 #article-container figure.highlight figcaption a,
@@ -1881,7 +1881,7 @@ blockquote footer cite:before {
   height: 2.15em;
   background: #1c1c1c;
   color: rgba(238,255,255,0.8);
-  font-size: 18pt;
+  font-size: 16pt;
 }
 #article-container .highlight-tools.closed + table {
   display: none;
