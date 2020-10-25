@@ -21,12 +21,12 @@
     var CONFIG = {"hostname":"xuestrange.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="&amp;#x4E0D;&amp;#x65AD;&amp;#x8865;&amp;#x5145;&amp;#x4E2D;">
+  <meta name="description" content="不断补充中">
 <meta property="og:type" content="article">
 <meta property="og:title" content="统计分布">
 <meta property="og:url" content="https://xuestrange.github.io/2020/07/02/%E7%BB%9F%E8%AE%A1%E5%88%86%E5%B8%83/index.html">
 <meta property="og:site_name" content="WU Li&#39;s Blog">
-<meta property="og:description" content="&amp;#x4E0D;&amp;#x65AD;&amp;#x8865;&amp;#x5145;&amp;#x4E2D;">
+<meta property="og:description" content="不断补充中">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-07-01T16:00:00.000Z">
 <meta property="article:modified_time" content="2020-10-25T05:50:13.663Z">
@@ -273,47 +273,47 @@
 
       
         <blockquote>
-<p>&#x4E0D;&#x65AD;&#x8865;&#x5145;&#x4E2D;</p>
+<p>不断补充中</p>
 </blockquote>
 <a id="more"></a>
 <h1 id="Defination"><a href="#Defination" class="headerlink" title="Defination"></a>Defination</h1><h2 id="Probability-Distribution"><a href="#Probability-Distribution" class="headerlink" title="Probability Distribution"></a>Probability Distribution</h2><p>$$ F(x_*)=P{x\leq x_*} $$</p>
-<p>&#x5BF9;&#x4E8E;&#x79BB;&#x6563;&#x578B;&#x968F;&#x673A;&#x53D8;&#x91CF;&#xFF1A;</p>
+<p>对于离散型随机变量：</p>
 <p>$$ F(x_n)=\sum_{i=1}^n P{x_i} $$</p>
-<p>&#x5BF9;&#x4E8E;&#x8FDE;&#x7EED;&#x578B;&#x968F;&#x673A;&#x53D8;&#x91CF;&#xFF1A;</p>
+<p>对于连续型随机变量：</p>
 <p>$$ F(x)=\int_{-\infty}^x f(x)dx $$</p>
-<p>&#x5176;&#x4E2D;&#xFF0C;$f(x)$&#x4E3A;&#x6982;&#x7387;&#x5BC6;&#x5EA6;&#x51FD;&#x6570;&#xFF0C;$F(x)$&#x4E5F;&#x53EB;&#x4F5C;&#x7D2F;&#x79EF;&#x6982;&#x7387;&#x5BC6;&#x5EA6;&#x51FD;&#x6570;</p>
-<h2 id="PDF"><a href="#PDF" class="headerlink" title="PDF"></a>PDF</h2><p>&#x8FDE;&#x7EED;&#x578B;&#x968F;&#x673A;&#x53D8;&#x91CF;&#x7684;&#x6982;&#x7387;&#x5BC6;&#x5EA6;&#x51FD;&#x6570;&#x5728;&#x67D0;&#x4E00;&#x533A;&#x95F4;&#x4E0A;&#x7684;&#x79EF;&#x5206;&#xFF0C;&#x8868;&#x793A;&#x53D6;&#x503C;&#x5728;&#x8FD9;&#x4E00;&#x533A;&#x95F4;&#x4EE5;&#x5185;&#x7684;&#x6982;&#x7387;&#xFF0C;&#x4F46;&#x662F;$f(x_0)$&#x5E76;&#x4E0D;&#x8868;&#x793A;$x_0$&#x8FD9;&#x4E00;&#x70B9;&#x7684;&#x6982;&#x7387;&#xFF0C;<strong>&#xFF01;&#xFF01;&#xFF01;</strong>&#x3002;</p>
+<p>其中，$f(x)$为概率密度函数，$F(x)$也叫作累积概率密度函数</p>
+<h2 id="PDF"><a href="#PDF" class="headerlink" title="PDF"></a>PDF</h2><p>连续型随机变量的概率密度函数在某一区间上的积分，表示取值在这一区间以内的概率，但是$f(x_0)$并不表示$x_0$这一点的概率，<strong>！！！</strong>。</p>
 <h1 id="DRV"><a href="#DRV" class="headerlink" title="DRV"></a>DRV</h1><h2 id="Bernoulli-Distribution"><a href="#Bernoulli-Distribution" class="headerlink" title="Bernoulli Distribution"></a>Bernoulli Distribution</h2><p>$$p{x=k}=p^k*(1-p)^{1-k},k=0,1$$</p>
-<p>&#x4E00;&#x4E2A;&#x5B9E;&#x9A8C;&#x53EA;&#x6709;&#x4E24;&#x79CD;&#x53EF;&#x80FD;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x5982;&#x629B;&#x4E00;&#x4E2A;&#x786C;&#x5E01;&#xFF0C;&#x975E;&#x6B63;&#x5373;&#x53CD;&#xFF0C;&#x8FD9;&#x4E5F;&#x53EB;&#x505A;1&#x91CD;&#x4F2F;&#x52AA;&#x5229;&#x5B9E;&#x9A8C;&#x3002;</p>
+<p>一个实验只有两种可能的结果，如抛一个硬币，非正即反，这也叫做1重伯努利实验。</p>
 <h2 id="Binomial-Distribution"><a href="#Binomial-Distribution" class="headerlink" title="Binomial Distribution"></a>Binomial Distribution</h2><!-- ====================================== -->
 <!-- \sim表示波浪线 -->
 <!-- space+space手动弹出代码提示 -->
 <!-- ====================================== -->
 
 <p>$$p{x=k}=C_n^kp^k*(1-p)^{n-k},k=0,1,2,\dots$$</p>
-<p>&#x5C06;&#x4F2F;&#x52AA;&#x5229;&#x8BD5;&#x9A8C;&#x91CD;&#x590D;$n$&#x6B21;&#xFF0C;&#x4F8B;&#xFF1A;&#x629B;$n$&#x7684;&#x786C;&#x5E01;&#xFF0C;&#x51FA;&#x73B0;$1,2,\dots,k$&#x6B21;&#x6B63;&#x9762;&#x671D;&#x4E0A;&#x7684;&#x7684;&#x6982;&#x7387;&#x670D;&#x4ECE;&#x4E8C;&#x9879;&#x5206;&#x5E03;&#xFF0C;&#x7B80;&#x5199;&#x4E3A;&#xFF1A;</p>
+<p>将伯努利试验重复$n$次，例：抛$n$的硬币，出现$1,2,\dots,k$次正面朝上的的概率服从二项分布，简写为：</p>
 <p>$$X \sim b(n,k)$$</p>
-<p>&#x5F53; $ n=1 $&#x65F6;&#xFF0C;&#x4E8C;&#x9879;&#x5206;&#x5E03;&#x5C31;&#x662F;&#x4F2F;&#x52AA;&#x5229;&#x5206;&#x5E03;&#x3002;</p>
-<p><strong>&#x5747;&#x503C;&#xFF1A;$ E(X)=np $ &#x65B9;&#x5DEE;&#xFF1A;$ D(X)=np(1-p) $</strong></p>
+<p>当 $ n=1 $时，二项分布就是伯努利分布。</p>
+<p><strong>均值：$ E(X)=np $ 方差：$ D(X)=np(1-p) $</strong></p>
 <h2 id="Possion-Distribution"><a href="#Possion-Distribution" class="headerlink" title="Possion Distribution"></a>Possion Distribution</h2><p>$$ P{x=k}=\frac{e^{-\lambda}\lambda^k}{k!},k=0,1,2,\dots$$</p>
-<p>&#x8BB0;&#x4E3A;&#xFF1A;</p>
+<p>记为：</p>
 <p>$$ X \sim \pi(\lambda) $$</p>
 <blockquote>
-<p>Poisson&#x5206;&#x5E03;&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x63CF;&#x8FF0;&#x5728;&#x5355;&#x4F4D;&#x65F6;&#x95F4;(&#x7A7A;&#x95F4;)&#x4E2D;&#x7A00;&#x6709;&#x4E8B;&#x4EF6;&#x7684;&#x53D1;&#x751F;&#x6570;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
+<p>Poisson分布主要用于描述在单位时间(空间)中稀有事件的发生数，例如：</p>
 <ol>
-<li>&#x653E;&#x5C04;&#x6027;&#x7269;&#x8D28;&#x5728;&#x5355;&#x4F4D;&#x65F6;&#x95F4;&#x5185;&#x7684;&#x653E;&#x5C04;&#x6B21;&#x6570;&#xFF1B;</li>
-<li>&#x91CE;&#x5916;&#x5355;&#x4F4D;&#x7A7A;&#x95F4;&#x4E2D;&#x7684;&#x67D0;&#x79CD;&#x6606;&#x866B;&#x6570;&#x7B49;&#x3002;</li>
+<li>放射性物质在单位时间内的放射次数；</li>
+<li>野外单位空间中的某种昆虫数等。</li>
 </ol>
 </blockquote>
-<p><strong>&#x5747;&#x503C;&#xFF1A;$ E(X)=\lambda $ &#x65B9;&#x5DEE;&#xFF1A;$ D(X)=\lambda $</strong></p>
-<p>&#x5728;&#x4E8C;&#x9879;&#x5206;&#x5E03;&#x7684; $ n $ &#x6B21;&#x4F2F;&#x52AA;&#x5229;&#x8BD5;&#x9A8C;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x8BD5;&#x9A8C;&#x6B21;&#x6570; $ n $ &#x5F88;&#x5927;&#xFF0C;&#x4E8C;&#x9879;&#x5206;&#x5E03;&#x7684;&#x6982;&#x7387; $ p $ &#x5F88;&#x5C0F;&#xFF0C;&#x4E14;&#x4E58;&#x79EF; $\lambda=np$ &#x6BD4;&#x8F83;&#x9002;&#x4E2D;&#xFF0C;&#x5219;&#x4E8B;&#x4EF6;&#x51FA;&#x73B0;&#x7684;&#x6B21;&#x6570;&#x7684;&#x6982;&#x7387;&#x53EF;&#x4EE5;&#x7528;&#x6CCA;&#x677E;&#x5206;&#x5E03;&#x6765;&#x903C;&#x8FD1;&#x3002;</p>
+<p><strong>均值：$ E(X)=\lambda $ 方差：$ D(X)=\lambda $</strong></p>
+<p>在二项分布的 $ n $ 次伯努利试验中，如果试验次数 $ n $ 很大，二项分布的概率 $ p $ 很小，且乘积 $\lambda=np$ 比较适中，则事件出现的次数的概率可以用泊松分布来逼近。</p>
 <h1 id="CRV"><a href="#CRV" class="headerlink" title="CRV"></a>CRV</h1><h2 id="Uniform-Distribution"><a href="#Uniform-Distribution" class="headerlink" title="Uniform Distribution"></a>Uniform Distribution</h2><p>$$ f(x)=\left{<br>\begin{array}{lc}<br>\frac{1}{b-a} &amp; a&lt;x&lt;b \<br>0 &amp; else\<br>\end{array}<br>\right.<br> $$</p>
 <p>$$ X\sim U(a,b) $$</p>
 <h2 id="Exponential-Distribution"><a href="#Exponential-Distribution" class="headerlink" title="Exponential Distribution"></a>Exponential Distribution</h2><p>$$ f(x)=\left{<br>\begin{array}{lc}<br>\frac{1}{\theta}e^{-x/\theta} &amp; x&gt;0 \<br>0 &amp; else\<br>\end{array}<br>\right.<br> $$</p>
-<p>&#x6307;&#x6570;&#x5206;&#x5E03;&#x5177;&#x6709;&#x65E0;&#x8BB0;&#x5FC6;&#x6027;<br>$ \theta &gt;0 $&#x4E3A;&#x5E38;&#x6570;</p>
+<p>指数分布具有无记忆性<br>$ \theta &gt;0 $为常数</p>
 <h2 id="Normal-Distribution"><a href="#Normal-Distribution" class="headerlink" title="Normal Distribution"></a>Normal Distribution</h2><p>$$ f(x)=\frac{1}{\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}},-\infty&lt;x&lt; \infty $$</p>
 <p>$$ X\sim N(\mu,\sigma^2) $$</p>
-<p>$3\sigma$&#x539F;&#x5219;&#xFF1A;<br>$ 1\sigma \quad 0.6826$<br>$ 2\sigma \quad 0.9544$<br>$ 3\sigma \quad 0.9974$<br>&#x5C3D;&#x7BA1;&#x6B63;&#x6001;&#x53D8;&#x91CF;&#x7684;&#x53D6;&#x503C;&#x662F;$ ( -\infty,\infty ) $&#xFF0C;&#x4F46;&#x662F;&#x5B83;&#x7684;&#x503C;&#x843D;&#x5728; $(\mu-3\sigma,\mu+3\sigma)$&#x5185;&#x51E0;&#x4E4E;&#x662F;&#x80AF;&#x5B9A;&#x7684;&#x4E8B;&#x3002;</p>
+<p>$3\sigma$原则：<br>$ 1\sigma \quad 0.6826$<br>$ 2\sigma \quad 0.9544$<br>$ 3\sigma \quad 0.9974$<br>尽管正态变量的取值是$ ( -\infty,\infty ) $，但是它的值落在 $(\mu-3\sigma,\mu+3\sigma)$内几乎是肯定的事。</p>
 
     </div>
 

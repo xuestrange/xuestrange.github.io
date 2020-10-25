@@ -21,12 +21,12 @@
     var CONFIG = {"hostname":"xuestrange.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="&amp;#x8BB0;&amp;#x5F55;&amp;#x81EA;&amp;#x5DF1;&amp;#x5B66;&amp;#x4E60;&amp;#x8BA1;&amp;#x91CF;&amp;#x7ECF;&amp;#x6D4E;&amp;#x5B66;&amp;#x7684;&amp;#x8FC7;&amp;#x7A0B;&amp;#xFF0C;&amp;#x66F4;&amp;#x65B0;&amp;#x81F3;&amp;#x7B2C;&amp;#x4E8C;&amp;#x7AE0;">
+  <meta name="description" content="记录自己学习计量经济学的过程，更新至第二章">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ecomometrics">
 <meta property="og:url" content="https://xuestrange.github.io/2020/09/20/Econometrics/index.html">
 <meta property="og:site_name" content="WU Li&#39;s Blog">
-<meta property="og:description" content="&amp;#x8BB0;&amp;#x5F55;&amp;#x81EA;&amp;#x5DF1;&amp;#x5B66;&amp;#x4E60;&amp;#x8BA1;&amp;#x91CF;&amp;#x7ECF;&amp;#x6D4E;&amp;#x5B66;&amp;#x7684;&amp;#x8FC7;&amp;#x7A0B;&amp;#xFF0C;&amp;#x66F4;&amp;#x65B0;&amp;#x81F3;&amp;#x7B2C;&amp;#x4E8C;&amp;#x7AE0;">
+<meta property="og:description" content="记录自己学习计量经济学的过程，更新至第二章">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-09-19T16:00:00.000Z">
 <meta property="article:modified_time" content="2020-10-25T05:46:08.343Z">
@@ -273,119 +273,119 @@
 
       
         <blockquote>
-<p>&#x8BB0;&#x5F55;&#x81EA;&#x5DF1;&#x5B66;&#x4E60;&#x8BA1;&#x91CF;&#x7ECF;&#x6D4E;&#x5B66;&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x66F4;&#x65B0;&#x81F3;&#x7B2C;&#x4E8C;&#x7AE0;</p>
+<p>记录自己学习计量经济学的过程，更新至第二章</p>
 </blockquote>
 <a id="more"></a>
 <h1 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1 Introduction"></a>1 Introduction</h1><ul>
-<li>&#x6570;&#x7406;&#x7ECF;&#x6D4E;&#x6A21;&#x578B;&#xFF1A;&#x7528;&#x6570;&#x5B66;&#x7406;&#x8BBA;&#x89E3;&#x91CA;&#x7ECF;&#x6D4E;&#x95EE;&#x9898;&#xFF0C;&#x4F46;&#x662F;&#x5E76;&#x6CA1;&#x6709;&#x89E3;&#x91CA;&#x5B9A;&#x91CF;&#x5173;&#x7CFB;</li>
-<li>&#x8BA1;&#x91CF;&#x7ECF;&#x6D4E;&#x5B66;&#x6A21;&#x578B;&#xFF1A;&#x63ED;&#x793A;&#x5B9A;&#x91CF;&#x5173;&#x7CFB;</li>
+<li>数理经济模型：用数学理论解释经济问题，但是并没有解释定量关系</li>
+<li>计量经济学模型：揭示定量关系</li>
 </ul>
 <h2 id="Model-Design"><a href="#Model-Design" class="headerlink" title="Model Design"></a>Model Design</h2><ol>
-<li>&#x9009;&#x62E9;&#x53D8;&#x91CF;</li>
-<li>&#x786E;&#x5B9A;&#x6570;&#x5B66;&#x5173;&#x7CFB;</li>
-<li>&#x786E;&#x5B9A;&#x53C2;&#x6570;&#x7684;&#x53D6;&#x503C;&#x8303;&#x56F4;</li>
+<li>选择变量</li>
+<li>确定数学关系</li>
+<li>确定参数的取值范围</li>
 </ol>
-<p>&#x53D8;&#x91CF;&#x7684;&#x9009;&#x53D6;&#x89C4;&#x5219;&#xFF1A;</p>
+<p>变量的选取规则：</p>
 <ul>
-<li>&#x6B63;&#x786E;&#x628A;&#x63E1;&#x7ECF;&#x6D4E;&#x73B0;&#x8C61;&#x4E2D;&#x6697;&#x542B;&#x7684;&#x7ECF;&#x6D4E;&#x5B66;&#x7406;&#x8BBA;&#x548C;&#x7ECF;&#x6D4E;&#x884C;&#x4E3A;&#x89C4;&#x5F8B;</li>
+<li>正确把握经济现象中暗含的经济学理论和经济行为规律</li>
 </ul>
-<p><em>&#x6240;&#x9009;&#x53D8;&#x91CF;&#x4E0E;&#x7ECF;&#x6D4E;&#x884C;&#x4E3A;&#x662F;&#x5426;&#x6709;&#x5173;</em></p>
+<p><em>所选变量与经济行为是否有关</em></p>
 <ul>
-<li>&#x8003;&#x8651;&#x6570;&#x636E;&#x7684;&#x53EF;&#x83B7;&#x5F97;&#x6027;</li>
-<li>&#x9009;&#x62E9;&#x53D8;&#x91CF;&#x662F;&#x8981;&#x8003;&#x8651;&#x6240;&#x6709;&#x5165;&#x9009;&#x53D8;&#x91CF;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#xFF0C;&#x4F7F;&#x6BCF;&#x4E2A;&#x53D8;&#x91CF;&#x90FD;&#x662F;&#x72EC;&#x7ACB;&#x7684;<ul>
-<li>&#x53D8;&#x91CF;&#x7684;&#x9009;&#x62E9;&#x9700;&#x8981;&#x53CD;&#x590D;&#x591A;&#x6B21;&#x8FDB;&#x884C;</li>
-<li><font color="red"> &#x62DF;&#x5408;&#x7A0B;&#x5EA6;&#x4E0D;&#x80FD;&#x7528;&#x6765;&#x5224;&#x65AD;&#x6A21;&#x578B;&#x53D8;&#x91CF;&#x9009;&#x62E9;&#x662F;&#x5426;&#x6B63;&#x786E; </font></li>
+<li>考虑数据的可获得性</li>
+<li>选择变量是要考虑所有入选变量之间的关系，使每个变量都是独立的<ul>
+<li>变量的选择需要反复多次进行</li>
+<li><font color='red'> 拟合程度不能用来判断模型变量选择是否正确 </font></li>
 </ul>
 </li>
 </ul>
-<p>&#x4E0D;&#x80FD;&#x901A;&#x8FC7;&#x7ECF;&#x6D4E;&#x610F;&#x4E49;&#x68C0;&#x9A8C;&#x7684;&#x8BA1;&#x91CF;&#x7ECF;&#x6D4E;&#x5B66;&#x6A21;&#x578B;&#x6CA1;&#x6709;&#x5229;&#x7528;&#x4EF7;&#x503C;&#x3002;</p>
-<h1 id="2-Linear-Regression"><a href="#2-Linear-Regression" class="headerlink" title="2 Linear Regression"></a>2 Linear Regression</h1><h2 id="General-Fomula"><a href="#General-Fomula" class="headerlink" title="General Fomula"></a>General Fomula</h2><p>&#x5047;&#x8BBE;&#x603B;&#x4F53;&#x4E2D;&#x53D8;&#x91CF;&#x4E4B;&#x95F4;&#x5173;&#x7CFB;&#x670D;&#x4ECE;&#xFF1A;</p>
+<p>不能通过经济意义检验的计量经济学模型没有利用价值。</p>
+<h1 id="2-Linear-Regression"><a href="#2-Linear-Regression" class="headerlink" title="2 Linear Regression"></a>2 Linear Regression</h1><h2 id="General-Fomula"><a href="#General-Fomula" class="headerlink" title="General Fomula"></a>General Fomula</h2><p>假设总体中变量之间关系服从：</p>
 <p>$$ y= \beta_0+\beta_1 x+u $$</p>
 <ul>
 <li>$ y $ named dependent variable, explained variable, response</li>
 <li>$ x $ named independent variable,explainatory variable, predictor</li>
-<li>$ \beta_0 $ intercept parameter&#xFF0C;&#x622A;&#x8DDD;</li>
-<li>$ \beta_1 $ slope parameter&#xFF0C;&#x659C;&#x7387;</li>
-<li>$ u $ error term&#xFF0C; disturbance, &#x8BEF;&#x5DEE;&#x9879;</li>
+<li>$ \beta_0 $ intercept parameter，截距</li>
+<li>$ \beta_1 $ slope parameter，斜率</li>
+<li>$ u $ error term， disturbance, 误差项</li>
 </ul>
-<p>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x5F97;&#x5230;&#x4E86;&#x4E00;&#x4E9B;&#x6837;&#x672C;(Sample) $ {x_i,y_i} $&#x6765;&#x4F30;&#x8BA1;&#x6A21;&#x578B;&#x4E2D;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x5728;&#x4F30;&#x8BA1;&#x4E4B;&#x524D;&#xFF0C;&#x9700;&#x8981;&#x5BF9;&#x6A21;&#x578B;&#x505A;&#x51FA;&#x82E5;&#x5E72;&#x5047;&#x8BBE;&#xFF0C;&#x5047;&#x8BBE;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p>现在我们得到了一些样本(Sample) $ {x_i,y_i} $来估计模型中的参数，在估计之前，需要对模型做出若干假设，假设如下：</p>
 <p>$$ E(u)=0 $$</p>
-<p>$ u $&#x4E0E; $ x $&#x4E0D;&#x76F8;&#x5173;(&#x4E0D;&#x5B58;&#x5728;&#x7EBF;&#x6027;&#x5173;&#x7CFB;)&#xFF0C;&#x5373;&#x7ED9;&#x5B9A; $ x $, $ u $&#x7684;&#x5747;&#x503C;&#x4E0E; $ x $&#x65E0;&#x5173;&#xFF0C;&#x5373; <strong>&#x96F6;&#x6761;&#x4EF6;&#x5747;&#x503C;&#x5047;&#x8BBE;</strong></p>
+<p>$ u $与 $ x $不相关(不存在线性关系)，即给定 $ x $, $ u $的均值与 $ x $无关，即 <strong>零条件均值假设</strong></p>
 <p>$$ E(u|x)=E(u) $$</p>
-<p>&#x6839;&#x636E;&#x4EE5;&#x4E0A;&#x4E24;&#x6761;&#x5047;&#x8BBE;&#xFF0C;&#x53EF;&#x4EE5;&#x63A8;&#x5BFC;&#x51FA; <strong>&#x603B;&#x4F53;&#x56DE;&#x5F52;&#x51FD;&#x6570;</strong>(Population Regression Function, PRF),</p>
+<p>根据以上两条假设，可以推导出 <strong>总体回归函数</strong>(Population Regression Function, PRF),</p>
 <p>$$ E(y|x)=\beta_0+\beta_1 x $$</p>
 <h2 id="Hypotheses"><a href="#Hypotheses" class="headerlink" title="Hypotheses"></a>Hypotheses</h2><ol>
-<li><p>&#x56DE;&#x5F52;&#x6A21;&#x578B;&#x662F;&#x6B63;&#x786E;&#x8BBE;&#x5B9A;&#x7684;<br>&#x603B;&#x4F53;&#x670D;&#x4ECE;&#x4EE5;&#x4E0B;&#x5173;&#x7CFB;&#xFF0C; $ x,y $&#x90FD;&#x662F;&#x968F;&#x673A;&#x53D8;&#x91CF;<br>$$ y=\beta_0+\beta_1 x+u $$</p>
+<li><p>回归模型是正确设定的<br>总体服从以下关系， $ x,y $都是随机变量<br>$$ y=\beta_0+\beta_1 x+u $$</p>
 <ul>
-<li>&#x6A21;&#x578B;&#x9009;&#x62E9;&#x4E86;&#x6B63;&#x786E;&#x7684;&#x53D8;&#x91CF;</li>
-<li>&#x6A21;&#x578B;&#x9009;&#x62E9;&#x4E86;&#x6B63;&#x786E;&#x7684;&#x51FD;&#x6570;&#x5F62;&#x5F0F;(&#x8BBE;&#x7ACB;&#x7684;&#x4E00;&#x5143;&#x7EBF;&#x6027;&#x56DE;&#x5F52;&#x6A21;&#x578B;&#x4E0E;&#x7ECF;&#x6D4E;&#x7406;&#x8BBA;&#x4E00;&#x81F4;)</li>
+<li>模型选择了正确的变量</li>
+<li>模型选择了正确的函数形式(设立的一元线性回归模型与经济理论一致)</li>
 </ul>
 </li>
 </ol>
 <blockquote>
-<p>&#x5F53;&#x8BE5;&#x5047;&#x8BBE;&#x6EE1;&#x8DB3;&#x65F6;&#xFF0C;&#x5C31;&#x8BF4;&#x660E;&#x6A21;&#x578B;&#x6CA1;&#x6709; <strong>&#x8BBE;&#x5B9A;&#x504F;&#x8BEF;(Specification error)</strong></p>
+<p>当该假设满足时，就说明模型没有 <strong>设定偏误(Specification error)</strong></p>
 </blockquote>
 <ol start="2">
-<li>&#x968F;&#x673A;&#x62BD;&#x6837;<br>&#x5BB9;&#x91CF;&#x4E3A; $ n $&#x7684; &#x968F;&#x673A;&#x6837;&#x672C;{(x_i,y_i)}&#x662F;&#x4ECE;&#x603B;&#x4F53;&#x968F;&#x673A;&#x62BD;&#x6837;&#x5F97;&#x5230;&#x7684;</li>
-<li>&#x89E3;&#x91CA;&#x53D8;&#x91CF;&#x7684;&#x6837;&#x672C;&#x6709;&#x53D8;&#x5F02;<br>$$ {x_i,i=1,2,\dots,n} $$ &#x4E0D;&#x662F;&#x4E00;&#x6837;&#x7684;</li>
+<li>随机抽样<br>容量为 $ n $的 随机样本{(x_i,y_i)}是从总体随机抽样得到的</li>
+<li>解释变量的样本有变异<br>$$ {x_i,i=1,2,\dots,n} $$ 不是一样的</li>
 </ol>
 <ol start="4">
-<li>&#x968F;&#x673A;&#x8BEF;&#x5DEE;&#x9879; $ u $ &#x5177;&#x6709;&#x5728;&#x7ED9;&#x5B9A; $ X $&#x6761;&#x4EF6;&#x4E0B;&#x7684;&#x96F6;&#x5747;&#x503C;&#x3001;&#x540C;&#x65B9;&#x5DEE;&#x3001;&#x4E0D;&#x5E8F;&#x5217;&#x76F8;&#x5173;&#x6027;</li>
+<li>随机误差项 $ u $ 具有在给定 $ X $条件下的零均值、同方差、不序列相关性</li>
 </ol>
 <p>$$ E(u|x)=0 $$<br>$$ Var(u|x)=\sigma^2 $$</p>
-<p>&#x4EE5;&#x4E0A;&#x56DB;&#x6761;&#x5047;&#x8BBE;&#x6210;&#x4E3A; <strong>&#x9AD8;&#x65AF;&#x2014;&#x9A6C;&#x5C14;&#x79D1;&#x592B;&#x5047;&#x8BBE;</strong></p>
+<p>以上四条假设成为 <strong>高斯—马尔科夫假设</strong></p>
 <ol start="5">
-<li>&#x968F;&#x673A;&#x8BEF;&#x5DEE;&#x9879;&#x4E0E;&#x89E3;&#x91CA;&#x53D8;&#x91CF;&#x95F4;&#x4E0D;&#x76F8;&#x5173;</li>
+<li>随机误差项与解释变量间不相关</li>
 </ol>
 <p>$$ Cov(x,u)=E(xu)-E(x)E(u)=E(xu)=0 $$</p>
 <ol start="6">
-<li>&#x968F;&#x673A;&#x8BEF;&#x5DEE;&#x9879;&#x670D;&#x4ECE;&#x5747;&#x503C;&#x4E3A;0&#xFF0C;&#x65B9;&#x5DEE;&#x4E3A; $ \sigma^2 $&#x7684;&#x6B63;&#x6001;&#x5206;&#x5E03;</li>
+<li>随机误差项服从均值为0，方差为 $ \sigma^2 $的正态分布</li>
 </ol>
-<p>$$ u \sim N(0&#xFF0C;\sigma^2) $$</p>
+<p>$$ u \sim N(0，\sigma^2) $$</p>
 <blockquote>
-<p>&#x5047;&#x8BBE;6&#x5728;&#x5C0F;&#x6837;&#x672C;&#x65F6;&#x5F88;&#x91CD;&#x8981;&#xFF0C;&#x5927;&#x6837;&#x672C;&#x65F6;&#x53CD;&#x800C;&#x8BA9;&#x6CA1;&#x6709;&#x90A3;&#x4E48;&#x91CD;&#x8981;(<strong>&#x4E2D;&#x5FC3;&#x6781;&#x9650;&#x5B9A;&#x7406;</strong>)</p>
+<p>假设6在小样本时很重要，大样本时反而让没有那么重要(<strong>中心极限定理</strong>)</p>
 </blockquote>
-<h2 id="Solutions-OLS"><a href="#Solutions-OLS" class="headerlink" title="Solutions(OLS)"></a>Solutions(OLS)</h2><p>&#x96F6;&#x6761;&#x4EF6;&#x5747;&#x503C;&#x5047;&#x8BBE;&#x8868;&#x660E; $ x $, $ u $&#x4E4B;&#x95F4;&#x7684;&#x4E0D;&#x5B58;&#x5728;&#x7EBF;&#x6027;&#x5173;&#x7CFB;&#xFF0C;&#x5373;&#x534F;&#x65B9;&#x5DEE;&#x4E3A;0&#xFF0C;&#x5219;&#x6709;&#xFF1A;</p>
+<h2 id="Solutions-OLS"><a href="#Solutions-OLS" class="headerlink" title="Solutions(OLS)"></a>Solutions(OLS)</h2><p>零条件均值假设表明 $ x $, $ u $之间的不存在线性关系，即协方差为0，则有：</p>
 <p>$$ Cov(x,u)=E(xu)-E(x)E(u)=0 $$</p>
-<p>&#x5373;&#xFF1A;</p>
+<p>即：</p>
 <p>$$ E(xu)=0 $$</p>
-<p>&#x518D;&#x8054;&#x5408; $ E(u)=0 $&#x53EF;&#x4EE5;&#x63A8;&#x5BFC;&#x51FA; $ \beta_0, \beta_1$&#x7684;&#x4F30;&#x8BA1;&#x503C; $ \hat{\beta_0}, \hat{\beta_1} $&#xFF08;&#x8FD9;&#x4E24;&#x4E2A;&#x5F0F;&#x5B50;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x6B8B;&#x5DEE;&#x5E73;&#x65B9;&#x548C;&#x5206;&#x522B;&#x6C42;&#x504F;&#x5BFC;&#x7B49;&#x4E8E;0&#x65F6;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x56E0;&#x6B64;&#x6700;&#x5C0F;&#x5316;&#x4E86;&#x6B8B;&#x5DEE;&#x5E73;&#x65B9;&#x548C;&#xFF09;, &#x4ED6;&#x4EEC;&#x4E5F;&#x53EB;&#x4F5C;&#x666E;&#x901A;&#x6700;&#x5C0F;&#x4E8C;&#x4E58;&#x4F30;&#x8BA1;&#x503C;(OLS), &#x5F97;&#x5230;&#x7684;&#x62DF;&#x5408;&#x503C; $ \hat{y} $&#x4E3A;&#xFF1A;</p>
+<p>再联合 $ E(u)=0 $可以推导出 $ \beta_0, \beta_1$的估计值 $ \hat{\beta_0}, \hat{\beta_1} $（这两个式子实际上是残差平方和分别求偏导等于0时的结果，因此最小化了残差平方和）, 他们也叫作普通最小二乘估计值(OLS), 得到的拟合值 $ \hat{y} $为：</p>
 <p>$$ \hat{y}=\hat{\beta_0}+\hat{\beta_1} x $$</p>
-<p>&#x5B83;&#x4E5F;&#x88AB;&#x53EB;&#x505A;<strong>OLS&#x56DE;&#x5F52;&#x7EBF;</strong>(OLS Regression Line)&#x6216; <strong>&#x6837;&#x672C;&#x56DE;&#x5F52;&#x51FD;&#x6570;</strong>(Sample Regression Function, SRF)&#xFF1A;</p>
-<p>&#x6B8B;&#x5DEE;(residual)&#x4E3A;&#xFF1A;</p>
+<p>它也被叫做<strong>OLS回归线</strong>(OLS Regression Line)或 <strong>样本回归函数</strong>(Sample Regression Function, SRF)：</p>
+<p>残差(residual)为：</p>
 <p>$$ \hat{u}=y-\hat{y} \text{ for each observations}$$</p>
-<h3 id="OLS&#x2019;s-Properties"><a href="#OLS&#x2019;s-Properties" class="headerlink" title="OLS&#x2019;s Properties"></a>OLS&#x2019;s Properties</h3><p>(1) &#x6B8B;&#x5DEE;&#x4E4B;&#x548C;&#x548C;&#x6B8B;&#x5DEE;&#x5747;&#x503C;&#x4E3A;0</p>
+<h3 id="OLS’s-Properties"><a href="#OLS’s-Properties" class="headerlink" title="OLS’s Properties"></a>OLS’s Properties</h3><p>(1) 残差之和和残差均值为0</p>
 <p>$$ E(\hat{u})=0 $$</p>
 <p>$$ \sum_{i=1}^{n}\hat{u}_i=0 $$</p>
-<p>(2) &#x81EA;&#x53D8;&#x91CF;&#x7684;&#x6837;&#x672C; $ x_1,x_2,\dots,x_n $&#x4E0E;&#x6B8B;&#x5DEE; $ u_1,u_2,\dots,u_n $&#x534F;&#x65B9;&#x5DEE;&#x4E3A;0&#xFF0C;&#x76F8;&#x5173;&#x7CFB;&#x6570;&#x4E3A;0</p>
-<p>(3) &#x70B9; $ (\bar{x},\bar{y}) $&#x603B;&#x5728;OSL&#x56DE;&#x5F52;&#x7EBF;&#x4E0A;&#x3002;</p>
+<p>(2) 自变量的样本 $ x_1,x_2,\dots,x_n $与残差 $ u_1,u_2,\dots,u_n $协方差为0，相关系数为0</p>
+<p>(3) 点 $ (\bar{x},\bar{y}) $总在OSL回归线上。</p>
 <blockquote>
-<p>&#x6839;&#x636E;&#x4EE5;&#x4E0A;&#x56DB;&#x6761;&#x5047;&#x8BBE;&#x53EF;&#x4EE5;&#x5F97;&#x5230;OLS&#x7684;&#x65E0;&#x504F;&#x6027;&#xFF0C;&#x5373;&#xFF1A;</p>
+<p>根据以上四条假设可以得到OLS的无偏性，即：</p>
 </blockquote>
 <p>$$ E(\hat \beta_0)=\beta_0 $$<br>$$ E(\hat \beta_1)=\beta_1 $$</p>
 <blockquote>
-<p>&#x6839;&#x636E;&#x4EE5;&#x4E0A;&#x4E94;&#x6761;&#x5047;&#x8BBE;&#x53EF;&#x4EE5;&#x5F97;&#x5230; $ \sigma^2 $&#x7684;&#x65E0;&#x504F;&#x6027;<br>$$ E(\hat \sigma^2)=\sigma^2 $$</p>
+<p>根据以上五条假设可以得到 $ \sigma^2 $的无偏性<br>$$ E(\hat \sigma^2)=\sigma^2 $$</p>
 </blockquote>
-<p><font color="red"> &#x4EE5;&#x4E0A;&#x4E94;&#x6761;&#x5047;&#x8BBE;&#x53C8;&#x53EB;&#x505A;&#x7B80;&#x5355;&#x7EBF;&#x6027;&#x56DE;&#x5F52;&#x7684;&#x9AD8;&#x65AF;-&#x9A6C;&#x5C14;&#x79D1;&#x592B;&#x5047;&#x5B9A; </font></p>
-<h2 id="Solutions-Maximum-Likilihood"><a href="#Solutions-Maximum-Likilihood" class="headerlink" title="Solutions(Maximum Likilihood)"></a>Solutions(Maximum Likilihood)</h2><p>&#x539F;&#x7406;</p>
+<p><font color='red'> 以上五条假设又叫做简单线性回归的高斯-马尔科夫假定 </font></p>
+<h2 id="Solutions-Maximum-Likilihood"><a href="#Solutions-Maximum-Likilihood" class="headerlink" title="Solutions(Maximum Likilihood)"></a>Solutions(Maximum Likilihood)</h2><p>原理</p>
 <blockquote>
-<p>&#x5F53;&#x4ECE;&#x6A21;&#x578B;&#x603B;&#x4F53;&#x968F;&#x673A;&#x62BD;&#x53D6; $ n $&#x7EC4;&#x6837;&#x672C;&#x89C2;&#x6D4B;&#x503C;&#x540E;&#xFF0C;&#x6700;&#x5408;&#x7406;&#x7684;&#x53C2;&#x6570;&#x4F30;&#x8BA1;&#x91CF;&#x5E94;&#x8BE5;&#x4F7F;&#x5F97;&#x4ECE;&#x6A21;&#x578B;&#x4E2D;&#x62BD;&#x53D6; $ n $&#x7EC4;&#x6837;&#x672C;&#x89C2;&#x6D4B;&#x503C;&#x7684;&#x6982;&#x7387;&#x6700;&#x5927;&#x3002;&#x6837;&#x672C;&#x89C2;&#x6D4B;&#x503C;&#x7684;&#x6982;&#x7387;&#x5BC6;&#x5EA6;&#x51FD;&#x6570;&#x7684;&#x4E58;&#x79EF; &#x2014; &#x8054;&#x5408;&#x6982;&#x7387;&#x5BC6;&#x5EA6;&#x51FD;&#x6570;&#x5C31;&#x53EB;&#x505A; <strong>&#x4F3C;&#x7136;&#x51FD;&#x6570;</strong></p>
+<p>当从模型总体随机抽取 $ n $组样本观测值后，最合理的参数估计量应该使得从模型中抽取 $ n $组样本观测值的概率最大。样本观测值的概率密度函数的乘积 — 联合概率密度函数就叫做 <strong>似然函数</strong></p>
 </blockquote>
-<p>&#x5728;&#x6EE1;&#x8DB3;&#x4E00;&#x7CFB;&#x5217;&#x57FA;&#x672C;&#x5047;&#x8BBE;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6A21;&#x578B;&#x7ED3;&#x6784;&#x53C2;&#x6570;&#x7684;&#x6700;&#x5927;&#x4F3C;&#x7136;&#x4F30;&#x8BA1;&#x91CF;&#x548C;&#x666E;&#x901A;&#x6700;&#x5C0F;&#x4E8C;&#x4E58;&#x6CD5;&#x7684;&#x6700;&#x5927;&#x4F3C;&#x7136;&#x4F30;&#x8BA1;&#x91CF;&#x662F;&#x76F8;&#x540C;&#x7684;&#x3002;</p>
+<p>在满足一系列基本假设的情况下，模型结构参数的最大似然估计量和普通最小二乘法的最大似然估计量是相同的。</p>
 <h2 id="R-2"><a href="#R-2" class="headerlink" title="R^2"></a>R^2</h2><ul>
-<li>&#x603B;&#x5E73;&#x65B9;&#x548C;(Total sum of squares,TSS)</li>
-<li>&#x89E3;&#x91CA;&#x5E73;&#x65B9;&#x548C;(Explained sum of squares, SSE)</li>
-<li>&#x6B8B;&#x5DEE;&#x5E73;&#x65B9;&#x548C;(Residual sum of squares, SSR)</li>
+<li>总平方和(Total sum of squares,TSS)</li>
+<li>解释平方和(Explained sum of squares, SSE)</li>
+<li>残差平方和(Residual sum of squares, SSR)</li>
 </ul>
 <p>$$ TSS=\sum_{i=1}^{n}(y_i-\bar{y})^2 $$</p>
 <p>$$ SSE=\sum_{i=1}^{n}(\hat{y}_i-bar{y})^2 $$</p>
 <p>$$ SSR=\sum_{i=1}^{n}(y_i-\hat{y_i})^2 $$</p>
-<p>&#x5173;&#x7CFB;&#xFF1A;</p>
+<p>关系：</p>
 <p>$$ TSS=SSE+SSR $$</p>
-<p>&#x62DF;&#x5408;&#x4F18;&#x5EA6; $ R^2 $:</p>
+<p>拟合优度 $ R^2 $:</p>
 <p>$$ R^2=\frac{SSE}{TSS}=1-\frac{SSR}{TSS} $$</p>
-<p>$ R^2 $&#x8D8A;&#x5927;&#xFF0C;&#x8868;&#x793A;&#x62DF;&#x5408;&#x4F18;&#x5EA6;&#x7EA6;&#x597D;&#x3002;</p>
-<p>$ R^2 $&#x4E0E;&#x53D8;&#x91CF;&#x7684;&#x5355;&#x4F4D;&#x65E0;&#x5173;&#x3002;</p>
+<p>$ R^2 $越大，表示拟合优度约好。</p>
+<p>$ R^2 $与变量的单位无关。</p>
 
     </div>
 
@@ -471,7 +471,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Introduction"><span class="nav-number">1.</span> <span class="nav-text">1 Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Model-Design"><span class="nav-number">1.1.</span> <span class="nav-text">Model Design</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Linear-Regression"><span class="nav-number">2.</span> <span class="nav-text">2 Linear Regression</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#General-Fomula"><span class="nav-number">2.1.</span> <span class="nav-text">General Fomula</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hypotheses"><span class="nav-number">2.2.</span> <span class="nav-text">Hypotheses</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solutions-OLS"><span class="nav-number">2.3.</span> <span class="nav-text">Solutions(OLS)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#OLS&#x2019;s-Properties"><span class="nav-number">2.3.1.</span> <span class="nav-text">OLS&amp;#x2019;s Properties</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solutions-Maximum-Likilihood"><span class="nav-number">2.4.</span> <span class="nav-text">Solutions(Maximum Likilihood)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#R-2"><span class="nav-number">2.5.</span> <span class="nav-text">R^2</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Introduction"><span class="nav-number">1.</span> <span class="nav-text">1 Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Model-Design"><span class="nav-number">1.1.</span> <span class="nav-text">Model Design</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Linear-Regression"><span class="nav-number">2.</span> <span class="nav-text">2 Linear Regression</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#General-Fomula"><span class="nav-number">2.1.</span> <span class="nav-text">General Fomula</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hypotheses"><span class="nav-number">2.2.</span> <span class="nav-text">Hypotheses</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solutions-OLS"><span class="nav-number">2.3.</span> <span class="nav-text">Solutions(OLS)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#OLS%E2%80%99s-Properties"><span class="nav-number">2.3.1.</span> <span class="nav-text">OLS’s Properties</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solutions-Maximum-Likilihood"><span class="nav-number">2.4.</span> <span class="nav-text">Solutions(Maximum Likilihood)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#R-2"><span class="nav-number">2.5.</span> <span class="nav-text">R^2</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
