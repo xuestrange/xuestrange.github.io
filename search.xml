@@ -1,6 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hexo+Butterfly+Github Pages配置个人博客网站</title>
+    <url>/2020/07/11/Butterfly%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<blockquote>
+<p>之前我也用Jekyll配置过博客，但是访问速度太慢，我又转向了Hexo，实践证明，Hexo还是很快的。我又换到Next了</p>
+</blockquote>
+<a id="more"></a>
+
+<h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><ol>
+<li>install <code>git</code> and <code>node.js</code>(better use npm taobao mirror or cnpm)</li>
+<li>config your github account infomation in local;<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;GitHub 用户名&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;GitHub 邮箱&quot;</span></span><br></pre></td></tr></table></figure></li>
+<li>create a new reposity named <code>username.github.io</code>;</li>
+<li>open <code>C:\Users\用户名\.ssh\id_rsa.pub</code> and copy the whole text;</li>
+</ol>
+<ul>
+<li>login Github in chrome</li>
+<li>setting —-&gt; SSH and GPG keys —-&gt; new SSH KEY —-&gt; paste</li>
+</ul>
+<h1 id="本地安装Hexo"><a href="#本地安装Hexo" class="headerlink" title="本地安装Hexo"></a>本地安装Hexo</h1><ol>
+<li>install Hexo in local;<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">d:</span><br><span class="line"><span class="built_in">cd</span> Blog</span><br><span class="line">cnpm install -g hexo-cli</span><br><span class="line">hexo init      <span class="comment"># 初始化</span></span><br><span class="line">cnpm install    <span class="comment"># 安装组件</span></span><br><span class="line">cnpm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+安装完之后，它默认使用的是landscape主题(主题都在themes这一文件夹下)<br>可以通过如下命令检验是否安装成功：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean <span class="comment"># 清除缓存文件</span></span><br><span class="line">hexo g   <span class="comment"># 生成页面</span></span><br><span class="line">hexo s   <span class="comment"># 启动预览</span></span><br></pre></td></tr></table></figure></li>
+<li>找到Blog文件根目录下的_config.yml文件，修改如下：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: git@github.com:用户名/用户名.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+接着运行<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h1 id="更换Butterfly主题"><a href="#更换Butterfly主题" class="headerlink" title="更换Butterfly主题"></a>更换Butterfly主题</h1><ol>
+<li>下载<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/Butterfly</span><br><span class="line"><span class="comment"># 可以使用gitee加快下载速度</span></span><br></pre></td></tr></table></figure></li>
+<li>修改Blog根目录下的_config.yml<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">theme: Butterfly</span><br></pre></td></tr></table></figure></li>
+<li>安装相关依赖<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cnpm install hexo-renderer-pug hexo-renderer-stylus --save</span><br><span class="line">cnpm install cheerio</span><br></pre></td></tr></table></figure></li>
+<li>试运行<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<blockquote>
+<p>可以使用这样的方法来连续执行多条CMD命令：<br>创建 <code>hexo.bat</code> 文件，写入以下命令，双击运行即可</p>
+<p>d: &amp;&amp; cd Blog &amp;&amp; hexo clean &amp;&amp; hexo g  &amp;&amp; hexo d &amp;&amp; hexo s</p>
+</blockquote>
+<h1 id="自定义Butterfly"><a href="#自定义Butterfly" class="headerlink" title="自定义Butterfly"></a>自定义Butterfly</h1><h2 id="修改右上角为中文"><a href="#修改右上角为中文" class="headerlink" title="修改右上角为中文"></a>修改右上角为中文</h2><ol>
+<li>修改根目录下的_config.yml中的语言<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">Li</span> <span class="string">Wu&#x27;s</span> <span class="string">BLog</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">&quot;&quot;</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">&quot;&quot;</span></span><br><span class="line"><span class="attr">keywords:</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">Li</span> <span class="string">Wu</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">&quot;&quot;</span></span><br></pre></td></tr></table></figure></li>
+<li>修改 <code>theme/Butterfly</code>文件夹下的_config.yml<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="string">主页:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span></span><br><span class="line">  <span class="string">时间轴:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br><span class="line">  <span class="string">标签:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line">  <span class="string">分类:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-folder-open</span></span><br><span class="line">  <span class="comment"># 链接: /link/ || fa fa-link</span></span><br><span class="line">  <span class="string">关于:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-heart</span></span><br></pre></td></tr></table></figure></li>
+<li>保存</li>
+<li>预览</li>
+</ol>
+<h2 id="创建archives-categories-tags-about页"><a href="#创建archives-categories-tags-about页" class="headerlink" title="创建archives,categories,tags,about页"></a>创建archives,categories,tags,about页</h2><p>以创建tags页为例，其它同理。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
+<p>修改 <code>Butterfly/source/tags/</code>文件夹下的tags.md</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2020-07-11 18:53:02</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">top_img: https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;large&#x2F;006z5e4Qgy1ggnynhq230j31hc0u0tfp.jpg</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<h2 id="开启评论系统-Valine"><a href="#开启评论系统-Valine" class="headerlink" title="开启评论系统(Valine)"></a>开启评论系统(Valine)</h2><ol>
+<li>在LeanCloud中注册账号，创建应用（开发板）；</li>
+<li>点击存储，创建类： <code>Comment</code>, <code>Counter</code>;</li>
+<li>设置，安全中心，只打开数据存储；</li>
+<li>设置，应用keys，复制AppID，AppKey;</li>
+<li>将信息粘贴到 <code>theme/Butterfly/_config.yml</code>中的这个地方：<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">valine:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span> <span class="comment"># if you want use valine,please set this value is true</span></span><br><span class="line">  <span class="attr">appId:</span> <span class="number">11111111111111111</span> <span class="comment"># leancloud application app id</span></span><br><span class="line">  <span class="attr">appKey:</span> <span class="number">222222222222222222</span> <span class="comment"># leancloud application app key</span></span><br><span class="line">  <span class="attr">notify:</span> <span class="literal">false</span> <span class="comment"># valine mail notify (true/false) https://github.com/xCss/Valine/wiki</span></span><br><span class="line">  <span class="attr">verify:</span> <span class="literal">false</span> <span class="comment"># valine verify code (true/false)</span></span><br><span class="line">  <span class="attr">pageSize:</span> <span class="number">6</span> <span class="comment"># comment list page size</span></span><br><span class="line">  <span class="comment"># avatar: monsterid # gravatar style https://valine.js.org/#/avatar</span></span><br><span class="line">  <span class="attr">lang:</span> <span class="string">zh-cn</span> <span class="comment"># i18n: zh-cn/en</span></span><br><span class="line">  <span class="attr">placeholder:</span> <span class="string">欢迎畅所欲言！</span> <span class="comment"># valine comment input placeholder(like: Please leave your footprints )</span></span><br><span class="line">  <span class="attr">guest_info:</span> <span class="string">nick,mail</span> <span class="comment">#valine comment header info</span></span><br><span class="line">  <span class="comment"># requiredFields: nick,mail # required fields (nick/mail)</span></span><br><span class="line">  <span class="attr">bg:</span> <span class="string">/img/comment_bg.png</span> <span class="comment"># valine background</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="页面配色"><a href="#页面配色" class="headerlink" title="页面配色"></a>页面配色</h2><ol>
+<li>主题配色在_config.yml中修改，参见官方文档</li>
+<li>主页上的划分的一个一个card，在这里修改<br><code>Butterfly/layout/includes/widgets/**.pug</code></li>
+<li>个人比较喜欢黑暗模式，但是黑暗模式的页面配色不太喜欢，具体可以在这里修改<br><code>Butterfly/source/css/_layout/z-darkmode.styl</code></li>
+</ol>
+<h2 id="其它设置"><a href="#其它设置" class="headerlink" title="其它设置"></a>其它设置</h2><p>参考_config.yml中的相关说明。</p>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>Butterfly</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Ecomometrics</title>
     <url>/2020/09/20/Econometrics/</url>
     <content><![CDATA[<blockquote>
@@ -123,78 +195,6 @@
       </categories>
       <tags>
         <tag>Econometrics</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo+Butterfly+Github Pages配置个人博客网站</title>
-    <url>/2020/07/11/Butterfly%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<blockquote>
-<p>之前我也用Jekyll配置过博客，但是访问速度太慢，我又转向了Hexo，实践证明，Hexo还是很快的。我又换到Next了</p>
-</blockquote>
-<a id="more"></a>
-
-<h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><ol>
-<li>install <code>git</code> and <code>node.js</code>(better use npm taobao mirror or cnpm)</li>
-<li>config your github account infomation in local;<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;GitHub 用户名&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;GitHub 邮箱&quot;</span></span><br></pre></td></tr></table></figure></li>
-<li>create a new reposity named <code>username.github.io</code>;</li>
-<li>open <code>C:\Users\用户名\.ssh\id_rsa.pub</code> and copy the whole text;</li>
-</ol>
-<ul>
-<li>login Github in chrome</li>
-<li>setting —-&gt; SSH and GPG keys —-&gt; new SSH KEY —-&gt; paste</li>
-</ul>
-<h1 id="本地安装Hexo"><a href="#本地安装Hexo" class="headerlink" title="本地安装Hexo"></a>本地安装Hexo</h1><ol>
-<li>install Hexo in local;<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">d:</span><br><span class="line"><span class="built_in">cd</span> Blog</span><br><span class="line">cnpm install -g hexo-cli</span><br><span class="line">hexo init      <span class="comment"># 初始化</span></span><br><span class="line">cnpm install    <span class="comment"># 安装组件</span></span><br><span class="line">cnpm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-安装完之后，它默认使用的是landscape主题(主题都在themes这一文件夹下)<br>可以通过如下命令检验是否安装成功：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean <span class="comment"># 清除缓存文件</span></span><br><span class="line">hexo g   <span class="comment"># 生成页面</span></span><br><span class="line">hexo s   <span class="comment"># 启动预览</span></span><br></pre></td></tr></table></figure></li>
-<li>找到Blog文件根目录下的_config.yml文件，修改如下：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: git@github.com:用户名/用户名.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-接着运行<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h1 id="更换Butterfly主题"><a href="#更换Butterfly主题" class="headerlink" title="更换Butterfly主题"></a>更换Butterfly主题</h1><ol>
-<li>下载<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/Butterfly</span><br><span class="line"><span class="comment"># 可以使用gitee加快下载速度</span></span><br></pre></td></tr></table></figure></li>
-<li>修改Blog根目录下的_config.yml<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">theme: Butterfly</span><br></pre></td></tr></table></figure></li>
-<li>安装相关依赖<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cnpm install hexo-renderer-pug hexo-renderer-stylus --save</span><br><span class="line">cnpm install cheerio</span><br></pre></td></tr></table></figure></li>
-<li>试运行<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<blockquote>
-<p>可以使用这样的方法来连续执行多条CMD命令：<br>创建 <code>hexo.bat</code> 文件，写入以下命令，双击运行即可</p>
-<p>d: &amp;&amp; cd Blog &amp;&amp; hexo clean &amp;&amp; hexo g  &amp;&amp; hexo d &amp;&amp; hexo s</p>
-</blockquote>
-<h1 id="自定义Butterfly"><a href="#自定义Butterfly" class="headerlink" title="自定义Butterfly"></a>自定义Butterfly</h1><h2 id="修改右上角为中文"><a href="#修改右上角为中文" class="headerlink" title="修改右上角为中文"></a>修改右上角为中文</h2><ol>
-<li>修改根目录下的_config.yml中的语言<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">Li</span> <span class="string">Wu&#x27;s</span> <span class="string">BLog</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">&quot;&quot;</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">&quot;&quot;</span></span><br><span class="line"><span class="attr">keywords:</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">Li</span> <span class="string">Wu</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">&quot;&quot;</span></span><br></pre></td></tr></table></figure></li>
-<li>修改 <code>theme/Butterfly</code>文件夹下的_config.yml<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="string">主页:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span></span><br><span class="line">  <span class="string">时间轴:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br><span class="line">  <span class="string">标签:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line">  <span class="string">分类:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-folder-open</span></span><br><span class="line">  <span class="comment"># 链接: /link/ || fa fa-link</span></span><br><span class="line">  <span class="string">关于:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-heart</span></span><br></pre></td></tr></table></figure></li>
-<li>保存</li>
-<li>预览</li>
-</ol>
-<h2 id="创建archives-categories-tags-about页"><a href="#创建archives-categories-tags-about页" class="headerlink" title="创建archives,categories,tags,about页"></a>创建archives,categories,tags,about页</h2><p>以创建tags页为例，其它同理。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
-<p>修改 <code>Butterfly/source/tags/</code>文件夹下的tags.md</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2020-07-11 18:53:02</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">top_img: https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;large&#x2F;006z5e4Qgy1ggnynhq230j31hc0u0tfp.jpg</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<h2 id="开启评论系统-Valine"><a href="#开启评论系统-Valine" class="headerlink" title="开启评论系统(Valine)"></a>开启评论系统(Valine)</h2><ol>
-<li>在LeanCloud中注册账号，创建应用（开发板）；</li>
-<li>点击存储，创建类： <code>Comment</code>, <code>Counter</code>;</li>
-<li>设置，安全中心，只打开数据存储；</li>
-<li>设置，应用keys，复制AppID，AppKey;</li>
-<li>将信息粘贴到 <code>theme/Butterfly/_config.yml</code>中的这个地方：<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">valine:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span> <span class="comment"># if you want use valine,please set this value is true</span></span><br><span class="line">  <span class="attr">appId:</span> <span class="number">11111111111111111</span> <span class="comment"># leancloud application app id</span></span><br><span class="line">  <span class="attr">appKey:</span> <span class="number">222222222222222222</span> <span class="comment"># leancloud application app key</span></span><br><span class="line">  <span class="attr">notify:</span> <span class="literal">false</span> <span class="comment"># valine mail notify (true/false) https://github.com/xCss/Valine/wiki</span></span><br><span class="line">  <span class="attr">verify:</span> <span class="literal">false</span> <span class="comment"># valine verify code (true/false)</span></span><br><span class="line">  <span class="attr">pageSize:</span> <span class="number">6</span> <span class="comment"># comment list page size</span></span><br><span class="line">  <span class="comment"># avatar: monsterid # gravatar style https://valine.js.org/#/avatar</span></span><br><span class="line">  <span class="attr">lang:</span> <span class="string">zh-cn</span> <span class="comment"># i18n: zh-cn/en</span></span><br><span class="line">  <span class="attr">placeholder:</span> <span class="string">欢迎畅所欲言！</span> <span class="comment"># valine comment input placeholder(like: Please leave your footprints )</span></span><br><span class="line">  <span class="attr">guest_info:</span> <span class="string">nick,mail</span> <span class="comment">#valine comment header info</span></span><br><span class="line">  <span class="comment"># requiredFields: nick,mail # required fields (nick/mail)</span></span><br><span class="line">  <span class="attr">bg:</span> <span class="string">/img/comment_bg.png</span> <span class="comment"># valine background</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h2 id="页面配色"><a href="#页面配色" class="headerlink" title="页面配色"></a>页面配色</h2><ol>
-<li>主题配色在_config.yml中修改，参见官方文档</li>
-<li>主页上的划分的一个一个card，在这里修改<br><code>Butterfly/layout/includes/widgets/**.pug</code></li>
-<li>个人比较喜欢黑暗模式，但是黑暗模式的页面配色不太喜欢，具体可以在这里修改<br><code>Butterfly/source/css/_layout/z-darkmode.styl</code></li>
-</ol>
-<h2 id="其它设置"><a href="#其它设置" class="headerlink" title="其它设置"></a>其它设置</h2><p>参考_config.yml中的相关说明。</p>
-]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>Butterfly</tag>
       </tags>
   </entry>
   <entry>
