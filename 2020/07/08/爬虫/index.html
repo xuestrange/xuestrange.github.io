@@ -1,272 +1,631 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>爬虫 | WU Li's Blog</title><meta name="keywords" content="requests,BeautifulSoup"><meta name="author" content="Wu Li"><meta name="copyright" content="Wu Li"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="当当网图书TOP250爬虫123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657import requestsfrom bs4 import BeautifulSoupimport reimport pandas as pdfrom tabul">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"xuestrange.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="&amp;#x5F53;&amp;#x5F53;&amp;#x7F51;&amp;#x56FE;&amp;#x4E66;TOP250&amp;#x722C;&amp;#x866B;123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657import requestsfrom bs4 import Be">
 <meta property="og:type" content="article">
 <meta property="og:title" content="爬虫">
 <meta property="og:url" content="https://xuestrange.github.io/2020/07/08/%E7%88%AC%E8%99%AB/index.html">
 <meta property="og:site_name" content="WU Li&#39;s Blog">
-<meta property="og:description" content="当当网图书TOP250爬虫123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657import requestsfrom bs4 import BeautifulSoupimport reimport pandas as pdfrom tabul">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://tva3.sinaimg.cn/large/006z5e4Qgy1ggo6ycf8ywj31hc0zk7ak.jpg">
+<meta property="og:description" content="&amp;#x5F53;&amp;#x5F53;&amp;#x7F51;&amp;#x56FE;&amp;#x4E66;TOP250&amp;#x722C;&amp;#x866B;123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657import requestsfrom bs4 import Be">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://tvax1.sinaimg.cn/large/006z5e4Qgy1ggkhfsn5krj315i0lt4k2.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006z5e4Qgy1ggsjt1e7lqj30p30ojgow.jpg">
 <meta property="article:published_time" content="2020-07-07T16:00:00.000Z">
 <meta property="article:modified_time" content="2020-08-08T05:44:06.000Z">
 <meta property="article:author" content="Wu Li">
 <meta property="article:tag" content="requests">
 <meta property="article:tag" content="BeautifulSoup">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://tva3.sinaimg.cn/large/006z5e4Qgy1ggo6ycf8ywj31hc0zk7ak.jpg"><link rel="shortcut icon" href="/img/flower.ico"><link rel="canonical" href="https://xuestrange.github.io/2020/07/08/%E7%88%AC%E8%99%AB/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
-  root: '/',
-  hexoversion: '5.2.0',
-  algolia: undefined,
-  localSearch: undefined,
-  translate: undefined,
-  noticeOutdate: undefined,
-  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
-  copy: {
-    success: '复制成功',
-    error: '复制错误',
-    noSupport: '浏览器不支持'
-  },
-  relativeDate: {
-    homepage: false,
-    post: false
-  },
-  runtime: '',
-  date_suffix: {
-    just: '刚刚',
-    min: '分钟前',
-    hour: '小时前',
-    day: '天前',
-    month: '个月前'
-  },
-  copyright: undefined,
-  ClickShowText: undefined,
-  lightbox: 'mediumZoom',
-  Snackbar: undefined,
-  justifiedGallery: {
-    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
-    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
-  },
-  isPhotoFigcaption: true,
-  islazyload: false,
-  isanchor: false
-};
+<meta name="twitter:image" content="https://tvax1.sinaimg.cn/large/006z5e4Qgy1ggkhfsn5krj315i0lt4k2.jpg">
 
-var saveToLocal = {
-  set: function setWithExpiry(key, value, ttl) {
-    const now = new Date()
-    const expiryDay = ttl * 86400000
-    const item = {
-      value: value,
-      expiry: now.getTime() + expiryDay,
-    }
-    localStorage.setItem(key, JSON.stringify(item))
-  },
+<link rel="canonical" href="https://xuestrange.github.io/2020/07/08/%E7%88%AC%E8%99%AB/">
 
-  get: function getWithExpiry(key) {
-    const itemStr = localStorage.getItem(key)
 
-    if (!itemStr) {
-      return undefined
-    }
-    const item = JSON.parse(itemStr)
-    const now = new Date()
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
 
-    if (now.getTime() > item.expiry) {
-      localStorage.removeItem(key)
-      return undefined
-    }
-    return item.value
-  }
-}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
-  isPost: true,
-  isHome: false,
-  isHighlightShrink: true,
-  isSidebar: true,
-  postUpdate: '2020-08-08 13:44:06'
-}</script><noscript><style type="text/css">
-  #nav {
-    opacity: 1
-  }
-  .justified-gallery img {
-    opacity: 1
+  <title>爬虫 | WU Li's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
   }
 
-  #recent-posts time,
-  #post-meta time {
-    display: inline !important
-  }
-</style></noscript><script>(function () {
-  window.activateDarkMode = function () {
-    document.documentElement.setAttribute('data-theme', 'dark')
-    if (document.querySelector('meta[name="theme-color"]') !== null) {
-      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-    }
-  }
-  window.activateLightMode = function () {
-    document.documentElement.setAttribute('data-theme', 'light')
-    if (document.querySelector('meta[name="theme-color"]') !== null) {
-      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-    }
-  }
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
 
-  const autoChangeMode = 'false'
-  const t = saveToLocal.get('theme')
-  if (autoChangeMode === '1') {
-    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
-    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
-    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
-    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+</head>
 
-    if (t === undefined) {
-      if (isLightMode) activateLightMode()
-      else if (isDarkMode) activateDarkMode()
-      else if (isNotSpecified || hasNoSupport) {
-        const now = new Date()
-        const hour = now.getHours()
-        const isNight = hour <= 6 || hour >= 18
-        isNight ? activateDarkMode() : activateLightMode()
-      }
-      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
-        if (saveToLocal.get('theme') === undefined) {
-          e.matches ? activateDarkMode() : activateLightMode()
-        }
-      })
-    } else if (t === 'light') activateLightMode()
-    else activateDarkMode()
-  } else if (autoChangeMode === '2') {
-    const now = new Date()
-    const hour = now.getHours()
-    const isNight = hour <= 6 || hour >= 18
-    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
-    else if (t === 'light') activateLightMode()
-    else activateDarkMode()
-  } else {
-    if (t === 'dark') activateDarkMode()
-    else if (t === 'light') activateLightMode()
-  }
-})()</script><meta name="generator" content="Hexo 5.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/touxiang.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">16</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">15</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">5</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div id="body-wrap"><div id="sidebar"><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BD%93%E5%BD%93%E7%BD%91%E5%9B%BE%E4%B9%A6TOP250%E7%88%AC%E8%99%AB"><span class="toc-number">1.</span> <span class="toc-text">当当网图书TOP250爬虫</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B1%86%E7%93%A3TOP250%E7%88%AC%E8%99%AB"><span class="toc-number">2.</span> <span class="toc-text">豆瓣TOP250爬虫</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%9C%82%E9%B8%9F%E7%BD%91%E7%88%AC%E8%99%AB"><span class="toc-number">3.</span> <span class="toc-text">蜂鸟网爬虫</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%90%86%E6%B1%A0%E9%85%8D%E7%BD%AE"><span class="toc-number">3.1.</span> <span class="toc-text">代理池配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%88%AC%E5%8F%96%E7%A8%8B%E5%BA%8F"><span class="toc-number">3.2.</span> <span class="toc-text">爬取程序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%88%AC%E5%8F%96%E7%BB%93%E6%9E%9C"><span class="toc-number">3.3.</span> <span class="toc-text">爬取结果</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E4%B9%8E%E8%AF%84%E8%AE%BA%E7%88%AC%E8%99%AB"><span class="toc-number">4.</span> <span class="toc-text">知乎评论爬虫</span></a></li></ol></div></div></div><header class="post-bg" id="page-header" style="background-image: url(https://tva3.sinaimg.cn/large/006z5e4Qgy1ggo6ycf8ywj31hc0zk7ak.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">WU Li's Blog</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">爬虫</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-07-07T16:00:00.000Z" title="发表于 2020-07-08 00:00:00">2020-07-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-08-08T05:44:06.000Z" title="更新于 2020-08-08 13:44:06">2020-08-08</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h1 id="当当网图书TOP250爬虫"><a href="#当当网图书TOP250爬虫" class="headerlink" title="当当网图书TOP250爬虫"></a>当当网图书TOP250爬虫</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> tabulate <span class="keyword">import</span> tabulate</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">page_generate</span>(<span class="params">num</span>):</span></span><br><span class="line">    url = <span class="string">&quot;http://bang.dangdang.com/books/fivestars/01.00.00.00.00.00-recent30-0-0-1-&quot;</span> + str(num)</span><br><span class="line">    <span class="keyword">return</span> url</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">url = page_generate(num=<span class="number">2</span>)</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    response = requests.get(url)</span><br><span class="line">    <span class="keyword">if</span> response.status_code == <span class="number">200</span>:</span><br><span class="line">        print(<span class="string">&quot;连接成功&quot;</span>)</span><br><span class="line"><span class="keyword">except</span> requests.RequestException:</span><br><span class="line">    print(<span class="string">&quot;连接失败&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">连接成功后，接下来分析获取到的html源码</span></span><br><span class="line"><span class="string">通过Chrome开发者模式对网页的元素进行分析</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">soup = BeautifulSoup(response.text, <span class="string">&quot;lxml&quot;</span>)</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">注意，find可以用来减小查找范围，属性中，不能写class，这和Python的自带的语法冲突了，所以用class_，但是其他的照常使用</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">ul_soup = soup.find(<span class="string">&quot;ul&quot;</span>, class_=<span class="string">&quot;bang_list clearfix bang_list_mode&quot;</span>)</span><br><span class="line"></span><br><span class="line">li_soup = ul_soup.find_all(<span class="string">&quot;li&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">extract</span>(<span class="params">element</span>):</span></span><br><span class="line">    l = []</span><br><span class="line">    <span class="keyword">for</span> tag <span class="keyword">in</span> li_soup:</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            s = tag.find(<span class="string">&quot;div&quot;</span>, class_=element).a[<span class="string">&quot;title&quot;</span>]</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            s = tag.find(<span class="string">&quot;div&quot;</span>, class_=element).a.string</span><br><span class="line">        l.append(s)</span><br><span class="line">    <span class="keyword">return</span> l</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>(<span class="params">elements</span>):</span></span><br><span class="line">    df = pd.DataFrame()</span><br><span class="line">    <span class="keyword">for</span> element <span class="keyword">in</span> elements:</span><br><span class="line">        res = extract(element)</span><br><span class="line">        df[element] = res</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    <span class="keyword">return</span> df</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    elements = [<span class="string">&quot;name&quot;</span>, <span class="string">&quot;star&quot;</span>]</span><br><span class="line">    df = main(elements)</span><br><span class="line">    print(tabulate(df, tablefmt=<span class="string">&quot;pretty&quot;</span>))</span><br></pre></td></tr></table></figure>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
 
-<h1 id="豆瓣TOP250爬虫"><a href="#豆瓣TOP250爬虫" class="headerlink" title="豆瓣TOP250爬虫"></a>豆瓣TOP250爬虫</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">from</span> fake_useragent <span class="keyword">import</span> UserAgent</span><br><span class="line"></span><br><span class="line">ua = UserAgent()</span><br><span class="line"></span><br><span class="line">url_num = [<span class="number">0</span>, <span class="number">25</span>, <span class="number">50</span>, <span class="number">75</span>, <span class="number">100</span>, <span class="number">125</span>, <span class="number">150</span>, <span class="number">175</span>, <span class="number">200</span>, <span class="number">225</span>]</span><br><span class="line"></span><br><span class="line">headers = &#123;<span class="string">&quot;User-Agent&quot;</span>: ua.chrome&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">url_generate</span>(<span class="params">num</span>):</span></span><br><span class="line">    url = <span class="string">&quot;https://movie.douban.com/top250?start=&#123;&#125;&amp;filter=&quot;</span>.format(str(num))</span><br><span class="line">    <span class="keyword">return</span> url</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_text</span>(<span class="params">num</span>):</span></span><br><span class="line">    url = url_generate(num)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        response = requests.get(url, headers=headers)</span><br><span class="line">        <span class="keyword">if</span> response.status_code == <span class="number">200</span>:</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">    <span class="keyword">except</span> requests.RequestException:</span><br><span class="line">        print(<span class="string">&quot;连接失败&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> response</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">print_film</span>(<span class="params">response</span>):</span></span><br><span class="line">    soup = BeautifulSoup(response.text, <span class="string">&quot;lxml&quot;</span>)</span><br><span class="line">    soup_ol = soup.find(<span class="string">&quot;ol&quot;</span>, class_=<span class="string">&quot;grid_view&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> soup_li <span class="keyword">in</span> soup_ol.find_all(<span class="string">&quot;li&quot;</span>):</span><br><span class="line"></span><br><span class="line">        name = soup_li.find(<span class="string">&quot;img&quot;</span>)[<span class="string">&quot;alt&quot;</span>]</span><br><span class="line">        rating = soup_li.find(<span class="string">&quot;span&quot;</span>, class_=<span class="string">&quot;rating_num&quot;</span>).string</span><br><span class="line">        index = soup_li.find(<span class="string">&quot;em&quot;</span>).string</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            quoto = soup_li.find(<span class="string">&quot;span&quot;</span>, class_=<span class="string">&quot;inq&quot;</span>).string</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            quoto = <span class="literal">None</span></span><br><span class="line">        print(<span class="string">&quot;正在爬取第&#123;&#125;个电影：《&#123;&#125;》，评分为&#123;&#125;，      “&#123;&#125;”&quot;</span>.format(index, name, rating, quoto))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    <span class="keyword">for</span> num <span class="keyword">in</span> url_num:</span><br><span class="line">        response = get_text(num)</span><br><span class="line">        print_film(response)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">main()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
 
-<h1 id="蜂鸟网爬虫"><a href="#蜂鸟网爬虫" class="headerlink" title="蜂鸟网爬虫"></a>蜂鸟网爬虫</h1><h2 id="代理池配置"><a href="#代理池配置" class="headerlink" title="代理池配置"></a>代理池配置</h2><p>之前试爬了一次，被封了IP（第二天又好了），所以使用代理池来操作, <strong>IP代理池的配置方法点<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzU2ODYzNTkwMg==&mid=2247484261&idx=1&sn=2d839d004d592be3c98d1356d6710a69&scene=19#wechat_redirect">这里</a></strong></p>
-<p>总结如下：</p>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">WU Li's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://xuestrange.github.io/2020/07/08/%E7%88%AC%E8%99%AB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.png">
+      <meta itemprop="name" content="Wu Li">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WU Li's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          爬虫
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-07-08 00:00:00" itemprop="dateCreated datePublished" datetime="2020-07-08T00:00:00+08:00">2020-07-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-08-08 13:44:06" itemprop="dateModified" datetime="2020-08-08T13:44:06+08:00">2020-08-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="&#x5F53;&#x5F53;&#x7F51;&#x56FE;&#x4E66;TOP250&#x722C;&#x866B;"><a href="#&#x5F53;&#x5F53;&#x7F51;&#x56FE;&#x4E66;TOP250&#x722C;&#x866B;" class="headerlink" title="&#x5F53;&#x5F53;&#x7F51;&#x56FE;&#x4E66;TOP250&#x722C;&#x866B;"></a>&#x5F53;&#x5F53;&#x7F51;&#x56FE;&#x4E66;TOP250&#x722C;&#x866B;</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> tabulate <span class="keyword">import</span> tabulate</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">page_generate</span>(<span class="params">num</span>):</span></span><br><span class="line">    url = <span class="string">&quot;http://bang.dangdang.com/books/fivestars/01.00.00.00.00.00-recent30-0-0-1-&quot;</span> + <span class="built_in">str</span>(num)</span><br><span class="line">    <span class="keyword">return</span> url</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">url = page_generate(num=<span class="number">2</span>)</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    response = requests.get(url)</span><br><span class="line">    <span class="keyword">if</span> response.status_code == <span class="number">200</span>:</span><br><span class="line">        print(<span class="string">&quot;&#x8FDE;&#x63A5;&#x6210;&#x529F;&quot;</span>)</span><br><span class="line"><span class="keyword">except</span> requests.RequestException:</span><br><span class="line">    print(<span class="string">&quot;&#x8FDE;&#x63A5;&#x5931;&#x8D25;&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">&#x8FDE;&#x63A5;&#x6210;&#x529F;&#x540E;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x5206;&#x6790;&#x83B7;&#x53D6;&#x5230;&#x7684;html&#x6E90;&#x7801;</span></span><br><span class="line"><span class="string">&#x901A;&#x8FC7;Chrome&#x5F00;&#x53D1;&#x8005;&#x6A21;&#x5F0F;&#x5BF9;&#x7F51;&#x9875;&#x7684;&#x5143;&#x7D20;&#x8FDB;&#x884C;&#x5206;&#x6790;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">soup = BeautifulSoup(response.text, <span class="string">&quot;lxml&quot;</span>)</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">&#x6CE8;&#x610F;&#xFF0C;find&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x51CF;&#x5C0F;&#x67E5;&#x627E;&#x8303;&#x56F4;&#xFF0C;&#x5C5E;&#x6027;&#x4E2D;&#xFF0C;&#x4E0D;&#x80FD;&#x5199;class&#xFF0C;&#x8FD9;&#x548C;Python&#x7684;&#x81EA;&#x5E26;&#x7684;&#x8BED;&#x6CD5;&#x51B2;&#x7A81;&#x4E86;&#xFF0C;&#x6240;&#x4EE5;&#x7528;class_&#xFF0C;&#x4F46;&#x662F;&#x5176;&#x4ED6;&#x7684;&#x7167;&#x5E38;&#x4F7F;&#x7528;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">ul_soup = soup.find(<span class="string">&quot;ul&quot;</span>, class_=<span class="string">&quot;bang_list clearfix bang_list_mode&quot;</span>)</span><br><span class="line"></span><br><span class="line">li_soup = ul_soup.find_all(<span class="string">&quot;li&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">extract</span>(<span class="params">element</span>):</span></span><br><span class="line">    l = []</span><br><span class="line">    <span class="keyword">for</span> tag <span class="keyword">in</span> li_soup:</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            s = tag.find(<span class="string">&quot;div&quot;</span>, class_=element).a[<span class="string">&quot;title&quot;</span>]</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            s = tag.find(<span class="string">&quot;div&quot;</span>, class_=element).a.string</span><br><span class="line">        l.append(s)</span><br><span class="line">    <span class="keyword">return</span> l</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>(<span class="params">elements</span>):</span></span><br><span class="line">    df = pd.DataFrame()</span><br><span class="line">    <span class="keyword">for</span> element <span class="keyword">in</span> elements:</span><br><span class="line">        res = extract(element)</span><br><span class="line">        df[element] = res</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    <span class="keyword">return</span> df</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    elements = [<span class="string">&quot;name&quot;</span>, <span class="string">&quot;star&quot;</span>]</span><br><span class="line">    df = main(elements)</span><br><span class="line">    print(tabulate(df, tablefmt=<span class="string">&quot;pretty&quot;</span>))</span><br></pre></td></tr></table></figure>
+
+<h1 id="&#x8C46;&#x74E3;TOP250&#x722C;&#x866B;"><a href="#&#x8C46;&#x74E3;TOP250&#x722C;&#x866B;" class="headerlink" title="&#x8C46;&#x74E3;TOP250&#x722C;&#x866B;"></a>&#x8C46;&#x74E3;TOP250&#x722C;&#x866B;</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">from</span> fake_useragent <span class="keyword">import</span> UserAgent</span><br><span class="line"></span><br><span class="line">ua = UserAgent()</span><br><span class="line"></span><br><span class="line">url_num = [<span class="number">0</span>, <span class="number">25</span>, <span class="number">50</span>, <span class="number">75</span>, <span class="number">100</span>, <span class="number">125</span>, <span class="number">150</span>, <span class="number">175</span>, <span class="number">200</span>, <span class="number">225</span>]</span><br><span class="line"></span><br><span class="line">headers = {<span class="string">&quot;User-Agent&quot;</span>: ua.chrome}</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">url_generate</span>(<span class="params">num</span>):</span></span><br><span class="line">    url = <span class="string">&quot;https://movie.douban.com/top250?start={}&amp;filter=&quot;</span>.<span class="built_in">format</span>(<span class="built_in">str</span>(num))</span><br><span class="line">    <span class="keyword">return</span> url</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_text</span>(<span class="params">num</span>):</span></span><br><span class="line">    url = url_generate(num)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        response = requests.get(url, headers=headers)</span><br><span class="line">        <span class="keyword">if</span> response.status_code == <span class="number">200</span>:</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">    <span class="keyword">except</span> requests.RequestException:</span><br><span class="line">        print(<span class="string">&quot;&#x8FDE;&#x63A5;&#x5931;&#x8D25;&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> response</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">print_film</span>(<span class="params">response</span>):</span></span><br><span class="line">    soup = BeautifulSoup(response.text, <span class="string">&quot;lxml&quot;</span>)</span><br><span class="line">    soup_ol = soup.find(<span class="string">&quot;ol&quot;</span>, class_=<span class="string">&quot;grid_view&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> soup_li <span class="keyword">in</span> soup_ol.find_all(<span class="string">&quot;li&quot;</span>):</span><br><span class="line"></span><br><span class="line">        name = soup_li.find(<span class="string">&quot;img&quot;</span>)[<span class="string">&quot;alt&quot;</span>]</span><br><span class="line">        rating = soup_li.find(<span class="string">&quot;span&quot;</span>, class_=<span class="string">&quot;rating_num&quot;</span>).string</span><br><span class="line">        index = soup_li.find(<span class="string">&quot;em&quot;</span>).string</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            quoto = soup_li.find(<span class="string">&quot;span&quot;</span>, class_=<span class="string">&quot;inq&quot;</span>).string</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            quoto = <span class="literal">None</span></span><br><span class="line">        print(<span class="string">&quot;&#x6B63;&#x5728;&#x722C;&#x53D6;&#x7B2C;{}&#x4E2A;&#x7535;&#x5F71;&#xFF1A;&#x300A;{}&#x300B;&#xFF0C;&#x8BC4;&#x5206;&#x4E3A;{}&#xFF0C;      &#x201C;{}&#x201D;&quot;</span>.<span class="built_in">format</span>(index, name, rating, quoto))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    <span class="keyword">for</span> num <span class="keyword">in</span> url_num:</span><br><span class="line">        response = get_text(num)</span><br><span class="line">        print_film(response)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">main()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="&#x8702;&#x9E1F;&#x7F51;&#x722C;&#x866B;"><a href="#&#x8702;&#x9E1F;&#x7F51;&#x722C;&#x866B;" class="headerlink" title="&#x8702;&#x9E1F;&#x7F51;&#x722C;&#x866B;"></a>&#x8702;&#x9E1F;&#x7F51;&#x722C;&#x866B;</h1><h2 id="&#x4EE3;&#x7406;&#x6C60;&#x914D;&#x7F6E;"><a href="#&#x4EE3;&#x7406;&#x6C60;&#x914D;&#x7F6E;" class="headerlink" title="&#x4EE3;&#x7406;&#x6C60;&#x914D;&#x7F6E;"></a>&#x4EE3;&#x7406;&#x6C60;&#x914D;&#x7F6E;</h2><p>&#x4E4B;&#x524D;&#x8BD5;&#x722C;&#x4E86;&#x4E00;&#x6B21;&#xFF0C;&#x88AB;&#x5C01;&#x4E86;IP&#xFF08;&#x7B2C;&#x4E8C;&#x5929;&#x53C8;&#x597D;&#x4E86;&#xFF09;&#xFF0C;&#x6240;&#x4EE5;&#x4F7F;&#x7528;&#x4EE3;&#x7406;&#x6C60;&#x6765;&#x64CD;&#x4F5C;, <strong>IP&#x4EE3;&#x7406;&#x6C60;&#x7684;&#x914D;&#x7F6E;&#x65B9;&#x6CD5;&#x70B9;<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzU2ODYzNTkwMg==&amp;mid=2247484261&amp;idx=1&amp;sn=2d839d004d592be3c98d1356d6710a69&amp;scene=19#wechat_redirect">&#x8FD9;&#x91CC;</a></strong></p>
+<p>&#x603B;&#x7ED3;&#x5982;&#x4E0B;&#xFF1A;</p>
 <ol>
-<li>安装redis，链接在 <a target="_blank" rel="noopener" href="https://github.com/MicrosoftArchive/redis/releases">这里</a></li>
-<li>下载Github上代理池的源代码<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;Python3WebSpider&#x2F;ProxyPool.git # 可以使用Gitee</span><br></pre></td></tr></table></figure></li>
-<li>cd到文件目录中，安装相关模块<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure></li>
-<li>运行<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python run.py</span><br></pre></td></tr></table></figure>
+<li>&#x5B89;&#x88C5;redis&#xFF0C;&#x94FE;&#x63A5;&#x5728; <a target="_blank" rel="noopener" href="https://github.com/MicrosoftArchive/redis/releases">&#x8FD9;&#x91CC;</a></li>
+<li>&#x4E0B;&#x8F7D;Github&#x4E0A;&#x4EE3;&#x7406;&#x6C60;&#x7684;&#x6E90;&#x4EE3;&#x7801;<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/Python3WebSpider/ProxyPool.git # &#x53EF;&#x4EE5;&#x4F7F;&#x7528;Gitee</span><br></pre></td></tr></table></figure></li>
+<li>cd&#x5230;&#x6587;&#x4EF6;&#x76EE;&#x5F55;&#x4E2D;&#xFF0C;&#x5B89;&#x88C5;&#x76F8;&#x5173;&#x6A21;&#x5757;<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure></li>
+<li>&#x8FD0;&#x884C;<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python run.py</span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
-<h2 id="爬取程序"><a href="#爬取程序" class="headerlink" title="爬取程序"></a>爬取程序</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">from</span> fake_useragent <span class="keyword">import</span> UserAgent</span><br><span class="line"></span><br><span class="line">ua = UserAgent()</span><br><span class="line">headers = &#123;<span class="string">&quot;User-Agent&quot;</span>: ua.chrome&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_proxy</span>():</span></span><br><span class="line">    PROXY_POOL_URL = <span class="string">&quot;http://localhost:5555/random&quot;</span></span><br><span class="line">    <span class="keyword">return</span> requests.get(PROXY_POOL_URL).content</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">proxy = get_proxy()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">url_generate</span>(<span class="params">num</span>):</span></span><br><span class="line">    url = <span class="string">&quot;https://photo.fengniao.com/f_101_1_&#123;&#125;.html&quot;</span>.format(num)</span><br><span class="line">    <span class="keyword">return</span> url</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_all_miniurl</span>(<span class="params">url</span>):</span></span><br><span class="line">    main_url = <span class="string">&quot;https://photo.fengniao.com&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        response = requests.get(url, headers=headers, proxies=&#123;<span class="string">&quot;http&quot;</span>: <span class="string">&quot;http://&#123;&#125;&quot;</span>.format(proxy)&#125;)</span><br><span class="line">        <span class="keyword">if</span> response.status_code == <span class="number">200</span>:</span><br><span class="line">            print(<span class="string">&quot;第一步连接成功&quot;</span>)</span><br><span class="line">    <span class="keyword">except</span> requests.RequestException:</span><br><span class="line">        print(<span class="string">&quot;连接失败&quot;</span>)</span><br><span class="line">    response.encoding = <span class="string">&quot;utf-8&quot;</span></span><br><span class="line">    soup = BeautifulSoup(response.text, <span class="string">&quot;lxml&quot;</span>)</span><br><span class="line">    miniurl = []</span><br><span class="line">    <span class="keyword">for</span> soup_li <span class="keyword">in</span> soup.find_all(<span class="string">&quot;li&quot;</span>, class_=<span class="string">&quot;noRight&quot;</span>):</span><br><span class="line">        url_ = soup_li.a[<span class="string">&quot;href&quot;</span>]</span><br><span class="line">        miniurl.append(main_url + url_)</span><br><span class="line">    <span class="keyword">return</span> miniurl</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_picture</span>(<span class="params">miniurl, dir</span>):</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        response = requests.get(miniurl, headers=headers, proxies=&#123;<span class="string">&quot;http&quot;</span>: <span class="string">&quot;http://&#123;&#125;&quot;</span>.format(proxy)&#125;)</span><br><span class="line">    <span class="keyword">except</span> requests.RequestException:</span><br><span class="line">        print(<span class="string">&quot;第二步连接失败&quot;</span>)</span><br><span class="line">    soup = BeautifulSoup(response.text, <span class="string">&quot;lxml&quot;</span>)</span><br><span class="line">    title = soup.find(<span class="string">&quot;h3&quot;</span>, class_=<span class="string">&quot;title overOneTxt&quot;</span>).string</span><br><span class="line">    imgurl = soup.find(<span class="string">&quot;div&quot;</span>, class_=<span class="string">&quot;imgBig&quot;</span>).img[<span class="string">&quot;src&quot;</span>]</span><br><span class="line">    r = requests.get(imgurl, headers=headers, proxies=&#123;<span class="string">&quot;http&quot;</span>: <span class="string">&quot;http://&#123;&#125;&quot;</span>.format(proxy)&#125;)</span><br><span class="line">    path = dir + title + <span class="string">&quot;.jpg&quot;</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">with</span> open(path, <span class="string">&quot;wb&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">            f.write(r.content)</span><br><span class="line">            f.close()</span><br><span class="line">            print(title, <span class="string">&quot;  图片下载成功&quot;</span>)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        print(title, <span class="string">&quot;  图片已存在&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>(<span class="params">num</span>):</span></span><br><span class="line">    url = url_generate(num)</span><br><span class="line">    miniurllist = get_all_miniurl(url)</span><br><span class="line">    dir = <span class="string">&quot;C:/Users/17394/Desktop/蜂鸟/&quot;</span></span><br><span class="line">    <span class="keyword">for</span> miniurl <span class="keyword">in</span> miniurllist:</span><br><span class="line">        get_picture(miniurl, dir)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">5</span>):</span><br><span class="line">    main(i)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="&#x722C;&#x53D6;&#x7A0B;&#x5E8F;"><a href="#&#x722C;&#x53D6;&#x7A0B;&#x5E8F;" class="headerlink" title="&#x722C;&#x53D6;&#x7A0B;&#x5E8F;"></a>&#x722C;&#x53D6;&#x7A0B;&#x5E8F;</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">from</span> fake_useragent <span class="keyword">import</span> UserAgent</span><br><span class="line"></span><br><span class="line">ua = UserAgent()</span><br><span class="line">headers = {<span class="string">&quot;User-Agent&quot;</span>: ua.chrome}</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_proxy</span>():</span></span><br><span class="line">    PROXY_POOL_URL = <span class="string">&quot;http://localhost:5555/random&quot;</span></span><br><span class="line">    <span class="keyword">return</span> requests.get(PROXY_POOL_URL).content</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">proxy = get_proxy()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">url_generate</span>(<span class="params">num</span>):</span></span><br><span class="line">    url = <span class="string">&quot;https://photo.fengniao.com/f_101_1_{}.html&quot;</span>.<span class="built_in">format</span>(num)</span><br><span class="line">    <span class="keyword">return</span> url</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_all_miniurl</span>(<span class="params">url</span>):</span></span><br><span class="line">    main_url = <span class="string">&quot;https://photo.fengniao.com&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        response = requests.get(url, headers=headers, proxies={<span class="string">&quot;http&quot;</span>: <span class="string">&quot;http://{}&quot;</span>.<span class="built_in">format</span>(proxy)})</span><br><span class="line">        <span class="keyword">if</span> response.status_code == <span class="number">200</span>:</span><br><span class="line">            print(<span class="string">&quot;&#x7B2C;&#x4E00;&#x6B65;&#x8FDE;&#x63A5;&#x6210;&#x529F;&quot;</span>)</span><br><span class="line">    <span class="keyword">except</span> requests.RequestException:</span><br><span class="line">        print(<span class="string">&quot;&#x8FDE;&#x63A5;&#x5931;&#x8D25;&quot;</span>)</span><br><span class="line">    response.encoding = <span class="string">&quot;utf-8&quot;</span></span><br><span class="line">    soup = BeautifulSoup(response.text, <span class="string">&quot;lxml&quot;</span>)</span><br><span class="line">    miniurl = []</span><br><span class="line">    <span class="keyword">for</span> soup_li <span class="keyword">in</span> soup.find_all(<span class="string">&quot;li&quot;</span>, class_=<span class="string">&quot;noRight&quot;</span>):</span><br><span class="line">        url_ = soup_li.a[<span class="string">&quot;href&quot;</span>]</span><br><span class="line">        miniurl.append(main_url + url_)</span><br><span class="line">    <span class="keyword">return</span> miniurl</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_picture</span>(<span class="params">miniurl, <span class="built_in">dir</span></span>):</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        response = requests.get(miniurl, headers=headers, proxies={<span class="string">&quot;http&quot;</span>: <span class="string">&quot;http://{}&quot;</span>.<span class="built_in">format</span>(proxy)})</span><br><span class="line">    <span class="keyword">except</span> requests.RequestException:</span><br><span class="line">        print(<span class="string">&quot;&#x7B2C;&#x4E8C;&#x6B65;&#x8FDE;&#x63A5;&#x5931;&#x8D25;&quot;</span>)</span><br><span class="line">    soup = BeautifulSoup(response.text, <span class="string">&quot;lxml&quot;</span>)</span><br><span class="line">    title = soup.find(<span class="string">&quot;h3&quot;</span>, class_=<span class="string">&quot;title overOneTxt&quot;</span>).string</span><br><span class="line">    imgurl = soup.find(<span class="string">&quot;div&quot;</span>, class_=<span class="string">&quot;imgBig&quot;</span>).img[<span class="string">&quot;src&quot;</span>]</span><br><span class="line">    r = requests.get(imgurl, headers=headers, proxies={<span class="string">&quot;http&quot;</span>: <span class="string">&quot;http://{}&quot;</span>.<span class="built_in">format</span>(proxy)})</span><br><span class="line">    path = <span class="built_in">dir</span> + title + <span class="string">&quot;.jpg&quot;</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(path, <span class="string">&quot;wb&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">            f.write(r.content)</span><br><span class="line">            f.close()</span><br><span class="line">            print(title, <span class="string">&quot;  &#x56FE;&#x7247;&#x4E0B;&#x8F7D;&#x6210;&#x529F;&quot;</span>)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        print(title, <span class="string">&quot;  &#x56FE;&#x7247;&#x5DF2;&#x5B58;&#x5728;&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>(<span class="params">num</span>):</span></span><br><span class="line">    url = url_generate(num)</span><br><span class="line">    miniurllist = get_all_miniurl(url)</span><br><span class="line">    <span class="built_in">dir</span> = <span class="string">&quot;C:/Users/17394/Desktop/&#x8702;&#x9E1F;/&quot;</span></span><br><span class="line">    <span class="keyword">for</span> miniurl <span class="keyword">in</span> miniurllist:</span><br><span class="line">        get_picture(miniurl, <span class="built_in">dir</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">5</span>):</span><br><span class="line">    main(i)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<h2 id="爬取结果"><a href="#爬取结果" class="headerlink" title="爬取结果"></a>爬取结果</h2><p><img src="https://tvax1.sinaimg.cn/large/006z5e4Qgy1ggkhfsn5krj315i0lt4k2.jpg" alt="爬取结果展示"></p>
-<h1 id="知乎评论爬虫"><a href="#知乎评论爬虫" class="headerlink" title="知乎评论爬虫"></a>知乎评论爬虫</h1><p>知乎评论是采用Ajax动态加载(Chrome XHR)评论，实际上，每获得一定数量的新的评论，发出请求的url也在发生变化。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url &#x3D; &quot;https:&#x2F;&#x2F;www.zhihu.com&#x2F;api&#x2F;v4&#x2F;answers&#x2F;608904604&#x2F;root_comments?limit&#x3D;10&amp;offset&#x3D;1&amp;order&#x3D;normal&amp;status&#x3D;open&quot;</span><br></pre></td></tr></table></figure>
-<p>url中有个<code>offset</code>参数，每加载一些评论，<code>offset+1</code>，由此可以得到请求的真实地址，通过分析<code>response</code>发现，评论是以json的格式存储的，使用 <code>json</code>模块可以获取到评论的所有数据，但是评论中包含的表情包，url等显示不正确。<br><img src="https://tva1.sinaimg.cn/large/006z5e4Qgy1ggsjt1e7lqj30p30ojgow.jpg" alt="知乎网页调试获取评论数据"></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> fake_useragent <span class="keyword">import</span> UserAgent</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">ua = UserAgent()</span><br><span class="line"></span><br><span class="line">headers = &#123;</span><br><span class="line">    <span class="string">&quot;User-Agent&quot;</span>: ua.chrome,</span><br><span class="line">    <span class="string">&quot;Cookie&quot;</span>: <span class="string">&#x27;&#x27;</span>, <span class="comment">#此处放你的cookie</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">url_generate</span>(<span class="params">offset</span>):</span></span><br><span class="line">    url = <span class="string">&quot;https://www.zhihu.com/api/v4/answers/608904604/root_comments?limit=10&amp;offset=&#123;&#125;&amp;order=normal&amp;status=open&quot;</span>.format(</span><br><span class="line">        offset</span><br><span class="line">    )</span><br><span class="line">    <span class="keyword">return</span> url</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_text</span>(<span class="params">url</span>):</span></span><br><span class="line">    response = requests.get(url, headers=headers,)</span><br><span class="line">    response.encoding = <span class="string">&quot;utf-8&quot;</span></span><br><span class="line">    data = json.loads(response.text)[<span class="string">&quot;data&quot;</span>]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(data)):</span><br><span class="line">        print(data[i][<span class="string">&quot;content&quot;</span>])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    offset_list = np.arange(<span class="number">10</span>, <span class="number">2100</span>, step=<span class="number">10</span>)</span><br><span class="line">    <span class="keyword">for</span> offset <span class="keyword">in</span> offset_list:</span><br><span class="line">        url = url_generate(offset)</span><br><span class="line">        get_text(url)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    main()</span><br><span class="line"></span><br></pre></td></tr></table></figure></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/requests/">requests</a><a class="post-meta__tags" href="/tags/BeautifulSoup/">BeautifulSoup</a></div><div class="post_share"><div class="social-share" data-image="https://tva3.sinaimg.cn/large/006z5e4Qgy1ggo6ycf8ywj31hc0zk7ak.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://tva1.sinaimg.cn/large/006z5e4Qgy1ggnz0rj5zjj31ao19wdp1.jpg" target="_blank"><img class="post-qr-code-img" src="https://tva1.sinaimg.cn/large/006z5e4Qgy1ggnz0rj5zjj31ao19wdp1.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="https://tva2.sinaimg.cn/large/006z5e4Qgy1ggnz1g21r2j314o14qqhn.jpg" target="_blank"><img class="post-qr-code-img" src="https://tva2.sinaimg.cn/large/006z5e4Qgy1ggnz1g21r2j314o14qqhn.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/07/11/Butterfly%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE/"><img class="prev-cover" src="https://tva3.sinaimg.cn/large/006z5e4Qgy1ggoi8sda8wj31790t3u0y.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Hexo+Butterfly+Github Pages配置个人博客网站</div></div></a></div><div class="next-post pull-right"><a href="/2020/07/02/%E7%BB%9F%E8%AE%A1%E5%88%86%E5%B8%83/"><img class="next-cover" src="https://tva3.sinaimg.cn/large/006z5e4Qgy1ggo6whxpjyj31hc0zh16x.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">统计分布</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></article></main><footer id="footer" style="background-image: url(https://tva3.sinaimg.cn/large/006z5e4Qgy1ggo6ycf8ywj31hc0zk7ak.jpg)"><div id="footer-wrap"><div class="copyright">&copy;2020 By Wu Li</div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script>var preloader = {
-  endLoading: () => {
-    document.body.style.overflow = 'auto';
-    document.getElementById('loading-box').classList.add("loaded")
-  },
-  initLoading: () => {
-    document.body.style.overflow = '';
-    document.getElementById('loading-box').classList.remove("loaded")
+<h2 id="&#x722C;&#x53D6;&#x7ED3;&#x679C;"><a href="#&#x722C;&#x53D6;&#x7ED3;&#x679C;" class="headerlink" title="&#x722C;&#x53D6;&#x7ED3;&#x679C;"></a>&#x722C;&#x53D6;&#x7ED3;&#x679C;</h2><p><img data-src="https://tvax1.sinaimg.cn/large/006z5e4Qgy1ggkhfsn5krj315i0lt4k2.jpg" alt="&#x722C;&#x53D6;&#x7ED3;&#x679C;&#x5C55;&#x793A;"></p>
+<h1 id="&#x77E5;&#x4E4E;&#x8BC4;&#x8BBA;&#x722C;&#x866B;"><a href="#&#x77E5;&#x4E4E;&#x8BC4;&#x8BBA;&#x722C;&#x866B;" class="headerlink" title="&#x77E5;&#x4E4E;&#x8BC4;&#x8BBA;&#x722C;&#x866B;"></a>&#x77E5;&#x4E4E;&#x8BC4;&#x8BBA;&#x722C;&#x866B;</h1><p>&#x77E5;&#x4E4E;&#x8BC4;&#x8BBA;&#x662F;&#x91C7;&#x7528;Ajax&#x52A8;&#x6001;&#x52A0;&#x8F7D;(Chrome XHR)&#x8BC4;&#x8BBA;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x6BCF;&#x83B7;&#x5F97;&#x4E00;&#x5B9A;&#x6570;&#x91CF;&#x7684;&#x65B0;&#x7684;&#x8BC4;&#x8BBA;&#xFF0C;&#x53D1;&#x51FA;&#x8BF7;&#x6C42;&#x7684;url&#x4E5F;&#x5728;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x3002;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url = &quot;https://www.zhihu.com/api/v4/answers/608904604/root_comments?limit=10&amp;offset=1&amp;order=normal&amp;status=open&quot;</span><br></pre></td></tr></table></figure>
+<p>url&#x4E2D;&#x6709;&#x4E2A;<code>offset</code>&#x53C2;&#x6570;&#xFF0C;&#x6BCF;&#x52A0;&#x8F7D;&#x4E00;&#x4E9B;&#x8BC4;&#x8BBA;&#xFF0C;<code>offset+1</code>&#xFF0C;&#x7531;&#x6B64;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x8BF7;&#x6C42;&#x7684;&#x771F;&#x5B9E;&#x5730;&#x5740;&#xFF0C;&#x901A;&#x8FC7;&#x5206;&#x6790;<code>response</code>&#x53D1;&#x73B0;&#xFF0C;&#x8BC4;&#x8BBA;&#x662F;&#x4EE5;json&#x7684;&#x683C;&#x5F0F;&#x5B58;&#x50A8;&#x7684;&#xFF0C;&#x4F7F;&#x7528; <code>json</code>&#x6A21;&#x5757;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x5230;&#x8BC4;&#x8BBA;&#x7684;&#x6240;&#x6709;&#x6570;&#x636E;&#xFF0C;&#x4F46;&#x662F;&#x8BC4;&#x8BBA;&#x4E2D;&#x5305;&#x542B;&#x7684;&#x8868;&#x60C5;&#x5305;&#xFF0C;url&#x7B49;&#x663E;&#x793A;&#x4E0D;&#x6B63;&#x786E;&#x3002;<br><img data-src="https://tva1.sinaimg.cn/large/006z5e4Qgy1ggsjt1e7lqj30p30ojgow.jpg" alt="&#x77E5;&#x4E4E;&#x7F51;&#x9875;&#x8C03;&#x8BD5;&#x83B7;&#x53D6;&#x8BC4;&#x8BBA;&#x6570;&#x636E;"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> fake_useragent <span class="keyword">import</span> UserAgent</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">ua = UserAgent()</span><br><span class="line"></span><br><span class="line">headers = {</span><br><span class="line">    <span class="string">&quot;User-Agent&quot;</span>: ua.chrome,</span><br><span class="line">    <span class="string">&quot;Cookie&quot;</span>: <span class="string">&apos;&apos;</span>, <span class="comment">#&#x6B64;&#x5904;&#x653E;&#x4F60;&#x7684;cookie</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">url_generate</span>(<span class="params">offset</span>):</span></span><br><span class="line">    url = <span class="string">&quot;https://www.zhihu.com/api/v4/answers/608904604/root_comments?limit=10&amp;offset={}&amp;order=normal&amp;status=open&quot;</span>.<span class="built_in">format</span>(</span><br><span class="line">        offset</span><br><span class="line">    )</span><br><span class="line">    <span class="keyword">return</span> url</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_text</span>(<span class="params">url</span>):</span></span><br><span class="line">    response = requests.get(url, headers=headers,)</span><br><span class="line">    response.encoding = <span class="string">&quot;utf-8&quot;</span></span><br><span class="line">    data = json.loads(response.text)[<span class="string">&quot;data&quot;</span>]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(data)):</span><br><span class="line">        print(data[i][<span class="string">&quot;content&quot;</span>])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    offset_list = np.arange(<span class="number">10</span>, <span class="number">2100</span>, step=<span class="number">10</span>)</span><br><span class="line">    <span class="keyword">for</span> offset <span class="keyword">in</span> offset_list:</span><br><span class="line">        url = url_generate(offset)</span><br><span class="line">        get_text(url)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    main()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+    </div>
 
-  }
-}
-window.addEventListener('load',()=> {preloader.endLoading()})</script><div class="js-pjax"><script>if (!window.MathJax) {
-  window.MathJax = {
-    loader: {
-      source: {
-        '[tex]/amsCd': '[tex]/amscd'
-      }
-    },
-    tex: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"]],
-      tags: 'ams'
-    },
-    options: {
-      renderActions: {
-        findScript: [10, doc => {
-          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
-            const display = !!node.type.match(/; *mode=display/)
-            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
-            const text = document.createTextNode('')
-            node.parentNode.replaceChild(text, node)
-            math.start = {node: text, delim: '', n: 0}
-            math.end = {node: text, delim: '', n: 0}
-            doc.math.push(math)
-          }
-        }, ''],
-        addClass: [200,() => {
-          document.querySelectorAll('mjx-container:not([display=\'true\']').forEach( node => {
-            const target = node.parentNode
-            if (!target.classList.contains('has-jax')) {
-              target.classList.add('mathjax-overflow')
-            }
-          })
-        }, '', false]
-      }
-    }
-  }
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/requests/" rel="tag"><i class="fa fa-tag"></i> requests</a>
+              <a href="/tags/BeautifulSoup/" rel="tag"><i class="fa fa-tag"></i> BeautifulSoup</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/07/02/%E7%BB%9F%E8%AE%A1%E5%88%86%E5%B8%83/" rel="prev" title="统计分布">
+      <i class="fa fa-chevron-left"></i> 统计分布
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/07/11/Butterfly%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE/" rel="next" title="Hexo+Butterfly+Github Pages配置个人博客网站">
+      Hexo+Butterfly+Github Pages配置个人博客网站 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
   
-  var script = document.createElement('script')
-  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
-  script.id = 'MathJax-script'
-  script.async = true
-  document.head.appendChild(script)
-} else {
-  MathJax.startup.document.state(0)
-  MathJax.texReset()
-  MathJax.typeset()
-}</script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css"><script>$(function () {
-  $('span.katex-display').wrap('<div class="katex-wrap"></div>')
-})</script><script>if (document.getElementsByClassName('mermaid').length) {
-  if (window.mermaidJsLoad) mermaid.init()
-  else {
-    $.getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js', function () {
-      window.mermaidJsLoad = true
-      mermaid.initialize({
-        theme: 'default',
-      })
-      false && mermaid.init()
-    })
-  }
-}</script><script>function loadValine () {
-  function initValine () {
-    const initData = {
-      el: '#vcomment',
-      appId: '5axoQNRyqxGjjYxVcWMB1TzA-gzGzoHsz',
-      appKey: 'wXajcmNbr8DUnfy7XsXF2eHT',
-      placeholder: 'Please leave your footprints',
-      avatar: 'monsterid',
-      meta: 'nick,mail,link'.split(','),
-      pageSize: '10',
-      lang: 'zh-CN',
-      recordIP: false,
-      serverURLs: '',
-      emojiCDN: '',
-      emojiMaps: "",
-      enableQQ: false,
-      path: window.location.pathname,
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
     }
-
-    if (true) { 
-      initData.requiredFields= ('nick,mail'.split(','))
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
     }
-
-    const valine = new Valine(initData)
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
   }
+</script>
 
-  if (typeof Valine === 'function') initValine() 
-  else $.getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js', initValine)
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#&#x5F53;&#x5F53;&#x7F51;&#x56FE;&#x4E66;TOP250&#x722C;&#x866B;"><span class="nav-number">1.</span> <span class="nav-text">&amp;#x5F53;&amp;#x5F53;&amp;#x7F51;&amp;#x56FE;&amp;#x4E66;TOP250&amp;#x722C;&amp;#x866B;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#&#x8C46;&#x74E3;TOP250&#x722C;&#x866B;"><span class="nav-number">2.</span> <span class="nav-text">&amp;#x8C46;&amp;#x74E3;TOP250&amp;#x722C;&amp;#x866B;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#&#x8702;&#x9E1F;&#x7F51;&#x722C;&#x866B;"><span class="nav-number">3.</span> <span class="nav-text">&amp;#x8702;&amp;#x9E1F;&amp;#x7F51;&amp;#x722C;&amp;#x866B;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#&#x4EE3;&#x7406;&#x6C60;&#x914D;&#x7F6E;"><span class="nav-number">3.1.</span> <span class="nav-text">&amp;#x4EE3;&amp;#x7406;&amp;#x6C60;&amp;#x914D;&amp;#x7F6E;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#&#x722C;&#x53D6;&#x7A0B;&#x5E8F;"><span class="nav-number">3.2.</span> <span class="nav-text">&amp;#x722C;&amp;#x53D6;&amp;#x7A0B;&amp;#x5E8F;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#&#x722C;&#x53D6;&#x7ED3;&#x679C;"><span class="nav-number">3.3.</span> <span class="nav-text">&amp;#x722C;&amp;#x53D6;&amp;#x7ED3;&amp;#x679C;</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#&#x77E5;&#x4E4E;&#x8BC4;&#x8BBA;&#x722C;&#x866B;"><span class="nav-number">4.</span> <span class="nav-text">&amp;#x77E5;&amp;#x4E4E;&amp;#x8BC4;&amp;#x8BBA;&amp;#x722C;&amp;#x866B;</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Wu Li"
+      src="/images/touxiang.png">
+  <p class="site-author-name" itemprop="name">Wu Li</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:xjz1cumt@163.com" title="E-Mail → mailto:xjz1cumt@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Wu Li</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+<script data-pjax>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
+
+
+<script data-pjax>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
 }
+</script>
 
-if ('Valine' === 'Valine' || !false) {
-  if (false) btf.loadComment(document.querySelector('#vcomment'),loadValine)
-  else setTimeout(() => loadValine(), 0)
-} else {
-  function loadOtherComment () {
-    loadValine()
+
+    <div id="pjax">
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
   }
-}</script></div></div></body></html>
+</script>
+
+    
+
+  
+
+    </div>
+</body>
+</html>

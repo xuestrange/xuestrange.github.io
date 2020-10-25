@@ -1,346 +1,2039 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>WU Li's Blog</title><meta name="author" content="Wu Li"><meta name="copyright" content="Wu Li"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta property="og:type" content="website">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"xuestrange.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta property="og:type" content="website">
 <meta property="og:title" content="WU Li&#39;s Blog">
 <meta property="og:url" content="https://xuestrange.github.io/index.html">
 <meta property="og:site_name" content="WU Li&#39;s Blog">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://xuestrange.github.io/img/touxiang.png">
+<meta property="og:locale" content="en_US">
 <meta property="article:author" content="Wu Li">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://xuestrange.github.io/img/touxiang.png"><link rel="shortcut icon" href="/img/flower.ico"><link rel="canonical" href="https://xuestrange.github.io/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
-  root: '/',
-  hexoversion: '5.2.0',
-  algolia: undefined,
-  localSearch: undefined,
-  translate: undefined,
-  noticeOutdate: undefined,
-  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
-  copy: {
-    success: '复制成功',
-    error: '复制错误',
-    noSupport: '浏览器不支持'
-  },
-  relativeDate: {
-    homepage: false,
-    post: false
-  },
-  runtime: '',
-  date_suffix: {
-    just: '刚刚',
-    min: '分钟前',
-    hour: '小时前',
-    day: '天前',
-    month: '个月前'
-  },
-  copyright: undefined,
-  ClickShowText: undefined,
-  lightbox: 'mediumZoom',
-  Snackbar: undefined,
-  justifiedGallery: {
-    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
-    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
-  },
-  isPhotoFigcaption: true,
-  islazyload: false,
-  isanchor: false
-};
 
-var saveToLocal = {
-  set: function setWithExpiry(key, value, ttl) {
-    const now = new Date()
-    const expiryDay = ttl * 86400000
-    const item = {
-      value: value,
-      expiry: now.getTime() + expiryDay,
-    }
-    localStorage.setItem(key, JSON.stringify(item))
-  },
+<link rel="canonical" href="https://xuestrange.github.io/">
 
-  get: function getWithExpiry(key) {
-    const itemStr = localStorage.getItem(key)
 
-    if (!itemStr) {
-      return undefined
-    }
-    const item = JSON.parse(itemStr)
-    const now = new Date()
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'en'
+  };
+</script>
 
-    if (now.getTime() > item.expiry) {
-      localStorage.removeItem(key)
-      return undefined
-    }
-    return item.value
-  }
-}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
-  isPost: false,
-  isHome: true,
-  isHighlightShrink: false,
-  isSidebar: false,
-  postUpdate: '2020-10-24 23:47:33'
-}</script><noscript><style type="text/css">
-  #nav {
-    opacity: 1
-  }
-  .justified-gallery img {
-    opacity: 1
+  <title>WU Li's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
   }
 
-  #recent-posts time,
-  #post-meta time {
-    display: inline !important
-  }
-</style></noscript><script>(function () {
-  window.activateDarkMode = function () {
-    document.documentElement.setAttribute('data-theme', 'dark')
-    if (document.querySelector('meta[name="theme-color"]') !== null) {
-      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-    }
-  }
-  window.activateLightMode = function () {
-    document.documentElement.setAttribute('data-theme', 'light')
-    if (document.querySelector('meta[name="theme-color"]') !== null) {
-      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-    }
-  }
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
 
-  const autoChangeMode = 'false'
-  const t = saveToLocal.get('theme')
-  if (autoChangeMode === '1') {
-    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
-    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
-    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
-    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+</head>
 
-    if (t === undefined) {
-      if (isLightMode) activateLightMode()
-      else if (isDarkMode) activateDarkMode()
-      else if (isNotSpecified || hasNoSupport) {
-        const now = new Date()
-        const hour = now.getHours()
-        const isNight = hour <= 6 || hour >= 18
-        isNight ? activateDarkMode() : activateLightMode()
-      }
-      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
-        if (saveToLocal.get('theme') === undefined) {
-          e.matches ? activateDarkMode() : activateLightMode()
-        }
-      })
-    } else if (t === 'light') activateLightMode()
-    else activateDarkMode()
-  } else if (autoChangeMode === '2') {
-    const now = new Date()
-    const hour = now.getHours()
-    const isNight = hour <= 6 || hour >= 18
-    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
-    else if (t === 'light') activateLightMode()
-    else activateDarkMode()
-  } else {
-    if (t === 'dark') activateDarkMode()
-    else if (t === 'light') activateLightMode()
-  }
-})()</script><meta name="generator" content="Hexo 5.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/touxiang.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">16</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">15</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">5</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(https://tva4.sinaimg.cn/large/006z5e4Qgy1ggnxpoh1nnj31hc0u01gk.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">WU Li's Blog</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="site-info"><h1 id="site-title">WU Li's Blog</h1><div id="site-subtitle"><span id="subtitle"></span></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout_page" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/10/24/%E8%AE%BA%E6%96%871021/" title="无题">     <img class="post_bg" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/10/24/%E8%AE%BA%E6%96%871021/" title="无题">无题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-10-24T13:41:07.454Z" title="发表于 2020-10-24 21:41:07">2020-10-24</time></span></div><div class="content">
-      &#x5468;&#x62A5;
-      
-      
-      
-      
-        
-          MathJax.Hub.Config({"extensions":["tex2jax.js"],"jax":["input/TeX","output/HTML-CSS"],"messageStyle":"none","tex2jax":{"processEnvironments":false,"processEscapes":true,"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"TeX":{"extensions":["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]},"HTML-CSS":{"availableFonts":["TeX"]}});
-        
-        
-        
-      
-      
-      
-       ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/10/21/hmm/" title="隐马尔科夫模型">     <img class="post_bg" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="隐马尔科夫模型"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/10/21/hmm/" title="隐马尔科夫模型">隐马尔科夫模型</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-10-20T16:00:00.000Z" title="发表于 2020-10-21 00:00:00">2020-10-21</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E5%8E%9F%E5%88%9B/">原创</a></span></div><div class="content">DTHMMDiscrete Time Hidden Markov Model 状态是离散的，输出可能是连续的Defination $ \lambda=(A,B,\pi) $
-3 questions
-概率预测问题已知 $ \lambda $ 求解序列 $ O={o_1,o_2,\dots,o_n} $出现的概率。前向算法，后向算法
-学习问题
-已知 $ {o_i,s_i} $，可以使用最大似然估计
-只知道 $ {o_i} $，可以使用EM算法
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
 
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
 
-解码问题要已知 $ \lambda $，求解最可能出现的序列，可以使用维特比算法。C-K equationCTHMMContinuous Time Hidden Markov Model 状态是连续的状态持续的时间服从指数分布状态转移矩阵是一个与时间相关的函数 $ P(t) $
+  <div class="site-meta">
 
-Defination $ \lambda=(\omega,\Pi,f,p()) $
-</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/10/21/%E8%AE%BA%E6%96%871021/" title="周报">     <img class="post_bg" src="https://i.imgur.com/yCW5JHJ.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="周报"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/10/21/%E8%AE%BA%E6%96%871021/" title="周报">周报</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-10-20T16:00:00.000Z" title="发表于 2020-10-21 00:00:00">2020-10-21</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E5%8E%9F%E5%88%9B/">原创</a></span></div><div class="content">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">WU Li's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
 
 
 
 
-1 连续时间隐马尔科夫模型在刻画体重管理者的线上社区参与度的应用
-In a word
-Motivations&amp;Contributions.
-Model: Multi-dimensional CTHMM
-waiting time:
-State-transition Matrix
-State-dependent Outcome
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
 
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
-Data
-Empirical Results
-Limitations
+  </li>
+        <li class="menu-item menu-item-categories">
 
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
 
-2 考虑评论的广告策略的实证研究
-In a word
-Motivations&amp;Contributions
-Data
-Model
-Results
+  </li>
+        <li class="menu-item menu-item-archives">
 
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
-
-
-1 连续时间隐马尔科夫模型在刻画体重管理者的线上社区参与度的应用
-Zhou, Tongxin, Lu (Lucy) Yan, Yingfei Wang, and Yong Tan. “Turn Your Online Engagement in Chronic Disease Management from Zero to Hero: A Multi-Dimensional Continuous-Time Eval ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/10/06/%E8%AE%BA%E6%96%871010/" title="论文1010">     <img class="post_bg" src="https://tvax2.sinaimg.cn/large/006z5e4Qly1gjcikr8ymvj318g0tmac9.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="论文1010"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/10/06/%E8%AE%BA%E6%96%871010/" title="论文1010">论文1010</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-10-05T16:00:00.000Z" title="发表于 2020-10-06 00:00:00">2020-10-06</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E5%8E%9F%E5%88%9B/">原创</a></span></div><div class="content">FirstWhen You Work with a Superman, Will You Also fly? An Empirical Study of the Impact of Coworkers on Performance
-
-Tan, T.F., Netessine, S., 2019. When You Work with a Superman, Will You Also Fly? An Empirical Study of the Impact of Coworkers on Performance. Management Science 65, 3495–3517. https://doi.org/10.1287/mnsc.2018.3135
-
-Vocabulary
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
 
 
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
 
-
-
-
-counterfactual
-违反事实的，虚拟的
-homegeneous
-同质的
-
-
-heterogeneous
-异质的
-spillover
-溢出
-
-
-incorperate
-包含
-polarize
-两极化
-
-
-reconcile
-协调、使一致
-shift
-排班
-
-
-mutual lear ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/10/01/PSM-DID/" title="PSM-DID">     <img class="post_bg" src="https://i.imgur.com/ooOZbIL.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="PSM-DID"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/10/01/PSM-DID/" title="PSM-DID">PSM-DID</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-09-30T16:00:00.000Z" title="发表于 2020-10-01 00:00:00">2020-10-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E5%8E%9F%E5%88%9B/">原创</a></span></div><div class="content">Pooled Cross Section and Panel Data面板数据：对每一个对象的一段时间的观察例如：统计高中26班同学的学生的高考成绩与平时的作息，是否运动，是否跑校，家庭背景，生源地，性别等指标是否有关系，为了研究需要，三年中每一年都对26班的每位同学都统计一次上述指标，三年得到的结果就是一个面板数据集。混合横截面数据：对同一类对象一段时间的观察，但是这个对象前后可能不是一个。例如：统计某高中的学生的高考成绩与平时的作息，是否运动，是否跑校，家庭背景，生源地，性别等指标是否有关系，为了研究需要，三年中每一年都从每个班随机抽取一位同学，统计上述指标，因此，同样是26班的同学，去年抽到的和今年抽到的不一样，三年后得到的结果就是一个混合横截面数据集。
-Propensity Score Match
-R 包install.packages(c(‘MatchIt’,’tableone’))
-
-1
-
-
-Difference in Difference</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/09/20/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6%E7%AC%AC%E4%B8%80%E7%AB%A0%E7%BB%AA%E8%AE%BA/" title="计量经济学第一章绪论">     <img class="post_bg" src="https://tva4.sinaimg.cn/large/006z5e4Qly1giwvm8lke3j310p0p075u.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="计量经济学第一章绪论"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/09/20/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6%E7%AC%AC%E4%B8%80%E7%AB%A0%E7%BB%AA%E8%AE%BA/" title="计量经济学第一章绪论">计量经济学第一章绪论</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-09-19T16:00:00.000Z" title="发表于 2020-09-20 00:00:00">2020-09-20</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E5%8E%9F%E5%88%9B/">原创</a></span></div><div class="content">计量经济学Econometrics
-
-数理经济模型：用数学理论解释经济问题，但是并没有解释定量关系
-计量经济学模型：揭示定量关系
-
-确定经典单方程计量经济学模型的步骤和要点理论模型的设计
-选择变量
-确定数学关系
-确定参数的取值范围
-
-变量的选取规则：
-
-正确把握经济现象中暗含的经济学理论和经济行为规律
-
-所选变量与经济行为是否有关
-
-考虑数据的可获得性
-选择变量是要考虑所有入选变量之间的关系，使每个变量都是独立的
-变量的选择需要反复多次进行
- 拟合程度不能用来判断模型变量选择是否正确 
-
-
-
-不能通过经济意义检验的计量经济学模型没有利用价值。
-</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/09/19/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6%E7%AC%AC%E4%BA%8C%E7%AB%A0%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/" title="计量经济学第二章一元线性回归模型">     <img class="post_bg" src="https://tvax4.sinaimg.cn/large/006z5e4Qly1gitleofq0vj318g0tmwlc.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="计量经济学第二章一元线性回归模型"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/09/19/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6%E7%AC%AC%E4%BA%8C%E7%AB%A0%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/" title="计量经济学第二章一元线性回归模型">计量经济学第二章一元线性回归模型</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-09-18T16:00:00.000Z" title="发表于 2020-09-19 00:00:00">2020-09-19</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E5%8E%9F%E5%88%9B/">原创</a></span></div><div class="content">一般形式假设总体中变量之间关系服从：
-$$ y= \beta_0+\beta_1 x+u $$
-
-$ y $ named dependent variable, explained variable, response
-$ x $ named independent variable,explainatory variable, predictor
-$ \beta_0 $ intercept parameter，截距
-$ \beta_1 $ slope parameter，斜率
-$ u $ error term， disturbance, 误差项
-
-现在我们得到了一些样本(Sample) $ {x_i,y_i} $来估计模型中的参数，在估计之前，需要对模型做出若干假设，假设如下：
-$$ E(u)=0 $$
-$ u $与 $ x $不相关(不存在线性关系)，即给定 $ x $, $ u $的均值与 $ x $无关，即 零条件均值假设
-$$ E(u|x)=E(u) $$
-根据以上两条假设，可以推导出 总体回归函数(Population Regression Function, PRF),
- ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/08/01/ISL/" title="An Introduction to Statistical Learning">     <img class="post_bg" src="https://tvax2.sinaimg.cn/large/006z5e4Qgy1ghbop2ey9rj315o0qrgry.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="An Introduction to Statistical Learning"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/08/01/ISL/" title="An Introduction to Statistical Learning">An Introduction to Statistical Learning</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-07-31T16:00:00.000Z" title="发表于 2020-08-01 00:00:00">2020-08-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%95%B0%E5%AD%A6/">数学</a></span></div><div class="content">本文记录了自己在学习《An Introduction to Statistical Learning》遇到的难点和解释。
-
-It’s tough to make predictions,  especially about the future.
- -Yogi Berra 
-
-
-Introduction数据来源（R包）
-
-ISLR
-MASS
-datasets
-
-Statistical Learningcategories
-superwised
-unsuperwised
-semi-superwised
-
-Bias-Variance Trade-off以下针对的是训练集数据。
- select an algorithm, repeat several times, create sevel model,have several $ \hat{f}(x) ,$ This is the key. 
-$$ E(x)=E[(Y-\hat{f}(x))^2]$$$$ E(x)=[E[\hat{f}(x)]-f(x)]^2+E[(\hat{f}(x)-E[\hat{f}(x)])^2]+\sigma^2 ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/touxiang.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Wu Li</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length_num">16</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length_num">15</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length_num">5</div></a></div></div><a class="button--animated" id="card-info-btn"><i></i><span></span></a></div></div><div class="sticky_layout"><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/Butterfly/" style="font-size: 1.1em; color: rgb(175, 65, 109)">Butterfly</a><a href="/tags/ML/" style="font-size: 1.3em; color: rgb(83, 51, 185)">ML</a><a href="/tags/R/" style="font-size: 1.3em; color: rgb(153, 115, 8)">R</a><a href="/tags/Latex/" style="font-size: 1.1em; color: rgb(113, 31, 145)">Latex</a><a href="/tags/Markdown/" style="font-size: 1.1em; color: rgb(112, 162, 118)">Markdown</a><a href="/tags/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6/" style="font-size: 1.5em; color: rgb(156, 76, 92)">计量经济学</a><a href="/tags/Python/" style="font-size: 1.1em; color: rgb(120, 15, 97)">Python</a><a href="/tags/MiniConda/" style="font-size: 1.1em; color: rgb(23, 169, 71)">MiniConda</a><a href="/tags/Java/" style="font-size: 1.1em; color: rgb(172, 10, 132)">Java</a><a href="/tags/Vscode/" style="font-size: 1.1em; color: rgb(126, 122, 157)">Vscode</a><a href="/tags/requests/" style="font-size: 1.1em; color: rgb(80, 50, 34)">requests</a><a href="/tags/BeautifulSoup/" style="font-size: 1.1em; color: rgb(49, 4, 87)">BeautifulSoup</a><a href="/tags/Scipy/" style="font-size: 1.1em; color: rgb(121, 84, 181)">Scipy</a><a href="/tags/paper/" style="font-size: 1.3em; color: rgb(19, 123, 127)">paper</a><a href="/tags/regex/" style="font-size: 1.1em; color: rgb(149, 154, 200)">regex</a></div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2020/10/24/%E8%AE%BA%E6%96%871021/" title="无题"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2020/10/24/%E8%AE%BA%E6%96%871021/" title="无题">无题</a><time datetime="2020-10-24T14:01:23.208Z" title="更新于 2020-10-24 22:01:23">2020-10-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/10/21/%E8%AE%BA%E6%96%871021/" title="周报"><img src="https://i.imgur.com/yCW5JHJ.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="周报"/></a><div class="content"><a class="title" href="/2020/10/21/%E8%AE%BA%E6%96%871021/" title="周报">周报</a><time datetime="2020-10-24T14:01:21.653Z" title="更新于 2020-10-24 22:01:21">2020-10-24</time></div></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div><ul class="card-category-list" id="aside-cat-list">
-            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%8E%9F%E5%88%9B/"><span class="card-category-list-name">原创</span><span class="card-category-list-count">6</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/"><span class="card-category-list-name">工具</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%95%B0%E5%AD%A6/"><span class="card-category-list-name">数学</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%BC%96%E7%A8%8B/"><span class="card-category-list-name">编程</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%BD%AC%E8%BD%BD/"><span class="card-category-list-name">转载</span><span class="card-category-list-count">1</span></a></li>
+          <div class="content index posts-expand">
             
-            </ul></div></div></div></div></main><footer id="footer" style="background-image: url(https://tva4.sinaimg.cn/large/006z5e4Qgy1ggnxpoh1nnj31hc0u01gk.jpg)"><div id="footer-wrap"><div class="copyright">&copy;2020 By Wu Li</div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script>var preloader = {
-  endLoading: () => {
-    document.body.style.overflow = 'auto';
-    document.getElementById('loading-box').classList.add("loaded")
-  },
-  initLoading: () => {
-    document.body.style.overflow = '';
-    document.getElementById('loading-box').classList.remove("loaded")
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://xuestrange.github.io/2020/10/24/%E8%AE%BA%E6%96%871021/">
 
-  }
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.png">
+      <meta itemprop="name" content="Wu Li">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WU Li's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/24/%E8%AE%BA%E6%96%871021/" class="post-title-link" itemprop="url">Untitled</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-10-24 21:41:07 / Modified: 22:01:23" itemprop="dateCreated datePublished" datetime="2020-10-24T21:41:07+08:00">2020-10-24</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <!DOCTYPE html><html><head>
+      <title>&#x5468;&#x62A5;</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({"extensions":["tex2jax.js"],"jax":["input/TeX","output/HTML-CSS"],"messageStyle":"none","tex2jax":{"processEnvironments":false,"processEscapes":true,"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"TeX":{"extensions":["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]},"HTML-CSS":{"availableFonts":["TeX"]}});
+        </script>
+        <script type="text/javascript" async src="file:///c:\Users\xue\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.5.13\node_modules\@shd101wyy\mume\dependencies\mathjax\MathJax.js" charset="UTF-8"></script>
+        
+      
+      
+      
+      <script type="text/javascript" src="file:///c:\Users\xue\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.5.13\node_modules\@shd101wyy\mume\dependencies\mermaid\mermaid.min.js" charset="UTF-8"></script>
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
 }
-window.addEventListener('load',()=> {preloader.endLoading()})</script><div class="js-pjax"><script>function subtitleType () {
-  $.getJSON('https://api.btstu.cn/yan/api.php?charset=utf-8&encode=json',function (data) {
-    if (true) {
-      var sub = "".length == 0 ? new Array() : "".split(',')
-      var both = sub.unshift(data.text)
-      typed = new Typed('#subtitle', {
-        strings: sub,
-        startDelay: 300,
-        typeSpeed: 150,
-        loop: true,
-        backSpeed: 50,
-      })
-    } else {
-      document.getElementById('subtitle').innerHTML = data.text
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+.markdown-preview.markdown-preview {
+  font-size: 12pt;
+}
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <div class="code-chunk" data-id="code-chunk-id-0" data-cmd="toc"><div class="input-div"><div class="btn-group"><div class="run-btn btn"><span>&#x25B6;&#xFE0E;</span></div><div class="run-all-btn btn">all</div></div><div class="status">running...</div></div><div class="output-div"></div></div><ul>
+<li><a href="#1-%E8%BF%9E%E7%BB%AD%E6%97%B6%E9%97%B4%E9%9A%90%E9%A9%AC%E5%B0%94%E7%A7%91%E5%A4%AB%E6%A8%A1%E5%9E%8B%E5%9C%A8%E5%88%BB%E7%94%BB%E4%BD%93%E9%87%8D%E7%AE%A1%E7%90%86%E8%80%85%E7%9A%84%E7%BA%BF%E4%B8%8A%E7%A4%BE%E5%8C%BA%E5%8F%82%E4%B8%8E%E5%BA%A6%E7%9A%84%E5%BA%94%E7%94%A8">1 &#x8FDE;&#x7EED;&#x65F6;&#x95F4;&#x9690;&#x9A6C;&#x5C14;&#x79D1;&#x592B;&#x6A21;&#x578B;&#x5728;&#x523B;&#x753B;&#x4F53;&#x91CD;&#x7BA1;&#x7406;&#x8005;&#x7684;&#x7EBF;&#x4E0A;&#x793E;&#x533A;&#x53C2;&#x4E0E;&#x5EA6;&#x7684;&#x5E94;&#x7528;</a>
+<ul>
+<li><a href="#in-a-word">In a word</a></li>
+<li><a href="#motivationscontributions">Motivations&amp;Contributions.</a></li>
+<li><a href="#model-multi-dimensional-cthmm">Model: Multi-dimensional CTHMM</a>
+<ul>
+<li><a href="#waiting-time">waiting time:</a></li>
+<li><a href="#state-transition-matrix">State-transition Matrix</a></li>
+<li><a href="#state-dependent-outcome">State-dependent Outcome</a></li>
+</ul>
+</li>
+<li><a href="#data">Data</a></li>
+<li><a href="#empirical-results">Empirical Results</a></li>
+<li><a href="#limitations">Limitations</a></li>
+</ul>
+</li>
+<li><a href="#2-%E8%80%83%E8%99%91%E8%AF%84%E8%AE%BA%E7%9A%84%E5%B9%BF%E5%91%8A%E7%AD%96%E7%95%A5%E7%9A%84%E5%AE%9E%E8%AF%81%E7%A0%94%E7%A9%B6">2 &#x8003;&#x8651;&#x8BC4;&#x8BBA;&#x7684;&#x5E7F;&#x544A;&#x7B56;&#x7565;&#x7684;&#x5B9E;&#x8BC1;&#x7814;&#x7A76;</a>
+<ul>
+<li><a href="#in-a-word-1">In a word</a></li>
+<li><a href="#motivationscontributions-1">Motivations&amp;Contributions</a></li>
+<li><a href="#data-1">Data</a></li>
+<li><a href="#model">Model</a></li>
+<li><a href="#results">Results</a></li>
+</ul>
+</li>
+</ul>
+<h1 class="mume-header" id="1-%E8%BF%9E%E7%BB%AD%E6%97%B6%E9%97%B4%E9%9A%90%E9%A9%AC%E5%B0%94%E7%A7%91%E5%A4%AB%E6%A8%A1%E5%9E%8B%E5%9C%A8%E5%88%BB%E7%94%BB%E4%BD%93%E9%87%8D%E7%AE%A1%E7%90%86%E8%80%85%E7%9A%84%E7%BA%BF%E4%B8%8A%E7%A4%BE%E5%8C%BA%E5%8F%82%E4%B8%8E%E5%BA%A6%E7%9A%84%E5%BA%94%E7%94%A8">1 &#x8FDE;&#x7EED;&#x65F6;&#x95F4;&#x9690;&#x9A6C;&#x5C14;&#x79D1;&#x592B;&#x6A21;&#x578B;&#x5728;&#x523B;&#x753B;&#x4F53;&#x91CD;&#x7BA1;&#x7406;&#x8005;&#x7684;&#x7EBF;&#x4E0A;&#x793E;&#x533A;&#x53C2;&#x4E0E;&#x5EA6;&#x7684;&#x5E94;&#x7528;</h1>
+
+<blockquote>
+<p>Zhou, Tongxin, Lu (Lucy) Yan, Yingfei Wang, and Yong Tan. &#x201C;Turn Your Online Engagement in Chronic Disease Management from Zero to Hero: A Multi-Dimensional Continuous-Time Evaluation.&#x201D; SSRN Electronic Journal, 2019. <a target="_blank" rel="noopener" href="https://doi.org/10.2139/ssrn.3320076">https://doi.org/10.2139/ssrn.3320076</a>.</p>
+</blockquote>
+<h2 class="mume-header" id="in-a-word">In a word</h2>
+
+<p>The authors research how the engagement levels change with time going given that all kinds of variables will affect some aspects of the model by constructing a CTHMM model.</p>
+<h2 class="mume-header" id="motivationscontributions">Motivations&amp;Contributions.</h2>
+
+<ul>
+<li>Prior studies have focus on only one behavioral dimension of online engagement.</li>
+<li>Timing information should be considered.</li>
+</ul>
+<h2 class="mume-header" id="model-multi-dimensional-cthmm">Model: Multi-dimensional CTHMM</h2>
+
+<p>&#x8FDE;&#x7EED;&#x65F6;&#x95F4;&#x9690;&#x9A6C;&#x5C14;&#x79D1;&#x592B;&#x6A21;&#x578B;&#x7684;&#x7EC4;&#x6210;&#xFF1A;</p>
+<ul>
+<li>waiting time</li>
+<li>state-depenent Outcome</li>
+<li>initial hidden state distribution</li>
+<li>&#x5D4C;&#x5165;&#x5F0F;&#x79BB;&#x6563;&#x9690;&#x9A6C;&#x5C14;&#x79D1;&#x592B;&#x6A21;&#x578B;&#x7684;&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x6982;&#x7387;</li>
+</ul>
+<h3 class="mume-header" id="waiting-time">waiting time:</h3>
+
+<p>exponiential distribution<br>
+</p><div class="mathjax-exps">$$f(\Delta t)=\theta_{sit}e^{\theta_{sit}\cdot \Delta t}$$</div><p></p>
+<p>where <span class="mathjax-exps">$\theta_{sit} =e^{\alpha_s\cdot D_{it}}$</span>, <span class="mathjax-exps">$s$</span>denotes the staes, <span class="mathjax-exps">$D_{it}$</span> denotes the variables affecting individual <span class="mathjax-exps">$i$</span>&apos;s waiting time at time <span class="mathjax-exps">$t$</span>,<span class="mathjax-exps">$\alpha_s$</span>is the coefficients of <span class="mathjax-exps">$D_{it}$</span>.<span class="mathjax-exps">$\Delta t$</span> is the waiting time, <span class="mathjax-exps">$f(\Delta t)$</span> is the distribution of <span class="mathjax-exps">$\Delta t$</span>.</p>
+<h3 class="mume-header" id="state-transition-matrix">State-transition Matrix</h3>
+
+<blockquote>
+<p>Fill the diagnonal of the state-transiton matrix with <span class="mathjax-exps">$\theta^{-1} =e^{-\alpha_s \cdot D_{it}}$</span><br>
+???</p>
+</blockquote>
+<p>&#x6700;&#x540E;&#x4E5F;&#x662F;&#x5F97;&#x5230;&#x4E86;&#x4E00;&#x4E2A;&#x542B;&#x6709;&#x5F85;&#x4F30;&#x53C2;&#x6570;&#x7684;&#x5D4C;&#x5165;&#x5F0F;&#x79BB;&#x6563;&#x9690;&#x9A6C;&#x5C14;&#x79D1;&#x592B;&#x6A21;&#x578B;&#x7684;&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x6982;&#x7387;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#x3002;<span class="mathjax-exps">$R_{it}$</span> contains the covariates that affect state transitions.</p>
+<h3 class="mume-header" id="state-dependent-outcome">State-dependent Outcome</h3>
+
+<p>Possion distribution</p>
+<p></p><div class="mathjax-exps">$$\Pi(Y_{jit}|s_{it}=s)=\frac{e^{-\lambda_{jsit}}\cdot\lambda_{jsit}^{Y_{jit}}}{Y_{jit}!}$$</div><br>
+where <span class="mathjax-exps">$Y_{jit}$</span> is multi-dimensional output, <span class="mathjax-exps">$j$</span> index activities type, <span class="mathjax-exps">$i$</span> index individual, <span class="mathjax-exps">$t$</span> index time and <span class="mathjax-exps">$\lambda_{jsit}=e^{\beta_{js}W_{it}+ \varepsilon_{ji}}$</span>, <span class="mathjax-exps">$W_{it}$</span> is the covariables affecting the individual <span class="mathjax-exps">$i$</span>&apos;s output at time <span class="mathjax-exps">$t$</span>.<p></p>
+<h2 class="mume-header" id="data">Data</h2>
+
+<div class="mermaid">graph LR
+a[(database)]--&gt;b[social support]
+a--&gt;c[self-monitorning]
+a--&gt;d[short-term goal setting]
+a--&gt;e[user]
+d.-&gt;dd[Outcome]
+b.-&gt;ww[waiting time]
+b.-&gt;cc[state transitions]
+b.-&gt;dd
+e.-&gt;dd
+e.-&gt;ww[waiting time]
+subgraph online weightloss community
+b
+c
+d
+end
+
+</div><h2 class="mume-header" id="empirical-results">Empirical Results</h2>
+
+<p>&#x901A;&#x8FC7;AIC/BIC&#x4FE1;&#x606F;&#x51C6;&#x5219;&#x9009;&#x62E9;&#x6700;&#x597D;&#x7684;&#x72B6;&#x6001;&#x4E2A;&#x6570;&#xFF0C;&#x7136;&#x540E;&#x4F30;&#x8BA1;&#x51FA;&#x6A21;&#x578B;&#x4E2D;&#x7684;&#x53C2;&#x6570;(<span class="mathjax-exps">$\beta_{js}, \alpha_s,\rho_s$</span>)(&#x6700;&#x5927;&#x4F3C;&#x7136;&#x4F30;&#x8BA1;)&#xFF0C;&#x5206;&#x6790;&#x53C2;&#x6570;&#x7684;&#x663E;&#x8457;&#x6027;&#x5F97;&#x5230;&#x5206;&#x6790;&#x7ED3;&#x679C;&#x3002;</p>
+<h2 class="mume-header" id="limitations">Limitations</h2>
+
+<p>&#x6CA1;&#x6709;&#x523B;&#x753B;&#x7EBF;&#x4E0B;&#x4F53;&#x91CD;&#x7BA1;&#x7406;&#x6D3B;&#x52A8;&#x3002;&#x8FD9;&#x662F;<strong>&#x793E;&#x4EA4;&#x5A92;&#x4F53;&#x7814;&#x7A76;&#x7684;&#x901A;&#x75C5;</strong></p>
+<h1 class="mume-header" id="2-%E8%80%83%E8%99%91%E8%AF%84%E8%AE%BA%E7%9A%84%E5%B9%BF%E5%91%8A%E7%AD%96%E7%95%A5%E7%9A%84%E5%AE%9E%E8%AF%81%E7%A0%94%E7%A9%B6">2 &#x8003;&#x8651;&#x8BC4;&#x8BBA;&#x7684;&#x5E7F;&#x544A;&#x7B56;&#x7565;&#x7684;&#x5B9E;&#x8BC1;&#x7814;&#x7A76;</h1>
+
+<blockquote>
+<p>Hollenbeck, Brett, Sridhar Moorthy, and Davide Proserpio. &#x201C;Advertising Strategy in the Presence of Reviews: An Empirical Analysis.&#x201D; Marketing Science, 2019, 20.</p>
+</blockquote>
+<h2 class="mume-header" id="in-a-word-1">In a word</h2>
+
+<p>&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x901A;&#x8FC7;&#x65AD;&#x70B9;&#x56DE;&#x5F52;(RDD)&#x7814;&#x7A76;&#x4E86;&#x7F8E;&#x56FD;&#x9152;&#x5E97;&#x7684;&#x5E7F;&#x544A;&#x652F;&#x51FA;&#x4E0E;&#x7EBF;&#x4E0A;&#x8BC4;&#x5206;&#x7684;&#x5173;&#x7CFB;&#x3002;</p>
+<h2 class="mume-header" id="motivationscontributions-1">Motivations&amp;Contributions</h2>
+
+<p>&#x6709;&#x5F88;&#x591A;&#x5B9E;&#x8BC1;&#x7814;&#x7A76;&#x662F;&#x5C06;&#x5E7F;&#x544A;&#x652F;&#x51FA;&#x548C;&#x4EA7;&#x54C1;&#x8D28;&#x91CF;&#x8054;&#x7CFB;&#x8D77;&#x6765;&#x7684;&#xFF0C;&#x8FD8;&#x6CA1;&#x6709;&#x7814;&#x7A76;&#x4F7F;&#x7528;&#x7EBF;&#x4E0A;&#x8BC4;&#x5206;&#x4F5C;&#x4E3A;&#x4EA7;&#x54C1;&#x8D28;&#x91CF;&#x7684;&#x5EA6;&#x91CF;(perceived quality)&#x3002;&#x5E76;&#x4E14;&#xFF0C;&#x8FD9;&#x4E9B;&#x7814;&#x7A76;&#x5F88;&#x591A;&#x662F;&#x7814;&#x7A76;&#x76F8;&#x5173;&#x5173;&#x7CFB;&#x7684;&#xFF0C;&#x6CA1;&#x6709;&#x7814;&#x7A76;&#x56E0;&#x679C;&#x5173;&#x7CFB;&#x3002;</p>
+<h2 class="mume-header" id="data-1">Data</h2>
+
+<div class="mermaid">graph LR
+data[(database)]--&gt;a[TripAdviser]
+data--&gt;b[KantarMedia]
+data--&gt;c[SpyFu]
+data--&gt;d[STR]
+subgraph hotel info
+a--&gt;a1[hotel name]
+a--&gt;a2[hotel address]
+a--&gt;a3[other properties]
+d--&gt;d1[hotel info: name,address,capacity,class,etc]
+d--&gt;d2[&#x8FDE;&#x9501;&#x9152;&#x5E97;]
+d--&gt;d3[panel of hotel prices]
+end
+subgraph advertisement
+b--&gt;b1[tranditional media]
+b--&gt;b2[internet display]
+c--&gt;c1[online search-Google]
+end
+
+
+</div><h2 class="mume-header" id="model">Model</h2>
+
+<p>&#x9152;&#x5E97;&#x7684;&#x7684;&#x771F;&#x5B9E;&#x8BC4;&#x5206;&#x4F1A;&#x8FDB;&#x884C;&#x56DB;&#x820D;&#x4E94;&#x5165;&#xFF0C;&#x7528;&#x6237;&#x770B;&#x5230;&#x7684;&#x662F;3.0,3.5,4.0,4.5,5.0&#x7C7B;&#x4F3C;&#x7684;&#x8BC4;&#x5206;&#x3002;&#x6240;&#x4EE5;&#x5728;&#x56DB;&#x820D;&#x4E94;&#x5165;&#x9608;&#x503C;&#x9644;&#x8FD1;(&#x5982;3.25,3.75,4.25,4.75)&#x7684;&#x503C;&#xFF0C;&#x9AD8;&#x4E8E;&#x9608;&#x503C;&#x5219;&#x820D;&#x5165;&#x5230;&#x9AD8;&#x8BC4;&#x5206;&#xFF0C;&#x4F4E;&#x4E8E;&#x9608;&#x503C;&#x5219;&#x820D;&#x5165;&#x5230;&#x4F4E;&#x8BC4;&#x5206;&#x3002;</p>
+<p>&#x5C06;&#x65AD;&#x70B9;&#x5206;&#x522B;&#x8BBE;&#x7F6E;&#x5728;&#x9608;&#x503C;3.25&#xFF0C;3.75&#xFF0C;4.25&#xFF0C;4.75&#x5904;&#xFF0C;&#x8BBE;&#x7F6E;&#x5E26;&#x5BBD;&#x4E3A;0.05&#x9897;&#x661F;&#xFF0C;&#x4E3A;&#x4E86;&#x51CF;&#x5C11;&#x6837;&#x672C;&#x65B9;&#x5DEE;&#xFF0C;&#x4EC5;&#x4F7F;&#x7528;&#x4E86;&#x9152;&#x5E97;&#x7684;&#x8BC4;&#x5206;&#x6570;&#x591A;&#x4E8E;20&#x4E2A;&#x7684;&#x3002;</p>
+<p>&#x56E0;&#x53D8;&#x91CF;&#x4E3A;&#x5E7F;&#x544A;&#x652F;&#x51FA;&#xFF0C;&#x81EA;&#x53D8;&#x91CF;&#x5305;&#x62EC;&#x9608;&#x503C;&#xFF0C;&#x5E73;&#x5747;&#x8BC4;&#x5206;&#xFF0C;&#x56FA;&#x5B9A;&#x6548;&#x5E94;&#x53D8;&#x91CF;&#x548C;&#x968F;&#x673A;&#x8BEF;&#x5DEE;&#x9879;&#x3002;</p>
+<p>&#x6A21;&#x578B;&#x7684;&#x68C0;&#x9A8C;&#xFF1A;</p>
+<ul>
+<li>&#x671F;&#x671B;&#x5E7F;&#x544A;&#x652F;&#x51FA;&#x4E0E;&#x5E73;&#x5747;&#x8BC4;&#x5206;&#x7684;&#x51FD;&#x6570;&#x5173;&#x7CFB;&#x5728;&#x65AD;&#x70B9;&#x5904;&#x662F;&#x8FDE;&#x7EED;&#x7684;&#xFF1B;</li>
+<li>&#x9152;&#x5E97;&#x4E0D;&#x4F1A;&#x64CD;&#x7EB5;&#x5E73;&#x5747;&#x5F97;&#x5206;&#x3002;</li>
+</ul>
+<h2 class="mume-header" id="results">Results</h2>
+
+<p>&#x5728;3.25,4.25,4.75&#x7684;&#x65AD;&#x70B9;&#x5904;&#xFF0C;&#x6709;&#x660E;&#x663E;&#x7684;&#x7684;&#x622A;&#x8DDD;&#x5DEE;&#x5F02;&#xFF0C;&#x8868;&#x660E;&#x5728;&#x65AD;&#x70B9;&#x5904;&#x8BC4;&#x5206;&#x7684;&#x8DF3;&#x8DC3;&#x5F0F;&#x589E;&#x957F;(+0.5)&#x5BFC;&#x81F4;&#x4E86;&#x5E7F;&#x544A;&#x652F;&#x51FA;&#x7684;&#x4E0B;&#x964D;&#x3002;</p>
+<p>&#x968F;&#x540E;&#xFF0C;&#x4F5C;&#x8005;&#x53C8;&#x5206;&#x522B;&#x68C0;&#x9A8C;&#x4E86;&#x5728;&#x63A7;&#x5236;&#x5E7F;&#x544A;&#x5A92;&#x4F53;&#x7684;&#x7C7B;&#x578B;&#x3001;&#x9152;&#x5E97;&#x7C7B;&#x578B;&#x3001;&#x5E02;&#x573A;&#x5DEE;&#x5F02;&#x5316;&#x56E0;&#x7D20;&#x3001;&#x65F6;&#x95F4;&#x6548;&#x5E94;&#xFF08;early versus late&#xFF09;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8BC4;&#x5206;&#x7684;&#x8DF3;&#x8DC3;&#x5F0F;&#x589E;&#x957F;&#x4E0E;&#x5E7F;&#x544A;&#x652F;&#x51FA;&#x7684;&#x5173;&#x7CFB;(&#x56E0;&#x679C;&#x5173;&#x7CFB;)&#x3002;</p>
+<p>&#x6700;&#x540E;&#x4F5C;&#x8005;&#x8FDB;&#x884C;&#x4E86;&#x9C81;&#x68D2;&#x6027;&#x68C0;&#x9A8C;&#xFF0C;&#x5305;&#x62EC;Placebo test(&#x5C06;&#x65AD;&#x70B9;&#x8BBE;&#x5728;&#x522B;&#x5904;&#xFF0C;&#x8BC1;&#x660E;&#x4E4B;&#x524D;&#x8BBE;&#x7F6E;&#x7684;&#x65AD;&#x70B9;&#x662F;&#x6709;&#x6548;&#x7684;)&#x3001;&#x4E8C;&#x6B21;&#x591A;&#x9879;&#x5F0F;&#x4F30;&#x8BA1;&#x7B49;</p>
+<blockquote>
+<p>RDD&#x7684;&#x4F7F;&#x7528;&#x60C5;&#x666F;&#x3001;&#x68C0;&#x9A8C;&#x65B9;&#x6CD5;&#x7B49;&#x8FD8;&#x9700;&#x8981;&#x8FDB;&#x4E00;&#x6B65;&#x5B66;&#x4E60;</p>
+</blockquote>
+
+      </div>
+      <div class="md-sidebar-toc"><ul>
+<li><a href="#1-%E8%BF%9E%E7%BB%AD%E6%97%B6%E9%97%B4%E9%9A%90%E9%A9%AC%E5%B0%94%E7%A7%91%E5%A4%AB%E6%A8%A1%E5%9E%8B%E5%9C%A8%E5%88%BB%E7%94%BB%E4%BD%93%E9%87%8D%E7%AE%A1%E7%90%86%E8%80%85%E7%9A%84%E7%BA%BF%E4%B8%8A%E7%A4%BE%E5%8C%BA%E5%8F%82%E4%B8%8E%E5%BA%A6%E7%9A%84%E5%BA%94%E7%94%A8">1 &#x8FDE;&#x7EED;&#x65F6;&#x95F4;&#x9690;&#x9A6C;&#x5C14;&#x79D1;&#x592B;&#x6A21;&#x578B;&#x5728;&#x523B;&#x753B;&#x4F53;&#x91CD;&#x7BA1;&#x7406;&#x8005;&#x7684;&#x7EBF;&#x4E0A;&#x793E;&#x533A;&#x53C2;&#x4E0E;&#x5EA6;&#x7684;&#x5E94;&#x7528;</a>
+<ul>
+<li><a href="#in-a-word">In a word</a></li>
+<li><a href="#motivationscontributions">Motivations&amp;Contributions.</a></li>
+<li><a href="#model-multi-dimensional-cthmm">Model: Multi-dimensional CTHMM</a>
+<ul>
+<li><a href="#waiting-time">waiting time:</a></li>
+<li><a href="#state-transition-matrix">State-transition Matrix</a></li>
+<li><a href="#state-dependent-outcome">State-dependent Outcome</a></li>
+</ul>
+</li>
+<li><a href="#data">Data</a></li>
+<li><a href="#empirical-results">Empirical Results</a></li>
+<li><a href="#limitations">Limitations</a></li>
+</ul>
+</li>
+<li><a href="#2-%E8%80%83%E8%99%91%E8%AF%84%E8%AE%BA%E7%9A%84%E5%B9%BF%E5%91%8A%E7%AD%96%E7%95%A5%E7%9A%84%E5%AE%9E%E8%AF%81%E7%A0%94%E7%A9%B6">2 &#x8003;&#x8651;&#x8BC4;&#x8BBA;&#x7684;&#x5E7F;&#x544A;&#x7B56;&#x7565;&#x7684;&#x5B9E;&#x8BC1;&#x7814;&#x7A76;</a>
+<ul>
+<li><a href="#in-a-word-1">In a word</a></li>
+<li><a href="#motivationscontributions-1">Motivations&amp;Contributions</a></li>
+<li><a href="#data-1">Data</a></li>
+<li><a href="#model">Model</a></li>
+<li><a href="#results">Results</a></li>
+</ul>
+</li>
+</ul>
+</div>
+      <a id="sidebar-toc-btn">&#x2261;</a>
+    
+    
+    <script>
+// config mermaid init call
+// http://knsv.github.io/mermaid/#configuration
+//
+// You can edit the 'MERMAID_CONFIG' variable below.
+MERMAID_CONFIG = {
+  startOnLoad: false
+}
+
+if (window['MERMAID_CONFIG']) {
+  window['MERMAID_CONFIG'].startOnLoad = false
+  window['MERMAID_CONFIG'].cloneCssStyles = false
+  window['MERMAID_CONFIG'].theme = "default"
+}
+mermaid.initialize(window['MERMAID_CONFIG'] || {})
+if (typeof(window['Reveal']) !== 'undefined') {
+  function mermaidRevealHelper(event) {
+    var currentSlide = event.currentSlide
+    var diagrams = currentSlide.querySelectorAll('.mermaid')
+    for (var i = 0; i < diagrams.length; i++) {
+      var diagram = diagrams[i]
+      if (!diagram.hasAttribute('data-processed')) {
+        mermaid.init(null, diagram, ()=> {
+          Reveal.slide(event.indexh, event.indexv)
+        })
+      }
     }
-  })
-}
-
-if (true) {
-  if (typeof Typed === 'function') subtitleType()
-  else $.getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js', subtitleType)
-} else {
-  subtitleType()
-}
-</script><script>if (document.getElementsByClassName('mermaid').length) {
-  if (window.mermaidJsLoad) mermaid.init()
-  else {
-    $.getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js', function () {
-      window.mermaidJsLoad = true
-      mermaid.initialize({
-        theme: 'default',
-      })
-      false && mermaid.init()
-    })
   }
-}</script></div></div></body></html>
+  Reveal.addEventListener('slidechanged', mermaidRevealHelper)
+  Reveal.addEventListener('ready', mermaidRevealHelper)
+} else {
+  mermaid.init(null, document.getElementsByClassName('mermaid'))
+}
+</script>
+    
+    
+    
+    
+    
+<script>
+
+var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+sidebarTOCBtn.addEventListener('click', function(event) {
+  event.stopPropagation()
+  if (document.body.hasAttribute('html-show-sidebar-toc')) {
+    document.body.removeAttribute('html-show-sidebar-toc')
+  } else {
+    document.body.setAttribute('html-show-sidebar-toc', true)
+  }
+})
+</script>
+      
+  
+    </body></html>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://xuestrange.github.io/2020/10/21/hmm/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.png">
+      <meta itemprop="name" content="Wu Li">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WU Li's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/21/hmm/" class="post-title-link" itemprop="url">隐马尔科夫模型</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-10-21 00:00:00 / Modified: 20:05:16" itemprop="dateCreated datePublished" datetime="2020-10-21T00:00:00+08:00">2020-10-21</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%8E%9F%E5%88%9B/" itemprop="url" rel="index"><span itemprop="name">原创</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="DTHMM"><a href="#DTHMM" class="headerlink" title="DTHMM"></a>DTHMM</h1><p>Discrete Time Hidden Markov Model &#x72B6;&#x6001;&#x662F;&#x79BB;&#x6563;&#x7684;&#xFF0C;&#x8F93;&#x51FA;&#x53EF;&#x80FD;&#x662F;&#x8FDE;&#x7EED;&#x7684;<br><em>Defination</em> $ \lambda=(A,B,\pi) $</p>
+<h2 id="3-questions"><a href="#3-questions" class="headerlink" title="3 questions"></a>3 questions</h2><ul>
+<li>&#x6982;&#x7387;&#x9884;&#x6D4B;&#x95EE;&#x9898;<br>&#x5DF2;&#x77E5; $ \lambda $ &#x6C42;&#x89E3;&#x5E8F;&#x5217; $ O={o_1,o_2,\dots,o_n} $&#x51FA;&#x73B0;&#x7684;&#x6982;&#x7387;&#x3002;<br>&#x524D;&#x5411;&#x7B97;&#x6CD5;&#xFF0C;&#x540E;&#x5411;&#x7B97;&#x6CD5;</li>
+<li>&#x5B66;&#x4E60;&#x95EE;&#x9898;<ul>
+<li>&#x5DF2;&#x77E5; $ {o_i,s_i} $&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6700;&#x5927;&#x4F3C;&#x7136;&#x4F30;&#x8BA1;</li>
+<li>&#x53EA;&#x77E5;&#x9053; $ {o_i} $&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;EM&#x7B97;&#x6CD5;</li>
+</ul>
+</li>
+<li>&#x89E3;&#x7801;&#x95EE;&#x9898;<br>&#x8981;&#x5DF2;&#x77E5; $ \lambda $&#xFF0C;&#x6C42;&#x89E3;&#x6700;&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x7684;&#x5E8F;&#x5217;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7EF4;&#x7279;&#x6BD4;&#x7B97;&#x6CD5;&#x3002;<h2 id="C-K-equation"><a href="#C-K-equation" class="headerlink" title="C-K equation"></a>C-K equation</h2><h1 id="CTHMM"><a href="#CTHMM" class="headerlink" title="CTHMM"></a>CTHMM</h1>Continuous Time Hidden Markov Model &#x72B6;&#x6001;&#x662F;&#x8FDE;&#x7EED;&#x7684;<br>&#x72B6;&#x6001;&#x6301;&#x7EED;&#x7684;&#x65F6;&#x95F4;&#x670D;&#x4ECE;&#x6307;&#x6570;&#x5206;&#x5E03;<br>&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x77E9;&#x9635;&#x662F;&#x4E00;&#x4E2A;&#x4E0E;&#x65F6;&#x95F4;&#x76F8;&#x5173;&#x7684;&#x51FD;&#x6570; $ P(t) $</li>
+</ul>
+<p><em>Defination</em> $ \lambda=(\omega,\Pi,f,p()) $</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://xuestrange.github.io/2020/10/21/%E8%AE%BA%E6%96%871021/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.png">
+      <meta itemprop="name" content="Wu Li">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WU Li's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/21/%E8%AE%BA%E6%96%871021/" class="post-title-link" itemprop="url">周报</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-10-21 00:00:00" itemprop="dateCreated datePublished" datetime="2020-10-21T00:00:00+08:00">2020-10-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-10-24 22:01:21" itemprop="dateModified" datetime="2020-10-24T22:01:21+08:00">2020-10-24</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%8E%9F%E5%88%9B/" itemprop="url" rel="index"><span itemprop="name">原创</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+<ul>
+<li><a href="#1-%E8%BF%9E%E7%BB%AD%E6%97%B6%E9%97%B4%E9%9A%90%E9%A9%AC%E5%B0%94%E7%A7%91%E5%A4%AB%E6%A8%A1%E5%9E%8B%E5%9C%A8%E5%88%BB%E7%94%BB%E4%BD%93%E9%87%8D%E7%AE%A1%E7%90%86%E8%80%85%E7%9A%84%E7%BA%BF%E4%B8%8A%E7%A4%BE%E5%8C%BA%E5%8F%82%E4%B8%8E%E5%BA%A6%E7%9A%84%E5%BA%94%E7%94%A8">1 &#x8FDE;&#x7EED;&#x65F6;&#x95F4;&#x9690;&#x9A6C;&#x5C14;&#x79D1;&#x592B;&#x6A21;&#x578B;&#x5728;&#x523B;&#x753B;&#x4F53;&#x91CD;&#x7BA1;&#x7406;&#x8005;&#x7684;&#x7EBF;&#x4E0A;&#x793E;&#x533A;&#x53C2;&#x4E0E;&#x5EA6;&#x7684;&#x5E94;&#x7528;</a><ul>
+<li><a href="#in-a-word">In a word</a></li>
+<li><a href="#motivationscontributions">Motivations&amp;Contributions.</a></li>
+<li><a href="#model-multi-dimensional-cthmm">Model: Multi-dimensional CTHMM</a><ul>
+<li><a href="#waiting-time">waiting time:</a></li>
+<li><a href="#state-transition-matrix">State-transition Matrix</a></li>
+<li><a href="#state-dependent-outcome">State-dependent Outcome</a></li>
+</ul>
+</li>
+<li><a href="#data">Data</a></li>
+<li><a href="#empirical-results">Empirical Results</a></li>
+<li><a href="#limitations">Limitations</a></li>
+</ul>
+</li>
+<li><a href="#2-%E8%80%83%E8%99%91%E8%AF%84%E8%AE%BA%E7%9A%84%E5%B9%BF%E5%91%8A%E7%AD%96%E7%95%A5%E7%9A%84%E5%AE%9E%E8%AF%81%E7%A0%94%E7%A9%B6">2 &#x8003;&#x8651;&#x8BC4;&#x8BBA;&#x7684;&#x5E7F;&#x544A;&#x7B56;&#x7565;&#x7684;&#x5B9E;&#x8BC1;&#x7814;&#x7A76;</a><ul>
+<li><a href="#in-a-word-1">In a word</a></li>
+<li><a href="#motivationscontributions-1">Motivations&amp;Contributions</a></li>
+<li><a href="#data-1">Data</a></li>
+<li><a href="#model">Model</a></li>
+<li><a href="#results">Results</a></li>
+</ul>
+</li>
+</ul>
+<!-- /code_chunk_output -->
+<h1 id="1-&#x8FDE;&#x7EED;&#x65F6;&#x95F4;&#x9690;&#x9A6C;&#x5C14;&#x79D1;&#x592B;&#x6A21;&#x578B;&#x5728;&#x523B;&#x753B;&#x4F53;&#x91CD;&#x7BA1;&#x7406;&#x8005;&#x7684;&#x7EBF;&#x4E0A;&#x793E;&#x533A;&#x53C2;&#x4E0E;&#x5EA6;&#x7684;&#x5E94;&#x7528;"><a href="#1-&#x8FDE;&#x7EED;&#x65F6;&#x95F4;&#x9690;&#x9A6C;&#x5C14;&#x79D1;&#x592B;&#x6A21;&#x578B;&#x5728;&#x523B;&#x753B;&#x4F53;&#x91CD;&#x7BA1;&#x7406;&#x8005;&#x7684;&#x7EBF;&#x4E0A;&#x793E;&#x533A;&#x53C2;&#x4E0E;&#x5EA6;&#x7684;&#x5E94;&#x7528;" class="headerlink" title="1 &#x8FDE;&#x7EED;&#x65F6;&#x95F4;&#x9690;&#x9A6C;&#x5C14;&#x79D1;&#x592B;&#x6A21;&#x578B;&#x5728;&#x523B;&#x753B;&#x4F53;&#x91CD;&#x7BA1;&#x7406;&#x8005;&#x7684;&#x7EBF;&#x4E0A;&#x793E;&#x533A;&#x53C2;&#x4E0E;&#x5EA6;&#x7684;&#x5E94;&#x7528;"></a>1 &#x8FDE;&#x7EED;&#x65F6;&#x95F4;&#x9690;&#x9A6C;&#x5C14;&#x79D1;&#x592B;&#x6A21;&#x578B;&#x5728;&#x523B;&#x753B;&#x4F53;&#x91CD;&#x7BA1;&#x7406;&#x8005;&#x7684;&#x7EBF;&#x4E0A;&#x793E;&#x533A;&#x53C2;&#x4E0E;&#x5EA6;&#x7684;&#x5E94;&#x7528;</h1><blockquote>
+<p>Zhou, Tongxin, Lu (Lucy) Yan, Yingfei Wang, and Yong Tan. &#x201C;Turn Your Online Engagement in Chronic Disease Management from Zero to Hero: A Multi-Dimensional Continuous-Time Evaluation.&#x201D; SSRN Electronic Journal, 2019. <a target="_blank" rel="noopener" href="https://doi.org/10.2139/ssrn.3320076">https://doi.org/10.2139/ssrn.3320076</a>.</p>
+</blockquote>
+<h2 id="In-a-word"><a href="#In-a-word" class="headerlink" title="In a word"></a>In a word</h2><p>The authors research how the engagement levels change with time going given that all kinds of variables will affect some aspects of the model by constructing a CTHMM model.</p>
+<h2 id="Motivations-amp-Contributions"><a href="#Motivations-amp-Contributions" class="headerlink" title="Motivations&amp;Contributions."></a>Motivations&amp;Contributions.</h2><ul>
+<li>Prior studies have focus on only one behavioral dimension of online engagement.</li>
+<li>Timing information should be considered.</li>
+</ul>
+<h2 id="Model-Multi-dimensional-CTHMM"><a href="#Model-Multi-dimensional-CTHMM" class="headerlink" title="Model: Multi-dimensional CTHMM"></a>Model: Multi-dimensional CTHMM</h2><p>&#x8FDE;&#x7EED;&#x65F6;&#x95F4;&#x9690;&#x9A6C;&#x5C14;&#x79D1;&#x592B;&#x6A21;&#x578B;&#x7684;&#x7EC4;&#x6210;&#xFF1A;</p>
+<ul>
+<li>waiting time</li>
+<li>state-depenent Outcome</li>
+<li>initial hidden state distribution</li>
+<li>&#x5D4C;&#x5165;&#x5F0F;&#x79BB;&#x6563;&#x9690;&#x9A6C;&#x5C14;&#x79D1;&#x592B;&#x6A21;&#x578B;&#x7684;&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x6982;&#x7387;</li>
+</ul>
+<h3 id="waiting-time"><a href="#waiting-time" class="headerlink" title="waiting time:"></a>waiting time:</h3><p>exponiential distribution<br>$$ f(\Delta t)=\theta_{sit}e^{\theta_{sit}\cdot \Delta t}$$</p>
+<p>where $ \theta_{sit} =e^{\alpha_s\cdot D_{it}}$, $ s $denotes the staes, $ D_{it} $ denotes the variables affecting individual $ i $&#x2019;s waiting time at time $ t $,$ \alpha_s $is the coefficients of $ D_{it} $.$ \Delta t $ is the waiting time, $ f(\Delta t) $ is the distribution of $ \Delta t$.</p>
+<h3 id="State-transition-Matrix"><a href="#State-transition-Matrix" class="headerlink" title="State-transition Matrix"></a>State-transition Matrix</h3><blockquote>
+<p>Fill the diagnonal of the state-transiton matrix with $ \theta^{-1} =e^{-\alpha_s \cdot D_{it}}$<br>????</p>
+</blockquote>
+<p>&#x6700;&#x540E;&#x4E5F;&#x662F;&#x5F97;&#x5230;&#x4E86;&#x4E00;&#x4E2A;&#x542B;&#x6709;&#x5F85;&#x4F30;&#x53C2;&#x6570;&#x7684;&#x5D4C;&#x5165;&#x5F0F;&#x79BB;&#x6563;&#x9690;&#x9A6C;&#x5C14;&#x79D1;&#x592B;&#x6A21;&#x578B;&#x7684;&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x6982;&#x7387;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#x3002;$ R_{it} $ contains the covariates that affect state transitions.</p>
+<h3 id="State-dependent-Outcome"><a href="#State-dependent-Outcome" class="headerlink" title="State-dependent Outcome"></a>State-dependent Outcome</h3><p>Possion distribution</p>
+<p>$$ \Pi(Y_{jit}|s_{it}=s)=\frac{e^{-\lambda_{jsit}}\cdot\lambda_{jsit}^{Y_{jit}}}{Y_{jit}!} $$<br>where $ Y_{jit} $ is multi-dimensional output, $ j $ index activities type, $ i $ index individual, $ t $ index time and $ \lambda_{jsit}=e^{\beta_{js}W_{it}+ \varepsilon_{ji}} $, $ W_{it} $ is the covariables affecting the individual $ i $&#x2019;s output at time $ t $.</p>
+<h2 id="Data"><a href="#Data" class="headerlink" title="Data"></a>Data</h2><div class="mermaid">
+graph LR
+a[(database)]--&gt;b[social support]
+a--&gt;c[self-monitorning]
+a--&gt;d[short-term goal setting]
+a--&gt;e[user]
+d.-&gt;dd[Outcome]
+b.-&gt;ww[waiting time]
+b.-&gt;cc[state transitions]
+b.-&gt;dd
+e.-&gt;dd
+e.-&gt;ww[waiting time]
+subgraph online weightloss community
+b
+c
+d
+end
+</div>
+
+<h2 id="Empirical-Results"><a href="#Empirical-Results" class="headerlink" title="Empirical Results"></a>Empirical Results</h2><p>&#x901A;&#x8FC7;AIC/BIC&#x4FE1;&#x606F;&#x51C6;&#x5219;&#x9009;&#x62E9;&#x6700;&#x597D;&#x7684;&#x72B6;&#x6001;&#x4E2A;&#x6570;&#xFF0C;&#x7136;&#x540E;&#x4F30;&#x8BA1;&#x51FA;&#x6A21;&#x578B;&#x4E2D;&#x7684;&#x53C2;&#x6570;($ \beta_{js}, \alpha_s,\rho_s$)(&#x6700;&#x5927;&#x4F3C;&#x7136;&#x4F30;&#x8BA1;)&#xFF0C;&#x5206;&#x6790;&#x53C2;&#x6570;&#x7684;&#x663E;&#x8457;&#x6027;&#x5F97;&#x5230;&#x5206;&#x6790;&#x7ED3;&#x679C;&#x3002;</p>
+<h2 id="Limitations"><a href="#Limitations" class="headerlink" title="Limitations"></a>Limitations</h2><p>&#x6CA1;&#x6709;&#x523B;&#x753B;&#x7EBF;&#x4E0B;&#x4F53;&#x91CD;&#x7BA1;&#x7406;&#x6D3B;&#x52A8;&#x3002;&#x8FD9;&#x662F;<strong>&#x793E;&#x4EA4;&#x5A92;&#x4F53;&#x7814;&#x7A76;&#x7684;&#x901A;&#x75C5;</strong></p>
+<h1 id="2-&#x8003;&#x8651;&#x8BC4;&#x8BBA;&#x7684;&#x5E7F;&#x544A;&#x7B56;&#x7565;&#x7684;&#x5B9E;&#x8BC1;&#x7814;&#x7A76;"><a href="#2-&#x8003;&#x8651;&#x8BC4;&#x8BBA;&#x7684;&#x5E7F;&#x544A;&#x7B56;&#x7565;&#x7684;&#x5B9E;&#x8BC1;&#x7814;&#x7A76;" class="headerlink" title="2 &#x8003;&#x8651;&#x8BC4;&#x8BBA;&#x7684;&#x5E7F;&#x544A;&#x7B56;&#x7565;&#x7684;&#x5B9E;&#x8BC1;&#x7814;&#x7A76;"></a>2 &#x8003;&#x8651;&#x8BC4;&#x8BBA;&#x7684;&#x5E7F;&#x544A;&#x7B56;&#x7565;&#x7684;&#x5B9E;&#x8BC1;&#x7814;&#x7A76;</h1><blockquote>
+<p>Hollenbeck, Brett, Sridhar Moorthy, and Davide Proserpio. &#x201C;Advertising Strategy in the Presence of Reviews: An Empirical Analysis.&#x201D; Marketing Science, 2019, 20.</p>
+</blockquote>
+<h2 id="In-a-word-1"><a href="#In-a-word-1" class="headerlink" title="In a word"></a>In a word</h2><p>&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x901A;&#x8FC7;&#x65AD;&#x70B9;&#x56DE;&#x5F52;(RDD)&#x7814;&#x7A76;&#x4E86;&#x7F8E;&#x56FD;&#x9152;&#x5E97;&#x7684;&#x5E7F;&#x544A;&#x652F;&#x51FA;&#x4E0E;&#x7EBF;&#x4E0A;&#x8BC4;&#x5206;&#x7684;&#x5173;&#x7CFB;&#x3002;</p>
+<h2 id="Motivations-amp-Contributions-1"><a href="#Motivations-amp-Contributions-1" class="headerlink" title="Motivations&amp;Contributions"></a>Motivations&amp;Contributions</h2><p>&#x6709;&#x5F88;&#x591A;&#x5B9E;&#x8BC1;&#x7814;&#x7A76;&#x662F;&#x5C06;&#x5E7F;&#x544A;&#x652F;&#x51FA;&#x548C;&#x4EA7;&#x54C1;&#x8D28;&#x91CF;&#x8054;&#x7CFB;&#x8D77;&#x6765;&#x7684;&#xFF0C;&#x8FD8;&#x6CA1;&#x6709;&#x7814;&#x7A76;&#x4F7F;&#x7528;&#x7EBF;&#x4E0A;&#x8BC4;&#x5206;&#x4F5C;&#x4E3A;&#x4EA7;&#x54C1;&#x8D28;&#x91CF;&#x7684;&#x5EA6;&#x91CF;(perceived quality)&#x3002;&#x5E76;&#x4E14;&#xFF0C;&#x8FD9;&#x4E9B;&#x7814;&#x7A76;&#x5F88;&#x591A;&#x662F;&#x7814;&#x7A76;&#x76F8;&#x5173;&#x5173;&#x7CFB;&#x7684;&#xFF0C;&#x6CA1;&#x6709;&#x7814;&#x7A76;&#x56E0;&#x679C;&#x5173;&#x7CFB;&#x3002;</p>
+<h2 id="Data-1"><a href="#Data-1" class="headerlink" title="Data"></a>Data</h2><div class="mermaid">
+graph LR
+data[(database)]--&gt;a[TripAdviser]
+data--&gt;b[KantarMedia]
+data--&gt;c[SpyFu]
+data--&gt;d[STR]
+subgraph hotel info
+a--&gt;a1[hotel name]
+a--&gt;a2[hotel address]
+a--&gt;a3[other properties]
+d--&gt;d1[hotel info: name,address,capacity,class,etc]
+d--&gt;d2[&#x8FDE;&#x9501;&#x9152;&#x5E97;]
+d--&gt;d3[panel of hotel prices]
+end
+subgraph advertisement
+b--&gt;b1[tranditional media]
+b--&gt;b2[internet display]
+c--&gt;c1[online search-Google]
+end
+
+</div>
+
+<h2 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h2><p>&#x9152;&#x5E97;&#x7684;&#x7684;&#x771F;&#x5B9E;&#x8BC4;&#x5206;&#x4F1A;&#x8FDB;&#x884C;&#x56DB;&#x820D;&#x4E94;&#x5165;&#xFF0C;&#x7528;&#x6237;&#x770B;&#x5230;&#x7684;&#x662F;3.0,3.5,4.0,4.5,5.0&#x7C7B;&#x4F3C;&#x7684;&#x8BC4;&#x5206;&#x3002;&#x6240;&#x4EE5;&#x5728;&#x56DB;&#x820D;&#x4E94;&#x5165;&#x9608;&#x503C;&#x9644;&#x8FD1;(&#x5982;3.25,3.75,,4.25,4.75)&#x7684;&#x503C;&#xFF0C;&#x9AD8;&#x4E8E;&#x9608;&#x503C;&#x5219;&#x820D;&#x5165;&#x5230;&#x9AD8;&#x8BC4;&#x5206;&#xFF0C;&#x4F4E;&#x4E8E;&#x9608;&#x503C;&#x5219;&#x820D;&#x5165;&#x5230;&#x4F4E;&#x8BC4;&#x5206;&#x3002;</p>
+<p>&#x5C06;&#x65AD;&#x70B9;&#x5206;&#x522B;&#x8BBE;&#x7F6E;&#x5728;&#x9608;&#x503C;3.25&#xFF0C;3.75&#xFF0C;4.25&#xFF0C;4.75&#x5904;&#xFF0C;&#x8BBE;&#x7F6E;&#x5E26;&#x5BBD;&#x4E3A;0.05&#x9897;&#x661F;&#xFF0C;&#x4E3A;&#x4E86;&#x51CF;&#x5C11;&#x6837;&#x672C;&#x65B9;&#x5DEE;&#xFF0C;&#x4EC5;&#x4F7F;&#x7528;&#x4E86;&#x9152;&#x5E97;&#x7684;&#x8BC4;&#x5206;&#x6570;&#x591A;&#x4E8E;20&#x4E2A;&#x7684;&#x3002;</p>
+<p>&#x56E0;&#x53D8;&#x91CF;&#x4E3A;&#x5E7F;&#x544A;&#x652F;&#x51FA;&#xFF0C;&#x81EA;&#x53D8;&#x91CF;&#x5305;&#x62EC;&#x9608;&#x503C;&#xFF0C;&#x5E73;&#x5747;&#x8BC4;&#x5206;&#xFF0C;&#x56FA;&#x5B9A;&#x6548;&#x5E94;&#x53D8;&#x91CF;&#x548C;&#x968F;&#x673A;&#x8BEF;&#x5DEE;&#x9879;&#x3002;</p>
+<p>&#x6A21;&#x578B;&#x7684;&#x68C0;&#x9A8C;&#xFF1A;</p>
+<ul>
+<li>&#x671F;&#x671B;&#x5E7F;&#x544A;&#x652F;&#x51FA;&#x4E0E;&#x5E73;&#x5747;&#x8BC4;&#x5206;&#x7684;&#x51FD;&#x6570;&#x5173;&#x7CFB;&#x5728;&#x65AD;&#x70B9;&#x5904;&#x662F;&#x8FDE;&#x7EED;&#x7684;&#xFF1B;</li>
+<li>&#x9152;&#x5E97;&#x4E0D;&#x4F1A;&#x64CD;&#x7EB5;&#x5E73;&#x5747;&#x5F97;&#x5206;&#x3002;</li>
+</ul>
+<h2 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h2><p>&#x5728;3.25,4.25,4.75&#x7684;&#x65AD;&#x70B9;&#x5904;&#xFF0C;&#x6709;&#x660E;&#x663E;&#x7684;&#x7684;&#x622A;&#x8DDD;&#x5DEE;&#x5F02;&#xFF0C;&#x8868;&#x660E;&#x5728;&#x65AD;&#x70B9;&#x5904;&#x8BC4;&#x5206;&#x7684;&#x8DF3;&#x8DC3;&#x5F0F;&#x589E;&#x957F;(+0.5)&#x5BFC;&#x81F4;&#x4E86;&#x5E7F;&#x544A;&#x652F;&#x51FA;&#x7684;&#x4E0B;&#x964D;&#x3002;</p>
+<p>&#x968F;&#x540E;&#xFF0C;&#x4F5C;&#x8005;&#x53C8;&#x5206;&#x522B;&#x68C0;&#x9A8C;&#x4E86;&#x5728;&#x63A7;&#x5236;&#x5E7F;&#x544A;&#x5A92;&#x4F53;&#x7684;&#x7C7B;&#x578B;&#x3001;&#x9152;&#x5E97;&#x7C7B;&#x578B;&#x3001;&#x5E02;&#x573A;&#x5DEE;&#x5F02;&#x5316;&#x56E0;&#x7D20;&#x3001;&#x65F6;&#x95F4;&#x6548;&#x5E94;&#xFF08;early versus late&#xFF09;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8BC4;&#x5206;&#x7684;&#x8DF3;&#x8DC3;&#x5F0F;&#x589E;&#x957F;&#x4E0E;&#x5E7F;&#x544A;&#x652F;&#x51FA;&#x7684;&#x5173;&#x7CFB;(&#x56E0;&#x679C;&#x5173;&#x7CFB;)&#x3002;</p>
+<p>&#x6700;&#x540E;&#x4F5C;&#x8005;&#x8FDB;&#x884C;&#x4E86;&#x9C81;&#x68D2;&#x6027;&#x68C0;&#x9A8C;&#xFF0C;&#x5305;&#x62EC;Placebo test(&#x5C06;&#x65AD;&#x70B9;&#x8BBE;&#x5728;&#x522B;&#x5904;&#xFF0C;&#x8BC1;&#x660E;&#x4E4B;&#x524D;&#x8BBE;&#x7F6E;&#x7684;&#x65AD;&#x70B9;&#x662F;&#x6709;&#x6548;&#x7684;)&#x3001;&#x4E8C;&#x6B21;&#x591A;&#x9879;&#x5F0F;&#x4F30;&#x8BA1;&#x7B49;</p>
+<blockquote>
+<p>RDD&#x7684;&#x4F7F;&#x7528;&#x60C5;&#x666F;&#x3001;&#x68C0;&#x9A8C;&#x65B9;&#x6CD5;&#x7B49;&#x8FD8;&#x9700;&#x8981;&#x8FDB;&#x4E00;&#x6B65;&#x5B66;&#x4E60;</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://xuestrange.github.io/2020/10/06/%E8%AE%BA%E6%96%871010/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.png">
+      <meta itemprop="name" content="Wu Li">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WU Li's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/06/%E8%AE%BA%E6%96%871010/" class="post-title-link" itemprop="url">论文1010</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-10-06 00:00:00" itemprop="dateCreated datePublished" datetime="2020-10-06T00:00:00+08:00">2020-10-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-10-12 18:39:59" itemprop="dateModified" datetime="2020-10-12T18:39:59+08:00">2020-10-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%8E%9F%E5%88%9B/" itemprop="url" rel="index"><span itemprop="name">原创</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="First"><a href="#First" class="headerlink" title="First"></a>First</h1><p><strong>When You Work with a Superman, Will You Also fly? An Empirical Study of the Impact of Coworkers on Performance</strong></p>
+<blockquote>
+<p>Tan, T.F., Netessine, S., 2019. When You Work with a Superman, Will You Also Fly? An Empirical Study of the Impact of Coworkers on Performance. Management Science 65, 3495&#x2013;3517. <a target="_blank" rel="noopener" href="https://doi.org/10.1287/mnsc.2018.3135">https://doi.org/10.1287/mnsc.2018.3135</a></p>
+</blockquote>
+<h2 id="Vocabulary"><a href="#Vocabulary" class="headerlink" title="Vocabulary"></a>Vocabulary</h2><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>counterfactual</td>
+<td>&#x8FDD;&#x53CD;&#x4E8B;&#x5B9E;&#x7684;&#xFF0C;&#x865A;&#x62DF;&#x7684;</td>
+<td>homegeneous</td>
+<td>&#x540C;&#x8D28;&#x7684;</td>
+</tr>
+<tr>
+<td>heterogeneous</td>
+<td>&#x5F02;&#x8D28;&#x7684;</td>
+<td>spillover</td>
+<td>&#x6EA2;&#x51FA;</td>
+</tr>
+<tr>
+<td>incorperate</td>
+<td>&#x5305;&#x542B;</td>
+<td>polarize</td>
+<td>&#x4E24;&#x6781;&#x5316;</td>
+</tr>
+<tr>
+<td>reconcile</td>
+<td>&#x534F;&#x8C03;&#x3001;&#x4F7F;&#x4E00;&#x81F4;</td>
+<td>shift</td>
+<td>&#x6392;&#x73ED;</td>
+</tr>
+<tr>
+<td>mutual learning</td>
+<td>&#x5171;&#x540C;&#x5B66;&#x4E60;</td>
+<td>intrateam bargaining</td>
+<td>&#x7EC4;&#x5185;&#x2026;</td>
+</tr>
+<tr>
+<td>proximity</td>
+<td>&#x63A5;&#x8FD1;</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="Content"><a href="#Content" class="headerlink" title="Content"></a>Content</h2><h3 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h3><p>&#x5C3D;&#x7BA1;&#x670D;&#x52A1;&#x4E1A;&#x5728;&#x5168;&#x7403;&#x7ECF;&#x6D4E;&#x4E2D;&#x53D1;&#x6325;&#x7740;&#x8D8A;&#x6765;&#x8D8A;&#x91CD;&#x8981;&#x7684;&#x4F5C;&#x7528;&#xFF0C;&#x4F46;&#x5B83;&#x4EEC;&#x666E;&#x904D;&#x53D7;&#x5230;&#x52B3;&#x52A8;&#x751F;&#x4EA7;&#x7387;&#x4F4E;&#x4E0B;&#x7684;&#x56F0;&#x6270;&#x3002; &#x7ECF;&#x6D4E;&#x5408;&#x4F5C;&#x4E0E;&#x53D1;&#x5C55;&#x7EC4;&#x7EC7;&#xFF08;OECD&#xFF09;&#x7684;&#x4E00;&#x9879;&#x7814;&#x7A76;&#x8868;&#x660E;&#xFF0C;&#x7ECF;&#x5408;&#x7EC4;&#x7EC7;&#x56FD;&#x5BB6;/&#x5730;&#x533A;&#x7684;&#x6279;&#x53D1;&#x548C;&#x96F6;&#x552E;&#x8D38;&#x6613;&#xFF0C;&#x9152;&#x5E97;&#x548C;&#x996D;&#x5E97;&#x7684;&#x52B3;&#x52A8;&#x751F;&#x4EA7;&#x7387;&#x901A;&#x5E38;&#x7EA6;&#x4E3A;&#x5236;&#x9020;&#x4E1A;&#x7B49;&#x5DE5;&#x4E1A;&#x90E8;&#x95E8;&#x7684;&#x56DB;&#x5206;&#x4E4B;&#x4E09;&#xFF08;Freeman 2008&#xFF09;&#xFF0C; &#x4ECE;&#x800C;&#x4E3A;&#x63D0;&#x9AD8;&#x751F;&#x4EA7;&#x7387;&#x521B;&#x9020;&#x4E86;&#x673A;&#x4F1A;&#x3002; &#x8FD9;&#x6837;&#x7684;&#x673A;&#x4F1A;&#x4E4B;&#x4E00;&#x5C31;&#x662F;&#x6709;&#x6548;&#x7684;&#x56E2;&#x961F;&#x7BA1;&#x7406;&#x3002;</p>
+<h3 id="Literature"><a href="#Literature" class="headerlink" title="Literature"></a>Literature</h3><ol>
+<li>Scheduling/Rostering<br>&#x8003;&#x8651;&#x6A21;&#x578B;&#x7684;&#x7B80;&#x5316;&#xFF0C;&#x4F20;&#x7EDF;&#x6A21;&#x578B;&#x5F80;&#x5F80;&#x53D7;&#x4EE5;&#x4E0B;&#x5047;&#x8BBE;&#x7684;&#x7EA6;&#x675F;&#xFF1A;&#x5DE5;&#x4EBA;&#x4E4B;&#x95F4;&#x662F;&#x76F8;&#x4F3C;&#x4E14;&#x5F7C;&#x6B64;&#x72EC;&#x7ACB;&#x7684;&#x3002;&#x800C;&#x6700;&#x8FD1;&#x7684;&#x8FD0;&#x8425;&#x7BA1;&#x7406;&#x7814;&#x7A76;&#x5DF2;&#x7ECF;&#x5F00;&#x53D1;&#x51FA;&#x65B0;&#x65B9;&#x6CD5;&#x6765;&#x7BA1;&#x7406;&#x5404;&#x4E2A;&#x9886;&#x57DF;&#x7684;&#x4E00;&#x7EC4;&#x5F02;&#x7C7B;&#x5DE5;&#x4EBA;&#xFF0C;&#x5305;&#x62EC;&#xFF1A;skill-based routing&#xFF0C;hiring and retention, structural&#x2026;.  &#x540C;&#x6837;&#xFF0C;&#x7814;&#x7A76;&#x4EBA;&#x5458;&#x4E5F;&#x5DF2;&#x5F00;&#x59CB;&#x5C06;&#x5DE5;&#x4EBA;&#x7684;&#x5F02;&#x8D28;&#x6027;&#x7EB3;&#x5165;&#x8BA1;&#x5212;/&#x6392;&#x73ED;&#x51B3;&#x7B56;&#x4E2D;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x8FD9;&#x4E9B;&#x8C03;&#x5EA6;/&#x6392;&#x73ED;&#x65B9;&#x9762;&#x7684;&#x8BBA;&#x6587;&#x90FD;&#x6CA1;&#x6709;&#x8003;&#x8651;&#x5DE5;&#x4EBA;&#x4E4B;&#x95F4;&#x7684;spillover effects&#x3002;</li>
+<li>Peer Effects<ul>
+<li>Positive ~<ul>
+<li>&#x5728;&#x5B9E;&#x9A8C;&#x5BA4;&#x73AF;&#x5883;&#x4E2D;&#xFF0C;Falk&#x548C;Ichino&#xFF08;2006&#xFF09;&#x53D1;&#x73B0;&#xFF0C;&#x7531;&#x4E8E;&#x540C;&#x4F34;&#x538B;&#x529B;&#xFF0C;&#x540C;&#x4F34;&#x6548;&#x5E94;&#x63D0;&#x9AD8;&#x4E86;&#x5DE5;&#x4EBA;&#x7684;&#x4FE1;&#x5C01;&#x586B;&#x5145;&#x751F;&#x4EA7;&#x7387;&#x3002;</li>
+<li>&#x751F;&#x4EA7;&#x7EBF;&#x4E0A;&#x7684;&#x5DE5;&#x4EBA;&#x5C06;&#x4ED6;&#x4EEC;&#x7684;&#x901F;&#x5EA6;&#x8C03;&#x6574;&#x4E3A;&#x540C;&#x4E8B;&#x7684;&#x5E73;&#x5747;&#x901F;&#x5EA6;&#xFF0C;&#x56E0;&#x4E3A;&#x4ED6;&#x4EEC;&#x7684;&#x5DE5;&#x4F5C;&#x7AD9;&#x662F;&#x76F8;&#x4E92;&#x4F9D;&#x8D56;&#x7684;&#x3002;</li>
+<li>&#x5728;&#x6CA1;&#x6709;&#x5916;&#x90E8;&#x56E0;&#x7D20;&#x3001;&#x5DE5;&#x4EBA;&#x83B7;&#x5F97;&#x8BA1;&#x4EF6;&#x5DE5;&#x8D44;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x91C7;&#x6458;&#x6C34;&#x679C;&#x7684;&#x4EBA;&#x4E0E;&#x80FD;&#x529B;&#x66F4;&#x5F3A;&#x7684;&#x670B;&#x53CB;&#x4E00;&#x8D77;&#x5DE5;&#x4F5C;&#x65F6;&#x751F;&#x4EA7;&#x7387;&#x4F1A;&#x63D0;&#x9AD8;&#xFF0C;&#x56E0;&#x4E3A;&#x5DE5;&#x4EBA;&#x66F4;&#x613F;&#x610F;&#x4E0E;&#x670B;&#x53CB;&#x793E;&#x4EA4;</li>
+</ul>
+</li>
+<li>Negative ~<ul>
+<li>&#x5728;&#x9F13;&#x52B1;&#x5B66;&#x751F;&#x4E92;&#x76F8;&#x5B66;&#x4E60;&#x7684;&#x5B66;&#x6821;&#x73AF;&#x5883;&#x4E2D;&#xFF0C;Carrell&#x7B49;&#x4EBA;&#x53D1;&#x73B0;&#x540C;&#x4F34;&#x6548;&#x5E94;&#x5BF9;&#x4F4E;&#x6210;&#x7EE9;&#x7684;&#x5B66;&#x751F;&#x4EA7;&#x751F;&#x4E86;&#x8D1F;&#x9762;&#x5F71;&#x54CD;&#xFF0C;&#x56E0;&#x4E3A;&#x4ED6;&#x4EEC;&#x503E;&#x5411;&#x4E8E;&#x4E0D;&#x4E0E;&#x9AD8;&#x6210;&#x7EE9;&#x7684;&#x5B66;&#x751F;&#x4E92;&#x52A8;&#x3002;</li>
+</ul>
+</li>
+<li>not even exist<ul>
+<li>&#x5206;&#x6790;&#x6BD4;&#x8D5B;&#x4F19;&#x4F34;&#x7684;&#x80FD;&#x529B;&#x662F;&#x5426;&#x4F1A;&#x5F71;&#x54CD;&#x804C;&#x4E1A;&#x9AD8;&#x5C14;&#x592B;&#x7403;&#x624B;&#x534F;&#x4F1A;&#x9AD8;&#x5C14;&#x592B;&#x7403;&#x624B;&#x7684;&#x8868;&#x73B0;&#xFF0C;&#x5E76;&#x4E14;&#x53D1;&#x73B0;&#x4F30;&#x7B97;&#x503C;&#x5728;&#x7EDF;&#x8BA1;&#x4E0A;&#x5FAE;&#x4E0D;&#x8DB3;&#x9053;&#x3002;<h3 id="Contributions"><a href="#Contributions" class="headerlink" title="Contributions"></a>Contributions</h3></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&#x5927;&#x591A;&#x6570;&#x540C;&#x4F34;&#x6548;&#x5E94;&#x7814;&#x7A76;&#x503E;&#x5411;&#x4E8E;&#x96C6;&#x4E2D;&#x4E8E;&#x7EBF;&#x6027;&#x540C;&#x4F34;&#x6548;&#x5E94;&#xFF0C;&#x5176;&#x7ED3;&#x679C;&#x662F;&#x6B63;&#x7684;&#xFF0C;&#x8D1F;&#x7684;&#x6216;&#x65E0;&#x58F0;&#x7684;&#xFF0C;&#x800C;&#x6211;&#x4EEC;&#x7684;&#x7814;&#x7A76;&#x5219;&#x96C6;&#x4E2D;&#x4E8E;&#x975E;&#x7EBF;&#x6027;&#x7684;&#x540C;&#x4F34;&#x6548;&#x5E94;&#xFF0C;&#x8FD9;&#x53EF;&#x4EE5;&#x8C03;&#x548C;&#x4E0A;&#x8FF0;&#x77DB;&#x76FE;&#x7684;&#x53D1;&#x73B0;&#x3002;</li>
+<li>&#x4E3A;&#x4E86;&#x5F25;&#x5408;&#x7ECF;&#x9A8C;&#x5BF9;&#x7B49;&#x6548;&#x5E94;&#x7814;&#x7A76;&#x4E0E;&#x670D;&#x52A1;&#x8FD0;&#x8425;&#x4E2D;&#x6700;&#x4F73;&#x52B3;&#x52A8;&#x51B3;&#x7B56;&#x6587;&#x732E;&#x4E4B;&#x95F4;&#x7684;&#x5DEE;&#x8DDD;&#xFF0C;&#x6211;&#x4EEC;&#x5EFA;&#x7ACB;&#x4E86;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x73B0;&#x5B9E;&#x7684;&#x8C03;&#x5EA6;/&#x6392;&#x73ED;&#x6A21;&#x578B;&#xFF0C;&#x8BE5;&#x6A21;&#x578B;&#x7ED3;&#x5408;&#x4E86;Peer Effects&#x6765;&#x505A;&#x51FA;&#x6700;&#x4F18;&#x8C03;&#x5EA6;&#x51B3;&#x7B56;&#x3002;<h3 id="Hypothesis"><a href="#Hypothesis" class="headerlink" title="Hypothesis"></a>Hypothesis</h3></li>
+<li>H1&#xFF1A;&#x968F;&#x7740;coworkers&#x7684;&#x9500;&#x552E;&#x80FD;&#x529B;&#x7684;&#x63D0;&#x9AD8;&#xFF0C;focal woker&#x7684;&#x9500;&#x552E;&#x4E1A;&#x7EE9;&#x5C06;&#x9996;&#x5148;&#x63D0;&#x9AD8;&#xFF0C;&#x7136;&#x540E;&#x4E0B;&#x964D;&#xFF1A;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x540C;&#x4E8B;&#x7684;&#x80FD;&#x529B;&#x548C;&#x9500;&#x552E;&#x4E1A;&#x7EE9;&#x4E4B;&#x95F4;&#x5B58;&#x5728;&#x5012;U&#x578B;&#x5173;&#x7CFB;&#x3002;</li>
+<li>H2&#xFF1A;&#x79BB;&#x6211;&#x66F4;&#x8FD1;&#x7684;&#x540C;&#x4E8B;&#x6BD4;&#x79BB;&#x6211;&#x8FDC;&#x7684;&#x540C;&#x4E8B;&#x6709;&#x66F4;&#x5F3A;&#x7684;peer effects&#x3002;</li>
+<li>H3&#xFF1A;&#x56E2;&#x961F;&#x4E2D;&#x7684;&#x670D;&#x52A1;&#x5458;&#x7684;&#x5F02;&#x8D28;&#x6027;&#xFF08;Heterogeneity&#xFF09;&#x4F1A;&#x63D0;&#x9AD8;&#x9500;&#x552E;&#x4E1A;&#x7EE9;&#x3002;<h3 id="Data"><a href="#Data" class="headerlink" title="Data"></a>Data</h3>detailed transaction-level data from the restaurant chain&#x2019;s point-of-sales system, which contains pproximately 226,350 check-level observations for three restaurants from January 2011 to June 2012&#x3002;</li>
+</ol>
+<h3 id="Research-Design"><a href="#Research-Design" class="headerlink" title="Research Design"></a>Research Design</h3><ol>
+<li>an instrumental variable approach</li>
+<li>a counterfactual analysis of the sales impact when managers consider the inverted U peer effects on scheduling<h3 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h3></li>
+<li>the inverted U relationship between the sales performance of the focal employee and coworkers&#x2019; sales ability.</li>
+<li>mixing waiters of various ability levels in the same shift is associated with improved financial performance</li>
+<li>when managers consider the inverted U peer effects on  scheduling: a sales increase of approximately 2.48% at no additional cost.<h3 id="Limitations"><a href="#Limitations" class="headerlink" title="Limitations"></a>Limitations</h3></li>
+<li>no social relationships among the coworkers, which have been found in prior work to moderate peer effects.</li>
+<li>lack other service quality data, such as complete tips data and customer satisfaction survey data.<h1 id="Second"><a href="#Second" class="headerlink" title="Second"></a>Second</h1></li>
+</ol>
+<p><strong>The Value of Buy&#x2010;Online&#x2010;and&#x2010;Pickup&#x2010;in&#x2010;Store in Omni&#x2010;Channel: Evidence from Customer Usage Data</strong></p>
+<blockquote>
+<p>Song, P., Wang, Q., Liu, H., Li, Q., 2020. The Value of Buy&#x2010;Online&#x2010;and&#x2010;Pickup&#x2010;in&#x2010;Store in Omni&#x2010;Channel: Evidence from Customer Usage Data. Prod Oper Manag 29, 995&#x2013;1010. <a target="_blank" rel="noopener" href="https://doi.org/10.1111/poms.13146">https://doi.org/10.1111/poms.13146</a></p>
+</blockquote>
+<h2 id="Content-1"><a href="#Content-1" class="headerlink" title="Content"></a>Content</h2><h3 id="Background-1"><a href="#Background-1" class="headerlink" title="Background"></a>Background</h3><p>With the continued growth of sales volumes in online channels, retailers are being pushed to operate omni-channel retailing&#x2014;that is, the synergetic management of various channels and customer touchpoints&#x2014;to enrich customer value and improve operational ef&#xFB01;-ciency.</p>
+<h3 id="Literature-1"><a href="#Literature-1" class="headerlink" title="Literature"></a>Literature</h3><ul>
+<li>existing literature on the topic has applied retailer perspective or analytical models to investigate the value of BOPS.</li>
+<li><font color="red"> few operations management studies have used customer usage data to quantify the impact of BOPS usage on subsequent customer purchase behaviors, nor xamined the critical role of of&#xFB02;ine stores in the value generation of BOPS services. </font></li>
+</ul>
+<h3 id="Contributions-1"><a href="#Contributions-1" class="headerlink" title="Contributions"></a>Contributions</h3><ul>
+<li>Focus on the value of customers&#x2019;s BOPS usage from a behavioral operations perspective &#x2014;&gt; <strong>complements literature</strong></li>
+<li>Focus on the moderating effects of offline store factors.</li>
+<li>Provides practitioners with insights.</li>
+</ul>
+<h3 id="Hypotheses"><a href="#Hypotheses" class="headerlink" title="Hypotheses"></a>Hypotheses</h3><ul>
+<li>BOPS has a positive effect on their online purchase frequency and amount.(information&#xFF0C;experience, saving delivery fee)</li>
+<li>(tactile interactions, unplanned purchases)BOPS has a positive effect on their offline purchase frequency and amount.</li>
+<li><strong>offline store density</strong> weekens BOPS usage in online purchase frequency and amount.</li>
+<li><strong>offline store density</strong> enhances BOPS usage in offline purchase frequency and amount.</li>
+<li><strong>product variety in pickup stores</strong> has a positive effect on online purchase and amount.</li>
+<li><strong>product variety in pickup stores</strong> has a positive effect on offline purchase and amount.</li>
+<li><strong>store competition density</strong> weakens OPS usage in online purchase frequency and amount.</li>
+<li><strong>store competition density</strong> weakens OPS usage in offline purchase frequency and amount.</li>
+</ul>
+<h3 id="Data-1"><a href="#Data-1" class="headerlink" title="Data"></a>Data</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">  A[(database)]</span><br><span class="line">  A-- four cities &amp; monthly agg --&gt;C[(detailed transaction data in the omni-channel)]</span><br><span class="line">  A--&gt;D[(objective data about the store)]</span><br></pre></td></tr></table></figure>
+
+<h3 id="Research-Design-1"><a href="#Research-Design-1" class="headerlink" title="Research Design"></a>Research Design</h3><ul>
+<li><input disabled type="checkbox"> field experiment :x:</li>
+<li><input checked disabled type="checkbox"> propensity score match and difference-in-difference :heavy_check_mark:</li>
+</ul>
+<p>Customers using BOPS comprised the treatment group, while customers who did not use BOPS comprised the control group.</p>
+<ol>
+<li><p>two models</p>
+<ul>
+<li>DID without moderator variable</li>
+<li>with moderating effects without control group<br>where moderator variable is</li>
+<li>$ StoreDensity $ 5km</li>
+<li>$ StoreProductVariety $ unique products offline</li>
+<li>$ StoreCompetition $ 5km</li>
+</ul>
+</li>
+<li><p>model check</p>
+<ul>
+<li>multi-collineatity &#x591A;&#x91CD;&#x5171;&#x7EBF;&#x6027;<ul>
+<li>Variance Inflation Factors: &#x65B9;&#x5DEE;&#x81A8;&#x80C0;&#x56E0;&#x5B50;</li>
+</ul>
+</li>
+<li>series correlation &#x5E8F;&#x5217;&#x76F8;&#x5173;&#x6027;<ul>
+<li>Durbin-Watson test</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="Results-1"><a href="#Results-1" class="headerlink" title="Results"></a>Results</h3><p>with the coefficients of solved models, we get:</p>
+<ul>
+<li>H1,H2 partially supported</li>
+<li>H3 are fully supported</li>
+<li>H4 was partially supported</li>
+<li>H5 was supported</li>
+<li>H6 was not supported<ul>
+<li>potential explanation: product variety online is much larger than that of pickup stores.</li>
+</ul>
+</li>
+<li>H7 fully opposite</li>
+<li>H8 partially supported</li>
+</ul>
+<h4 id="Rubustness-Check"><a href="#Rubustness-Check" class="headerlink" title="Rubustness Check"></a>Rubustness Check</h4><ol>
+<li>time window<ul>
+<li>3 months for pre or post &#x2013;&gt; 2 months</li>
+</ul>
+</li>
+<li>offline store density<ul>
+<li>5km &#x2013;&gt; 10km</li>
+</ul>
+</li>
+<li>product variety<ul>
+<li>unique product selling &#x2013;&gt; number of product categories</li>
+</ul>
+</li>
+<li>propensity score match<ul>
+<li>included pre-period purchase frequency and amount</li>
+</ul>
+</li>
+<li>treatment group<ul>
+<li>only have used BOPS once</li>
+</ul>
+</li>
+<li>store type</li>
+<li>overlap about BOPS usage</li>
+<li>placebo test<ul>
+<li>&#x5B89;&#x6170;&#x5242;&#x68C0;&#x9A8C;&#xFF1F;&#xFF1F;&#xFF1F;</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>&#x201C;A neutral treatment that has no &#x201C;real&#x201D; effect on the dependent variable is called a placebo&#x201D;<br>i.e. &#x68C0;&#x6D4B;&#x836F;&#x7269;&#x662F;&#x5426;&#x6709;&#x6548;&#xFF1A;<br>Plan A: group A &#x5403;&#x836F;&#xFF1B;<br>Plan B: group B &#x5403;&#x7CD6;&#xFF1B;&#xFF08;placebo&#xFF09;<br>Plan C: group C &#x5565;&#x90FD;&#x4E0D;&#x5403;&#xFF1B;<br>&#x82E5;&#x5403;&#x7CD6;&#x6709;&#x5229;&#x4E8E;&#x5EB7;&#x590D;(&#x4E5F;&#x8BB8;&#x662F;&#x5FC3;&#x60C5;&#x597D;&#x4E86;)&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x4EA7;&#x751F;&#x4E86;placebo effect.</p>
+</blockquote>
+<h3 id="Additional-Insights"><a href="#Additional-Insights" class="headerlink" title="Additional Insights"></a>Additional Insights</h3><ul>
+<li>channel preference &amp; BOPS experience</li>
+<li>economic impact</li>
+</ul>
+<h3 id="Limitation"><a href="#Limitation" class="headerlink" title="Limitation"></a>Limitation</h3><ul>
+<li>one hybrid retailer</li>
+<li>time gap</li>
+</ul>
+<ul>
+<li>BOPS service launched in 2013, but the data wo used is in 2015</li>
+</ul>
+<ul>
+<li>how BOPS usage leads to such reactions?</li>
+<li>the secondary data hh.</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://xuestrange.github.io/2020/10/01/PSM-DID/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.png">
+      <meta itemprop="name" content="Wu Li">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WU Li's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/01/PSM-DID/" class="post-title-link" itemprop="url">PSM-DID</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-10-01 00:00:00" itemprop="dateCreated datePublished" datetime="2020-10-01T00:00:00+08:00">2020-10-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-10-21 14:46:57" itemprop="dateModified" datetime="2020-10-21T14:46:57+08:00">2020-10-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%8E%9F%E5%88%9B/" itemprop="url" rel="index"><span itemprop="name">原创</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Pooled-Cross-Section-and-Panel-Data"><a href="#Pooled-Cross-Section-and-Panel-Data" class="headerlink" title="Pooled Cross Section and Panel Data"></a>Pooled Cross Section and Panel Data</h1><p>&#x9762;&#x677F;&#x6570;&#x636E;&#xFF1A;&#x5BF9;&#x6BCF;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x7684;&#x89C2;&#x5BDF;<br>&#x4F8B;&#x5982;&#xFF1A;&#x7EDF;&#x8BA1;&#x9AD8;&#x4E2D;26&#x73ED;&#x540C;&#x5B66;&#x7684;&#x5B66;&#x751F;&#x7684;&#x9AD8;&#x8003;&#x6210;&#x7EE9;&#x4E0E;&#x5E73;&#x65F6;&#x7684;&#x4F5C;&#x606F;&#xFF0C;&#x662F;&#x5426;&#x8FD0;&#x52A8;&#xFF0C;&#x662F;&#x5426;&#x8DD1;&#x6821;&#xFF0C;&#x5BB6;&#x5EAD;&#x80CC;&#x666F;&#xFF0C;&#x751F;&#x6E90;&#x5730;&#xFF0C;&#x6027;&#x522B;&#x7B49;&#x6307;&#x6807;&#x662F;&#x5426;&#x6709;&#x5173;&#x7CFB;&#xFF0C;&#x4E3A;&#x4E86;&#x7814;&#x7A76;&#x9700;&#x8981;&#xFF0C;&#x4E09;&#x5E74;&#x4E2D;&#x6BCF;&#x4E00;&#x5E74;&#x90FD;&#x5BF9;26&#x73ED;&#x7684;&#x6BCF;&#x4F4D;&#x540C;&#x5B66;&#x90FD;&#x7EDF;&#x8BA1;&#x4E00;&#x6B21;&#x4E0A;&#x8FF0;&#x6307;&#x6807;&#xFF0C;&#x4E09;&#x5E74;&#x5F97;&#x5230;&#x7684;&#x7ED3;&#x679C;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x9762;&#x677F;&#x6570;&#x636E;&#x96C6;&#x3002;<br>&#x6DF7;&#x5408;&#x6A2A;&#x622A;&#x9762;&#x6570;&#x636E;&#xFF1A;&#x5BF9;&#x540C;&#x4E00;&#x7C7B;&#x5BF9;&#x8C61;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x7684;&#x89C2;&#x5BDF;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x524D;&#x540E;&#x53EF;&#x80FD;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x3002;<br>&#x4F8B;&#x5982;&#xFF1A;&#x7EDF;&#x8BA1;&#x67D0;&#x9AD8;&#x4E2D;&#x7684;&#x5B66;&#x751F;&#x7684;&#x9AD8;&#x8003;&#x6210;&#x7EE9;&#x4E0E;&#x5E73;&#x65F6;&#x7684;&#x4F5C;&#x606F;&#xFF0C;&#x662F;&#x5426;&#x8FD0;&#x52A8;&#xFF0C;&#x662F;&#x5426;&#x8DD1;&#x6821;&#xFF0C;&#x5BB6;&#x5EAD;&#x80CC;&#x666F;&#xFF0C;&#x751F;&#x6E90;&#x5730;&#xFF0C;&#x6027;&#x522B;&#x7B49;&#x6307;&#x6807;&#x662F;&#x5426;&#x6709;&#x5173;&#x7CFB;&#xFF0C;&#x4E3A;&#x4E86;&#x7814;&#x7A76;&#x9700;&#x8981;&#xFF0C;&#x4E09;&#x5E74;&#x4E2D;&#x6BCF;&#x4E00;&#x5E74;&#x90FD;&#x4ECE;&#x6BCF;&#x4E2A;&#x73ED;&#x968F;&#x673A;&#x62BD;&#x53D6;&#x4E00;&#x4F4D;&#x540C;&#x5B66;&#xFF0C;&#x7EDF;&#x8BA1;&#x4E0A;&#x8FF0;&#x6307;&#x6807;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x540C;&#x6837;&#x662F;26&#x73ED;&#x7684;&#x540C;&#x5B66;&#xFF0C;&#x53BB;&#x5E74;&#x62BD;&#x5230;&#x7684;&#x548C;&#x4ECA;&#x5E74;&#x62BD;&#x5230;&#x7684;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x4E09;&#x5E74;&#x540E;&#x5F97;&#x5230;&#x7684;&#x7ED3;&#x679C;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x6DF7;&#x5408;&#x6A2A;&#x622A;&#x9762;&#x6570;&#x636E;&#x96C6;&#x3002;</p>
+<h1 id="Propensity-Score-Match"><a href="#Propensity-Score-Match" class="headerlink" title="Propensity Score Match"></a>Propensity Score Match</h1><blockquote>
+<p>R &#x5305;<br>install.packages(c(&#x2018;MatchIt&#x2019;,&#x2019;tableone&#x2019;))</p>
+</blockquote>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h1 id="Difference-in-Difference"><a href="#Difference-in-Difference" class="headerlink" title="Difference in Difference"></a>Difference in Difference</h1>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://xuestrange.github.io/2020/09/20/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6%E7%AC%AC%E4%B8%80%E7%AB%A0%E7%BB%AA%E8%AE%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.png">
+      <meta itemprop="name" content="Wu Li">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WU Li's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/20/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6%E7%AC%AC%E4%B8%80%E7%AB%A0%E7%BB%AA%E8%AE%BA/" class="post-title-link" itemprop="url">计量经济学第一章绪论</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-09-20 00:00:00 / Modified: 11:25:58" itemprop="dateCreated datePublished" datetime="2020-09-20T00:00:00+08:00">2020-09-20</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%8E%9F%E5%88%9B/" itemprop="url" rel="index"><span itemprop="name">原创</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="&#x8BA1;&#x91CF;&#x7ECF;&#x6D4E;&#x5B66;"><a href="#&#x8BA1;&#x91CF;&#x7ECF;&#x6D4E;&#x5B66;" class="headerlink" title="&#x8BA1;&#x91CF;&#x7ECF;&#x6D4E;&#x5B66;"></a>&#x8BA1;&#x91CF;&#x7ECF;&#x6D4E;&#x5B66;</h1><p>Econometrics</p>
+<ul>
+<li>&#x6570;&#x7406;&#x7ECF;&#x6D4E;&#x6A21;&#x578B;&#xFF1A;&#x7528;&#x6570;&#x5B66;&#x7406;&#x8BBA;&#x89E3;&#x91CA;&#x7ECF;&#x6D4E;&#x95EE;&#x9898;&#xFF0C;&#x4F46;&#x662F;&#x5E76;&#x6CA1;&#x6709;&#x89E3;&#x91CA;&#x5B9A;&#x91CF;&#x5173;&#x7CFB;</li>
+<li>&#x8BA1;&#x91CF;&#x7ECF;&#x6D4E;&#x5B66;&#x6A21;&#x578B;&#xFF1A;&#x63ED;&#x793A;&#x5B9A;&#x91CF;&#x5173;&#x7CFB;</li>
+</ul>
+<h2 id="&#x786E;&#x5B9A;&#x7ECF;&#x5178;&#x5355;&#x65B9;&#x7A0B;&#x8BA1;&#x91CF;&#x7ECF;&#x6D4E;&#x5B66;&#x6A21;&#x578B;&#x7684;&#x6B65;&#x9AA4;&#x548C;&#x8981;&#x70B9;"><a href="#&#x786E;&#x5B9A;&#x7ECF;&#x5178;&#x5355;&#x65B9;&#x7A0B;&#x8BA1;&#x91CF;&#x7ECF;&#x6D4E;&#x5B66;&#x6A21;&#x578B;&#x7684;&#x6B65;&#x9AA4;&#x548C;&#x8981;&#x70B9;" class="headerlink" title="&#x786E;&#x5B9A;&#x7ECF;&#x5178;&#x5355;&#x65B9;&#x7A0B;&#x8BA1;&#x91CF;&#x7ECF;&#x6D4E;&#x5B66;&#x6A21;&#x578B;&#x7684;&#x6B65;&#x9AA4;&#x548C;&#x8981;&#x70B9;"></a>&#x786E;&#x5B9A;&#x7ECF;&#x5178;&#x5355;&#x65B9;&#x7A0B;&#x8BA1;&#x91CF;&#x7ECF;&#x6D4E;&#x5B66;&#x6A21;&#x578B;&#x7684;&#x6B65;&#x9AA4;&#x548C;&#x8981;&#x70B9;</h2><h3 id="&#x7406;&#x8BBA;&#x6A21;&#x578B;&#x7684;&#x8BBE;&#x8BA1;"><a href="#&#x7406;&#x8BBA;&#x6A21;&#x578B;&#x7684;&#x8BBE;&#x8BA1;" class="headerlink" title="&#x7406;&#x8BBA;&#x6A21;&#x578B;&#x7684;&#x8BBE;&#x8BA1;"></a>&#x7406;&#x8BBA;&#x6A21;&#x578B;&#x7684;&#x8BBE;&#x8BA1;</h3><ol>
+<li>&#x9009;&#x62E9;&#x53D8;&#x91CF;</li>
+<li>&#x786E;&#x5B9A;&#x6570;&#x5B66;&#x5173;&#x7CFB;</li>
+<li>&#x786E;&#x5B9A;&#x53C2;&#x6570;&#x7684;&#x53D6;&#x503C;&#x8303;&#x56F4;</li>
+</ol>
+<p>&#x53D8;&#x91CF;&#x7684;&#x9009;&#x53D6;&#x89C4;&#x5219;&#xFF1A;</p>
+<ul>
+<li>&#x6B63;&#x786E;&#x628A;&#x63E1;&#x7ECF;&#x6D4E;&#x73B0;&#x8C61;&#x4E2D;&#x6697;&#x542B;&#x7684;&#x7ECF;&#x6D4E;&#x5B66;&#x7406;&#x8BBA;&#x548C;&#x7ECF;&#x6D4E;&#x884C;&#x4E3A;&#x89C4;&#x5F8B;</li>
+</ul>
+<p><em>&#x6240;&#x9009;&#x53D8;&#x91CF;&#x4E0E;&#x7ECF;&#x6D4E;&#x884C;&#x4E3A;&#x662F;&#x5426;&#x6709;&#x5173;</em></p>
+<ul>
+<li>&#x8003;&#x8651;&#x6570;&#x636E;&#x7684;&#x53EF;&#x83B7;&#x5F97;&#x6027;</li>
+<li>&#x9009;&#x62E9;&#x53D8;&#x91CF;&#x662F;&#x8981;&#x8003;&#x8651;&#x6240;&#x6709;&#x5165;&#x9009;&#x53D8;&#x91CF;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#xFF0C;&#x4F7F;&#x6BCF;&#x4E2A;&#x53D8;&#x91CF;&#x90FD;&#x662F;&#x72EC;&#x7ACB;&#x7684;<ul>
+<li>&#x53D8;&#x91CF;&#x7684;&#x9009;&#x62E9;&#x9700;&#x8981;&#x53CD;&#x590D;&#x591A;&#x6B21;&#x8FDB;&#x884C;</li>
+<li><font color="red"> &#x62DF;&#x5408;&#x7A0B;&#x5EA6;&#x4E0D;&#x80FD;&#x7528;&#x6765;&#x5224;&#x65AD;&#x6A21;&#x578B;&#x53D8;&#x91CF;&#x9009;&#x62E9;&#x662F;&#x5426;&#x6B63;&#x786E; </font></li>
+</ul>
+</li>
+</ul>
+<p>&#x4E0D;&#x80FD;&#x901A;&#x8FC7;&#x7ECF;&#x6D4E;&#x610F;&#x4E49;&#x68C0;&#x9A8C;&#x7684;&#x8BA1;&#x91CF;&#x7ECF;&#x6D4E;&#x5B66;&#x6A21;&#x578B;&#x6CA1;&#x6709;&#x5229;&#x7528;&#x4EF7;&#x503C;&#x3002;</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://xuestrange.github.io/2020/09/19/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6%E7%AC%AC%E4%BA%8C%E7%AB%A0%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.png">
+      <meta itemprop="name" content="Wu Li">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WU Li's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/19/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6%E7%AC%AC%E4%BA%8C%E7%AB%A0%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/" class="post-title-link" itemprop="url">计量经济学第二章一元线性回归模型</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-09-19 00:00:00" itemprop="dateCreated datePublished" datetime="2020-09-19T00:00:00+08:00">2020-09-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-09-21 19:37:25" itemprop="dateModified" datetime="2020-09-21T19:37:25+08:00">2020-09-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%8E%9F%E5%88%9B/" itemprop="url" rel="index"><span itemprop="name">原创</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="&#x4E00;&#x822C;&#x5F62;&#x5F0F;"><a href="#&#x4E00;&#x822C;&#x5F62;&#x5F0F;" class="headerlink" title="&#x4E00;&#x822C;&#x5F62;&#x5F0F;"></a>&#x4E00;&#x822C;&#x5F62;&#x5F0F;</h1><p>&#x5047;&#x8BBE;&#x603B;&#x4F53;&#x4E2D;&#x53D8;&#x91CF;&#x4E4B;&#x95F4;&#x5173;&#x7CFB;&#x670D;&#x4ECE;&#xFF1A;</p>
+<p>$$ y= \beta_0+\beta_1 x+u $$</p>
+<ul>
+<li>$ y $ named dependent variable, explained variable, response</li>
+<li>$ x $ named independent variable,explainatory variable, predictor</li>
+<li>$ \beta_0 $ intercept parameter&#xFF0C;&#x622A;&#x8DDD;</li>
+<li>$ \beta_1 $ slope parameter&#xFF0C;&#x659C;&#x7387;</li>
+<li>$ u $ error term&#xFF0C; disturbance, &#x8BEF;&#x5DEE;&#x9879;</li>
+</ul>
+<p>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x5F97;&#x5230;&#x4E86;&#x4E00;&#x4E9B;&#x6837;&#x672C;(Sample) $ {x_i,y_i} $&#x6765;&#x4F30;&#x8BA1;&#x6A21;&#x578B;&#x4E2D;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x5728;&#x4F30;&#x8BA1;&#x4E4B;&#x524D;&#xFF0C;&#x9700;&#x8981;&#x5BF9;&#x6A21;&#x578B;&#x505A;&#x51FA;&#x82E5;&#x5E72;&#x5047;&#x8BBE;&#xFF0C;&#x5047;&#x8BBE;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p>$$ E(u)=0 $$</p>
+<p>$ u $&#x4E0E; $ x $&#x4E0D;&#x76F8;&#x5173;(&#x4E0D;&#x5B58;&#x5728;&#x7EBF;&#x6027;&#x5173;&#x7CFB;)&#xFF0C;&#x5373;&#x7ED9;&#x5B9A; $ x $, $ u $&#x7684;&#x5747;&#x503C;&#x4E0E; $ x $&#x65E0;&#x5173;&#xFF0C;&#x5373; <strong>&#x96F6;&#x6761;&#x4EF6;&#x5747;&#x503C;&#x5047;&#x8BBE;</strong></p>
+<p>$$ E(u|x)=E(u) $$</p>
+<p>&#x6839;&#x636E;&#x4EE5;&#x4E0A;&#x4E24;&#x6761;&#x5047;&#x8BBE;&#xFF0C;&#x53EF;&#x4EE5;&#x63A8;&#x5BFC;&#x51FA; <strong>&#x603B;&#x4F53;&#x56DE;&#x5F52;&#x51FD;&#x6570;</strong>(Population Regression Function, PRF),</p>
+<p>$$ E(y|x)=\beta_0+\beta_1 x $$</p>
+<h1 id="&#x5047;&#x8BBE;"><a href="#&#x5047;&#x8BBE;" class="headerlink" title="&#x5047;&#x8BBE;"></a>&#x5047;&#x8BBE;</h1><ol>
+<li><p>&#x56DE;&#x5F52;&#x6A21;&#x578B;&#x662F;&#x6B63;&#x786E;&#x8BBE;&#x5B9A;&#x7684;<br>&#x603B;&#x4F53;&#x670D;&#x4ECE;&#x4EE5;&#x4E0B;&#x5173;&#x7CFB;&#xFF0C; $ x,y $&#x90FD;&#x662F;&#x968F;&#x673A;&#x53D8;&#x91CF;<br>$$ y=\beta_0+\beta_1 x+u $$</p>
+<ul>
+<li>&#x6A21;&#x578B;&#x9009;&#x62E9;&#x4E86;&#x6B63;&#x786E;&#x7684;&#x53D8;&#x91CF;</li>
+<li>&#x6A21;&#x578B;&#x9009;&#x62E9;&#x4E86;&#x6B63;&#x786E;&#x7684;&#x51FD;&#x6570;&#x5F62;&#x5F0F;(&#x8BBE;&#x7ACB;&#x7684;&#x4E00;&#x5143;&#x7EBF;&#x6027;&#x56DE;&#x5F52;&#x6A21;&#x578B;&#x4E0E;&#x7ECF;&#x6D4E;&#x7406;&#x8BBA;&#x4E00;&#x81F4;)</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>&#x5F53;&#x8BE5;&#x5047;&#x8BBE;&#x6EE1;&#x8DB3;&#x65F6;&#xFF0C;&#x5C31;&#x8BF4;&#x660E;&#x6A21;&#x578B;&#x6CA1;&#x6709; <strong>&#x8BBE;&#x5B9A;&#x504F;&#x8BEF;(Specification error)</strong></p>
+</blockquote>
+<ol start="2">
+<li>&#x968F;&#x673A;&#x62BD;&#x6837;<br>&#x5BB9;&#x91CF;&#x4E3A; $ n $&#x7684; &#x968F;&#x673A;&#x6837;&#x672C;{(x_i,y_i)}&#x662F;&#x4ECE;&#x603B;&#x4F53;&#x968F;&#x673A;&#x62BD;&#x6837;&#x5F97;&#x5230;&#x7684;</li>
+<li>&#x89E3;&#x91CA;&#x53D8;&#x91CF;&#x7684;&#x6837;&#x672C;&#x6709;&#x53D8;&#x5F02;<br>$$ {x_i,i=1,2,\dots,n} $$ &#x4E0D;&#x662F;&#x4E00;&#x6837;&#x7684;</li>
+</ol>
+<ol start="4">
+<li>&#x968F;&#x673A;&#x8BEF;&#x5DEE;&#x9879; $ u $ &#x5177;&#x6709;&#x5728;&#x7ED9;&#x5B9A; $ X $&#x6761;&#x4EF6;&#x4E0B;&#x7684;&#x96F6;&#x5747;&#x503C;&#x3001;&#x540C;&#x65B9;&#x5DEE;&#x3001;&#x4E0D;&#x5E8F;&#x5217;&#x76F8;&#x5173;&#x6027;</li>
+</ol>
+<p>$$ E(u|x)=0 $$<br>$$ Var(u|x)=\sigma^2 $$</p>
+<p>&#x4EE5;&#x4E0A;&#x56DB;&#x6761;&#x5047;&#x8BBE;&#x6210;&#x4E3A; <strong>&#x9AD8;&#x65AF;&#x2014;&#x9A6C;&#x5C14;&#x79D1;&#x592B;&#x5047;&#x8BBE;</strong></p>
+<ol start="5">
+<li>&#x968F;&#x673A;&#x8BEF;&#x5DEE;&#x9879;&#x4E0E;&#x89E3;&#x91CA;&#x53D8;&#x91CF;&#x95F4;&#x4E0D;&#x76F8;&#x5173;</li>
+</ol>
+<p>$$ Cov(x,u)=E(xu)-E(x)E(u)=E(xu)=0 $$</p>
+<ol start="6">
+<li>&#x968F;&#x673A;&#x8BEF;&#x5DEE;&#x9879;&#x670D;&#x4ECE;&#x5747;&#x503C;&#x4E3A;0&#xFF0C;&#x65B9;&#x5DEE;&#x4E3A; $ \sigma^2 $&#x7684;&#x6B63;&#x6001;&#x5206;&#x5E03;</li>
+</ol>
+<p>$$ u \sim N(0&#xFF0C;\sigma^2) $$</p>
+<blockquote>
+<p>&#x5047;&#x8BBE;6&#x5728;&#x5C0F;&#x6837;&#x672C;&#x65F6;&#x5F88;&#x91CD;&#x8981;&#xFF0C;&#x5927;&#x6837;&#x672C;&#x65F6;&#x53CD;&#x800C;&#x8BA9;&#x6CA1;&#x6709;&#x90A3;&#x4E48;&#x91CD;&#x8981;(<strong>&#x4E2D;&#x5FC3;&#x6781;&#x9650;&#x5B9A;&#x7406;</strong>)</p>
+</blockquote>
+<h1 id="&#x53C2;&#x6570;&#x6C42;&#x89E3;&#x65B9;&#x6CD5;"><a href="#&#x53C2;&#x6570;&#x6C42;&#x89E3;&#x65B9;&#x6CD5;" class="headerlink" title="&#x53C2;&#x6570;&#x6C42;&#x89E3;&#x65B9;&#x6CD5;"></a>&#x53C2;&#x6570;&#x6C42;&#x89E3;&#x65B9;&#x6CD5;</h1><h2 id="OLS"><a href="#OLS" class="headerlink" title="OLS"></a>OLS</h2><p>&#x96F6;&#x6761;&#x4EF6;&#x5747;&#x503C;&#x5047;&#x8BBE;&#x8868;&#x660E; $ x $, $ u $&#x4E4B;&#x95F4;&#x7684;&#x4E0D;&#x5B58;&#x5728;&#x7EBF;&#x6027;&#x5173;&#x7CFB;&#xFF0C;&#x5373;&#x534F;&#x65B9;&#x5DEE;&#x4E3A;0&#xFF0C;&#x5219;&#x6709;&#xFF1A;</p>
+<p>$$ Cov(x,u)=E(xu)-E(x)E(u)=0 $$</p>
+<p>&#x5373;&#xFF1A;</p>
+<p>$$ E(xu)=0 $$</p>
+<p>&#x518D;&#x8054;&#x5408; $ E(u)=0 $&#x53EF;&#x4EE5;&#x63A8;&#x5BFC;&#x51FA; $ \beta_0, \beta_1$&#x7684;&#x4F30;&#x8BA1;&#x503C; $ \hat{\beta_0}, \hat{\beta_1} $&#xFF08;&#x8FD9;&#x4E24;&#x4E2A;&#x5F0F;&#x5B50;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x6B8B;&#x5DEE;&#x5E73;&#x65B9;&#x548C;&#x5206;&#x522B;&#x6C42;&#x504F;&#x5BFC;&#x7B49;&#x4E8E;0&#x65F6;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x56E0;&#x6B64;&#x6700;&#x5C0F;&#x5316;&#x4E86;&#x6B8B;&#x5DEE;&#x5E73;&#x65B9;&#x548C;&#xFF09;, &#x4ED6;&#x4EEC;&#x4E5F;&#x53EB;&#x4F5C;&#x666E;&#x901A;&#x6700;&#x5C0F;&#x4E8C;&#x4E58;&#x4F30;&#x8BA1;&#x503C;(OLS), &#x5F97;&#x5230;&#x7684;&#x62DF;&#x5408;&#x503C; $ \hat{y} $&#x4E3A;&#xFF1A;</p>
+<p>$$ \hat{y}=\hat{\beta_0}+\hat{\beta_1} x $$</p>
+<p>&#x5B83;&#x4E5F;&#x88AB;&#x53EB;&#x505A;<strong>OLS&#x56DE;&#x5F52;&#x7EBF;</strong>(OLS Regression Line)&#x6216; <strong>&#x6837;&#x672C;&#x56DE;&#x5F52;&#x51FD;&#x6570;</strong>(Sample Regression Function, SRF)&#xFF1A;</p>
+<p>&#x6B8B;&#x5DEE;(residual)&#x4E3A;&#xFF1A;</p>
+<p>$$ \hat{u}=y-\hat{y} \text{ for each observations}$$</p>
+<h2 id="OLS-&#x7684;&#x4EE3;&#x6570;&#x6027;&#x8D28;"><a href="#OLS-&#x7684;&#x4EE3;&#x6570;&#x6027;&#x8D28;" class="headerlink" title="OLS &#x7684;&#x4EE3;&#x6570;&#x6027;&#x8D28;"></a>OLS &#x7684;&#x4EE3;&#x6570;&#x6027;&#x8D28;</h2><p>(1) &#x6B8B;&#x5DEE;&#x4E4B;&#x548C;&#x548C;&#x6B8B;&#x5DEE;&#x5747;&#x503C;&#x4E3A;0</p>
+<p>$$ E(\hat{u})=0 $$</p>
+<p>$$ \sum_{i=1}^{n}\hat{u}_i=0 $$</p>
+<p>(2) &#x81EA;&#x53D8;&#x91CF;&#x7684;&#x6837;&#x672C; $ x_1,x_2,\dots,x_n $&#x4E0E;&#x6B8B;&#x5DEE; $ u_1,u_2,\dots,u_n $&#x534F;&#x65B9;&#x5DEE;&#x4E3A;0&#xFF0C;&#x76F8;&#x5173;&#x7CFB;&#x6570;&#x4E3A;0</p>
+<p>(3) &#x70B9; $ (\bar{x},\bar{y}) $&#x603B;&#x5728;OSL&#x56DE;&#x5F52;&#x7EBF;&#x4E0A;&#x3002;</p>
+<h2 id="ML-Maximum-Likilihood"><a href="#ML-Maximum-Likilihood" class="headerlink" title="ML ( Maximum Likilihood)"></a>ML ( Maximum Likilihood)</h2><p>&#x539F;&#x7406;</p>
+<blockquote>
+<p>&#x5F53;&#x4ECE;&#x6A21;&#x578B;&#x603B;&#x4F53;&#x968F;&#x673A;&#x62BD;&#x53D6; $ n $&#x7EC4;&#x6837;&#x672C;&#x89C2;&#x6D4B;&#x503C;&#x540E;&#xFF0C;&#x6700;&#x5408;&#x7406;&#x7684;&#x53C2;&#x6570;&#x4F30;&#x8BA1;&#x91CF;&#x5E94;&#x8BE5;&#x4F7F;&#x5F97;&#x4ECE;&#x6A21;&#x578B;&#x4E2D;&#x62BD;&#x53D6; $ n $&#x7EC4;&#x6837;&#x672C;&#x89C2;&#x6D4B;&#x503C;&#x7684;&#x6982;&#x7387;&#x6700;&#x5927;&#x3002;&#x6837;&#x672C;&#x89C2;&#x6D4B;&#x503C;&#x7684;&#x6982;&#x7387;&#x5BC6;&#x5EA6;&#x51FD;&#x6570;&#x7684;&#x4E58;&#x79EF; &#x2014; &#x8054;&#x5408;&#x6982;&#x7387;&#x5BC6;&#x5EA6;&#x51FD;&#x6570;&#x5C31;&#x53EB;&#x505A; <strong>&#x4F3C;&#x7136;&#x51FD;&#x6570;</strong></p>
+</blockquote>
+<p>&#x5728;&#x6EE1;&#x8DB3;&#x4E00;&#x7CFB;&#x5217;&#x57FA;&#x672C;&#x5047;&#x8BBE;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6A21;&#x578B;&#x7ED3;&#x6784;&#x53C2;&#x6570;&#x7684;&#x6700;&#x5927;&#x4F3C;&#x7136;&#x4F30;&#x8BA1;&#x91CF;&#x548C;&#x666E;&#x901A;&#x6700;&#x5C0F;&#x4E8C;&#x4E58;&#x6CD5;&#x7684;&#x6700;&#x5927;&#x4F3C;&#x7136;&#x4F30;&#x8BA1;&#x91CF;&#x662F;&#x76F8;&#x540C;&#x7684;&#x3002;</p>
+<h2 id="&#x62DF;&#x5408;&#x4F18;&#x5EA6;"><a href="#&#x62DF;&#x5408;&#x4F18;&#x5EA6;" class="headerlink" title="&#x62DF;&#x5408;&#x4F18;&#x5EA6;"></a>&#x62DF;&#x5408;&#x4F18;&#x5EA6;</h2><ul>
+<li>&#x603B;&#x5E73;&#x65B9;&#x548C;(Total sum of squares,TSS)</li>
+<li>&#x89E3;&#x91CA;&#x5E73;&#x65B9;&#x548C;(Explained sum of squares, SSE)</li>
+<li>&#x6B8B;&#x5DEE;&#x5E73;&#x65B9;&#x548C;(Residual sum of squares, SSR)</li>
+</ul>
+<p>$$ TSS=\sum_{i=1}^{n}(y_i-\bar{y})^2 $$</p>
+<p>$$ SSE=\sum_{i=1}^{n}(\hat{y}_i-bar{y})^2 $$</p>
+<p>$$ SSR=\sum_{i=1}^{n}(y_i-\hat{y_i})^2 $$</p>
+<p>&#x5173;&#x7CFB;&#xFF1A;</p>
+<p>$$ TSS=SSE+SSR $$</p>
+<p>&#x62DF;&#x5408;&#x4F18;&#x5EA6; $ R^2 $:</p>
+<p>$$ R^2=\frac{SSE}{TSS}=1-\frac{SSR}{TSS} $$</p>
+<p>$ R^2 $&#x8D8A;&#x5927;&#xFF0C;&#x8868;&#x793A;&#x62DF;&#x5408;&#x4F18;&#x5EA6;&#x7EA6;&#x597D;&#x3002;</p>
+<p>$ R^2 $&#x4E0E;&#x53D8;&#x91CF;&#x7684;&#x5355;&#x4F4D;&#x65E0;&#x5173;&#x3002;</p>
+<h2 id="OLS&#x4F30;&#x8BA1;&#x91CF;&#x7684;&#x671F;&#x671B;&#x503C;&#x548C;&#x65B9;&#x5DEE;"><a href="#OLS&#x4F30;&#x8BA1;&#x91CF;&#x7684;&#x671F;&#x671B;&#x503C;&#x548C;&#x65B9;&#x5DEE;" class="headerlink" title="OLS&#x4F30;&#x8BA1;&#x91CF;&#x7684;&#x671F;&#x671B;&#x503C;&#x548C;&#x65B9;&#x5DEE;"></a>OLS&#x4F30;&#x8BA1;&#x91CF;&#x7684;&#x671F;&#x671B;&#x503C;&#x548C;&#x65B9;&#x5DEE;</h2><blockquote>
+<p>&#x6839;&#x636E;&#x4EE5;&#x4E0A;&#x56DB;&#x6761;&#x5047;&#x8BBE;&#x53EF;&#x4EE5;&#x5F97;&#x5230;OLS&#x7684;&#x65E0;&#x504F;&#x6027;&#xFF0C;&#x5373;&#xFF1A;</p>
+</blockquote>
+<p>$$ E(\hat \beta_0)=\beta_0 $$<br>$$ E(\hat \beta_1)=\beta_1 $$</p>
+<blockquote>
+<p>&#x6839;&#x636E;&#x4EE5;&#x4E0A;&#x4E94;&#x6761;&#x5047;&#x8BBE;&#x53EF;&#x4EE5;&#x5F97;&#x5230; $ \sigma^2 $&#x7684;&#x65E0;&#x504F;&#x6027;<br>$$ E(\hat \sigma^2)=\sigma^2 $$</p>
+</blockquote>
+<p><font color="red"> &#x4EE5;&#x4E0A;&#x4E94;&#x6761;&#x5047;&#x8BBE;&#x53C8;&#x53EB;&#x505A;&#x7B80;&#x5355;&#x7EBF;&#x6027;&#x56DE;&#x5F52;&#x7684;&#x9AD8;&#x65AF;-&#x9A6C;&#x5C14;&#x79D1;&#x592B;&#x5047;&#x5B9A; </font></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://xuestrange.github.io/2020/08/01/ISL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.png">
+      <meta itemprop="name" content="Wu Li">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WU Li's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/08/01/ISL/" class="post-title-link" itemprop="url">An Introduction to Statistical Learning</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-08-01 00:00:00" itemprop="dateCreated datePublished" datetime="2020-08-01T00:00:00+08:00">2020-08-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-10-11 18:30:21" itemprop="dateModified" datetime="2020-10-11T18:30:21+08:00">2020-10-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">数学</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>&#x672C;&#x6587;&#x8BB0;&#x5F55;&#x4E86;&#x81EA;&#x5DF1;&#x5728;&#x5B66;&#x4E60;<a href="www.StatLearning.com">&#x300A;An Introduction to Statistical Learning&#x300B;</a>&#x9047;&#x5230;&#x7684;&#x96BE;&#x70B9;&#x548C;&#x89E3;&#x91CA;&#x3002;</p>
+<font size="5" color="purple">
+<center>It&#x2019;s tough to make predictions,  especially about the future.</center>
+<p align="right"> -Yogi Berra </p>
+</font>
+
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>&#x6570;&#x636E;&#x6765;&#x6E90;&#xFF08;R&#x5305;&#xFF09;</p>
+<ul>
+<li><code>ISLR</code></li>
+<li><code>MASS</code></li>
+<li><code>datasets</code></li>
+</ul>
+<h1 id="Statistical-Learning"><a href="#Statistical-Learning" class="headerlink" title="Statistical Learning"></a>Statistical Learning</h1><h2 id="categories"><a href="#categories" class="headerlink" title="categories"></a>categories</h2><ul>
+<li>superwised</li>
+<li>unsuperwised</li>
+<li>semi-superwised</li>
+</ul>
+<h2 id="Bias-Variance-Trade-off"><a href="#Bias-Variance-Trade-off" class="headerlink" title="Bias-Variance Trade-off"></a>Bias-Variance Trade-off</h2><p>&#x4EE5;&#x4E0B;&#x9488;&#x5BF9;&#x7684;&#x662F;&#x8BAD;&#x7EC3;&#x96C6;&#x6570;&#x636E;&#x3002;</p>
+<p><font color="red"><center> select an algorithm, repeat several times, create sevel model,have several $ \hat{f}(x) ,$ This is the key. </center></font></p>
+<p>$$ E(x)=E[(Y-\hat{f}(x))^2]$$<br>$$ E(x)=[E[\hat{f}(x)]-f(x)]^2+E[(\hat{f}(x)-E[\hat{f}(x)])^2]+\sigma^2_e $$<br>$$ E(x)=\text{Bias}^2+Variance+Irreducible Error $$</p>
+<p>&#x7FFB;&#x8BD1;&#x6210;&#x4EBA;&#x8BDD;&#xFF1A;</p>
+<ul>
+<li>Bias&#xFF1A;&#x591A;&#x4E2A;&#x6A21;&#x578B;&#x9884;&#x6D4B;&#x7ED3;&#x679C;&#x7684;&#x5747;&#x503C;&#x4E0E;&#x771F;&#x5B9E;&#x503C;&#x7684;&#x5DEE;&#x8DDD;&#xFF1B;</li>
+<li>Variance&#xFF1A; &#x591A;&#x4E2A;&#x6A21;&#x578B;&#x9884;&#x6D4B;&#x7ED3;&#x679C;&#x7684;&#x65B9;&#x5DEE;&#xFF1B;</li>
+<li>Irreducible Error: noise</li>
+</ul>
+<p>standard error:<br>standard deviation:</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Wu Li"
+      src="/images/touxiang.png">
+  <p class="site-author-name" itemprop="name">Wu Li</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:xjz1cumt@163.com" title="E-Mail → mailto:xjz1cumt@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Wu Li</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+<script data-pjax>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
+
+
+<script data-pjax>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+    <div id="pjax">
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+    </div>
+</body>
+</html>
