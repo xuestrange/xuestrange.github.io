@@ -21,15 +21,15 @@
     var CONFIG = {"hostname":"xuestrange.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="DTHMMDiscrete Time Hidden Markov Model &amp;#x72B6;&amp;#x6001;&amp;#x662F;&amp;#x79BB;&amp;#x6563;&amp;#x7684;&amp;#xFF0C;&amp;#x8F93;&amp;#x51FA;&amp;#x53EF;&amp;#x80FD;&amp;#x662F;&amp;#x8FDE;&amp;#x7EED;&amp;#x7684;Defination $ \lambda&#x3D;(A,B,\pi) $ 3 quest">
+  <meta name="description" content="&amp;#x79BB;&amp;#x6563;&amp;#x4E0E;&amp;#x8FDE;&amp;#x7EED;&amp;#x65F6;&amp;#x95F4;&amp;#x9690;&amp;#x9A6C;&amp;#x5C14;&amp;#x79D1;&amp;#x592B;&amp;#x6A21;&amp;#x578B;&amp;#x7684;&amp;#x5B66;&amp;#x4E60;&amp;#x2026;..">
 <meta property="og:type" content="article">
 <meta property="og:title" content="隐马尔科夫模型">
 <meta property="og:url" content="https://xuestrange.github.io/2020/10/21/hmm/index.html">
 <meta property="og:site_name" content="WU Li&#39;s Blog">
-<meta property="og:description" content="DTHMMDiscrete Time Hidden Markov Model &amp;#x72B6;&amp;#x6001;&amp;#x662F;&amp;#x79BB;&amp;#x6563;&amp;#x7684;&amp;#xFF0C;&amp;#x8F93;&amp;#x51FA;&amp;#x53EF;&amp;#x80FD;&amp;#x662F;&amp;#x8FDE;&amp;#x7EED;&amp;#x7684;Defination $ \lambda&#x3D;(A,B,\pi) $ 3 quest">
+<meta property="og:description" content="&amp;#x79BB;&amp;#x6563;&amp;#x4E0E;&amp;#x8FDE;&amp;#x7EED;&amp;#x65F6;&amp;#x95F4;&amp;#x9690;&amp;#x9A6C;&amp;#x5C14;&amp;#x79D1;&amp;#x592B;&amp;#x6A21;&amp;#x578B;&amp;#x7684;&amp;#x5B66;&amp;#x4E60;&amp;#x2026;..">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-10-20T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-10-25T05:13:56.820Z">
+<meta property="article:modified_time" content="2020-10-25T05:47:33.021Z">
 <meta property="article:author" content="Wu Li">
 <meta property="article:tag" content="ML">
 <meta name="twitter:card" content="summary">
@@ -221,7 +221,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-10-25 13:13:56" itemprop="dateModified" datetime="2020-10-25T13:13:56+08:00">2020-10-25</time>
+                <time title="Modified: 2020-10-25 13:47:33" itemprop="dateModified" datetime="2020-10-25T13:47:33+08:00">2020-10-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -253,7 +253,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>359</span>
+              <span>379</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -272,7 +272,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <a id="more"></a>
+        <p>&#x79BB;&#x6563;&#x4E0E;&#x8FDE;&#x7EED;&#x65F6;&#x95F4;&#x9690;&#x9A6C;&#x5C14;&#x79D1;&#x592B;&#x6A21;&#x578B;&#x7684;&#x5B66;&#x4E60;&#x2026;..</p>
+<a id="more"></a>
 <h1 id="DTHMM"><a href="#DTHMM" class="headerlink" title="DTHMM"></a>DTHMM</h1><p>Discrete Time Hidden Markov Model &#x72B6;&#x6001;&#x662F;&#x79BB;&#x6563;&#x7684;&#xFF0C;&#x8F93;&#x51FA;&#x53EF;&#x80FD;&#x662F;&#x8FDE;&#x7EED;&#x7684;<br><em>Defination</em> $ \lambda=(A,B,\pi) $</p>
 <h2 id="3-questions"><a href="#3-questions" class="headerlink" title="3 questions"></a>3 questions</h2><ul>
 <li>&#x6982;&#x7387;&#x9884;&#x6D4B;&#x95EE;&#x9898;<br>&#x5DF2;&#x77E5; $ \lambda $ &#x6C42;&#x89E3;&#x5E8F;&#x5217; $ O={o_1,o_2,\dots,o_n} $&#x51FA;&#x73B0;&#x7684;&#x6982;&#x7387;&#x3002;<br>&#x524D;&#x5411;&#x7B97;&#x6CD5;&#xFF0C;&#x540E;&#x5411;&#x7B97;&#x6CD5;</li>
@@ -303,7 +304,7 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/10/06/%E8%AE%BA%E6%96%871010/" rel="prev" title="论文阅读记录">
+    <a href="/2020/10/06/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/" rel="prev" title="论文阅读记录">
       <i class="fa fa-chevron-left"></i> 论文阅读记录
     </a></div>
       <div class="post-nav-item"></div>
