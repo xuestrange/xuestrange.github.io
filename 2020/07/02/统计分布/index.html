@@ -18,18 +18,18 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"xuestrange.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"xuestrange.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="&amp;#x6982;&amp;#x5FF5;&amp;#x6982;&amp;#x7387;&amp;#x5206;&amp;#x5E03;&amp;#x51FD;&amp;#x6570;$$ F(x_*)&#x3D;P{x\leq x_*} $$ &amp;#x5BF9;&amp;#x4E8E;&amp;#x79BB;&amp;#x6563;&amp;#x578B;&amp;#x968F;&amp;#x673A;&amp;#x53D8;&amp;#x91CF;&amp;#xFF1A; $$ F(x_n)&#x3D;\sum_{i&#x3D;1}^n P{x_i}">
+  <meta name="description" content="DefinationProbability Distribution$$ F(x_*)&#x3D;P{x\leq x_*} $$ &amp;#x5BF9;&amp;#x4E8E;&amp;#x79BB;&amp;#x6563;&amp;#x578B;&amp;#x968F;&amp;#x673A;&amp;#x53D8;&amp;#x91CF;&amp;#xFF1A; $$ F(x_n)&#x3D;\sum_{i&#x3D;1}^n P{x_i} $$ &amp;#x5BF9;&amp;#x4E8E;&amp;#x8FDE;&amp;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="统计分布">
 <meta property="og:url" content="https://xuestrange.github.io/2020/07/02/%E7%BB%9F%E8%AE%A1%E5%88%86%E5%B8%83/index.html">
 <meta property="og:site_name" content="WU Li&#39;s Blog">
-<meta property="og:description" content="&amp;#x6982;&amp;#x5FF5;&amp;#x6982;&amp;#x7387;&amp;#x5206;&amp;#x5E03;&amp;#x51FD;&amp;#x6570;$$ F(x_*)&#x3D;P{x\leq x_*} $$ &amp;#x5BF9;&amp;#x4E8E;&amp;#x79BB;&amp;#x6563;&amp;#x578B;&amp;#x968F;&amp;#x673A;&amp;#x53D8;&amp;#x91CF;&amp;#xFF1A; $$ F(x_n)&#x3D;\sum_{i&#x3D;1}^n P{x_i}">
+<meta property="og:description" content="DefinationProbability Distribution$$ F(x_*)&#x3D;P{x\leq x_*} $$ &amp;#x5BF9;&amp;#x4E8E;&amp;#x79BB;&amp;#x6563;&amp;#x578B;&amp;#x968F;&amp;#x673A;&amp;#x53D8;&amp;#x91CF;&amp;#xFF1A; $$ F(x_n)&#x3D;\sum_{i&#x3D;1}^n P{x_i} $$ &amp;#x5BF9;&amp;#x4E8E;&amp;#x8FDE;&amp;">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-07-01T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-09-12T04:44:40.000Z">
+<meta property="article:modified_time" content="2020-10-25T05:35:27.742Z">
 <meta property="article:author" content="Wu Li">
 <meta property="article:tag" content="Scipy">
 <meta name="twitter:card" content="summary">
@@ -221,7 +221,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-09-12 12:44:40" itemprop="dateModified" datetime="2020-09-12T12:44:40+08:00">2020-09-12</time>
+                <time title="Modified: 2020-10-25 13:35:27" itemprop="dateModified" datetime="2020-10-25T13:35:27+08:00">2020-10-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -234,6 +234,20 @@
             </span>
 
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2020/07/02/%E7%BB%9F%E8%AE%A1%E5%88%86%E5%B8%83/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/02/%E7%BB%9F%E8%AE%A1%E5%88%86%E5%B8%83/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
             <span class="post-meta-item" title="Symbols count in article">
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
@@ -258,16 +272,17 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="&#x6982;&#x5FF5;"><a href="#&#x6982;&#x5FF5;" class="headerlink" title="&#x6982;&#x5FF5;"></a>&#x6982;&#x5FF5;</h1><h2 id="&#x6982;&#x7387;&#x5206;&#x5E03;&#x51FD;&#x6570;"><a href="#&#x6982;&#x7387;&#x5206;&#x5E03;&#x51FD;&#x6570;" class="headerlink" title="&#x6982;&#x7387;&#x5206;&#x5E03;&#x51FD;&#x6570;"></a>&#x6982;&#x7387;&#x5206;&#x5E03;&#x51FD;&#x6570;</h2><p>$$ F(x_*)=P{x\leq x_*} $$</p>
+        <a id="more"></a>
+<h1 id="Defination"><a href="#Defination" class="headerlink" title="Defination"></a>Defination</h1><h2 id="Probability-Distribution"><a href="#Probability-Distribution" class="headerlink" title="Probability Distribution"></a>Probability Distribution</h2><p>$$ F(x_*)=P{x\leq x_*} $$</p>
 <p>&#x5BF9;&#x4E8E;&#x79BB;&#x6563;&#x578B;&#x968F;&#x673A;&#x53D8;&#x91CF;&#xFF1A;</p>
 <p>$$ F(x_n)=\sum_{i=1}^n P{x_i} $$</p>
 <p>&#x5BF9;&#x4E8E;&#x8FDE;&#x7EED;&#x578B;&#x968F;&#x673A;&#x53D8;&#x91CF;&#xFF1A;</p>
 <p>$$ F(x)=\int_{-\infty}^x f(x)dx $$</p>
 <p>&#x5176;&#x4E2D;&#xFF0C;$f(x)$&#x4E3A;&#x6982;&#x7387;&#x5BC6;&#x5EA6;&#x51FD;&#x6570;&#xFF0C;$F(x)$&#x4E5F;&#x53EB;&#x4F5C;&#x7D2F;&#x79EF;&#x6982;&#x7387;&#x5BC6;&#x5EA6;&#x51FD;&#x6570;</p>
-<h2 id="&#x6982;&#x7387;&#x5BC6;&#x5EA6;&#x51FD;&#x6570;"><a href="#&#x6982;&#x7387;&#x5BC6;&#x5EA6;&#x51FD;&#x6570;" class="headerlink" title="&#x6982;&#x7387;&#x5BC6;&#x5EA6;&#x51FD;&#x6570;"></a>&#x6982;&#x7387;&#x5BC6;&#x5EA6;&#x51FD;&#x6570;</h2><p>&#x8FDE;&#x7EED;&#x578B;&#x968F;&#x673A;&#x53D8;&#x91CF;&#x7684;&#x6982;&#x7387;&#x5BC6;&#x5EA6;&#x51FD;&#x6570;&#x5728;&#x67D0;&#x4E00;&#x533A;&#x95F4;&#x4E0A;&#x7684;&#x79EF;&#x5206;&#xFF0C;&#x8868;&#x793A;&#x53D6;&#x503C;&#x5728;&#x8FD9;&#x4E00;&#x533A;&#x95F4;&#x4EE5;&#x5185;&#x7684;&#x6982;&#x7387;&#xFF0C;&#x4F46;&#x662F;$f(x_0)$&#x5E76;&#x4E0D;&#x8868;&#x793A;$x_0$&#x8FD9;&#x4E00;&#x70B9;&#x7684;&#x6982;&#x7387;&#xFF0C;<strong>&#xFF01;&#xFF01;&#xFF01;</strong>&#x3002;</p>
-<h1 id="&#x79BB;&#x6563;&#x578B;&#x968F;&#x673A;&#x53D8;&#x91CF;"><a href="#&#x79BB;&#x6563;&#x578B;&#x968F;&#x673A;&#x53D8;&#x91CF;" class="headerlink" title="&#x79BB;&#x6563;&#x578B;&#x968F;&#x673A;&#x53D8;&#x91CF;"></a>&#x79BB;&#x6563;&#x578B;&#x968F;&#x673A;&#x53D8;&#x91CF;</h1><h2 id="Bernoulli-Distribution-0-1&#x5206;&#x5E03;&#xFF0C;&#x4E24;&#x70B9;&#x5206;&#x5E03;"><a href="#Bernoulli-Distribution-0-1&#x5206;&#x5E03;&#xFF0C;&#x4E24;&#x70B9;&#x5206;&#x5E03;" class="headerlink" title="Bernoulli Distribution(0-1&#x5206;&#x5E03;&#xFF0C;&#x4E24;&#x70B9;&#x5206;&#x5E03;)"></a>Bernoulli Distribution(0-1&#x5206;&#x5E03;&#xFF0C;&#x4E24;&#x70B9;&#x5206;&#x5E03;)</h2><p>$$p{x=k}=p^k*(1-p)^{1-k},k=0,1$$</p>
+<h2 id="PDF"><a href="#PDF" class="headerlink" title="PDF"></a>PDF</h2><p>&#x8FDE;&#x7EED;&#x578B;&#x968F;&#x673A;&#x53D8;&#x91CF;&#x7684;&#x6982;&#x7387;&#x5BC6;&#x5EA6;&#x51FD;&#x6570;&#x5728;&#x67D0;&#x4E00;&#x533A;&#x95F4;&#x4E0A;&#x7684;&#x79EF;&#x5206;&#xFF0C;&#x8868;&#x793A;&#x53D6;&#x503C;&#x5728;&#x8FD9;&#x4E00;&#x533A;&#x95F4;&#x4EE5;&#x5185;&#x7684;&#x6982;&#x7387;&#xFF0C;&#x4F46;&#x662F;$f(x_0)$&#x5E76;&#x4E0D;&#x8868;&#x793A;$x_0$&#x8FD9;&#x4E00;&#x70B9;&#x7684;&#x6982;&#x7387;&#xFF0C;<strong>&#xFF01;&#xFF01;&#xFF01;</strong>&#x3002;</p>
+<h1 id="DRV"><a href="#DRV" class="headerlink" title="DRV"></a>DRV</h1><h2 id="Bernoulli-Distribution"><a href="#Bernoulli-Distribution" class="headerlink" title="Bernoulli Distribution"></a>Bernoulli Distribution</h2><p>$$p{x=k}=p^k*(1-p)^{1-k},k=0,1$$</p>
 <p>&#x4E00;&#x4E2A;&#x5B9E;&#x9A8C;&#x53EA;&#x6709;&#x4E24;&#x79CD;&#x53EF;&#x80FD;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x5982;&#x629B;&#x4E00;&#x4E2A;&#x786C;&#x5E01;&#xFF0C;&#x975E;&#x6B63;&#x5373;&#x53CD;&#xFF0C;&#x8FD9;&#x4E5F;&#x53EB;&#x505A;1&#x91CD;&#x4F2F;&#x52AA;&#x5229;&#x5B9E;&#x9A8C;&#x3002;</p>
-<h2 id="Binomial-Distribution-&#x4E8C;&#x9879;&#x5206;&#x5E03;"><a href="#Binomial-Distribution-&#x4E8C;&#x9879;&#x5206;&#x5E03;" class="headerlink" title="Binomial Distribution(&#x4E8C;&#x9879;&#x5206;&#x5E03;)"></a>Binomial Distribution(&#x4E8C;&#x9879;&#x5206;&#x5E03;)</h2><!-- ====================================== -->
+<h2 id="Binomial-Distribution"><a href="#Binomial-Distribution" class="headerlink" title="Binomial Distribution"></a>Binomial Distribution</h2><!-- ====================================== -->
 <!-- \sim表示波浪线 -->
 <!-- space+space手动弹出代码提示 -->
 <!-- ====================================== -->
@@ -277,7 +292,7 @@
 <p>$$X \sim b(n,k)$$</p>
 <p>&#x5F53; $ n=1 $&#x65F6;&#xFF0C;&#x4E8C;&#x9879;&#x5206;&#x5E03;&#x5C31;&#x662F;&#x4F2F;&#x52AA;&#x5229;&#x5206;&#x5E03;&#x3002;</p>
 <p><strong>&#x5747;&#x503C;&#xFF1A;$ E(X)=np $ &#x65B9;&#x5DEE;&#xFF1A;$ D(X)=np(1-p) $</strong></p>
-<h2 id="Possion-Distribution-&#x6CCA;&#x677E;&#x5206;&#x5E03;"><a href="#Possion-Distribution-&#x6CCA;&#x677E;&#x5206;&#x5E03;" class="headerlink" title="Possion Distribution(&#x6CCA;&#x677E;&#x5206;&#x5E03;)"></a>Possion Distribution(&#x6CCA;&#x677E;&#x5206;&#x5E03;)</h2><p>$$ P{x=k}=\frac{e^{-\lambda}\lambda^k}{k!},k=0,1,2,\dots$$</p>
+<h2 id="Possion-Distribution"><a href="#Possion-Distribution" class="headerlink" title="Possion Distribution"></a>Possion Distribution</h2><p>$$ P{x=k}=\frac{e^{-\lambda}\lambda^k}{k!},k=0,1,2,\dots$$</p>
 <p>&#x8BB0;&#x4E3A;&#xFF1A;</p>
 <p>$$ X \sim \pi(\lambda) $$</p>
 <blockquote>
@@ -289,11 +304,11 @@
 </blockquote>
 <p><strong>&#x5747;&#x503C;&#xFF1A;$ E(X)=\lambda $ &#x65B9;&#x5DEE;&#xFF1A;$ D(X)=\lambda $</strong></p>
 <p>&#x5728;&#x4E8C;&#x9879;&#x5206;&#x5E03;&#x7684; $ n $ &#x6B21;&#x4F2F;&#x52AA;&#x5229;&#x8BD5;&#x9A8C;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x8BD5;&#x9A8C;&#x6B21;&#x6570; $ n $ &#x5F88;&#x5927;&#xFF0C;&#x4E8C;&#x9879;&#x5206;&#x5E03;&#x7684;&#x6982;&#x7387; $ p $ &#x5F88;&#x5C0F;&#xFF0C;&#x4E14;&#x4E58;&#x79EF; $\lambda=np$ &#x6BD4;&#x8F83;&#x9002;&#x4E2D;&#xFF0C;&#x5219;&#x4E8B;&#x4EF6;&#x51FA;&#x73B0;&#x7684;&#x6B21;&#x6570;&#x7684;&#x6982;&#x7387;&#x53EF;&#x4EE5;&#x7528;&#x6CCA;&#x677E;&#x5206;&#x5E03;&#x6765;&#x903C;&#x8FD1;&#x3002;</p>
-<h1 id="&#x8FDE;&#x7EED;&#x578B;&#x968F;&#x673A;&#x53D8;&#x91CF;"><a href="#&#x8FDE;&#x7EED;&#x578B;&#x968F;&#x673A;&#x53D8;&#x91CF;" class="headerlink" title="&#x8FDE;&#x7EED;&#x578B;&#x968F;&#x673A;&#x53D8;&#x91CF;"></a>&#x8FDE;&#x7EED;&#x578B;&#x968F;&#x673A;&#x53D8;&#x91CF;</h1><h2 id="Uniform-Distribution-&#x5747;&#x5300;&#x5206;&#x5E03;"><a href="#Uniform-Distribution-&#x5747;&#x5300;&#x5206;&#x5E03;" class="headerlink" title="Uniform Distribution(&#x5747;&#x5300;&#x5206;&#x5E03;)"></a>Uniform Distribution(&#x5747;&#x5300;&#x5206;&#x5E03;)</h2><p>$$ f(x)=\left{<br>\begin{array}{lc}<br>\frac{1}{b-a} &amp; a&lt;x&lt;b \<br>0 &amp; else\<br>\end{array}<br>\right.<br> $$</p>
+<h1 id="CRV"><a href="#CRV" class="headerlink" title="CRV"></a>CRV</h1><h2 id="Uniform-Distribution"><a href="#Uniform-Distribution" class="headerlink" title="Uniform Distribution"></a>Uniform Distribution</h2><p>$$ f(x)=\left{<br>\begin{array}{lc}<br>\frac{1}{b-a} &amp; a&lt;x&lt;b \<br>0 &amp; else\<br>\end{array}<br>\right.<br> $$</p>
 <p>$$ X\sim U(a,b) $$</p>
-<h2 id="Exponential-Distribution-&#x6307;&#x6570;&#x5206;&#x5E03;&#xFF0C;&#x8D1F;&#x6307;&#x6570;&#x5206;&#x5E03;"><a href="#Exponential-Distribution-&#x6307;&#x6570;&#x5206;&#x5E03;&#xFF0C;&#x8D1F;&#x6307;&#x6570;&#x5206;&#x5E03;" class="headerlink" title="Exponential Distribution(&#x6307;&#x6570;&#x5206;&#x5E03;&#xFF0C;&#x8D1F;&#x6307;&#x6570;&#x5206;&#x5E03;)"></a>Exponential Distribution(&#x6307;&#x6570;&#x5206;&#x5E03;&#xFF0C;&#x8D1F;&#x6307;&#x6570;&#x5206;&#x5E03;)</h2><p>$$ f(x)=\left{<br>\begin{array}{lc}<br>\frac{1}{\theta}e^{-x/\theta} &amp; x&gt;0 \<br>0 &amp; else\<br>\end{array}<br>\right.<br> $$</p>
+<h2 id="Exponential-Distribution"><a href="#Exponential-Distribution" class="headerlink" title="Exponential Distribution"></a>Exponential Distribution</h2><p>$$ f(x)=\left{<br>\begin{array}{lc}<br>\frac{1}{\theta}e^{-x/\theta} &amp; x&gt;0 \<br>0 &amp; else\<br>\end{array}<br>\right.<br> $$</p>
 <p>&#x6307;&#x6570;&#x5206;&#x5E03;&#x5177;&#x6709;&#x65E0;&#x8BB0;&#x5FC6;&#x6027;<br>$ \theta &gt;0 $&#x4E3A;&#x5E38;&#x6570;</p>
-<h2 id="Normal-Distribution-&#x6B63;&#x6001;&#x5206;&#x5E03;&#xFF0C;&#x53C8;&#x53EB;&#x505A;Gassian-Distribution"><a href="#Normal-Distribution-&#x6B63;&#x6001;&#x5206;&#x5E03;&#xFF0C;&#x53C8;&#x53EB;&#x505A;Gassian-Distribution" class="headerlink" title="Normal Distribution(&#x6B63;&#x6001;&#x5206;&#x5E03;&#xFF0C;&#x53C8;&#x53EB;&#x505A;Gassian Distribution)"></a>Normal Distribution(&#x6B63;&#x6001;&#x5206;&#x5E03;&#xFF0C;&#x53C8;&#x53EB;&#x505A;Gassian Distribution)</h2><p>$$ f(x)=\frac{1}{\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}},-\infty&lt;x&lt; \infty $$</p>
+<h2 id="Normal-Distribution"><a href="#Normal-Distribution" class="headerlink" title="Normal Distribution"></a>Normal Distribution</h2><p>$$ f(x)=\frac{1}{\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}},-\infty&lt;x&lt; \infty $$</p>
 <p>$$ X\sim N(\mu,\sigma^2) $$</p>
 <p>$3\sigma$&#x539F;&#x5219;&#xFF1A;<br>$ 1\sigma \quad 0.6826$<br>$ 2\sigma \quad 0.9544$<br>$ 3\sigma \quad 0.9974$<br>&#x5C3D;&#x7BA1;&#x6B63;&#x6001;&#x53D8;&#x91CF;&#x7684;&#x53D6;&#x503C;&#x662F;$ ( -\infty,\infty ) $&#xFF0C;&#x4F46;&#x662F;&#x5B83;&#x7684;&#x503C;&#x843D;&#x5728; $(\mu-3\sigma,\mu+3\sigma)$&#x5185;&#x51E0;&#x4E4E;&#x662F;&#x80AF;&#x5B9A;&#x7684;&#x4E8B;&#x3002;</p>
 
@@ -319,8 +334,8 @@
       <i class="fa fa-chevron-left"></i> 正则表达式
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/07/08/%E7%88%AC%E8%99%AB/" rel="next" title="爬虫">
-      爬虫 <i class="fa fa-chevron-right"></i>
+    <a href="/2020/07/11/Butterfly%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE/" rel="next" title="Hexo+Butterfly+Github Pages配置个人博客网站">
+      Hexo+Butterfly+Github Pages配置个人博客网站 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -334,6 +349,7 @@
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -380,7 +396,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#&#x6982;&#x5FF5;"><span class="nav-number">1.</span> <span class="nav-text">&amp;#x6982;&amp;#x5FF5;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#&#x6982;&#x7387;&#x5206;&#x5E03;&#x51FD;&#x6570;"><span class="nav-number">1.1.</span> <span class="nav-text">&amp;#x6982;&amp;#x7387;&amp;#x5206;&amp;#x5E03;&amp;#x51FD;&amp;#x6570;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#&#x6982;&#x7387;&#x5BC6;&#x5EA6;&#x51FD;&#x6570;"><span class="nav-number">1.2.</span> <span class="nav-text">&amp;#x6982;&amp;#x7387;&amp;#x5BC6;&amp;#x5EA6;&amp;#x51FD;&amp;#x6570;</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#&#x79BB;&#x6563;&#x578B;&#x968F;&#x673A;&#x53D8;&#x91CF;"><span class="nav-number">2.</span> <span class="nav-text">&amp;#x79BB;&amp;#x6563;&amp;#x578B;&amp;#x968F;&amp;#x673A;&amp;#x53D8;&amp;#x91CF;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Bernoulli-Distribution-0-1&#x5206;&#x5E03;&#xFF0C;&#x4E24;&#x70B9;&#x5206;&#x5E03;"><span class="nav-number">2.1.</span> <span class="nav-text">Bernoulli Distribution(0-1&amp;#x5206;&amp;#x5E03;&amp;#xFF0C;&amp;#x4E24;&amp;#x70B9;&amp;#x5206;&amp;#x5E03;)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Binomial-Distribution-&#x4E8C;&#x9879;&#x5206;&#x5E03;"><span class="nav-number">2.2.</span> <span class="nav-text">Binomial Distribution(&amp;#x4E8C;&amp;#x9879;&amp;#x5206;&amp;#x5E03;)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Possion-Distribution-&#x6CCA;&#x677E;&#x5206;&#x5E03;"><span class="nav-number">2.3.</span> <span class="nav-text">Possion Distribution(&amp;#x6CCA;&amp;#x677E;&amp;#x5206;&amp;#x5E03;)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#&#x8FDE;&#x7EED;&#x578B;&#x968F;&#x673A;&#x53D8;&#x91CF;"><span class="nav-number">3.</span> <span class="nav-text">&amp;#x8FDE;&amp;#x7EED;&amp;#x578B;&amp;#x968F;&amp;#x673A;&amp;#x53D8;&amp;#x91CF;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Uniform-Distribution-&#x5747;&#x5300;&#x5206;&#x5E03;"><span class="nav-number">3.1.</span> <span class="nav-text">Uniform Distribution(&amp;#x5747;&amp;#x5300;&amp;#x5206;&amp;#x5E03;)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Exponential-Distribution-&#x6307;&#x6570;&#x5206;&#x5E03;&#xFF0C;&#x8D1F;&#x6307;&#x6570;&#x5206;&#x5E03;"><span class="nav-number">3.2.</span> <span class="nav-text">Exponential Distribution(&amp;#x6307;&amp;#x6570;&amp;#x5206;&amp;#x5E03;&amp;#xFF0C;&amp;#x8D1F;&amp;#x6307;&amp;#x6570;&amp;#x5206;&amp;#x5E03;)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Normal-Distribution-&#x6B63;&#x6001;&#x5206;&#x5E03;&#xFF0C;&#x53C8;&#x53EB;&#x505A;Gassian-Distribution"><span class="nav-number">3.3.</span> <span class="nav-text">Normal Distribution(&amp;#x6B63;&amp;#x6001;&amp;#x5206;&amp;#x5E03;&amp;#xFF0C;&amp;#x53C8;&amp;#x53EB;&amp;#x505A;Gassian Distribution)</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Defination"><span class="nav-number">1.</span> <span class="nav-text">Defination</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Probability-Distribution"><span class="nav-number">1.1.</span> <span class="nav-text">Probability Distribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PDF"><span class="nav-number">1.2.</span> <span class="nav-text">PDF</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DRV"><span class="nav-number">2.</span> <span class="nav-text">DRV</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Bernoulli-Distribution"><span class="nav-number">2.1.</span> <span class="nav-text">Bernoulli Distribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Binomial-Distribution"><span class="nav-number">2.2.</span> <span class="nav-text">Binomial Distribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Possion-Distribution"><span class="nav-number">2.3.</span> <span class="nav-text">Possion Distribution</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CRV"><span class="nav-number">3.</span> <span class="nav-text">CRV</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Uniform-Distribution"><span class="nav-number">3.1.</span> <span class="nav-text">Uniform Distribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Exponential-Distribution"><span class="nav-number">3.2.</span> <span class="nav-text">Exponential Distribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Normal-Distribution"><span class="nav-number">3.3.</span> <span class="nav-text">Normal Distribution</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -396,7 +412,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -409,7 +425,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -661,6 +677,35 @@ if (document.querySelectorAll('pre.mermaid').length) {
     
 
   
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : '5axoQNRyqxGjjYxVcWMB1TzA-gzGzoHsz',
+      appKey     : 'wXajcmNbr8DUnfy7XsXF2eHT',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
 
     </div>
 </body>

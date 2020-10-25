@@ -18,23 +18,23 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"xuestrange.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"xuestrange.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="&amp;#x4E00;&amp;#x822C;&amp;#x5F62;&amp;#x5F0F;&amp;#x5047;&amp;#x8BBE;&amp;#x603B;&amp;#x4F53;&amp;#x4E2D;&amp;#x53D8;&amp;#x91CF;&amp;#x4E4B;&amp;#x95F4;&amp;#x5173;&amp;#x7CFB;&amp;#x670D;&amp;#x4ECE;&amp;#xFF1A; $$ y&#x3D; \beta_0+\beta_1 x+u $$  $ y $ named dependent var">
+  <meta name="description" content="1 Introduction &amp;#x6570;&amp;#x7406;&amp;#x7ECF;&amp;#x6D4E;&amp;#x6A21;&amp;#x578B;&amp;#xFF1A;&amp;#x7528;&amp;#x6570;&amp;#x5B66;&amp;#x7406;&amp;#x8BBA;&amp;#x89E3;&amp;#x91CA;&amp;#x7ECF;&amp;#x6D4E;&amp;#x95EE;&amp;#x9898;&amp;#xFF0C;&amp;#x4F46;&amp;#x662F;&amp;#x5E76;&amp;#x6CA1;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="计量经济学第二章一元线性回归模型">
-<meta property="og:url" content="https://xuestrange.github.io/2020/09/19/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6%E7%AC%AC%E4%BA%8C%E7%AB%A0%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/index.html">
+<meta property="og:title" content="Ecomometrics">
+<meta property="og:url" content="https://xuestrange.github.io/2020/09/20/Econometrics/index.html">
 <meta property="og:site_name" content="WU Li&#39;s Blog">
-<meta property="og:description" content="&amp;#x4E00;&amp;#x822C;&amp;#x5F62;&amp;#x5F0F;&amp;#x5047;&amp;#x8BBE;&amp;#x603B;&amp;#x4F53;&amp;#x4E2D;&amp;#x53D8;&amp;#x91CF;&amp;#x4E4B;&amp;#x95F4;&amp;#x5173;&amp;#x7CFB;&amp;#x670D;&amp;#x4ECE;&amp;#xFF1A; $$ y&#x3D; \beta_0+\beta_1 x+u $$  $ y $ named dependent var">
+<meta property="og:description" content="1 Introduction &amp;#x6570;&amp;#x7406;&amp;#x7ECF;&amp;#x6D4E;&amp;#x6A21;&amp;#x578B;&amp;#xFF1A;&amp;#x7528;&amp;#x6570;&amp;#x5B66;&amp;#x7406;&amp;#x8BBA;&amp;#x89E3;&amp;#x91CA;&amp;#x7ECF;&amp;#x6D4E;&amp;#x95EE;&amp;#x9898;&amp;#xFF0C;&amp;#x4F46;&amp;#x662F;&amp;#x5E76;&amp;#x6CA1;">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-09-18T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-09-21T11:37:25.000Z">
+<meta property="article:published_time" content="2020-09-19T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-10-25T05:28:05.753Z">
 <meta property="article:author" content="Wu Li">
-<meta property="article:tag" content="计量经济学">
+<meta property="article:tag" content="Econometrics">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://xuestrange.github.io/2020/09/19/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6%E7%AC%AC%E4%BA%8C%E7%AB%A0%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/">
+<link rel="canonical" href="https://xuestrange.github.io/2020/09/20/Econometrics/">
 
 
 <script id="page-configurations">
@@ -47,7 +47,7 @@
   };
 </script>
 
-  <title>计量经济学第二章一元线性回归模型 | WU Li's Blog</title>
+  <title>Ecomometrics | WU Li's Blog</title>
   
 
 
@@ -191,7 +191,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://xuestrange.github.io/2020/09/19/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6%E7%AC%AC%E4%BA%8C%E7%AB%A0%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/">
+    <link itemprop="mainEntityOfPage" href="https://xuestrange.github.io/2020/09/20/Econometrics/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/touxiang.png">
@@ -204,7 +204,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          计量经济学第二章一元线性回归模型
+          Ecomometrics
         </h1>
 
         <div class="post-meta">
@@ -214,14 +214,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2020-09-19 00:00:00" itemprop="dateCreated datePublished" datetime="2020-09-19T00:00:00+08:00">2020-09-19</time>
+              <time title="Created: 2020-09-20 00:00:00" itemprop="dateCreated datePublished" datetime="2020-09-20T00:00:00+08:00">2020-09-20</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-09-21 19:37:25" itemprop="dateModified" datetime="2020-09-21T19:37:25+08:00">2020-09-21</time>
+                <time title="Modified: 2020-10-25 13:28:05" itemprop="dateModified" datetime="2020-10-25T13:28:05+08:00">2020-10-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -234,12 +234,26 @@
             </span>
 
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2020/09/20/Econometrics/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/09/20/Econometrics/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
             <span class="post-meta-item" title="Symbols count in article">
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>2.1k</span>
+              <span>2.4k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -258,7 +272,31 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="&#x4E00;&#x822C;&#x5F62;&#x5F0F;"><a href="#&#x4E00;&#x822C;&#x5F62;&#x5F0F;" class="headerlink" title="&#x4E00;&#x822C;&#x5F62;&#x5F0F;"></a>&#x4E00;&#x822C;&#x5F62;&#x5F0F;</h1><p>&#x5047;&#x8BBE;&#x603B;&#x4F53;&#x4E2D;&#x53D8;&#x91CF;&#x4E4B;&#x95F4;&#x5173;&#x7CFB;&#x670D;&#x4ECE;&#xFF1A;</p>
+        <a id="more"></a>
+<h1 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1 Introduction"></a>1 Introduction</h1><ul>
+<li>&#x6570;&#x7406;&#x7ECF;&#x6D4E;&#x6A21;&#x578B;&#xFF1A;&#x7528;&#x6570;&#x5B66;&#x7406;&#x8BBA;&#x89E3;&#x91CA;&#x7ECF;&#x6D4E;&#x95EE;&#x9898;&#xFF0C;&#x4F46;&#x662F;&#x5E76;&#x6CA1;&#x6709;&#x89E3;&#x91CA;&#x5B9A;&#x91CF;&#x5173;&#x7CFB;</li>
+<li>&#x8BA1;&#x91CF;&#x7ECF;&#x6D4E;&#x5B66;&#x6A21;&#x578B;&#xFF1A;&#x63ED;&#x793A;&#x5B9A;&#x91CF;&#x5173;&#x7CFB;</li>
+</ul>
+<h2 id="Model-Design"><a href="#Model-Design" class="headerlink" title="Model Design"></a>Model Design</h2><ol>
+<li>&#x9009;&#x62E9;&#x53D8;&#x91CF;</li>
+<li>&#x786E;&#x5B9A;&#x6570;&#x5B66;&#x5173;&#x7CFB;</li>
+<li>&#x786E;&#x5B9A;&#x53C2;&#x6570;&#x7684;&#x53D6;&#x503C;&#x8303;&#x56F4;</li>
+</ol>
+<p>&#x53D8;&#x91CF;&#x7684;&#x9009;&#x53D6;&#x89C4;&#x5219;&#xFF1A;</p>
+<ul>
+<li>&#x6B63;&#x786E;&#x628A;&#x63E1;&#x7ECF;&#x6D4E;&#x73B0;&#x8C61;&#x4E2D;&#x6697;&#x542B;&#x7684;&#x7ECF;&#x6D4E;&#x5B66;&#x7406;&#x8BBA;&#x548C;&#x7ECF;&#x6D4E;&#x884C;&#x4E3A;&#x89C4;&#x5F8B;</li>
+</ul>
+<p><em>&#x6240;&#x9009;&#x53D8;&#x91CF;&#x4E0E;&#x7ECF;&#x6D4E;&#x884C;&#x4E3A;&#x662F;&#x5426;&#x6709;&#x5173;</em></p>
+<ul>
+<li>&#x8003;&#x8651;&#x6570;&#x636E;&#x7684;&#x53EF;&#x83B7;&#x5F97;&#x6027;</li>
+<li>&#x9009;&#x62E9;&#x53D8;&#x91CF;&#x662F;&#x8981;&#x8003;&#x8651;&#x6240;&#x6709;&#x5165;&#x9009;&#x53D8;&#x91CF;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#xFF0C;&#x4F7F;&#x6BCF;&#x4E2A;&#x53D8;&#x91CF;&#x90FD;&#x662F;&#x72EC;&#x7ACB;&#x7684;<ul>
+<li>&#x53D8;&#x91CF;&#x7684;&#x9009;&#x62E9;&#x9700;&#x8981;&#x53CD;&#x590D;&#x591A;&#x6B21;&#x8FDB;&#x884C;</li>
+<li><font color="red"> &#x62DF;&#x5408;&#x7A0B;&#x5EA6;&#x4E0D;&#x80FD;&#x7528;&#x6765;&#x5224;&#x65AD;&#x6A21;&#x578B;&#x53D8;&#x91CF;&#x9009;&#x62E9;&#x662F;&#x5426;&#x6B63;&#x786E; </font></li>
+</ul>
+</li>
+</ul>
+<p>&#x4E0D;&#x80FD;&#x901A;&#x8FC7;&#x7ECF;&#x6D4E;&#x610F;&#x4E49;&#x68C0;&#x9A8C;&#x7684;&#x8BA1;&#x91CF;&#x7ECF;&#x6D4E;&#x5B66;&#x6A21;&#x578B;&#x6CA1;&#x6709;&#x5229;&#x7528;&#x4EF7;&#x503C;&#x3002;</p>
+<h1 id="2-Linear-Regression"><a href="#2-Linear-Regression" class="headerlink" title="2 Linear Regression"></a>2 Linear Regression</h1><h2 id="General-Fomula"><a href="#General-Fomula" class="headerlink" title="General Fomula"></a>General Fomula</h2><p>&#x5047;&#x8BBE;&#x603B;&#x4F53;&#x4E2D;&#x53D8;&#x91CF;&#x4E4B;&#x95F4;&#x5173;&#x7CFB;&#x670D;&#x4ECE;&#xFF1A;</p>
 <p>$$ y= \beta_0+\beta_1 x+u $$</p>
 <ul>
 <li>$ y $ named dependent variable, explained variable, response</li>
@@ -273,7 +311,7 @@
 <p>$$ E(u|x)=E(u) $$</p>
 <p>&#x6839;&#x636E;&#x4EE5;&#x4E0A;&#x4E24;&#x6761;&#x5047;&#x8BBE;&#xFF0C;&#x53EF;&#x4EE5;&#x63A8;&#x5BFC;&#x51FA; <strong>&#x603B;&#x4F53;&#x56DE;&#x5F52;&#x51FD;&#x6570;</strong>(Population Regression Function, PRF),</p>
 <p>$$ E(y|x)=\beta_0+\beta_1 x $$</p>
-<h1 id="&#x5047;&#x8BBE;"><a href="#&#x5047;&#x8BBE;" class="headerlink" title="&#x5047;&#x8BBE;"></a>&#x5047;&#x8BBE;</h1><ol>
+<h2 id="Hypotheses"><a href="#Hypotheses" class="headerlink" title="Hypotheses"></a>Hypotheses</h2><ol>
 <li><p>&#x56DE;&#x5F52;&#x6A21;&#x578B;&#x662F;&#x6B63;&#x786E;&#x8BBE;&#x5B9A;&#x7684;<br>&#x603B;&#x4F53;&#x670D;&#x4ECE;&#x4EE5;&#x4E0B;&#x5173;&#x7CFB;&#xFF0C; $ x,y $&#x90FD;&#x662F;&#x968F;&#x673A;&#x53D8;&#x91CF;<br>$$ y=\beta_0+\beta_1 x+u $$</p>
 <ul>
 <li>&#x6A21;&#x578B;&#x9009;&#x62E9;&#x4E86;&#x6B63;&#x786E;&#x7684;&#x53D8;&#x91CF;</li>
@@ -304,7 +342,7 @@
 <blockquote>
 <p>&#x5047;&#x8BBE;6&#x5728;&#x5C0F;&#x6837;&#x672C;&#x65F6;&#x5F88;&#x91CD;&#x8981;&#xFF0C;&#x5927;&#x6837;&#x672C;&#x65F6;&#x53CD;&#x800C;&#x8BA9;&#x6CA1;&#x6709;&#x90A3;&#x4E48;&#x91CD;&#x8981;(<strong>&#x4E2D;&#x5FC3;&#x6781;&#x9650;&#x5B9A;&#x7406;</strong>)</p>
 </blockquote>
-<h1 id="&#x53C2;&#x6570;&#x6C42;&#x89E3;&#x65B9;&#x6CD5;"><a href="#&#x53C2;&#x6570;&#x6C42;&#x89E3;&#x65B9;&#x6CD5;" class="headerlink" title="&#x53C2;&#x6570;&#x6C42;&#x89E3;&#x65B9;&#x6CD5;"></a>&#x53C2;&#x6570;&#x6C42;&#x89E3;&#x65B9;&#x6CD5;</h1><h2 id="OLS"><a href="#OLS" class="headerlink" title="OLS"></a>OLS</h2><p>&#x96F6;&#x6761;&#x4EF6;&#x5747;&#x503C;&#x5047;&#x8BBE;&#x8868;&#x660E; $ x $, $ u $&#x4E4B;&#x95F4;&#x7684;&#x4E0D;&#x5B58;&#x5728;&#x7EBF;&#x6027;&#x5173;&#x7CFB;&#xFF0C;&#x5373;&#x534F;&#x65B9;&#x5DEE;&#x4E3A;0&#xFF0C;&#x5219;&#x6709;&#xFF1A;</p>
+<h2 id="Solutions-OLS"><a href="#Solutions-OLS" class="headerlink" title="Solutions(OLS)"></a>Solutions(OLS)</h2><p>&#x96F6;&#x6761;&#x4EF6;&#x5747;&#x503C;&#x5047;&#x8BBE;&#x8868;&#x660E; $ x $, $ u $&#x4E4B;&#x95F4;&#x7684;&#x4E0D;&#x5B58;&#x5728;&#x7EBF;&#x6027;&#x5173;&#x7CFB;&#xFF0C;&#x5373;&#x534F;&#x65B9;&#x5DEE;&#x4E3A;0&#xFF0C;&#x5219;&#x6709;&#xFF1A;</p>
 <p>$$ Cov(x,u)=E(xu)-E(x)E(u)=0 $$</p>
 <p>&#x5373;&#xFF1A;</p>
 <p>$$ E(xu)=0 $$</p>
@@ -313,17 +351,25 @@
 <p>&#x5B83;&#x4E5F;&#x88AB;&#x53EB;&#x505A;<strong>OLS&#x56DE;&#x5F52;&#x7EBF;</strong>(OLS Regression Line)&#x6216; <strong>&#x6837;&#x672C;&#x56DE;&#x5F52;&#x51FD;&#x6570;</strong>(Sample Regression Function, SRF)&#xFF1A;</p>
 <p>&#x6B8B;&#x5DEE;(residual)&#x4E3A;&#xFF1A;</p>
 <p>$$ \hat{u}=y-\hat{y} \text{ for each observations}$$</p>
-<h2 id="OLS-&#x7684;&#x4EE3;&#x6570;&#x6027;&#x8D28;"><a href="#OLS-&#x7684;&#x4EE3;&#x6570;&#x6027;&#x8D28;" class="headerlink" title="OLS &#x7684;&#x4EE3;&#x6570;&#x6027;&#x8D28;"></a>OLS &#x7684;&#x4EE3;&#x6570;&#x6027;&#x8D28;</h2><p>(1) &#x6B8B;&#x5DEE;&#x4E4B;&#x548C;&#x548C;&#x6B8B;&#x5DEE;&#x5747;&#x503C;&#x4E3A;0</p>
+<h3 id="OLS&#x2019;s-Properties"><a href="#OLS&#x2019;s-Properties" class="headerlink" title="OLS&#x2019;s Properties"></a>OLS&#x2019;s Properties</h3><p>(1) &#x6B8B;&#x5DEE;&#x4E4B;&#x548C;&#x548C;&#x6B8B;&#x5DEE;&#x5747;&#x503C;&#x4E3A;0</p>
 <p>$$ E(\hat{u})=0 $$</p>
 <p>$$ \sum_{i=1}^{n}\hat{u}_i=0 $$</p>
 <p>(2) &#x81EA;&#x53D8;&#x91CF;&#x7684;&#x6837;&#x672C; $ x_1,x_2,\dots,x_n $&#x4E0E;&#x6B8B;&#x5DEE; $ u_1,u_2,\dots,u_n $&#x534F;&#x65B9;&#x5DEE;&#x4E3A;0&#xFF0C;&#x76F8;&#x5173;&#x7CFB;&#x6570;&#x4E3A;0</p>
 <p>(3) &#x70B9; $ (\bar{x},\bar{y}) $&#x603B;&#x5728;OSL&#x56DE;&#x5F52;&#x7EBF;&#x4E0A;&#x3002;</p>
-<h2 id="ML-Maximum-Likilihood"><a href="#ML-Maximum-Likilihood" class="headerlink" title="ML ( Maximum Likilihood)"></a>ML ( Maximum Likilihood)</h2><p>&#x539F;&#x7406;</p>
+<blockquote>
+<p>&#x6839;&#x636E;&#x4EE5;&#x4E0A;&#x56DB;&#x6761;&#x5047;&#x8BBE;&#x53EF;&#x4EE5;&#x5F97;&#x5230;OLS&#x7684;&#x65E0;&#x504F;&#x6027;&#xFF0C;&#x5373;&#xFF1A;</p>
+</blockquote>
+<p>$$ E(\hat \beta_0)=\beta_0 $$<br>$$ E(\hat \beta_1)=\beta_1 $$</p>
+<blockquote>
+<p>&#x6839;&#x636E;&#x4EE5;&#x4E0A;&#x4E94;&#x6761;&#x5047;&#x8BBE;&#x53EF;&#x4EE5;&#x5F97;&#x5230; $ \sigma^2 $&#x7684;&#x65E0;&#x504F;&#x6027;<br>$$ E(\hat \sigma^2)=\sigma^2 $$</p>
+</blockquote>
+<p><font color="red"> &#x4EE5;&#x4E0A;&#x4E94;&#x6761;&#x5047;&#x8BBE;&#x53C8;&#x53EB;&#x505A;&#x7B80;&#x5355;&#x7EBF;&#x6027;&#x56DE;&#x5F52;&#x7684;&#x9AD8;&#x65AF;-&#x9A6C;&#x5C14;&#x79D1;&#x592B;&#x5047;&#x5B9A; </font></p>
+<h2 id="Solutions-Maximum-Likilihood"><a href="#Solutions-Maximum-Likilihood" class="headerlink" title="Solutions(Maximum Likilihood)"></a>Solutions(Maximum Likilihood)</h2><p>&#x539F;&#x7406;</p>
 <blockquote>
 <p>&#x5F53;&#x4ECE;&#x6A21;&#x578B;&#x603B;&#x4F53;&#x968F;&#x673A;&#x62BD;&#x53D6; $ n $&#x7EC4;&#x6837;&#x672C;&#x89C2;&#x6D4B;&#x503C;&#x540E;&#xFF0C;&#x6700;&#x5408;&#x7406;&#x7684;&#x53C2;&#x6570;&#x4F30;&#x8BA1;&#x91CF;&#x5E94;&#x8BE5;&#x4F7F;&#x5F97;&#x4ECE;&#x6A21;&#x578B;&#x4E2D;&#x62BD;&#x53D6; $ n $&#x7EC4;&#x6837;&#x672C;&#x89C2;&#x6D4B;&#x503C;&#x7684;&#x6982;&#x7387;&#x6700;&#x5927;&#x3002;&#x6837;&#x672C;&#x89C2;&#x6D4B;&#x503C;&#x7684;&#x6982;&#x7387;&#x5BC6;&#x5EA6;&#x51FD;&#x6570;&#x7684;&#x4E58;&#x79EF; &#x2014; &#x8054;&#x5408;&#x6982;&#x7387;&#x5BC6;&#x5EA6;&#x51FD;&#x6570;&#x5C31;&#x53EB;&#x505A; <strong>&#x4F3C;&#x7136;&#x51FD;&#x6570;</strong></p>
 </blockquote>
 <p>&#x5728;&#x6EE1;&#x8DB3;&#x4E00;&#x7CFB;&#x5217;&#x57FA;&#x672C;&#x5047;&#x8BBE;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6A21;&#x578B;&#x7ED3;&#x6784;&#x53C2;&#x6570;&#x7684;&#x6700;&#x5927;&#x4F3C;&#x7136;&#x4F30;&#x8BA1;&#x91CF;&#x548C;&#x666E;&#x901A;&#x6700;&#x5C0F;&#x4E8C;&#x4E58;&#x6CD5;&#x7684;&#x6700;&#x5927;&#x4F3C;&#x7136;&#x4F30;&#x8BA1;&#x91CF;&#x662F;&#x76F8;&#x540C;&#x7684;&#x3002;</p>
-<h2 id="&#x62DF;&#x5408;&#x4F18;&#x5EA6;"><a href="#&#x62DF;&#x5408;&#x4F18;&#x5EA6;" class="headerlink" title="&#x62DF;&#x5408;&#x4F18;&#x5EA6;"></a>&#x62DF;&#x5408;&#x4F18;&#x5EA6;</h2><ul>
+<h2 id="R-2"><a href="#R-2" class="headerlink" title="R^2"></a>R^2</h2><ul>
 <li>&#x603B;&#x5E73;&#x65B9;&#x548C;(Total sum of squares,TSS)</li>
 <li>&#x89E3;&#x91CA;&#x5E73;&#x65B9;&#x548C;(Explained sum of squares, SSE)</li>
 <li>&#x6B8B;&#x5DEE;&#x5E73;&#x65B9;&#x548C;(Residual sum of squares, SSR)</li>
@@ -337,14 +383,6 @@
 <p>$$ R^2=\frac{SSE}{TSS}=1-\frac{SSR}{TSS} $$</p>
 <p>$ R^2 $&#x8D8A;&#x5927;&#xFF0C;&#x8868;&#x793A;&#x62DF;&#x5408;&#x4F18;&#x5EA6;&#x7EA6;&#x597D;&#x3002;</p>
 <p>$ R^2 $&#x4E0E;&#x53D8;&#x91CF;&#x7684;&#x5355;&#x4F4D;&#x65E0;&#x5173;&#x3002;</p>
-<h2 id="OLS&#x4F30;&#x8BA1;&#x91CF;&#x7684;&#x671F;&#x671B;&#x503C;&#x548C;&#x65B9;&#x5DEE;"><a href="#OLS&#x4F30;&#x8BA1;&#x91CF;&#x7684;&#x671F;&#x671B;&#x503C;&#x548C;&#x65B9;&#x5DEE;" class="headerlink" title="OLS&#x4F30;&#x8BA1;&#x91CF;&#x7684;&#x671F;&#x671B;&#x503C;&#x548C;&#x65B9;&#x5DEE;"></a>OLS&#x4F30;&#x8BA1;&#x91CF;&#x7684;&#x671F;&#x671B;&#x503C;&#x548C;&#x65B9;&#x5DEE;</h2><blockquote>
-<p>&#x6839;&#x636E;&#x4EE5;&#x4E0A;&#x56DB;&#x6761;&#x5047;&#x8BBE;&#x53EF;&#x4EE5;&#x5F97;&#x5230;OLS&#x7684;&#x65E0;&#x504F;&#x6027;&#xFF0C;&#x5373;&#xFF1A;</p>
-</blockquote>
-<p>$$ E(\hat \beta_0)=\beta_0 $$<br>$$ E(\hat \beta_1)=\beta_1 $$</p>
-<blockquote>
-<p>&#x6839;&#x636E;&#x4EE5;&#x4E0A;&#x4E94;&#x6761;&#x5047;&#x8BBE;&#x53EF;&#x4EE5;&#x5F97;&#x5230; $ \sigma^2 $&#x7684;&#x65E0;&#x504F;&#x6027;<br>$$ E(\hat \sigma^2)=\sigma^2 $$</p>
-</blockquote>
-<p><font color="red"> &#x4EE5;&#x4E0A;&#x4E94;&#x6761;&#x5047;&#x8BBE;&#x53C8;&#x53EB;&#x505A;&#x7B80;&#x5355;&#x7EBF;&#x6027;&#x56DE;&#x5F52;&#x7684;&#x9AD8;&#x65AF;-&#x9A6C;&#x5C14;&#x79D1;&#x592B;&#x5047;&#x5B9A; </font></p>
 
     </div>
 
@@ -355,7 +393,7 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6/" rel="tag"><i class="fa fa-tag"></i> 计量经济学</a>
+              <a href="/tags/Econometrics/" rel="tag"><i class="fa fa-tag"></i> Econometrics</a>
           </div>
 
         
@@ -364,12 +402,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/08/01/ISL/" rel="prev" title="An Introduction to Statistical Learning">
-      <i class="fa fa-chevron-left"></i> An Introduction to Statistical Learning
+    <a href="/2020/07/15/%E4%B9%B1%E4%B8%83%E5%85%AB%E7%B3%9F/" rel="prev" title="乱七八糟">
+      <i class="fa fa-chevron-left"></i> 乱七八糟
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/09/20/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6%E7%AC%AC%E4%B8%80%E7%AB%A0%E7%BB%AA%E8%AE%BA/" rel="next" title="计量经济学第一章绪论">
-      计量经济学第一章绪论 <i class="fa fa-chevron-right"></i>
+    <a href="/2020/10/06/%E8%AE%BA%E6%96%871010/" rel="next" title="论文阅读记录">
+      论文阅读记录 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -383,6 +421,7 @@
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -429,7 +468,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#&#x4E00;&#x822C;&#x5F62;&#x5F0F;"><span class="nav-number">1.</span> <span class="nav-text">&amp;#x4E00;&amp;#x822C;&amp;#x5F62;&amp;#x5F0F;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#&#x5047;&#x8BBE;"><span class="nav-number">2.</span> <span class="nav-text">&amp;#x5047;&amp;#x8BBE;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#&#x53C2;&#x6570;&#x6C42;&#x89E3;&#x65B9;&#x6CD5;"><span class="nav-number">3.</span> <span class="nav-text">&amp;#x53C2;&amp;#x6570;&amp;#x6C42;&amp;#x89E3;&amp;#x65B9;&amp;#x6CD5;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#OLS"><span class="nav-number">3.1.</span> <span class="nav-text">OLS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OLS-&#x7684;&#x4EE3;&#x6570;&#x6027;&#x8D28;"><span class="nav-number">3.2.</span> <span class="nav-text">OLS &amp;#x7684;&amp;#x4EE3;&amp;#x6570;&amp;#x6027;&amp;#x8D28;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ML-Maximum-Likilihood"><span class="nav-number">3.3.</span> <span class="nav-text">ML ( Maximum Likilihood)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#&#x62DF;&#x5408;&#x4F18;&#x5EA6;"><span class="nav-number">3.4.</span> <span class="nav-text">&amp;#x62DF;&amp;#x5408;&amp;#x4F18;&amp;#x5EA6;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OLS&#x4F30;&#x8BA1;&#x91CF;&#x7684;&#x671F;&#x671B;&#x503C;&#x548C;&#x65B9;&#x5DEE;"><span class="nav-number">3.5.</span> <span class="nav-text">OLS&amp;#x4F30;&amp;#x8BA1;&amp;#x91CF;&amp;#x7684;&amp;#x671F;&amp;#x671B;&amp;#x503C;&amp;#x548C;&amp;#x65B9;&amp;#x5DEE;</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Introduction"><span class="nav-number">1.</span> <span class="nav-text">1 Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Model-Design"><span class="nav-number">1.1.</span> <span class="nav-text">Model Design</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Linear-Regression"><span class="nav-number">2.</span> <span class="nav-text">2 Linear Regression</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#General-Fomula"><span class="nav-number">2.1.</span> <span class="nav-text">General Fomula</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hypotheses"><span class="nav-number">2.2.</span> <span class="nav-text">Hypotheses</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solutions-OLS"><span class="nav-number">2.3.</span> <span class="nav-text">Solutions(OLS)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#OLS&#x2019;s-Properties"><span class="nav-number">2.3.1.</span> <span class="nav-text">OLS&amp;#x2019;s Properties</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solutions-Maximum-Likilihood"><span class="nav-number">2.4.</span> <span class="nav-text">Solutions(Maximum Likilihood)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#R-2"><span class="nav-number">2.5.</span> <span class="nav-text">R^2</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -445,7 +484,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -458,7 +497,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -710,6 +749,35 @@ if (document.querySelectorAll('pre.mermaid').length) {
     
 
   
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : '5axoQNRyqxGjjYxVcWMB1TzA-gzGzoHsz',
+      appKey     : 'wXajcmNbr8DUnfy7XsXF2eHT',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
 
     </div>
 </body>
