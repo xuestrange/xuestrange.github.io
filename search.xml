@@ -1,102 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hexo+Butterfly+Github Pages配置个人博客网站</title>
-    <url>/2020/07/11/Butterfly%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<blockquote>
-<p>之前我也用Jekyll配置过博客，但是访问速度太慢，我又转向了Hexo，实践证明，Hexo还是很快的。我又换到Next了</p>
-</blockquote>
-<a id="more"></a>
-
-<h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><ol>
-<li>install <code>git</code> and <code>node.js</code>(better use npm taobao mirror or cnpm)</li>
-<li>config your github account infomation in local;<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;GitHub 用户名&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;GitHub 邮箱&quot;</span></span><br></pre></td></tr></table></figure></li>
-<li>create a new reposity named <code>username.github.io</code>;</li>
-<li>open <code>C:\Users\用户名\.ssh\id_rsa.pub</code> and copy the whole text;</li>
-</ol>
-<ul>
-<li>login Github in chrome</li>
-<li>setting —-&gt; SSH and GPG keys —-&gt; new SSH KEY —-&gt; paste</li>
-</ul>
-<h1 id="本地安装Hexo"><a href="#本地安装Hexo" class="headerlink" title="本地安装Hexo"></a>本地安装Hexo</h1><ol>
-<li>install Hexo in local;<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">d:</span><br><span class="line"><span class="built_in">cd</span> Blog</span><br><span class="line">cnpm install -g hexo-cli</span><br><span class="line">hexo init      <span class="comment"># 初始化</span></span><br><span class="line">cnpm install    <span class="comment"># 安装组件</span></span><br><span class="line">cnpm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-安装完之后，它默认使用的是landscape主题(主题都在themes这一文件夹下)<br>可以通过如下命令检验是否安装成功：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean <span class="comment"># 清除缓存文件</span></span><br><span class="line">hexo g   <span class="comment"># 生成页面</span></span><br><span class="line">hexo s   <span class="comment"># 启动预览</span></span><br></pre></td></tr></table></figure></li>
-<li>找到Blog文件根目录下的_config.yml文件，修改如下：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: git@github.com:用户名/用户名.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-接着运行<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h1 id="更换Butterfly主题"><a href="#更换Butterfly主题" class="headerlink" title="更换Butterfly主题"></a>更换Butterfly主题</h1><ol>
-<li>下载<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/Butterfly</span><br><span class="line"><span class="comment"># 可以使用gitee加快下载速度</span></span><br></pre></td></tr></table></figure></li>
-<li>修改Blog根目录下的_config.yml<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">theme: Butterfly</span><br></pre></td></tr></table></figure></li>
-<li>安装相关依赖<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cnpm install hexo-renderer-pug hexo-renderer-stylus --save</span><br><span class="line">cnpm install cheerio</span><br></pre></td></tr></table></figure></li>
-<li>试运行<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<blockquote>
-<p>可以使用这样的方法来连续执行多条CMD命令：<br>创建 <code>hexo.bat</code> 文件，写入以下命令，双击运行即可</p>
-<p>d: &amp;&amp; cd Blog &amp;&amp; hexo clean &amp;&amp; hexo g  &amp;&amp; hexo d &amp;&amp; hexo s</p>
-</blockquote>
-<h1 id="自定义Butterfly"><a href="#自定义Butterfly" class="headerlink" title="自定义Butterfly"></a>自定义Butterfly</h1><h2 id="修改右上角为中文"><a href="#修改右上角为中文" class="headerlink" title="修改右上角为中文"></a>修改右上角为中文</h2><ol>
-<li>修改根目录下的_config.yml中的语言<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">Li</span> <span class="string">Wu&#x27;s</span> <span class="string">BLog</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">&quot;&quot;</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">&quot;&quot;</span></span><br><span class="line"><span class="attr">keywords:</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">Li</span> <span class="string">Wu</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">&quot;&quot;</span></span><br></pre></td></tr></table></figure></li>
-<li>修改 <code>theme/Butterfly</code>文件夹下的_config.yml<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="string">主页:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span></span><br><span class="line">  <span class="string">时间轴:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br><span class="line">  <span class="string">标签:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line">  <span class="string">分类:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-folder-open</span></span><br><span class="line">  <span class="comment"># 链接: /link/ || fa fa-link</span></span><br><span class="line">  <span class="string">关于:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-heart</span></span><br></pre></td></tr></table></figure></li>
-<li>保存</li>
-<li>预览</li>
-</ol>
-<h2 id="创建archives-categories-tags-about页"><a href="#创建archives-categories-tags-about页" class="headerlink" title="创建archives,categories,tags,about页"></a>创建archives,categories,tags,about页</h2><p>以创建tags页为例，其它同理。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
-<p>修改 <code>Butterfly/source/tags/</code>文件夹下的tags.md</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2020-07-11 18:53:02</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">top_img: https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;large&#x2F;006z5e4Qgy1ggnynhq230j31hc0u0tfp.jpg</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<h2 id="开启评论系统-Valine"><a href="#开启评论系统-Valine" class="headerlink" title="开启评论系统(Valine)"></a>开启评论系统(Valine)</h2><ol>
-<li>在LeanCloud中注册账号，创建应用（开发板）；</li>
-<li>点击存储，创建类： <code>Comment</code>, <code>Counter</code>;</li>
-<li>设置，安全中心，只打开数据存储；</li>
-<li>设置，应用keys，复制AppID，AppKey;</li>
-<li>将信息粘贴到 <code>theme/Butterfly/_config.yml</code>中的这个地方：<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">valine:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span> <span class="comment"># if you want use valine,please set this value is true</span></span><br><span class="line">  <span class="attr">appId:</span> <span class="number">11111111111111111</span> <span class="comment"># leancloud application app id</span></span><br><span class="line">  <span class="attr">appKey:</span> <span class="number">222222222222222222</span> <span class="comment"># leancloud application app key</span></span><br><span class="line">  <span class="attr">notify:</span> <span class="literal">false</span> <span class="comment"># valine mail notify (true/false) https://github.com/xCss/Valine/wiki</span></span><br><span class="line">  <span class="attr">verify:</span> <span class="literal">false</span> <span class="comment"># valine verify code (true/false)</span></span><br><span class="line">  <span class="attr">pageSize:</span> <span class="number">6</span> <span class="comment"># comment list page size</span></span><br><span class="line">  <span class="comment"># avatar: monsterid # gravatar style https://valine.js.org/#/avatar</span></span><br><span class="line">  <span class="attr">lang:</span> <span class="string">zh-cn</span> <span class="comment"># i18n: zh-cn/en</span></span><br><span class="line">  <span class="attr">placeholder:</span> <span class="string">欢迎畅所欲言！</span> <span class="comment"># valine comment input placeholder(like: Please leave your footprints )</span></span><br><span class="line">  <span class="attr">guest_info:</span> <span class="string">nick,mail</span> <span class="comment">#valine comment header info</span></span><br><span class="line">  <span class="comment"># requiredFields: nick,mail # required fields (nick/mail)</span></span><br><span class="line">  <span class="attr">bg:</span> <span class="string">/img/comment_bg.png</span> <span class="comment"># valine background</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h2 id="页面配色"><a href="#页面配色" class="headerlink" title="页面配色"></a>页面配色</h2><ol>
-<li>主题配色在_config.yml中修改，参见官方文档</li>
-<li>主页上的划分的一个一个card，在这里修改<br><code>Butterfly/layout/includes/widgets/**.pug</code></li>
-<li>个人比较喜欢黑暗模式，但是黑暗模式的页面配色不太喜欢，具体可以在这里修改<br><code>Butterfly/source/css/_layout/z-darkmode.styl</code></li>
-</ol>
-<h2 id="其它设置"><a href="#其它设置" class="headerlink" title="其它设置"></a>其它设置</h2><p>参考_config.yml中的相关说明。</p>
-]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>Butterfly</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>隐马尔科夫模型</title>
-    <url>/2020/10/21/hmm/</url>
-    <content><![CDATA[<p>离散与连续时间隐马尔科夫模型的学习…..</p>
-<a id="more"></a>
-<h1 id="DTHMM"><a href="#DTHMM" class="headerlink" title="DTHMM"></a>DTHMM</h1><p>Discrete Time Hidden Markov Model 状态是离散的，输出可能是连续的<br><em>Defination</em> $ \lambda=(A,B,\pi) $</p>
-<h2 id="3-questions"><a href="#3-questions" class="headerlink" title="3 questions"></a>3 questions</h2><ul>
-<li>概率预测问题<br>已知 $ \lambda $ 求解序列 $ O={o_1,o_2,\dots,o_n} $出现的概率。<br>前向算法，后向算法</li>
-<li>学习问题<ul>
-<li>已知 $ {o_i,s_i} $，可以使用最大似然估计</li>
-<li>只知道 $ {o_i} $，可以使用EM算法</li>
-</ul>
-</li>
-<li>解码问题<br>要已知 $ \lambda $，求解最可能出现的序列，可以使用维特比算法。<h2 id="C-K-equation"><a href="#C-K-equation" class="headerlink" title="C-K equation"></a>C-K equation</h2><h1 id="CTHMM"><a href="#CTHMM" class="headerlink" title="CTHMM"></a>CTHMM</h1>Continuous Time Hidden Markov Model 状态是连续的<br>状态持续的时间服从指数分布<br>状态转移矩阵是一个与时间相关的函数 $ P(t) $</li>
-</ul>
-<p><em>Defination</em> $ \lambda=(\omega,\Pi,f,p()) $</p>
-]]></content>
-      <categories>
-        <category>原创</category>
-      </categories>
-      <tags>
-        <tag>ML</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Ecomometrics</title>
     <url>/2020/09/20/Econometrics/</url>
     <content><![CDATA[<blockquote>
@@ -222,6 +126,145 @@
       </tags>
   </entry>
   <entry>
+    <title>Hexo+Butterfly+Github Pages配置个人博客网站</title>
+    <url>/2020/07/11/Butterfly%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<blockquote>
+<p>之前我也用Jekyll配置过博客，但是访问速度太慢，我又转向了Hexo，实践证明，Hexo还是很快的。我又换到Next了</p>
+</blockquote>
+<a id="more"></a>
+
+<h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><ol>
+<li>install <code>git</code> and <code>node.js</code>(better use npm taobao mirror or cnpm)</li>
+<li>config your github account infomation in local;<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;GitHub 用户名&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;GitHub 邮箱&quot;</span></span><br></pre></td></tr></table></figure></li>
+<li>create a new reposity named <code>username.github.io</code>;</li>
+<li>open <code>C:\Users\用户名\.ssh\id_rsa.pub</code> and copy the whole text;</li>
+</ol>
+<ul>
+<li>login Github in chrome</li>
+<li>setting —-&gt; SSH and GPG keys —-&gt; new SSH KEY —-&gt; paste</li>
+</ul>
+<h1 id="本地安装Hexo"><a href="#本地安装Hexo" class="headerlink" title="本地安装Hexo"></a>本地安装Hexo</h1><ol>
+<li>install Hexo in local;<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">d:</span><br><span class="line"><span class="built_in">cd</span> Blog</span><br><span class="line">cnpm install -g hexo-cli</span><br><span class="line">hexo init      <span class="comment"># 初始化</span></span><br><span class="line">cnpm install    <span class="comment"># 安装组件</span></span><br><span class="line">cnpm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+安装完之后，它默认使用的是landscape主题(主题都在themes这一文件夹下)<br>可以通过如下命令检验是否安装成功：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean <span class="comment"># 清除缓存文件</span></span><br><span class="line">hexo g   <span class="comment"># 生成页面</span></span><br><span class="line">hexo s   <span class="comment"># 启动预览</span></span><br></pre></td></tr></table></figure></li>
+<li>找到Blog文件根目录下的_config.yml文件，修改如下：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: git@github.com:用户名/用户名.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+接着运行<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h1 id="更换Butterfly主题"><a href="#更换Butterfly主题" class="headerlink" title="更换Butterfly主题"></a>更换Butterfly主题</h1><ol>
+<li>下载<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/Butterfly</span><br><span class="line"><span class="comment"># 可以使用gitee加快下载速度</span></span><br></pre></td></tr></table></figure></li>
+<li>修改Blog根目录下的_config.yml<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">theme: Butterfly</span><br></pre></td></tr></table></figure></li>
+<li>安装相关依赖<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cnpm install hexo-renderer-pug hexo-renderer-stylus --save</span><br><span class="line">cnpm install cheerio</span><br></pre></td></tr></table></figure></li>
+<li>试运行<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<blockquote>
+<p>可以使用这样的方法来连续执行多条CMD命令：<br>创建 <code>hexo.bat</code> 文件，写入以下命令，双击运行即可</p>
+<p>d: &amp;&amp; cd Blog &amp;&amp; hexo clean &amp;&amp; hexo g  &amp;&amp; hexo d &amp;&amp; hexo s</p>
+</blockquote>
+<h1 id="自定义Butterfly"><a href="#自定义Butterfly" class="headerlink" title="自定义Butterfly"></a>自定义Butterfly</h1><h2 id="修改右上角为中文"><a href="#修改右上角为中文" class="headerlink" title="修改右上角为中文"></a>修改右上角为中文</h2><ol>
+<li>修改根目录下的_config.yml中的语言<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">Li</span> <span class="string">Wu&#x27;s</span> <span class="string">BLog</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">&quot;&quot;</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">&quot;&quot;</span></span><br><span class="line"><span class="attr">keywords:</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">Li</span> <span class="string">Wu</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">&quot;&quot;</span></span><br></pre></td></tr></table></figure></li>
+<li>修改 <code>theme/Butterfly</code>文件夹下的_config.yml<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="string">主页:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span></span><br><span class="line">  <span class="string">时间轴:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br><span class="line">  <span class="string">标签:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line">  <span class="string">分类:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-folder-open</span></span><br><span class="line">  <span class="comment"># 链接: /link/ || fa fa-link</span></span><br><span class="line">  <span class="string">关于:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-heart</span></span><br></pre></td></tr></table></figure></li>
+<li>保存</li>
+<li>预览</li>
+</ol>
+<h2 id="创建archives-categories-tags-about页"><a href="#创建archives-categories-tags-about页" class="headerlink" title="创建archives,categories,tags,about页"></a>创建archives,categories,tags,about页</h2><p>以创建tags页为例，其它同理。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
+<p>修改 <code>Butterfly/source/tags/</code>文件夹下的tags.md</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2020-07-11 18:53:02</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">top_img: https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;large&#x2F;006z5e4Qgy1ggnynhq230j31hc0u0tfp.jpg</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<h2 id="开启评论系统-Valine"><a href="#开启评论系统-Valine" class="headerlink" title="开启评论系统(Valine)"></a>开启评论系统(Valine)</h2><ol>
+<li>在LeanCloud中注册账号，创建应用（开发板）；</li>
+<li>点击存储，创建类： <code>Comment</code>, <code>Counter</code>;</li>
+<li>设置，安全中心，只打开数据存储；</li>
+<li>设置，应用keys，复制AppID，AppKey;</li>
+<li>将信息粘贴到 <code>theme/Butterfly/_config.yml</code>中的这个地方：<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">valine:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span> <span class="comment"># if you want use valine,please set this value is true</span></span><br><span class="line">  <span class="attr">appId:</span> <span class="number">11111111111111111</span> <span class="comment"># leancloud application app id</span></span><br><span class="line">  <span class="attr">appKey:</span> <span class="number">222222222222222222</span> <span class="comment"># leancloud application app key</span></span><br><span class="line">  <span class="attr">notify:</span> <span class="literal">false</span> <span class="comment"># valine mail notify (true/false) https://github.com/xCss/Valine/wiki</span></span><br><span class="line">  <span class="attr">verify:</span> <span class="literal">false</span> <span class="comment"># valine verify code (true/false)</span></span><br><span class="line">  <span class="attr">pageSize:</span> <span class="number">6</span> <span class="comment"># comment list page size</span></span><br><span class="line">  <span class="comment"># avatar: monsterid # gravatar style https://valine.js.org/#/avatar</span></span><br><span class="line">  <span class="attr">lang:</span> <span class="string">zh-cn</span> <span class="comment"># i18n: zh-cn/en</span></span><br><span class="line">  <span class="attr">placeholder:</span> <span class="string">欢迎畅所欲言！</span> <span class="comment"># valine comment input placeholder(like: Please leave your footprints )</span></span><br><span class="line">  <span class="attr">guest_info:</span> <span class="string">nick,mail</span> <span class="comment">#valine comment header info</span></span><br><span class="line">  <span class="comment"># requiredFields: nick,mail # required fields (nick/mail)</span></span><br><span class="line">  <span class="attr">bg:</span> <span class="string">/img/comment_bg.png</span> <span class="comment"># valine background</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="页面配色"><a href="#页面配色" class="headerlink" title="页面配色"></a>页面配色</h2><ol>
+<li>主题配色在_config.yml中修改，参见官方文档</li>
+<li>主页上的划分的一个一个card，在这里修改<br><code>Butterfly/layout/includes/widgets/**.pug</code></li>
+<li>个人比较喜欢黑暗模式，但是黑暗模式的页面配色不太喜欢，具体可以在这里修改<br><code>Butterfly/source/css/_layout/z-darkmode.styl</code></li>
+</ol>
+<h2 id="其它设置"><a href="#其它设置" class="headerlink" title="其它设置"></a>其它设置</h2><p>参考_config.yml中的相关说明。</p>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>Butterfly</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Latex&amp;Markcdown</title>
+    <url>/2020/06/13/Latex&amp;Marndown/</url>
+    <content><![CDATA[<p>Latex和Markdown内容不多，合并到一起来写。持续记录中……</p>
+<a id="more"></a>
+
+<h1 id="Html-in-Markdown"><a href="#Html-in-Markdown" class="headerlink" title="Html in Markdown"></a>Html in Markdown</h1><h2 id="font"><a href="#font" class="headerlink" title="font"></a>font</h2><p><font size=4 color='red' font=黑体>这是4号紫色黑体</font><br><font size=6 color='cyan' font=宋体>这是6号cyan颜色宋体</font></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">size</span>=<span class="string">4</span> <span class="attr">color</span>=<span class="string">&#x27;red&#x27;</span> <span class="attr">font</span>=<span class="string">黑体</span>&gt;</span>这是4号紫色黑体<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">size</span>=<span class="string">6</span> <span class="attr">color</span>=<span class="string">&#x27;cyan&#x27;</span> <span class="attr">font</span>=<span class="string">宋体</span>&gt;</span>这是6号cyan颜色宋体<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="text-align"><a href="#text-align" class="headerlink" title="text align"></a>text align</h2><p align="left">这是靠左对齐</p>
+<center>这是居中对齐</center>
+<p align="right">这是靠右对齐</p>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">align</span>=<span class="string">&quot;left&quot;</span>&gt;</span>这是靠左对齐<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">center</span>&gt;</span>这是居中对齐<span class="tag">&lt;/<span class="name">center</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">align</span>=<span class="string">&quot;right&quot;</span>&gt;</span>这是靠右对齐<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="combine"><a href="#combine" class="headerlink" title="combine"></a>combine</h2><p>别说，还挺好用的<br><font size=6 color='pink' ></p>
+<center>Hey, bitch.</center>
+<p  align="right"> -pinkman </p>
+</font>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">size</span>=<span class="string">5</span> <span class="attr">color</span>=<span class="string">&#x27;pink&#x27;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">center</span>&gt;</span>Hey, bitch.<span class="tag">&lt;/<span class="name">center</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>  <span class="attr">align</span>=<span class="string">&quot;right&quot;</span>&gt;</span> -pinkman <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这就挺够用的了，其它CSS啥的咱也不会用，咱也用不上。</p>
+<h1 id="Latex"><a href="#Latex" class="headerlink" title="Latex"></a>Latex</h1><table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th align="center">快捷方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">在线绘制表格生成代码</td>
+<td align="center"><a href="https://www.tablesgenerator.com/latex_tables">这里</a></td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>Latex</tag>
+        <tag>Markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>隐马尔科夫模型</title>
+    <url>/2020/10/21/hmm/</url>
+    <content><![CDATA[<p>离散与连续时间隐马尔科夫模型的学习…..</p>
+<a id="more"></a>
+<h1 id="DTHMM"><a href="#DTHMM" class="headerlink" title="DTHMM"></a>DTHMM</h1><p>Discrete Time Hidden Markov Model 状态是离散的，输出可能是连续的<br><em>Defination</em> $ \lambda=(A,B,\pi) $</p>
+<h2 id="3-questions"><a href="#3-questions" class="headerlink" title="3 questions"></a>3 questions</h2><ul>
+<li>概率预测问题<br>已知 $ \lambda $ 求解序列 $ O={o_1,o_2,\dots,o_n} $出现的概率。<br>前向算法，后向算法</li>
+<li>学习问题<ul>
+<li>已知 $ {o_i,s_i} $，可以使用最大似然估计</li>
+<li>只知道 $ {o_i} $，可以使用EM算法</li>
+</ul>
+</li>
+<li>解码问题<br>要已知 $ \lambda $，求解最可能出现的序列，可以使用维特比算法。<h2 id="C-K-equation"><a href="#C-K-equation" class="headerlink" title="C-K equation"></a>C-K equation</h2><h1 id="CTHMM"><a href="#CTHMM" class="headerlink" title="CTHMM"></a>CTHMM</h1>Continuous Time Hidden Markov Model 状态是连续的<br>状态持续的时间服从指数分布<br>状态转移矩阵是一个与时间相关的函数 $ P(t) $</li>
+</ul>
+<p><em>Defination</em> $ \lambda=(\omega,\Pi,f,p()) $</p>
+]]></content>
+      <categories>
+        <category>原创</category>
+      </categories>
+      <tags>
+        <tag>ML</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python</title>
     <url>/2020/06/13/python/</url>
     <content><![CDATA[<blockquote>
@@ -293,49 +336,6 @@
       </categories>
       <tags>
         <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Latex&amp;Markcdown</title>
-    <url>/2020/06/13/Latex&amp;Marndown/</url>
-    <content><![CDATA[<p>Latex和Markdown内容不多，合并到一起来写。持续记录中……</p>
-<a id="more"></a>
-
-<h1 id="Html-in-Markdown"><a href="#Html-in-Markdown" class="headerlink" title="Html in Markdown"></a>Html in Markdown</h1><h2 id="font"><a href="#font" class="headerlink" title="font"></a>font</h2><p><font size=4 color='red' font=黑体>这是4号紫色黑体</font><br><font size=6 color='cyan' font=宋体>这是6号cyan颜色宋体</font></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">size</span>=<span class="string">4</span> <span class="attr">color</span>=<span class="string">&#x27;red&#x27;</span> <span class="attr">font</span>=<span class="string">黑体</span>&gt;</span>这是4号紫色黑体<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">size</span>=<span class="string">6</span> <span class="attr">color</span>=<span class="string">&#x27;cyan&#x27;</span> <span class="attr">font</span>=<span class="string">宋体</span>&gt;</span>这是6号cyan颜色宋体<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="text-align"><a href="#text-align" class="headerlink" title="text align"></a>text align</h2><p align="left">这是靠左对齐</p>
-<center>这是居中对齐</center>
-<p align="right">这是靠右对齐</p>
-
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">align</span>=<span class="string">&quot;left&quot;</span>&gt;</span>这是靠左对齐<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">center</span>&gt;</span>这是居中对齐<span class="tag">&lt;/<span class="name">center</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">align</span>=<span class="string">&quot;right&quot;</span>&gt;</span>这是靠右对齐<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="combine"><a href="#combine" class="headerlink" title="combine"></a>combine</h2><p>别说，还挺好用的<br><font size=6 color='pink' ></p>
-<center>Hey, bitch.</center>
-<p  align="right"> -pinkman </p>
-</font>
-
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">size</span>=<span class="string">5</span> <span class="attr">color</span>=<span class="string">&#x27;pink&#x27;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">center</span>&gt;</span>Hey, bitch.<span class="tag">&lt;/<span class="name">center</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>  <span class="attr">align</span>=<span class="string">&quot;right&quot;</span>&gt;</span> -pinkman <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>这就挺够用的了，其它CSS啥的咱也不会用，咱也用不上。</p>
-<h1 id="Latex"><a href="#Latex" class="headerlink" title="Latex"></a>Latex</h1><table>
-<thead>
-<tr>
-<th align="center">方法</th>
-<th align="center">快捷方式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">在线绘制表格生成代码</td>
-<td align="center"><a href="https://www.tablesgenerator.com/latex_tables">这里</a></td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>Latex</tag>
-        <tag>Markdown</tag>
       </tags>
   </entry>
   <entry>
@@ -576,6 +576,7 @@
 <li><a href="#the-value-of-buyonlineandpickupinstore-in-omnichannel-evidence-from-customer-usage-data">The Value of Buy‐Online‐and‐Pickup‐in‐Store in Omni‐Channel: Evidence from Customer Usage Data</a></li>
 <li><a href="#turn-your-online-engagement-in-chronic-disease-management-from-zero-to-hero-a-multi-dimensional-continuous-time-evaluation">Turn Your Online Engagement in Chronic Disease Management from Zero to Hero: A Multi-Dimensional Continuous-Time Evaluation</a></li>
 <li><a href="#advertising-strategy-in-the-presence-of-reviews-an-empirical-analysis">Advertising Strategy in the Presence of Reviews: An Empirical Analysis</a></li>
+<li><a href="#does-piracy-create-online-word-of-mouth-an-empirical-of-analysis-in-the-movie-industry">Does Piracy Create Online Word of Mouth? An Empirical of Analysis in the Movie Industry</a></li>
 </ol>
 <!-- /code_chunk_output -->
 
@@ -832,6 +833,33 @@ end
 <blockquote>
 <p>RDD的使用情景、检验方法等还需要进一步学习</p>
 </blockquote>
+<h1 id="Does-Piracy-Create-Online-Word-of-Mouth-An-Empirical-of-Analysis-in-the-Movie-Industry"><a href="#Does-Piracy-Create-Online-Word-of-Mouth-An-Empirical-of-Analysis-in-the-Movie-Industry" class="headerlink" title="Does Piracy Create Online Word of Mouth? An Empirical of Analysis in the Movie Industry"></a>Does Piracy Create Online Word of Mouth? An Empirical of Analysis in the Movie Industry</h1><p>盗版是否会对电影的线上口碑（Word of Mouth, WOM）产生影响呢？<br>WOM volume:</p>
+<p>WOM valence:</p>
+<h2 id="In-a-Word"><a href="#In-a-Word" class="headerlink" title="In a Word"></a>In a Word</h2><h2 id="Motivation-amp-Contributions"><a href="#Motivation-amp-Contributions" class="headerlink" title="Motivation&amp;Contributions"></a>Motivation&amp;Contributions</h2><h2 id="Data-4"><a href="#Data-4" class="headerlink" title="Data"></a>Data</h2><ul>
+<li>Box Office Mojo(票房)</li>
+<li>IMDB</li>
+<li>The Pirate Bay</li>
+<li>The Numbers</li>
+<li>Rotten Toamtoes</li>
+<li>Kantar Media（广告数据）</li>
+</ul>
+<p>WOM volume： 用户评论数<br>WOM valence：用户的平均评分</p>
+<h2 id="Model-1"><a href="#Model-1" class="headerlink" title="Model"></a>Model</h2><p>(1)<br>$$ Box_office_revenue = torrents_volume+reviews+average_rating+theaters+…. for_each_movie $$<br>(2) WOM volume<br>$$ reviews= 前一天的torrents_volume+average rating+theaters+…. for_each_movie $$<br>(3)WOM valence<br>$$ average rating =前一天的torrents volume+reviews+theaters+…. for_each_movie $$<br>内生性分析</p>
+<ol>
+<li>观测不到的需求因素会影响种子数量进而影响到票房<br>需求因素隐藏在模型的误差项中，换句话说，误差项与自变量相关而产生了内生性。<br>问题解决：<br>假设种子上传者会不会上传种子取决于上传种子的成本和获得的收益，即<br>$$ torrent_volume= f(benefit(\epsilon),cost)$$<br>所以只要找到一个可以影响上传种子的成本但是又不影响收益的变量就可以作为工具变量。</li>
+</ol>
+<p>俄罗斯市场与美国市场</p>
+<blockquote>
+<p>工具变量法:<br>对于模型 $y=\beta_1+\beta_2 X+\epsilon$<br>由于 $ X $ 与 $ \epsilon $ 相关，使得估计出的 $ \beta_2 $ 不准确，所以需要找一个工具变量IV，重新估计 $ X $ 使得新的 $ X $ 与 $ \epsilon $ 不相关（第一阶段），再使用新的 $ X $ 进行 OLS 回归(第二阶段)，得到的 $ \beta_2 $ 就是准确的。（两阶段最小二乘法）</p>
+<blockquote>
+<p>IV应该满足的条件<br>$$ Cor(IV,X)\neq 0 $$<br>$$ Cor(IV,\epsilon) = 0$$<br>当 IV与 $ X $ 相关性不强时，IV被称为弱工具变量。</p>
+</blockquote>
+</blockquote>
+<p>俄罗斯两个盗版网站的种子数量作为工具变量，原因：</p>
+<ul>
+<li><strong>外生性条件：</strong> 俄罗斯和美国市场分离，所以俄罗斯的市场需求不会影响美国的市场需求，即与误差项 $ \epsilon $ 不相关</li>
+<li><strong>相关性条件：</strong> 美国人会从俄罗斯网站上下载种子上传到海盗湾上，降低了上传种子的成本，即与自变量 $ torrent_volume $ 相关</li>
+</ul>
 ]]></content>
       <categories>
         <category>原创</category>
