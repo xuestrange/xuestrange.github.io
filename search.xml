@@ -73,6 +73,49 @@
       </tags>
   </entry>
   <entry>
+    <title>Latex&amp;Markcdown</title>
+    <url>/2020/06/13/Latex&amp;Marndown/</url>
+    <content><![CDATA[<p>Latex和Markdown内容不多，合并到一起来写。持续记录中……</p>
+<a id="more"></a>
+
+<h1 id="Html-in-Markdown"><a href="#Html-in-Markdown" class="headerlink" title="Html in Markdown"></a>Html in Markdown</h1><h2 id="font"><a href="#font" class="headerlink" title="font"></a>font</h2><p><font size=4 color='red' font=黑体>这是4号紫色黑体</font><br><font size=6 color='cyan' font=宋体>这是6号cyan颜色宋体</font></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">size</span>=<span class="string">4</span> <span class="attr">color</span>=<span class="string">&#x27;red&#x27;</span> <span class="attr">font</span>=<span class="string">黑体</span>&gt;</span>这是4号紫色黑体<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">size</span>=<span class="string">6</span> <span class="attr">color</span>=<span class="string">&#x27;cyan&#x27;</span> <span class="attr">font</span>=<span class="string">宋体</span>&gt;</span>这是6号cyan颜色宋体<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="text-align"><a href="#text-align" class="headerlink" title="text align"></a>text align</h2><p align="left">这是靠左对齐</p>
+<center>这是居中对齐</center>
+<p align="right">这是靠右对齐</p>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">align</span>=<span class="string">&quot;left&quot;</span>&gt;</span>这是靠左对齐<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">center</span>&gt;</span>这是居中对齐<span class="tag">&lt;/<span class="name">center</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">align</span>=<span class="string">&quot;right&quot;</span>&gt;</span>这是靠右对齐<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="combine"><a href="#combine" class="headerlink" title="combine"></a>combine</h2><p>别说，还挺好用的<br><font size=6 color='pink' ></p>
+<center>Hey, bitch.</center>
+<p  align="right"> -pinkman </p>
+</font>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">size</span>=<span class="string">5</span> <span class="attr">color</span>=<span class="string">&#x27;pink&#x27;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">center</span>&gt;</span>Hey, bitch.<span class="tag">&lt;/<span class="name">center</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>  <span class="attr">align</span>=<span class="string">&quot;right&quot;</span>&gt;</span> -pinkman <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这就挺够用的了，其它CSS啥的咱也不会用，咱也用不上。</p>
+<h1 id="Latex"><a href="#Latex" class="headerlink" title="Latex"></a>Latex</h1><table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th align="center">快捷方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">在线绘制表格生成代码</td>
+<td align="center"><a href="https://www.tablesgenerator.com/latex_tables">这里</a></td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>Latex</tag>
+        <tag>Markdown</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Ecomometrics</title>
     <url>/2020/09/20/Econometrics/</url>
     <content><![CDATA[<blockquote>
@@ -195,49 +238,6 @@
       </categories>
       <tags>
         <tag>Econometrics</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Latex&amp;Markcdown</title>
-    <url>/2020/06/13/Latex&amp;Marndown/</url>
-    <content><![CDATA[<p>Latex和Markdown内容不多，合并到一起来写。持续记录中……</p>
-<a id="more"></a>
-
-<h1 id="Html-in-Markdown"><a href="#Html-in-Markdown" class="headerlink" title="Html in Markdown"></a>Html in Markdown</h1><h2 id="font"><a href="#font" class="headerlink" title="font"></a>font</h2><p><font size=4 color='red' font=黑体>这是4号紫色黑体</font><br><font size=6 color='cyan' font=宋体>这是6号cyan颜色宋体</font></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">size</span>=<span class="string">4</span> <span class="attr">color</span>=<span class="string">&#x27;red&#x27;</span> <span class="attr">font</span>=<span class="string">黑体</span>&gt;</span>这是4号紫色黑体<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">size</span>=<span class="string">6</span> <span class="attr">color</span>=<span class="string">&#x27;cyan&#x27;</span> <span class="attr">font</span>=<span class="string">宋体</span>&gt;</span>这是6号cyan颜色宋体<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="text-align"><a href="#text-align" class="headerlink" title="text align"></a>text align</h2><p align="left">这是靠左对齐</p>
-<center>这是居中对齐</center>
-<p align="right">这是靠右对齐</p>
-
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">align</span>=<span class="string">&quot;left&quot;</span>&gt;</span>这是靠左对齐<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">center</span>&gt;</span>这是居中对齐<span class="tag">&lt;/<span class="name">center</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">align</span>=<span class="string">&quot;right&quot;</span>&gt;</span>这是靠右对齐<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="combine"><a href="#combine" class="headerlink" title="combine"></a>combine</h2><p>别说，还挺好用的<br><font size=6 color='pink' ></p>
-<center>Hey, bitch.</center>
-<p  align="right"> -pinkman </p>
-</font>
-
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">size</span>=<span class="string">5</span> <span class="attr">color</span>=<span class="string">&#x27;pink&#x27;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">center</span>&gt;</span>Hey, bitch.<span class="tag">&lt;/<span class="name">center</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>  <span class="attr">align</span>=<span class="string">&quot;right&quot;</span>&gt;</span> -pinkman <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>这就挺够用的了，其它CSS啥的咱也不会用，咱也用不上。</p>
-<h1 id="Latex"><a href="#Latex" class="headerlink" title="Latex"></a>Latex</h1><table>
-<thead>
-<tr>
-<th align="center">方法</th>
-<th align="center">快捷方式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">在线绘制表格生成代码</td>
-<td align="center"><a href="https://www.tablesgenerator.com/latex_tables">这里</a></td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>Latex</tag>
-        <tag>Markdown</tag>
       </tags>
   </entry>
   <entry>
