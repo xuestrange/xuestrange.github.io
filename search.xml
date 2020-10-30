@@ -265,6 +265,77 @@
       </tags>
   </entry>
   <entry>
+    <title>乱七八糟</title>
+    <url>/2020/07/15/%E4%B9%B1%E4%B8%83%E5%85%AB%E7%B3%9F/</url>
+    <content><![CDATA[<blockquote>
+<p>&#x4E0D;&#x592A;&#x597D;&#x5206;&#x7C7B;&#x7684;&#x4E00;&#x4E9B;&#x4E1C;&#x897F;</p>
+</blockquote>
+<a id="more"></a>
+<h1 id="Research"><a href="#Research" class="headerlink" title="Research"></a>Research</h1><h2 id="database"><a href="#database" class="headerlink" title="database"></a>database</h2><ul>
+<li>Web of Science: SCI&#xFF0C;&#x5386;&#x53F2;&#x60A0;&#x4E45;&#xFF0C;&#x671F;&#x520A;&#x5168;&#xFF0C;&#x4EBA;&#x6587;&#x793E;&#x79D1;&#x5565;&#x7684;&#x5168;&#x90FD;&#x6709;</li>
+<li>Engineering villiage: EI</li>
+<li>Scopus: &#x6458;&#x8981;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x6BD4;&#x8F83;&#x65B0;&#xFF0C;&#x8377;&#x5170;&#x51FA;&#x7248;&#x5546;2004&#x5E74;&#x641E;&#x5F97;&#xFF0C;&#x6536;&#x5F55;&#x7684;&#x671F;&#x520A;&#x79CD;&#x7C7B;&#x6BD4;Web of Science&#x591A;&#xFF0C;&#x4F46;&#x662F;&#x8001;&#x4E00;&#x70B9;&#x7684;&#x671F;&#x520A;&#x5C11;</li>
+</ul>
+<h2 id="tools"><a href="#tools" class="headerlink" title="tools"></a>tools</h2><ul>
+<li><code>Scival</code>&#xFF1A; &#x7231;&#x601D;&#x552F;&#x5C14;&#x641E;&#x5F97;&#x8BBA;&#x6587;&#x68C0;&#x7D22;&#x5E73;&#x53F0;&#xFF0C;&#x4EE5;Scopus&#x6570;&#x636E;&#x5E93;&#x4E3A;&#x57FA;&#x7840;&#xFF0C;&#x63D0;&#x4F9B;&#x4E86;&#x5404;&#x79CD;&#x9AD8;&#x7EA7;&#x68C0;&#x7D22;&#x529F;&#x80FD;&#xFF08;&#x4E0D;&#x662F;&#x641C;&#x8BBA;&#x6587;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A; topic search, &#x7814;&#x7A76;&#x70ED;&#x70B9;&#x7B49;&#x7B49;&#x3002;&#xFF09;</li>
+</ul>
+<h2 id="others"><a href="#others" class="headerlink" title="others"></a>others</h2><ul>
+<li>IF: Impact Factor, &#x5F71;&#x54CD;&#x56E0;&#x5B50;</li>
+<li>JCR&#xFF1A; Journal Citation Reports&#x671F;&#x520A;&#x5F15;&#x6587;&#x62A5;&#x544A;</li>
+</ul>
+<p>&#x76EE;&#x524D;&#x56FD;&#x9645;&#x4E0A;&#x6709;&#x4E2D;&#x79D1;&#x9662;&#x5206;&#x533A;&#x548C;&#x6C64;&#x68EE;&#x8DEF;&#x900F;&#x5206;&#x533A;&#xFF08;&#x79D1;&#x777F;&#x552F;&#x5B89;&#xFF09;&#xFF0C;&#x6C64;&#x68EE;&#x8DEF;&#x900F;&#x6BCF;&#x5E74;&#x4F1A;&#x53D1;&#x5E03;&#x671F;&#x520A;&#x5F15;&#x7528;&#x62A5;&#x544A;&#xFF08;Journal Citation Reports, JCR&#xFF09;&#xFF0C;&#x641E;&#x5206;&#x533A;&#x7684;&#x76EE;&#x7684;&#x662F;&#x5BF9;&#x4E2A;&#x5B66;&#x79D1;&#x9886;&#x57DF;&#x8FDB;&#x884C;&#x5212;&#x5206;&#xFF0C;&#x6839;&#x636E;&#x5F71;&#x54CD;&#x56E0;&#x5B50;&#xFF0C;&#x5BF9;&#x67D0;&#x4E00;&#x5B66;&#x79D1;&#x9886;&#x57DF;&#x7684;&#x671F;&#x520A;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#x5206;&#x7C7B;&#x3002;</p>
+<p>&#x6C64;&#x68EE;&#x8DEF;&#x900F;&#x5206;&#x533A;&#xFF1A;</p>
+<ul>
+<li>Q1: 0~25%</li>
+<li>Q2&#xFF1A;26%~50%</li>
+<li>Q3: 51~75%</li>
+<li>Q4: 76%~100%</li>
+</ul>
+<p>&#x4E2D;&#x79D1;&#x9662;&#x5206;&#x533A;&#xFF1A;</p>
+<ul>
+<li>SCI &#x4E00;&#x533A;&#xFF1A;5% TOP</li>
+<li>SCI &#x4E8C;&#x533A;&#xFF1A;6%~20% selected TOP</li>
+<li>SCI &#x4E09;&#x533A;&#xFF1A;21%~50%</li>
+<li>SCI &#x56DB;&#x533A;&#xFF1A;51%~100%</li>
+</ul>
+<blockquote>
+<p>&#x56FD;&#x5185;&#x8BF4;SCI &#x4E00;&#x533A;&#xFF0C;&#x5E94;&#x8BE5;&#x662F;&#x4E2D;&#x79D1;&#x9662;&#x5206;&#x533A;&#xFF0C;&#x6C64;&#x68EE;&#x8DEF;&#x900F;&#x5206;&#x533A;&#xFF08;&#x79D1;&#x777F;&#x552F;&#x5B89;&#x5206;&#x533A;&#x3001;JCR&#x5206;&#x533A;&#xFF09;&#x4E00;&#x822C;&#x8BF4;Q1</p>
+</blockquote>
+<p><font color="#cf2f89" size="5" font="&#x9ED1;&#x4F53;">&#x8C8C;&#x4F3C;&#x4E2D;&#x79D1;&#x9662;&#x5206;&#x533A;&#x98CE;&#x8BC4;&#x4E0D;&#x592A;&#x597D;&#xFF0C;&#x597D;&#x591A;&#x9886;&#x57DF;&#x7684;&#x9876;&#x7EA7;&#x671F;&#x520A;&#x7ED9;&#x653E;&#x5230;&#x4E86;SCI &#x4E8C;&#x533A;&#xFF0C;&#x4E09;&#x533A;</font></p>
+<h1 id="Paper"><a href="#Paper" class="headerlink" title="Paper"></a>Paper</h1><blockquote>
+<p>The Institute for Operations Research and Management Sciences<br>&#x8FD0;&#x7B79;&#x5B66;&#x4E0E;&#x7BA1;&#x7406;&#x5B66;&#x534F;&#x4F1A;&#x3002;</p>
+</blockquote>
+<p>UTD 24</p>
+<h1 id="Empirical-Study"><a href="#Empirical-Study" class="headerlink" title="Empirical Study"></a>Empirical Study</h1><p>&#x4E0E;&#x4E4B;&#x5BF9;&#x5E94;&#x7684;&#x662F; <strong>&#x7406;&#x8BBA;&#x7814;&#x7A76;</strong>(Conceptual Study, Theoretical Study)</p>
+<blockquote>
+<p>&#x5B9E;&#x8BC1;&#x7814;&#x7A76;&#x662F;&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#x793E;&#x4F1A;&#x79D1;&#x5B66;&#x9886;&#x57DF;&#x6700;&#x88AB;&#x5E7F;&#x6CDB;&#x63A5;&#x53D7;&#x3001;&#x6700;&#x6D41;&#x884C;&#x3001;&#x6700;&#x5E38;&#x89C1;&#x7684;&#x7814;&#x7A76;&#x7C7B;&#x578B;&#x3002;<br>&#x7B80;&#x8A00;&#x4E4B;&#xFF0C;&#x5BB9;&#x6613;&#x53D1;&#x6587;&#x7AE0;&#x3002;</p>
+</blockquote>
+<p>&#x4E00;&#x822C;&#x6B65;&#x9AA4;(&#x6301;&#x7EED;&#x66F4;&#x65B0;)&#xFF1A;</p>
+<ol>
+<li>&#x786E;&#x5B9A;&#x4E00;&#x4E2A;&#x7814;&#x7A76;&#x95EE;&#x9898;<br>e.g.</li>
+</ol>
+<ul>
+<li>&#x517B;&#x72D7;&#x7684;&#x4EBA;&#x6BD4;&#x517B;&#x732B;&#x7684;&#x4EBA;&#x66F4;&#x613F;&#x610F;&#x8DDF;&#x5176;&#x4ED6;&#x4EBA;&#x793E;&#x4EA4;&#x5417;&#xFF1F;</li>
+<li>&#x5B66;&#x751F;&#x81EA;&#x53D1;&#x4E0A;&#x77E5;&#x4E4E;&#x7684;&#x9891;&#x7387;&#x8DDF;&#x5B66;&#x4E60;&#x6210;&#x7EE9;&#x6210;&#x76F8;&#x5173;&#x6027;&#x5417;&#xFF1F;</li>
+</ul>
+<ol start="2">
+<li>&#x8BBE;&#x8BA1;&#x5B9E;&#x9A8C;&#x4E0E;&#x6536;&#x96C6;&#x6570;&#x636E;</li>
+<li>&#x7EDF;&#x8BA1;&#x5206;&#x6790;<br>&#x5229;&#x7528;&#x5404;&#x79CD;&#x5404;&#x6837;&#x7684;&#x7EDF;&#x8BA1;&#x5B66;&#x5DE5;&#x5177;&#x8FDB;&#x884C; Data Analysis</li>
+<li>&#x7ED3;&#x8BBA;&#x4E0E;&#x8BC4;&#x4EF7;</li>
+</ol>
+<blockquote>
+<p>notes<br>&#x52A1;&#x5FC5;&#x4FDD;&#x7559;&#x539F;&#x59CB;&#x6570;&#x636E;&#x548C;&#x6570;&#x636E;&#x5904;&#x7406;(&#x89C4;&#x8303;&#x5316;)&#x7684;&#x7A0B;&#x5E8F;&#xFF0C;Raw Data&#x2013;Don&#x2019;t Touch!</p>
+</blockquote>
+<h1 id="Talk"><a href="#Talk" class="headerlink" title="Talk"></a>Talk</h1><p><a href="https://www.bilibili.com/video/BV1Nx41147gc?from=search&amp;seid=15203410503206147670">&#x6613;&#x4E2D;&#x5929;&#x300A;&#x5386;&#x53F2;&#x7684;&#x5E95;&#x724C;&#x300B;</a></p>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><h2 id="APA"><a href="#APA" class="headerlink" title="APA"></a>APA</h2><p>APA&#x683C;&#x5F0F;&#x662F;&#x6307;&#x7F8E;&#x56FD;&#x5FC3;&#x7406;&#x5B66;&#x4F1A;&#xFF08;American Psychological Association&#xFF09;&#x51FA;&#x7248;&#x7684;&#x300A;&#x7F8E;&#x56FD;&#x5FC3;&#x7406;&#x534F;&#x4F1A;&#x520A;&#x7269;&#x51C6;&#x5219;&#x300B;&#xFF0C;&#x662F;&#x4E00;&#x4E2A;&#x88AB;&#x5E7F;&#x6CDB;&#x63A5;&#x53D7;&#x7684;&#x7814;&#x7A76;&#x8BBA;&#x6587;&#x64B0;&#x5199;&#x683C;&#x5F0F;&#xFF0C;&#x7279;&#x522B;&#x9488;&#x5BF9;&#x793E;&#x4F1A;&#x79D1;&#x5B66;&#x9886;&#x57DF;&#x7684;&#x7814;&#x7A76;&#xFF0C;&#x89C4;&#x8303;&#x5B66;&#x672F;&#x6587;&#x732E;&#x7684;&#x5F15;&#x7528;&#x548C;&#x53C2;&#x8003;&#x6587;&#x732E;&#x7684;&#x64B0;&#x5199;&#x65B9;&#x6CD5;&#xFF0C;&#x4EE5;&#x53CA;&#x8868;&#x683C;&#x3001;&#x56FE;&#x8868;&#x3001;&#x6CE8;&#x811A;&#x548C;&#x9644;&#x5F55;&#x7684;&#x7F16;&#x6392;&#x65B9;&#x5F0F;&#x3002;&#x5176;&#x201C;&#x4F5C;&#x8005;&#x548C;&#x65E5;&#x671F;&#x201D;&#x7684;&#x5F15;&#x7528;&#x8303;&#x5F0F;&#x548C;&#x201C;&#x62EC;&#x53F7;&#x5185;&#x5F15;&#x7528;&#x6CD5;&#x201D;&#x76F8;&#x5F53;&#x8457;&#x540D;&#x3002;<br>APA&#x683C;&#x5F0F;&#x89C4;&#x5B9A;&#x201C;&#x53C2;&#x8003;&#x6587;&#x732E;&#x201D;&#x90E8;&#x5206;&#x7684;&#x4EBA;&#x540D;&#x5FC5;&#x987B;&#x4EE5;&#x59D3;(Family name)&#x7684;&#x5B57;&#x6BCD;&#x987A;&#x5E8F;&#x6765;&#x6392;&#x5217;&#xFF0C;&#x5305;&#x62EC;&#x540D;(First name)&#x7684;&#x524D;&#x7F00;&#x3002;&#x8B6C;&#x5982;&#xFF0C;James Smith&#x5E94;&#x88AB;&#x6539;&#x6210;&#x201C;Smith, J.,&#x201D;&#xFF1B;Saif Al Falasi&#x5219;&#x6539;&#x6210;&#x201C;Al-Falasi, Saif.&#x201D;&#x3002;</p>
+<h2 id="MLA"><a href="#MLA" class="headerlink" title="MLA"></a>MLA</h2><p>MLA&#xFF08;Modern Language Association&#xFF09;&#x4E3A;&#x7F8E;&#x56FD;&#x73B0;&#x4EE3;&#x8BED;&#x8A00;&#x534F;&#x4F1A;&#x5236;&#x5B9A;&#x7684;&#x8BBA;&#x6587;&#x6307;&#x5BFC;&#x683C;&#x5F0F;&#xFF0C;&#x5728;&#x4E00;&#x822C;&#x4E66;&#x5199;&#x82F1;&#x8BED;&#x8BBA;&#x6587;&#x65F6;&#x5E94;&#x5F53;&#x4F7F;&#x7528;MLA&#x683C;&#x5F0F;&#x6765;&#x4FDD;&#x8BC1;&#x5B66;&#x672F;&#x8457;&#x4F5C;&#x7684;&#x5B8C;&#x6574;&#x3002;MLA&#x591A;&#x7528;&#x5728;&#x82F1;&#x8BED;&#x8BED;&#x8A00;&#x4E0E;&#x6587;&#x5B66;&#x7B49;&#x4EBA;&#x6587;&#x5B66;&#x79D1;&#x7684;&#x5B66;&#x672F;&#x8BBA;&#x6587;&#x5199;&#x4F5C;&#x4E2D;&#x3002;</p>
+<h2 id="Chicago"><a href="#Chicago" class="headerlink" title="Chicago"></a>Chicago</h2><p>Chicago&#x683C;&#x5F0F;&#x7531;&#x829D;&#x52A0;&#x54E5;&#x5927;&#x5B66;&#x51FA;&#x7248;&#x793E;&#x4E8E;1906&#x5E74;&#x9996;&#x6B21;&#x53D1;&#x884C;&#xFF0C;&#x5E7F;&#x6CDB;&#x5E94;&#x7528;&#x4E8E;&#x56FE;&#x4E66;&#x3001;&#x6742;&#x5FD7;&#x3001;&#x62A5;&#x7EB8;&#x4EE5;&#x53CA;&#x4EBA;&#x6587;&#x79D1;&#x5B66;&#x9886;&#x57DF;&#x3002; &#x8FD9;&#x4E00;&#x683C;&#x5F0F;&#x7684;&#x6807;&#x51C6;&#x662F;&#x300A;&#x829D;&#x52A0;&#x54E5;&#x5F15;&#x6CE8;&#x683C;&#x5F0F;&#x4F7F;&#x7528;&#x6307;&#x5357;&#x300B;&#xFF08;The Chicago Manual of Style&#xFF09;&#x3002;&#x4F46;&#x662F;&#x4E5F;&#x6709;&#x5F88;&#x591A;&#x7528;&#x6237;&#x628A;&#x51EF;&#x7279;&#x2022;&#x675C;&#x62C9;&#x5BBE;&#xFF08;Kate Turabian&#xFF09;&#x4E3A;&#x5B66;&#x751F;&#x7F16;&#x5199;&#x7684;&#x300A;&#x5B66;&#x671F;&#x3001;&#x5B66;&#x4F4D;&#x3001;&#x5B66;&#x672F;&#x8BBA;&#x6587;&#x5199;&#x4F5C;&#x6307;&#x5357;&#x300B;&#xFF08;A Manual for Writers of Term Papers, Theses and Dissertations&#xFF09;&#x4F5C;&#x4E3A;&#x53C2;&#x8003;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x829D;&#x52A0;&#x54E5;&#x5F15;&#x6CE8;&#x683C;&#x5F0F;&#x4E5F;&#x79F0;&#x4E3A;&#x675C;&#x62C9;&#x5BBE;&#x5F15;&#x6CE8;&#x683C;&#x5F0F;&#x3002;</p>
+<p>Chicago&#x5F15;&#x6CE8;&#x683C;&#x5F0F;&#x4E3B;&#x8981;&#x7528;&#x811A;&#x6CE8;&#xFF08;Footnotes&#xFF09;&#x5F62;&#x5F0F;&#x5F15;&#x6CE8;&#xFF0C;&#x8FD9;&#x79CD;&#x5F15;&#x6CE8;&#x5F62;&#x5F0F;&#x5E38;&#x7528;&#x4E8E;&#x4EBA;&#x6587;&#x5B66;&#x79D1;&#xFF0C;&#x5982;&#x6587;&#x5B66;&#x3001;&#x5386;&#x53F2;&#x548C;&#x827A;&#x672F;&#x5B66;&#x79D1;&#x7B49;&#x3002;&#x53E6;&#x4E00;&#x79CD;&#x5F62;&#x5F0F;&#x662F;&#x7528;&#x4F5C;&#x8005;&#x548C;&#x5E74;&#x4EFD;&#x7684;&#x5F15;&#x6CE8;&#x683C;&#x5F0F;&#x3002;&#x8FD9;&#x79CD;&#x5F15;&#x6CE8;&#x5F62;&#x5F0F;&#x5E38;&#x4E8E;&#x79D1;&#x5B66;&#x5B66;&#x79D1;&#xFF0C;&#x5982;&#x5386;&#x53F2;&#x3001;&#x5728;&#x81EA;&#x7136;&#x548C;&#x793E;&#x4F1A;&#x79D1;&#x5B66;&#x7B49;&#x3002;&#x540C;&#x6837;&#xFF0C;&#x6839;&#x636E;&#x5F15;&#x7528;&#x5185;&#x5BB9;&#x4E0D;&#x540C;&#xFF0C;&#x5728;&#x5F15;&#x7528;&#x65F6;&#x7684;&#x5177;&#x4F53;&#x8868;&#x793A;&#x65B9;&#x5F0F;&#x4E5F;&#x4E0D;&#x540C;&#x3002;</p>
+<h2 id="Harvard"><a href="#Harvard" class="headerlink" title="Harvard"></a>Harvard</h2><p>Harvard&#x5F15;&#x7528;&#x4F53;&#x7CFB;&#xFF0C;&#x987E;&#x540D;&#x601D;&#x4E49;&#x662F;&#x54C8;&#x4F5B;&#x5927;&#x5B66;&#x7684;&#x8BBA;&#x6587;&#x53C2;&#x8003;&#x6587;&#x732E;&#x6807;&#x51C6;&#xFF0C;&#x5168;&#x540D;&#x4E3A;&#xFF1A;&#x54C8;&#x4F5B;&#x6CE8;&#x91CA;&#x4F53;&#x7CFB;(Harvard System&#xFF09;&#xFF0C;&#x4E5F;&#x53EB;&#x201C;&#x4F5C;&#x8005;&#xFF0D;&#x65E5;&#x671F;&#x6CD5;&#x201D;(Author-date method)&#x3002;Harvard&#x5F15;&#x7528;&#x4F53;&#x7CFB;&#x5728;&#x82F1;&#x56FD;&#x548C;&#x6FB3;&#x6D32;&#x7B49;&#x56FD;&#x5BB6;&#x8FD0;&#x7528;&#x5F97;&#x6BD4;&#x8F83;&#x591A;&#xFF0C;&#x5C24;&#x5176;&#x5728;&#x7269;&#x7406;&#x548C;&#x81EA;&#x7136;&#x79D1;&#x5B66;&#x9886;&#x57DF;&#x3002;&#x6839;&#x636E;Harvard&#x4F53;&#x7CFB;&#xFF0C;&#x6BCF;&#x4E00;&#x4E2A;&#x5F15;&#x6587;&#xFF0C;&#x65E0;&#x8BBA;&#x76F4;&#x63A5;&#x8FD8;&#x662F;&#x95F4;&#x63A5;&#x5F15;&#x7528;&#xFF0C;&#x90FD;&#x5E94;&#x5206;&#x522B;&#x5728;&#x4E24;&#x5904;&#x6CE8;&#x660E;&#xFF1A;&#x5728;&#x6587;&#x4E2D;&#x5F15;&#x7528;&#x5904;&#x6CE8;&#x660E;&#xFF1B;&#x5728;&#x5168;&#x4E66;&#x6216;&#x5168;&#x6587;&#x6700;&#x540E;&#x7684;&#x53C2;&#x8003;&#x4E66;&#x76EE;&#xFF08;references&#xFF09;&#x5904;&#x6CE8;&#x660E;&#x3002;</p>
+<h2 id="GB-T-7714"><a href="#GB-T-7714" class="headerlink" title="GB/T 7714"></a>GB/T 7714</h2><p>&#x4E2D;&#x56FD;&#x56FD;&#x5BB6;&#x6807;&#x51C6;</p>
+]]></content>
+  </entry>
+  <entry>
     <title>Python</title>
     <url>/2020/06/13/python/</url>
     <content><![CDATA[<blockquote>
@@ -337,77 +408,6 @@
       <tags>
         <tag>Python</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>乱七八糟</title>
-    <url>/2020/07/15/%E4%B9%B1%E4%B8%83%E5%85%AB%E7%B3%9F/</url>
-    <content><![CDATA[<blockquote>
-<p>&#x4E0D;&#x592A;&#x597D;&#x5206;&#x7C7B;&#x7684;&#x4E00;&#x4E9B;&#x4E1C;&#x897F;</p>
-</blockquote>
-<a id="more"></a>
-<h1 id="Research"><a href="#Research" class="headerlink" title="Research"></a>Research</h1><h2 id="database"><a href="#database" class="headerlink" title="database"></a>database</h2><ul>
-<li>Web of Science: SCI&#xFF0C;&#x5386;&#x53F2;&#x60A0;&#x4E45;&#xFF0C;&#x671F;&#x520A;&#x5168;&#xFF0C;&#x4EBA;&#x6587;&#x793E;&#x79D1;&#x5565;&#x7684;&#x5168;&#x90FD;&#x6709;</li>
-<li>Engineering villiage: EI</li>
-<li>Scopus: &#x6458;&#x8981;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x6BD4;&#x8F83;&#x65B0;&#xFF0C;&#x8377;&#x5170;&#x51FA;&#x7248;&#x5546;2004&#x5E74;&#x641E;&#x5F97;&#xFF0C;&#x6536;&#x5F55;&#x7684;&#x671F;&#x520A;&#x79CD;&#x7C7B;&#x6BD4;Web of Science&#x591A;&#xFF0C;&#x4F46;&#x662F;&#x8001;&#x4E00;&#x70B9;&#x7684;&#x671F;&#x520A;&#x5C11;</li>
-</ul>
-<h2 id="tools"><a href="#tools" class="headerlink" title="tools"></a>tools</h2><ul>
-<li><code>Scival</code>&#xFF1A; &#x7231;&#x601D;&#x552F;&#x5C14;&#x641E;&#x5F97;&#x8BBA;&#x6587;&#x68C0;&#x7D22;&#x5E73;&#x53F0;&#xFF0C;&#x4EE5;Scopus&#x6570;&#x636E;&#x5E93;&#x4E3A;&#x57FA;&#x7840;&#xFF0C;&#x63D0;&#x4F9B;&#x4E86;&#x5404;&#x79CD;&#x9AD8;&#x7EA7;&#x68C0;&#x7D22;&#x529F;&#x80FD;&#xFF08;&#x4E0D;&#x662F;&#x641C;&#x8BBA;&#x6587;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A; topic search, &#x7814;&#x7A76;&#x70ED;&#x70B9;&#x7B49;&#x7B49;&#x3002;&#xFF09;</li>
-</ul>
-<h2 id="others"><a href="#others" class="headerlink" title="others"></a>others</h2><ul>
-<li>IF: Impact Factor, &#x5F71;&#x54CD;&#x56E0;&#x5B50;</li>
-<li>JCR&#xFF1A; Journal Citation Reports&#x671F;&#x520A;&#x5F15;&#x6587;&#x62A5;&#x544A;</li>
-</ul>
-<p>&#x76EE;&#x524D;&#x56FD;&#x9645;&#x4E0A;&#x6709;&#x4E2D;&#x79D1;&#x9662;&#x5206;&#x533A;&#x548C;&#x6C64;&#x68EE;&#x8DEF;&#x900F;&#x5206;&#x533A;&#xFF08;&#x79D1;&#x777F;&#x552F;&#x5B89;&#xFF09;&#xFF0C;&#x6C64;&#x68EE;&#x8DEF;&#x900F;&#x6BCF;&#x5E74;&#x4F1A;&#x53D1;&#x5E03;&#x671F;&#x520A;&#x5F15;&#x7528;&#x62A5;&#x544A;&#xFF08;Journal Citation Reports, JCR&#xFF09;&#xFF0C;&#x641E;&#x5206;&#x533A;&#x7684;&#x76EE;&#x7684;&#x662F;&#x5BF9;&#x4E2A;&#x5B66;&#x79D1;&#x9886;&#x57DF;&#x8FDB;&#x884C;&#x5212;&#x5206;&#xFF0C;&#x6839;&#x636E;&#x5F71;&#x54CD;&#x56E0;&#x5B50;&#xFF0C;&#x5BF9;&#x67D0;&#x4E00;&#x5B66;&#x79D1;&#x9886;&#x57DF;&#x7684;&#x671F;&#x520A;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#x5206;&#x7C7B;&#x3002;</p>
-<p>&#x6C64;&#x68EE;&#x8DEF;&#x900F;&#x5206;&#x533A;&#xFF1A;</p>
-<ul>
-<li>Q1: 0~25%</li>
-<li>Q2&#xFF1A;26%~50%</li>
-<li>Q3: 51~75%</li>
-<li>Q4: 76%~100%</li>
-</ul>
-<p>&#x4E2D;&#x79D1;&#x9662;&#x5206;&#x533A;&#xFF1A;</p>
-<ul>
-<li>SCI &#x4E00;&#x533A;&#xFF1A;5% TOP</li>
-<li>SCI &#x4E8C;&#x533A;&#xFF1A;6%~20% selected TOP</li>
-<li>SCI &#x4E09;&#x533A;&#xFF1A;21%~50%</li>
-<li>SCI &#x56DB;&#x533A;&#xFF1A;51%~100%</li>
-</ul>
-<blockquote>
-<p>&#x56FD;&#x5185;&#x8BF4;SCI &#x4E00;&#x533A;&#xFF0C;&#x5E94;&#x8BE5;&#x662F;&#x4E2D;&#x79D1;&#x9662;&#x5206;&#x533A;&#xFF0C;&#x6C64;&#x68EE;&#x8DEF;&#x900F;&#x5206;&#x533A;&#xFF08;&#x79D1;&#x777F;&#x552F;&#x5B89;&#x5206;&#x533A;&#x3001;JCR&#x5206;&#x533A;&#xFF09;&#x4E00;&#x822C;&#x8BF4;Q1</p>
-</blockquote>
-<p><font color="#cf2f89" size="5" font="&#x9ED1;&#x4F53;">&#x8C8C;&#x4F3C;&#x4E2D;&#x79D1;&#x9662;&#x5206;&#x533A;&#x98CE;&#x8BC4;&#x4E0D;&#x592A;&#x597D;&#xFF0C;&#x597D;&#x591A;&#x9886;&#x57DF;&#x7684;&#x9876;&#x7EA7;&#x671F;&#x520A;&#x7ED9;&#x653E;&#x5230;&#x4E86;SCI &#x4E8C;&#x533A;&#xFF0C;&#x4E09;&#x533A;</font></p>
-<h1 id="Paper"><a href="#Paper" class="headerlink" title="Paper"></a>Paper</h1><blockquote>
-<p>The Institute for Operations Research and Management Sciences<br>&#x8FD0;&#x7B79;&#x5B66;&#x4E0E;&#x7BA1;&#x7406;&#x5B66;&#x534F;&#x4F1A;&#x3002;</p>
-</blockquote>
-<p>UTD 24</p>
-<h1 id="Empirical-Study"><a href="#Empirical-Study" class="headerlink" title="Empirical Study"></a>Empirical Study</h1><p>&#x4E0E;&#x4E4B;&#x5BF9;&#x5E94;&#x7684;&#x662F; <strong>&#x7406;&#x8BBA;&#x7814;&#x7A76;</strong>(Conceptual Study, Theoretical Study)</p>
-<blockquote>
-<p>&#x5B9E;&#x8BC1;&#x7814;&#x7A76;&#x662F;&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#x793E;&#x4F1A;&#x79D1;&#x5B66;&#x9886;&#x57DF;&#x6700;&#x88AB;&#x5E7F;&#x6CDB;&#x63A5;&#x53D7;&#x3001;&#x6700;&#x6D41;&#x884C;&#x3001;&#x6700;&#x5E38;&#x89C1;&#x7684;&#x7814;&#x7A76;&#x7C7B;&#x578B;&#x3002;<br>&#x7B80;&#x8A00;&#x4E4B;&#xFF0C;&#x5BB9;&#x6613;&#x53D1;&#x6587;&#x7AE0;&#x3002;</p>
-</blockquote>
-<p>&#x4E00;&#x822C;&#x6B65;&#x9AA4;(&#x6301;&#x7EED;&#x66F4;&#x65B0;)&#xFF1A;</p>
-<ol>
-<li>&#x786E;&#x5B9A;&#x4E00;&#x4E2A;&#x7814;&#x7A76;&#x95EE;&#x9898;<br>e.g.</li>
-</ol>
-<ul>
-<li>&#x517B;&#x72D7;&#x7684;&#x4EBA;&#x6BD4;&#x517B;&#x732B;&#x7684;&#x4EBA;&#x66F4;&#x613F;&#x610F;&#x8DDF;&#x5176;&#x4ED6;&#x4EBA;&#x793E;&#x4EA4;&#x5417;&#xFF1F;</li>
-<li>&#x5B66;&#x751F;&#x81EA;&#x53D1;&#x4E0A;&#x77E5;&#x4E4E;&#x7684;&#x9891;&#x7387;&#x8DDF;&#x5B66;&#x4E60;&#x6210;&#x7EE9;&#x6210;&#x76F8;&#x5173;&#x6027;&#x5417;&#xFF1F;</li>
-</ul>
-<ol start="2">
-<li>&#x8BBE;&#x8BA1;&#x5B9E;&#x9A8C;&#x4E0E;&#x6536;&#x96C6;&#x6570;&#x636E;</li>
-<li>&#x7EDF;&#x8BA1;&#x5206;&#x6790;<br>&#x5229;&#x7528;&#x5404;&#x79CD;&#x5404;&#x6837;&#x7684;&#x7EDF;&#x8BA1;&#x5B66;&#x5DE5;&#x5177;&#x8FDB;&#x884C; Data Analysis</li>
-<li>&#x7ED3;&#x8BBA;&#x4E0E;&#x8BC4;&#x4EF7;</li>
-</ol>
-<blockquote>
-<p>notes<br>&#x52A1;&#x5FC5;&#x4FDD;&#x7559;&#x539F;&#x59CB;&#x6570;&#x636E;&#x548C;&#x6570;&#x636E;&#x5904;&#x7406;(&#x89C4;&#x8303;&#x5316;)&#x7684;&#x7A0B;&#x5E8F;&#xFF0C;Raw Data&#x2013;Don&#x2019;t Touch!</p>
-</blockquote>
-<h1 id="Talk"><a href="#Talk" class="headerlink" title="Talk"></a>Talk</h1><p><a href="https://www.bilibili.com/video/BV1Nx41147gc?from=search&amp;seid=15203410503206147670">&#x6613;&#x4E2D;&#x5929;&#x300A;&#x5386;&#x53F2;&#x7684;&#x5E95;&#x724C;&#x300B;</a></p>
-<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><h2 id="APA"><a href="#APA" class="headerlink" title="APA"></a>APA</h2><p>APA&#x683C;&#x5F0F;&#x662F;&#x6307;&#x7F8E;&#x56FD;&#x5FC3;&#x7406;&#x5B66;&#x4F1A;&#xFF08;American Psychological Association&#xFF09;&#x51FA;&#x7248;&#x7684;&#x300A;&#x7F8E;&#x56FD;&#x5FC3;&#x7406;&#x534F;&#x4F1A;&#x520A;&#x7269;&#x51C6;&#x5219;&#x300B;&#xFF0C;&#x662F;&#x4E00;&#x4E2A;&#x88AB;&#x5E7F;&#x6CDB;&#x63A5;&#x53D7;&#x7684;&#x7814;&#x7A76;&#x8BBA;&#x6587;&#x64B0;&#x5199;&#x683C;&#x5F0F;&#xFF0C;&#x7279;&#x522B;&#x9488;&#x5BF9;&#x793E;&#x4F1A;&#x79D1;&#x5B66;&#x9886;&#x57DF;&#x7684;&#x7814;&#x7A76;&#xFF0C;&#x89C4;&#x8303;&#x5B66;&#x672F;&#x6587;&#x732E;&#x7684;&#x5F15;&#x7528;&#x548C;&#x53C2;&#x8003;&#x6587;&#x732E;&#x7684;&#x64B0;&#x5199;&#x65B9;&#x6CD5;&#xFF0C;&#x4EE5;&#x53CA;&#x8868;&#x683C;&#x3001;&#x56FE;&#x8868;&#x3001;&#x6CE8;&#x811A;&#x548C;&#x9644;&#x5F55;&#x7684;&#x7F16;&#x6392;&#x65B9;&#x5F0F;&#x3002;&#x5176;&#x201C;&#x4F5C;&#x8005;&#x548C;&#x65E5;&#x671F;&#x201D;&#x7684;&#x5F15;&#x7528;&#x8303;&#x5F0F;&#x548C;&#x201C;&#x62EC;&#x53F7;&#x5185;&#x5F15;&#x7528;&#x6CD5;&#x201D;&#x76F8;&#x5F53;&#x8457;&#x540D;&#x3002;<br>APA&#x683C;&#x5F0F;&#x89C4;&#x5B9A;&#x201C;&#x53C2;&#x8003;&#x6587;&#x732E;&#x201D;&#x90E8;&#x5206;&#x7684;&#x4EBA;&#x540D;&#x5FC5;&#x987B;&#x4EE5;&#x59D3;(Family name)&#x7684;&#x5B57;&#x6BCD;&#x987A;&#x5E8F;&#x6765;&#x6392;&#x5217;&#xFF0C;&#x5305;&#x62EC;&#x540D;(First name)&#x7684;&#x524D;&#x7F00;&#x3002;&#x8B6C;&#x5982;&#xFF0C;James Smith&#x5E94;&#x88AB;&#x6539;&#x6210;&#x201C;Smith, J.,&#x201D;&#xFF1B;Saif Al Falasi&#x5219;&#x6539;&#x6210;&#x201C;Al-Falasi, Saif.&#x201D;&#x3002;</p>
-<h2 id="MLA"><a href="#MLA" class="headerlink" title="MLA"></a>MLA</h2><p>MLA&#xFF08;Modern Language Association&#xFF09;&#x4E3A;&#x7F8E;&#x56FD;&#x73B0;&#x4EE3;&#x8BED;&#x8A00;&#x534F;&#x4F1A;&#x5236;&#x5B9A;&#x7684;&#x8BBA;&#x6587;&#x6307;&#x5BFC;&#x683C;&#x5F0F;&#xFF0C;&#x5728;&#x4E00;&#x822C;&#x4E66;&#x5199;&#x82F1;&#x8BED;&#x8BBA;&#x6587;&#x65F6;&#x5E94;&#x5F53;&#x4F7F;&#x7528;MLA&#x683C;&#x5F0F;&#x6765;&#x4FDD;&#x8BC1;&#x5B66;&#x672F;&#x8457;&#x4F5C;&#x7684;&#x5B8C;&#x6574;&#x3002;MLA&#x591A;&#x7528;&#x5728;&#x82F1;&#x8BED;&#x8BED;&#x8A00;&#x4E0E;&#x6587;&#x5B66;&#x7B49;&#x4EBA;&#x6587;&#x5B66;&#x79D1;&#x7684;&#x5B66;&#x672F;&#x8BBA;&#x6587;&#x5199;&#x4F5C;&#x4E2D;&#x3002;</p>
-<h2 id="Chicago"><a href="#Chicago" class="headerlink" title="Chicago"></a>Chicago</h2><p>Chicago&#x683C;&#x5F0F;&#x7531;&#x829D;&#x52A0;&#x54E5;&#x5927;&#x5B66;&#x51FA;&#x7248;&#x793E;&#x4E8E;1906&#x5E74;&#x9996;&#x6B21;&#x53D1;&#x884C;&#xFF0C;&#x5E7F;&#x6CDB;&#x5E94;&#x7528;&#x4E8E;&#x56FE;&#x4E66;&#x3001;&#x6742;&#x5FD7;&#x3001;&#x62A5;&#x7EB8;&#x4EE5;&#x53CA;&#x4EBA;&#x6587;&#x79D1;&#x5B66;&#x9886;&#x57DF;&#x3002; &#x8FD9;&#x4E00;&#x683C;&#x5F0F;&#x7684;&#x6807;&#x51C6;&#x662F;&#x300A;&#x829D;&#x52A0;&#x54E5;&#x5F15;&#x6CE8;&#x683C;&#x5F0F;&#x4F7F;&#x7528;&#x6307;&#x5357;&#x300B;&#xFF08;The Chicago Manual of Style&#xFF09;&#x3002;&#x4F46;&#x662F;&#x4E5F;&#x6709;&#x5F88;&#x591A;&#x7528;&#x6237;&#x628A;&#x51EF;&#x7279;&#x2022;&#x675C;&#x62C9;&#x5BBE;&#xFF08;Kate Turabian&#xFF09;&#x4E3A;&#x5B66;&#x751F;&#x7F16;&#x5199;&#x7684;&#x300A;&#x5B66;&#x671F;&#x3001;&#x5B66;&#x4F4D;&#x3001;&#x5B66;&#x672F;&#x8BBA;&#x6587;&#x5199;&#x4F5C;&#x6307;&#x5357;&#x300B;&#xFF08;A Manual for Writers of Term Papers, Theses and Dissertations&#xFF09;&#x4F5C;&#x4E3A;&#x53C2;&#x8003;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x829D;&#x52A0;&#x54E5;&#x5F15;&#x6CE8;&#x683C;&#x5F0F;&#x4E5F;&#x79F0;&#x4E3A;&#x675C;&#x62C9;&#x5BBE;&#x5F15;&#x6CE8;&#x683C;&#x5F0F;&#x3002;</p>
-<p>Chicago&#x5F15;&#x6CE8;&#x683C;&#x5F0F;&#x4E3B;&#x8981;&#x7528;&#x811A;&#x6CE8;&#xFF08;Footnotes&#xFF09;&#x5F62;&#x5F0F;&#x5F15;&#x6CE8;&#xFF0C;&#x8FD9;&#x79CD;&#x5F15;&#x6CE8;&#x5F62;&#x5F0F;&#x5E38;&#x7528;&#x4E8E;&#x4EBA;&#x6587;&#x5B66;&#x79D1;&#xFF0C;&#x5982;&#x6587;&#x5B66;&#x3001;&#x5386;&#x53F2;&#x548C;&#x827A;&#x672F;&#x5B66;&#x79D1;&#x7B49;&#x3002;&#x53E6;&#x4E00;&#x79CD;&#x5F62;&#x5F0F;&#x662F;&#x7528;&#x4F5C;&#x8005;&#x548C;&#x5E74;&#x4EFD;&#x7684;&#x5F15;&#x6CE8;&#x683C;&#x5F0F;&#x3002;&#x8FD9;&#x79CD;&#x5F15;&#x6CE8;&#x5F62;&#x5F0F;&#x5E38;&#x4E8E;&#x79D1;&#x5B66;&#x5B66;&#x79D1;&#xFF0C;&#x5982;&#x5386;&#x53F2;&#x3001;&#x5728;&#x81EA;&#x7136;&#x548C;&#x793E;&#x4F1A;&#x79D1;&#x5B66;&#x7B49;&#x3002;&#x540C;&#x6837;&#xFF0C;&#x6839;&#x636E;&#x5F15;&#x7528;&#x5185;&#x5BB9;&#x4E0D;&#x540C;&#xFF0C;&#x5728;&#x5F15;&#x7528;&#x65F6;&#x7684;&#x5177;&#x4F53;&#x8868;&#x793A;&#x65B9;&#x5F0F;&#x4E5F;&#x4E0D;&#x540C;&#x3002;</p>
-<h2 id="Harvard"><a href="#Harvard" class="headerlink" title="Harvard"></a>Harvard</h2><p>Harvard&#x5F15;&#x7528;&#x4F53;&#x7CFB;&#xFF0C;&#x987E;&#x540D;&#x601D;&#x4E49;&#x662F;&#x54C8;&#x4F5B;&#x5927;&#x5B66;&#x7684;&#x8BBA;&#x6587;&#x53C2;&#x8003;&#x6587;&#x732E;&#x6807;&#x51C6;&#xFF0C;&#x5168;&#x540D;&#x4E3A;&#xFF1A;&#x54C8;&#x4F5B;&#x6CE8;&#x91CA;&#x4F53;&#x7CFB;(Harvard System&#xFF09;&#xFF0C;&#x4E5F;&#x53EB;&#x201C;&#x4F5C;&#x8005;&#xFF0D;&#x65E5;&#x671F;&#x6CD5;&#x201D;(Author-date method)&#x3002;Harvard&#x5F15;&#x7528;&#x4F53;&#x7CFB;&#x5728;&#x82F1;&#x56FD;&#x548C;&#x6FB3;&#x6D32;&#x7B49;&#x56FD;&#x5BB6;&#x8FD0;&#x7528;&#x5F97;&#x6BD4;&#x8F83;&#x591A;&#xFF0C;&#x5C24;&#x5176;&#x5728;&#x7269;&#x7406;&#x548C;&#x81EA;&#x7136;&#x79D1;&#x5B66;&#x9886;&#x57DF;&#x3002;&#x6839;&#x636E;Harvard&#x4F53;&#x7CFB;&#xFF0C;&#x6BCF;&#x4E00;&#x4E2A;&#x5F15;&#x6587;&#xFF0C;&#x65E0;&#x8BBA;&#x76F4;&#x63A5;&#x8FD8;&#x662F;&#x95F4;&#x63A5;&#x5F15;&#x7528;&#xFF0C;&#x90FD;&#x5E94;&#x5206;&#x522B;&#x5728;&#x4E24;&#x5904;&#x6CE8;&#x660E;&#xFF1A;&#x5728;&#x6587;&#x4E2D;&#x5F15;&#x7528;&#x5904;&#x6CE8;&#x660E;&#xFF1B;&#x5728;&#x5168;&#x4E66;&#x6216;&#x5168;&#x6587;&#x6700;&#x540E;&#x7684;&#x53C2;&#x8003;&#x4E66;&#x76EE;&#xFF08;references&#xFF09;&#x5904;&#x6CE8;&#x660E;&#x3002;</p>
-<h2 id="GB-T-7714"><a href="#GB-T-7714" class="headerlink" title="GB/T 7714"></a>GB/T 7714</h2><p>&#x4E2D;&#x56FD;&#x56FD;&#x5BB6;&#x6807;&#x51C6;</p>
-]]></content>
   </entry>
   <entry>
     <title>编程工具配置</title>
