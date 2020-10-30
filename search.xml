@@ -1,6 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hexo+Butterfly+Github Pages配置个人博客网站</title>
+    <url>/2020/07/11/Butterfly%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<blockquote>
+<p>之前我也用Jekyll配置过博客，但是访问速度太慢，我又转向了Hexo，实践证明，Hexo还是很快的。我又换到Next了</p>
+</blockquote>
+<a id="more"></a>
+
+<h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><ol>
+<li>install <code>git</code> and <code>node.js</code>(better use npm taobao mirror or cnpm)</li>
+<li>config your github account infomation in local;<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;GitHub 用户名&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;GitHub 邮箱&quot;</span></span><br></pre></td></tr></table></figure></li>
+<li>create a new reposity named <code>username.github.io</code>;</li>
+<li>open <code>C:\Users\用户名\.ssh\id_rsa.pub</code> and copy the whole text;</li>
+</ol>
+<ul>
+<li>login Github in chrome</li>
+<li>setting —-&gt; SSH and GPG keys —-&gt; new SSH KEY —-&gt; paste</li>
+</ul>
+<h1 id="本地安装Hexo"><a href="#本地安装Hexo" class="headerlink" title="本地安装Hexo"></a>本地安装Hexo</h1><ol>
+<li>install Hexo in local;<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">d:</span><br><span class="line"><span class="built_in">cd</span> Blog</span><br><span class="line">cnpm install -g hexo-cli</span><br><span class="line">hexo init      <span class="comment"># 初始化</span></span><br><span class="line">cnpm install    <span class="comment"># 安装组件</span></span><br><span class="line">cnpm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+安装完之后，它默认使用的是landscape主题(主题都在themes这一文件夹下)<br>可以通过如下命令检验是否安装成功：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean <span class="comment"># 清除缓存文件</span></span><br><span class="line">hexo g   <span class="comment"># 生成页面</span></span><br><span class="line">hexo s   <span class="comment"># 启动预览</span></span><br></pre></td></tr></table></figure></li>
+<li>找到Blog文件根目录下的_config.yml文件，修改如下：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: git@github.com:用户名/用户名.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+接着运行<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h1 id="更换Butterfly主题"><a href="#更换Butterfly主题" class="headerlink" title="更换Butterfly主题"></a>更换Butterfly主题</h1><ol>
+<li>下载<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/Butterfly</span><br><span class="line"><span class="comment"># 可以使用gitee加快下载速度</span></span><br></pre></td></tr></table></figure></li>
+<li>修改Blog根目录下的_config.yml<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">theme: Butterfly</span><br></pre></td></tr></table></figure></li>
+<li>安装相关依赖<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cnpm install hexo-renderer-pug hexo-renderer-stylus --save</span><br><span class="line">cnpm install cheerio</span><br></pre></td></tr></table></figure></li>
+<li>试运行<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<blockquote>
+<p>可以使用这样的方法来连续执行多条CMD命令：<br>创建 <code>hexo.bat</code> 文件，写入以下命令，双击运行即可</p>
+<p>d: &amp;&amp; cd Blog &amp;&amp; hexo clean &amp;&amp; hexo g  &amp;&amp; hexo d &amp;&amp; hexo s</p>
+</blockquote>
+<h1 id="自定义Butterfly"><a href="#自定义Butterfly" class="headerlink" title="自定义Butterfly"></a>自定义Butterfly</h1><h2 id="修改右上角为中文"><a href="#修改右上角为中文" class="headerlink" title="修改右上角为中文"></a>修改右上角为中文</h2><ol>
+<li>修改根目录下的_config.yml中的语言<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">Li</span> <span class="string">Wu&#x27;s</span> <span class="string">BLog</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">&quot;&quot;</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">&quot;&quot;</span></span><br><span class="line"><span class="attr">keywords:</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">Li</span> <span class="string">Wu</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">&quot;&quot;</span></span><br></pre></td></tr></table></figure></li>
+<li>修改 <code>theme/Butterfly</code>文件夹下的_config.yml<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="string">主页:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span></span><br><span class="line">  <span class="string">时间轴:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br><span class="line">  <span class="string">标签:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line">  <span class="string">分类:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-folder-open</span></span><br><span class="line">  <span class="comment"># 链接: /link/ || fa fa-link</span></span><br><span class="line">  <span class="string">关于:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-heart</span></span><br></pre></td></tr></table></figure></li>
+<li>保存</li>
+<li>预览</li>
+</ol>
+<h2 id="创建archives-categories-tags-about页"><a href="#创建archives-categories-tags-about页" class="headerlink" title="创建archives,categories,tags,about页"></a>创建archives,categories,tags,about页</h2><p>以创建tags页为例，其它同理。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
+<p>修改 <code>Butterfly/source/tags/</code>文件夹下的tags.md</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2020-07-11 18:53:02</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">top_img: https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;large&#x2F;006z5e4Qgy1ggnynhq230j31hc0u0tfp.jpg</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<h2 id="开启评论系统-Valine"><a href="#开启评论系统-Valine" class="headerlink" title="开启评论系统(Valine)"></a>开启评论系统(Valine)</h2><ol>
+<li>在LeanCloud中注册账号，创建应用（开发板）；</li>
+<li>点击存储，创建类： <code>Comment</code>, <code>Counter</code>;</li>
+<li>设置，安全中心，只打开数据存储；</li>
+<li>设置，应用keys，复制AppID，AppKey;</li>
+<li>将信息粘贴到 <code>theme/Butterfly/_config.yml</code>中的这个地方：<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">valine:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span> <span class="comment"># if you want use valine,please set this value is true</span></span><br><span class="line">  <span class="attr">appId:</span> <span class="number">11111111111111111</span> <span class="comment"># leancloud application app id</span></span><br><span class="line">  <span class="attr">appKey:</span> <span class="number">222222222222222222</span> <span class="comment"># leancloud application app key</span></span><br><span class="line">  <span class="attr">notify:</span> <span class="literal">false</span> <span class="comment"># valine mail notify (true/false) https://github.com/xCss/Valine/wiki</span></span><br><span class="line">  <span class="attr">verify:</span> <span class="literal">false</span> <span class="comment"># valine verify code (true/false)</span></span><br><span class="line">  <span class="attr">pageSize:</span> <span class="number">6</span> <span class="comment"># comment list page size</span></span><br><span class="line">  <span class="comment"># avatar: monsterid # gravatar style https://valine.js.org/#/avatar</span></span><br><span class="line">  <span class="attr">lang:</span> <span class="string">zh-cn</span> <span class="comment"># i18n: zh-cn/en</span></span><br><span class="line">  <span class="attr">placeholder:</span> <span class="string">欢迎畅所欲言！</span> <span class="comment"># valine comment input placeholder(like: Please leave your footprints )</span></span><br><span class="line">  <span class="attr">guest_info:</span> <span class="string">nick,mail</span> <span class="comment">#valine comment header info</span></span><br><span class="line">  <span class="comment"># requiredFields: nick,mail # required fields (nick/mail)</span></span><br><span class="line">  <span class="attr">bg:</span> <span class="string">/img/comment_bg.png</span> <span class="comment"># valine background</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="页面配色"><a href="#页面配色" class="headerlink" title="页面配色"></a>页面配色</h2><ol>
+<li>主题配色在_config.yml中修改，参见官方文档</li>
+<li>主页上的划分的一个一个card，在这里修改<br><code>Butterfly/layout/includes/widgets/**.pug</code></li>
+<li>个人比较喜欢黑暗模式，但是黑暗模式的页面配色不太喜欢，具体可以在这里修改<br><code>Butterfly/source/css/_layout/z-darkmode.styl</code></li>
+</ol>
+<h2 id="其它设置"><a href="#其它设置" class="headerlink" title="其它设置"></a>其它设置</h2><p>参考_config.yml中的相关说明。</p>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>Butterfly</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Ecomometrics</title>
     <url>/2020/09/20/Econometrics/</url>
     <content><![CDATA[<blockquote>
@@ -123,78 +195,6 @@
       </categories>
       <tags>
         <tag>Econometrics</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo+Butterfly+Github Pages配置个人博客网站</title>
-    <url>/2020/07/11/Butterfly%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<blockquote>
-<p>之前我也用Jekyll配置过博客，但是访问速度太慢，我又转向了Hexo，实践证明，Hexo还是很快的。我又换到Next了</p>
-</blockquote>
-<a id="more"></a>
-
-<h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><ol>
-<li>install <code>git</code> and <code>node.js</code>(better use npm taobao mirror or cnpm)</li>
-<li>config your github account infomation in local;<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;GitHub 用户名&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;GitHub 邮箱&quot;</span></span><br></pre></td></tr></table></figure></li>
-<li>create a new reposity named <code>username.github.io</code>;</li>
-<li>open <code>C:\Users\用户名\.ssh\id_rsa.pub</code> and copy the whole text;</li>
-</ol>
-<ul>
-<li>login Github in chrome</li>
-<li>setting —-&gt; SSH and GPG keys —-&gt; new SSH KEY —-&gt; paste</li>
-</ul>
-<h1 id="本地安装Hexo"><a href="#本地安装Hexo" class="headerlink" title="本地安装Hexo"></a>本地安装Hexo</h1><ol>
-<li>install Hexo in local;<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">d:</span><br><span class="line"><span class="built_in">cd</span> Blog</span><br><span class="line">cnpm install -g hexo-cli</span><br><span class="line">hexo init      <span class="comment"># 初始化</span></span><br><span class="line">cnpm install    <span class="comment"># 安装组件</span></span><br><span class="line">cnpm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-安装完之后，它默认使用的是landscape主题(主题都在themes这一文件夹下)<br>可以通过如下命令检验是否安装成功：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean <span class="comment"># 清除缓存文件</span></span><br><span class="line">hexo g   <span class="comment"># 生成页面</span></span><br><span class="line">hexo s   <span class="comment"># 启动预览</span></span><br></pre></td></tr></table></figure></li>
-<li>找到Blog文件根目录下的_config.yml文件，修改如下：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: git@github.com:用户名/用户名.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-接着运行<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h1 id="更换Butterfly主题"><a href="#更换Butterfly主题" class="headerlink" title="更换Butterfly主题"></a>更换Butterfly主题</h1><ol>
-<li>下载<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/Butterfly</span><br><span class="line"><span class="comment"># 可以使用gitee加快下载速度</span></span><br></pre></td></tr></table></figure></li>
-<li>修改Blog根目录下的_config.yml<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">theme: Butterfly</span><br></pre></td></tr></table></figure></li>
-<li>安装相关依赖<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cnpm install hexo-renderer-pug hexo-renderer-stylus --save</span><br><span class="line">cnpm install cheerio</span><br></pre></td></tr></table></figure></li>
-<li>试运行<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<blockquote>
-<p>可以使用这样的方法来连续执行多条CMD命令：<br>创建 <code>hexo.bat</code> 文件，写入以下命令，双击运行即可</p>
-<p>d: &amp;&amp; cd Blog &amp;&amp; hexo clean &amp;&amp; hexo g  &amp;&amp; hexo d &amp;&amp; hexo s</p>
-</blockquote>
-<h1 id="自定义Butterfly"><a href="#自定义Butterfly" class="headerlink" title="自定义Butterfly"></a>自定义Butterfly</h1><h2 id="修改右上角为中文"><a href="#修改右上角为中文" class="headerlink" title="修改右上角为中文"></a>修改右上角为中文</h2><ol>
-<li>修改根目录下的_config.yml中的语言<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">Li</span> <span class="string">Wu&#x27;s</span> <span class="string">BLog</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">&quot;&quot;</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">&quot;&quot;</span></span><br><span class="line"><span class="attr">keywords:</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">Li</span> <span class="string">Wu</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">&quot;&quot;</span></span><br></pre></td></tr></table></figure></li>
-<li>修改 <code>theme/Butterfly</code>文件夹下的_config.yml<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="string">主页:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span></span><br><span class="line">  <span class="string">时间轴:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br><span class="line">  <span class="string">标签:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line">  <span class="string">分类:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-folder-open</span></span><br><span class="line">  <span class="comment"># 链接: /link/ || fa fa-link</span></span><br><span class="line">  <span class="string">关于:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-heart</span></span><br></pre></td></tr></table></figure></li>
-<li>保存</li>
-<li>预览</li>
-</ol>
-<h2 id="创建archives-categories-tags-about页"><a href="#创建archives-categories-tags-about页" class="headerlink" title="创建archives,categories,tags,about页"></a>创建archives,categories,tags,about页</h2><p>以创建tags页为例，其它同理。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
-<p>修改 <code>Butterfly/source/tags/</code>文件夹下的tags.md</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2020-07-11 18:53:02</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">top_img: https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;large&#x2F;006z5e4Qgy1ggnynhq230j31hc0u0tfp.jpg</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<h2 id="开启评论系统-Valine"><a href="#开启评论系统-Valine" class="headerlink" title="开启评论系统(Valine)"></a>开启评论系统(Valine)</h2><ol>
-<li>在LeanCloud中注册账号，创建应用（开发板）；</li>
-<li>点击存储，创建类： <code>Comment</code>, <code>Counter</code>;</li>
-<li>设置，安全中心，只打开数据存储；</li>
-<li>设置，应用keys，复制AppID，AppKey;</li>
-<li>将信息粘贴到 <code>theme/Butterfly/_config.yml</code>中的这个地方：<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">valine:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span> <span class="comment"># if you want use valine,please set this value is true</span></span><br><span class="line">  <span class="attr">appId:</span> <span class="number">11111111111111111</span> <span class="comment"># leancloud application app id</span></span><br><span class="line">  <span class="attr">appKey:</span> <span class="number">222222222222222222</span> <span class="comment"># leancloud application app key</span></span><br><span class="line">  <span class="attr">notify:</span> <span class="literal">false</span> <span class="comment"># valine mail notify (true/false) https://github.com/xCss/Valine/wiki</span></span><br><span class="line">  <span class="attr">verify:</span> <span class="literal">false</span> <span class="comment"># valine verify code (true/false)</span></span><br><span class="line">  <span class="attr">pageSize:</span> <span class="number">6</span> <span class="comment"># comment list page size</span></span><br><span class="line">  <span class="comment"># avatar: monsterid # gravatar style https://valine.js.org/#/avatar</span></span><br><span class="line">  <span class="attr">lang:</span> <span class="string">zh-cn</span> <span class="comment"># i18n: zh-cn/en</span></span><br><span class="line">  <span class="attr">placeholder:</span> <span class="string">欢迎畅所欲言！</span> <span class="comment"># valine comment input placeholder(like: Please leave your footprints )</span></span><br><span class="line">  <span class="attr">guest_info:</span> <span class="string">nick,mail</span> <span class="comment">#valine comment header info</span></span><br><span class="line">  <span class="comment"># requiredFields: nick,mail # required fields (nick/mail)</span></span><br><span class="line">  <span class="attr">bg:</span> <span class="string">/img/comment_bg.png</span> <span class="comment"># valine background</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h2 id="页面配色"><a href="#页面配色" class="headerlink" title="页面配色"></a>页面配色</h2><ol>
-<li>主题配色在_config.yml中修改，参见官方文档</li>
-<li>主页上的划分的一个一个card，在这里修改<br><code>Butterfly/layout/includes/widgets/**.pug</code></li>
-<li>个人比较喜欢黑暗模式，但是黑暗模式的页面配色不太喜欢，具体可以在这里修改<br><code>Butterfly/source/css/_layout/z-darkmode.styl</code></li>
-</ol>
-<h2 id="其它设置"><a href="#其它设置" class="headerlink" title="其它设置"></a>其它设置</h2><p>参考_config.yml中的相关说明。</p>
-]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>Butterfly</tag>
       </tags>
   </entry>
   <entry>
@@ -556,316 +556,6 @@
       </categories>
       <tags>
         <tag>Scipy</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>论文阅读记录</title>
-    <url>/2020/10/06/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<blockquote>
-<p>管理学顶刊(UTD24、FT50)的的阅读记录</p>
-</blockquote>
-<a id="more"></a>
-
-
-<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=1 orderedList=true} -->
-
-<!-- code_chunk_output -->
-
-<ol>
-<li><a href="#when-you-work-with-a-superman-will-you-also-fly-an-empirical-study-of-the-impact-of-coworkers-on-performance">When You Work with a Superman, Will You Also fly? An Empirical Study of the Impact of Coworkers on Performance</a></li>
-<li><a href="#the-value-of-buyonlineandpickupinstore-in-omnichannel-evidence-from-customer-usage-data">The Value of Buy‐Online‐and‐Pickup‐in‐Store in Omni‐Channel: Evidence from Customer Usage Data</a></li>
-<li><a href="#turn-your-online-engagement-in-chronic-disease-management-from-zero-to-hero-a-multi-dimensional-continuous-time-evaluation">Turn Your Online Engagement in Chronic Disease Management from Zero to Hero: A Multi-Dimensional Continuous-Time Evaluation</a></li>
-<li><a href="#advertising-strategy-in-the-presence-of-reviews-an-empirical-analysis">Advertising Strategy in the Presence of Reviews: An Empirical Analysis</a></li>
-<li><a href="#does-piracy-create-online-word-of-mouth-an-empirical-of-analysis-in-the-movie-industry">Does Piracy Create Online Word of Mouth? An Empirical of Analysis in the Movie Industry</a></li>
-</ol>
-<!-- /code_chunk_output -->
-
-
-<h1 id="When-You-Work-with-a-Superman-Will-You-Also-fly-An-Empirical-Study-of-the-Impact-of-Coworkers-on-Performance"><a href="#When-You-Work-with-a-Superman-Will-You-Also-fly-An-Empirical-Study-of-the-Impact-of-Coworkers-on-Performance" class="headerlink" title="When You Work with a Superman, Will You Also fly? An Empirical Study of the Impact of Coworkers on Performance"></a>When You Work with a Superman, Will You Also fly? An Empirical Study of the Impact of Coworkers on Performance</h1><blockquote>
-<p>Tan, T.F., Netessine, S., 2019. When You Work with a Superman, Will You Also Fly? An Empirical Study of the Impact of Coworkers on Performance. Management Science 65, 3495–3517. <a href="https://doi.org/10.1287/mnsc.2018.3135">https://doi.org/10.1287/mnsc.2018.3135</a></p>
-</blockquote>
-<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>尽管服务业在全球经济中发挥着越来越重要的作用，但它们普遍受到劳动生产率低下的困扰。 经济合作与发展组织（OECD）的一项研究表明，经合组织国家/地区的批发和零售贸易，酒店和饭店的劳动生产率通常约为制造业等工业部门的四分之三（Freeman 2008）， 从而为提高生产率创造了机会。 这样的机会之一就是有效的团队管理。</p>
-<h2 id="Literature"><a href="#Literature" class="headerlink" title="Literature"></a>Literature</h2><ol>
-<li>Scheduling/Rostering<br>考虑模型的简化，传统模型往往受以下假设的约束：工人之间是相似且彼此独立的。而最近的运营管理研究已经开发出新方法来管理各个领域的一组异类工人，包括：skill-based routing，hiring and retention, structural….  同样，研究人员也已开始将工人的异质性纳入计划/排班决策中。但是，这些调度/排班方面的论文都没有考虑工人之间的spillover effects。</li>
-<li>Peer Effects<ul>
-<li>Positive ~<ul>
-<li>在实验室环境中，Falk和Ichino（2006）发现，由于同伴压力，同伴效应提高了工人的信封填充生产率。</li>
-<li>生产线上的工人将他们的速度调整为同事的平均速度，因为他们的工作站是相互依赖的。</li>
-<li>在没有外部因素、工人获得计件工资的情况下，采摘水果的人与能力更强的朋友一起工作时生产率会提高，因为工人更愿意与朋友社交</li>
-</ul>
-</li>
-<li>Negative ~<ul>
-<li>在鼓励学生互相学习的学校环境中，Carrell等人发现同伴效应对低成绩的学生产生了负面影响，因为他们倾向于不与高成绩的学生互动。</li>
-</ul>
-</li>
-<li>not even exist<ul>
-<li>分析比赛伙伴的能力是否会影响职业高尔夫球手协会高尔夫球手的表现，并且发现估算值在统计上微不足道。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<h2 id="Contributions"><a href="#Contributions" class="headerlink" title="Contributions"></a>Contributions</h2><ol>
-<li>大多数同伴效应研究倾向于集中于线性同伴效应，其结果是正的，负的或无声的，而我们的研究则集中于非线性的同伴效应，这可以调和上述矛盾的发现。</li>
-<li>为了弥合经验对等效应研究与服务运营中最佳劳动决策文献之间的差距，我们建立了一个非常现实的调度/排班模型，该模型结合了Peer Effects来做出最优调度决策。</li>
-</ol>
-<h2 id="Hypothesis"><a href="#Hypothesis" class="headerlink" title="Hypothesis"></a>Hypothesis</h2><ol>
-<li>H1：随着coworkers的销售能力的提高，focal woker的销售业绩将首先提高，然后下降：也就是说，同事的能力和销售业绩之间存在倒U型关系。</li>
-<li>H2：离我更近的同事比离我远的同事有更强的peer effects。</li>
-<li>H3：团队中的服务员的异质性（Heterogeneity）会提高销售业绩。</li>
-</ol>
-<h2 id="Data"><a href="#Data" class="headerlink" title="Data"></a>Data</h2><p>detailed transaction-level data from the restaurant chain’s point-of-sales system, which contains pproximately 226,350 check-level observations for three restaurants from January 2011 to June 2012。</p>
-<h2 id="Research-Design"><a href="#Research-Design" class="headerlink" title="Research Design"></a>Research Design</h2><ol>
-<li>an instrumental variable approach</li>
-<li>a counterfactual analysis of the sales impact when managers consider the inverted U peer effects on scheduling</li>
-</ol>
-<h2 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h2><ol>
-<li>the inverted U relationship between the sales performance of the focal employee and coworkers’ sales ability.</li>
-<li>mixing waiters of various ability levels in the same shift is associated with improved financial performance</li>
-<li>when managers consider the inverted U peer effects on  scheduling: a sales increase of approximately 2.48% at no additional cost.</li>
-</ol>
-<h2 id="Limitations"><a href="#Limitations" class="headerlink" title="Limitations"></a>Limitations</h2><ol>
-<li>no social relationships among the coworkers, which have been found in prior work to moderate peer effects.</li>
-<li>lack other service quality data, such as complete tips data and customer satisfaction survey data.</li>
-</ol>
-<h1 id="The-Value-of-Buy‐Online‐and‐Pickup‐in‐Store-in-Omni‐Channel-Evidence-from-Customer-Usage-Data"><a href="#The-Value-of-Buy‐Online‐and‐Pickup‐in‐Store-in-Omni‐Channel-Evidence-from-Customer-Usage-Data" class="headerlink" title="The Value of Buy‐Online‐and‐Pickup‐in‐Store in Omni‐Channel: Evidence from Customer Usage Data"></a>The Value of Buy‐Online‐and‐Pickup‐in‐Store in Omni‐Channel: Evidence from Customer Usage Data</h1><blockquote>
-<p>Song, P., Wang, Q., Liu, H., Li, Q., 2020. The Value of Buy‐Online‐and‐Pickup‐in‐Store in Omni‐Channel: Evidence from Customer Usage Data. Prod Oper Manag 29, 995–1010. <a href="https://doi.org/10.1111/poms.13146">https://doi.org/10.1111/poms.13146</a></p>
-</blockquote>
-<h2 id="Background-1"><a href="#Background-1" class="headerlink" title="Background"></a>Background</h2><p>With the continued growth of sales volumes in online channels, retailers are being pushed to operate omni-channel retailing—that is, the synergetic management of various channels and customer touchpoints—to enrich customer value and improve operational efﬁ-ciency.</p>
-<h2 id="Literature-1"><a href="#Literature-1" class="headerlink" title="Literature"></a>Literature</h2><ul>
-<li>existing literature on the topic has applied retailer perspective or analytical models to investigate the value of BOPS.</li>
-<li><font color='red'> few operations management studies have used customer usage data to quantify the impact of BOPS usage on subsequent customer purchase behaviors, nor xamined the critical role of ofﬂine stores in the value generation of BOPS services. </font></li>
-</ul>
-<h2 id="Contributions-1"><a href="#Contributions-1" class="headerlink" title="Contributions"></a>Contributions</h2><ul>
-<li>Focus on the value of customers’s BOPS usage from a behavioral operations perspective —&gt; <strong>complements literature</strong></li>
-<li>Focus on the moderating effects of offline store factors.</li>
-<li>Provides practitioners with insights.</li>
-</ul>
-<h2 id="Hypotheses"><a href="#Hypotheses" class="headerlink" title="Hypotheses"></a>Hypotheses</h2><ul>
-<li>BOPS has a positive effect on their online purchase frequency and amount.(information，experience, saving delivery fee)</li>
-<li>(tactile interactions, unplanned purchases)BOPS has a positive effect on their offline purchase frequency and amount.</li>
-<li><strong>offline store density</strong> weekens BOPS usage in online purchase frequency and amount.</li>
-<li><strong>offline store density</strong> enhances BOPS usage in offline purchase frequency and amount.</li>
-<li><strong>product variety in pickup stores</strong> has a positive effect on online purchase and amount.</li>
-<li><strong>product variety in pickup stores</strong> has a positive effect on offline purchase and amount.</li>
-<li><strong>store competition density</strong> weakens OPS usage in online purchase frequency and amount.</li>
-<li><strong>store competition density</strong> weakens OPS usage in offline purchase frequency and amount.</li>
-</ul>
-<h2 id="Data-1"><a href="#Data-1" class="headerlink" title="Data"></a>Data</h2><pre class="mermaid" style="text-align: center;">
-            
-            graph LR
-  A[(database)]
-  A-- four cities & monthly agg -->C[(detailed transaction data in the omni-channel)]
-  A-->D[(objective data about the store)]
-          </pre>
-
-
-<h2 id="Research-Design-1"><a href="#Research-Design-1" class="headerlink" title="Research Design"></a>Research Design</h2><ul>
-<li><input disabled="" type="checkbox"> field experiment :x:</li>
-<li><input checked="" disabled="" type="checkbox"> propensity score match and difference-in-difference :heavy_check_mark:</li>
-</ul>
-<p>Customers using BOPS comprised the treatment group, while customers who did not use BOPS comprised the control group.</p>
-<ol>
-<li><p>two models</p>
-<ul>
-<li>DID without moderator variable</li>
-<li>with moderating effects without control group<br>where moderator variable is</li>
-<li>$ StoreDensity $ 5km</li>
-<li>$ StoreProductVariety $ unique products offline</li>
-<li>$ StoreCompetition $ 5km</li>
-</ul>
-</li>
-<li><p>model check</p>
-<ul>
-<li>multi-collineatity 多重共线性<ul>
-<li>Variance Inflation Factors: 方差膨胀因子</li>
-</ul>
-</li>
-<li>series correlation 序列相关性<ul>
-<li>Durbin-Watson test</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<h2 id="Results-1"><a href="#Results-1" class="headerlink" title="Results"></a>Results</h2><p>with the coefficients of solved models, we get:</p>
-<ul>
-<li>H1,H2 partially supported</li>
-<li>H3 are fully supported</li>
-<li>H4 was partially supported</li>
-<li>H5 was supported</li>
-<li>H6 was not supported<ul>
-<li>potential explanation: product variety online is much larger than that of pickup stores.</li>
-</ul>
-</li>
-<li>H7 fully opposite</li>
-<li>H8 partially supported</li>
-</ul>
-<h2 id="Rubustness-Check"><a href="#Rubustness-Check" class="headerlink" title="Rubustness Check"></a>Rubustness Check</h2><ol>
-<li>time window<ul>
-<li>3 months for pre or post –&gt; 2 months</li>
-</ul>
-</li>
-<li>offline store density<ul>
-<li>5km –&gt; 10km</li>
-</ul>
-</li>
-<li>product variety<ul>
-<li>unique product selling –&gt; number of product categories</li>
-</ul>
-</li>
-<li>propensity score match<ul>
-<li>included pre-period purchase frequency and amount</li>
-</ul>
-</li>
-<li>treatment group<ul>
-<li>only have used BOPS once</li>
-</ul>
-</li>
-<li>store type</li>
-<li>overlap about BOPS usage</li>
-<li>placebo test<ul>
-<li>安慰剂检验？？？</li>
-</ul>
-</li>
-</ol>
-<blockquote>
-<p>“A neutral treatment that has no “real” effect on the dependent variable is called a placebo”<br>i.e. 检测药物是否有效：<br>Plan A: group A 吃药；<br>Plan B: group B 吃糖；（placebo）<br>Plan C: group C 啥都不吃；<br>若吃糖有利于康复(也许是心情好了)，那么就产生了placebo effect.</p>
-</blockquote>
-<h2 id="Additional-Insights"><a href="#Additional-Insights" class="headerlink" title="Additional Insights"></a>Additional Insights</h2><ul>
-<li>channel preference &amp; BOPS experience</li>
-<li>economic impact</li>
-</ul>
-<h2 id="Limitations-1"><a href="#Limitations-1" class="headerlink" title="Limitations"></a>Limitations</h2><ul>
-<li>one hybrid retailer</li>
-<li>time gap</li>
-</ul>
-<ul>
-<li>BOPS service launched in 2013, but the data wo used is in 2015</li>
-</ul>
-<ul>
-<li>how BOPS usage leads to such reactions?</li>
-<li>the secondary data hh.</li>
-</ul>
-<h1 id="Turn-Your-Online-Engagement-in-Chronic-Disease-Management-from-Zero-to-Hero-A-Multi-Dimensional-Continuous-Time-Evaluation"><a href="#Turn-Your-Online-Engagement-in-Chronic-Disease-Management-from-Zero-to-Hero-A-Multi-Dimensional-Continuous-Time-Evaluation" class="headerlink" title="Turn Your Online Engagement in Chronic Disease Management from Zero to Hero: A Multi-Dimensional Continuous-Time Evaluation"></a>Turn Your Online Engagement in Chronic Disease Management from Zero to Hero: A Multi-Dimensional Continuous-Time Evaluation</h1><blockquote>
-<p>Zhou, Tongxin, Lu (Lucy) Yan, Yingfei Wang, and Yong Tan. “Turn Your Online Engagement in Chronic Disease Management from Zero to Hero: A Multi-Dimensional Continuous-Time Evaluation.” SSRN Electronic Journal, 2019. <a href="https://doi.org/10.2139/ssrn.3320076">https://doi.org/10.2139/ssrn.3320076</a>.</p>
-</blockquote>
-<h2 id="In-a-word"><a href="#In-a-word" class="headerlink" title="In a word"></a>In a word</h2><p>The authors research how the engagement levels change with time going given that all kinds of variables will affect some aspects of the model by constructing a CTHMM model.</p>
-<h2 id="Motivations-amp-Contributions"><a href="#Motivations-amp-Contributions" class="headerlink" title="Motivations&amp;Contributions."></a>Motivations&amp;Contributions.</h2><ul>
-<li>Prior studies have focus on only one behavioral dimension of online engagement.</li>
-<li>Timing information should be considered.</li>
-</ul>
-<h2 id="Model-Multi-dimensional-CTHMM"><a href="#Model-Multi-dimensional-CTHMM" class="headerlink" title="Model: Multi-dimensional CTHMM"></a>Model: Multi-dimensional CTHMM</h2><p>连续时间隐马尔科夫模型的组成：</p>
-<ul>
-<li>waiting time</li>
-<li>state-depenent Outcome</li>
-<li>initial hidden state distribution</li>
-<li>嵌入式离散隐马尔科夫模型的状态转移概率</li>
-</ul>
-<h3 id="waiting-time"><a href="#waiting-time" class="headerlink" title="waiting time:"></a>waiting time:</h3><p>exponiential distribution<br>$$ f(\Delta t)=\theta_{sit}e^{\theta_{sit}\cdot \Delta t}$$</p>
-<p>where $ \theta_{sit} =e^{\alpha_s\cdot D_{it}}$, $ s $denotes the staes, $ D_{it} $ denotes the variables affecting individual $ i $’s waiting time at time $ t $,$ \alpha_s $is the coefficients of $ D_{it} $.$ \Delta t $ is the waiting time, $ f(\Delta t) $ is the distribution of $ \Delta t$.</p>
-<h3 id="State-transition-Matrix"><a href="#State-transition-Matrix" class="headerlink" title="State-transition Matrix"></a>State-transition Matrix</h3><blockquote>
-<p>Fill the diagnonal of the state-transiton matrix with $ \theta^{-1} =e^{-\alpha_s \cdot D_{it}}$<br>????</p>
-</blockquote>
-<p>最后也是得到了一个含有待估参数的嵌入式离散隐马尔科夫模型的状态转移概率的表达式。$ R_{it} $ contains the covariates that affect state transitions.</p>
-<h3 id="State-dependent-Outcome"><a href="#State-dependent-Outcome" class="headerlink" title="State-dependent Outcome"></a>State-dependent Outcome</h3><p>Possion distribution</p>
-<p>$$ \Pi(Y_{jit}|s_{it}=s)=\frac{e^{-\lambda_{jsit}}\cdot\lambda_{jsit}^{Y_{jit}}}{Y_{jit}!} $$<br>where $ Y_{jit} $ is multi-dimensional output, $ j $ index activities type, $ i $ index individual, $ t $ index time and $ \lambda_{jsit}=e^{\beta_{js}W_{it}+ \varepsilon_{ji}} $, $ W_{it} $ is the covariables affecting the individual $ i $’s output at time $ t $.</p>
-<h2 id="Data-2"><a href="#Data-2" class="headerlink" title="Data"></a>Data</h2><pre class="mermaid" style="text-align: center;">
-            
-            graph LR
-a[(database)]-->b[social support]
-a-->c[self-monitorning]
-a-->d[short-term goal setting]
-a-->e[user]
-d.->dd[Outcome]
-b.->ww[waiting time]
-b.->cc[state transitions]
-b.->dd
-e.->dd
-e.->ww[waiting time]
-subgraph online weightloss community
-b
-c
-d
-end
-          </pre>
-
-<h2 id="Empirical-Results"><a href="#Empirical-Results" class="headerlink" title="Empirical Results"></a>Empirical Results</h2><p>通过AIC/BIC信息准则选择最好的状态个数，然后估计出模型中的参数($ \beta_{js}, \alpha_s,\rho_s$)(最大似然估计)，分析参数的显著性得到分析结果。</p>
-<h2 id="Limitations-2"><a href="#Limitations-2" class="headerlink" title="Limitations"></a>Limitations</h2><p>没有刻画线下体重管理活动。这是<strong>社交媒体研究的通病</strong></p>
-<h1 id="Advertising-Strategy-in-the-Presence-of-Reviews-An-Empirical-Analysis"><a href="#Advertising-Strategy-in-the-Presence-of-Reviews-An-Empirical-Analysis" class="headerlink" title="Advertising Strategy in the Presence of Reviews: An Empirical Analysis"></a>Advertising Strategy in the Presence of Reviews: An Empirical Analysis</h1><blockquote>
-<p>Hollenbeck, Brett, Sridhar Moorthy, and Davide Proserpio. “Advertising Strategy in the Presence of Reviews: An Empirical Analysis.” Marketing Science, 2019, 20.</p>
-</blockquote>
-<h2 id="In-a-word-1"><a href="#In-a-word-1" class="headerlink" title="In a word"></a>In a word</h2><p>这篇文章通过断点回归(RDD)研究了美国酒店的广告支出与线上评分的关系。</p>
-<h2 id="Motivations-amp-Contributions-1"><a href="#Motivations-amp-Contributions-1" class="headerlink" title="Motivations&amp;Contributions"></a>Motivations&amp;Contributions</h2><p>有很多实证研究是将广告支出和产品质量联系起来的，还没有研究使用线上评分作为产品质量的度量(perceived quality)。并且，这些研究很多是研究相关关系的，没有研究因果关系。</p>
-<h2 id="Data-3"><a href="#Data-3" class="headerlink" title="Data"></a>Data</h2><pre class="mermaid" style="text-align: center;">
-            
-            graph LR
-data[(database)]-->a[TripAdviser]
-data-->b[KantarMedia]
-data-->c[SpyFu]
-data-->d[STR]
-subgraph hotel info
-a-->a1[hotel name]
-a-->a2[hotel address]
-a-->a3[other properties]
-d-->d1[hotel info: name,address,capacity,class,etc]
-d-->d2[连锁酒店]
-d-->d3[panel of hotel prices]
-end
-subgraph advertisement
-b-->b1[tranditional media]
-b-->b2[internet display]
-c-->c1[online search-Google]
-end
-          </pre>
-
-<h2 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h2><p>酒店的的真实评分会进行四舍五入，用户看到的是3.0,3.5,4.0,4.5,5.0类似的评分。所以在四舍五入阈值附近(如3.25,3.75,,4.25,4.75)的值，高于阈值则舍入到高评分，低于阈值则舍入到低评分。</p>
-<p>将断点分别设置在阈值3.25，3.75，4.25，4.75处，设置带宽为0.05颗星，为了减少样本方差，仅使用了酒店的评分数多于20个的。</p>
-<p>因变量为广告支出，自变量包括阈值，平均评分，固定效应变量和随机误差项。</p>
-<p>模型的检验：</p>
-<ul>
-<li>期望广告支出与平均评分的函数关系在断点处是连续的；</li>
-<li>酒店不会操纵平均得分。</li>
-</ul>
-<h2 id="Results-2"><a href="#Results-2" class="headerlink" title="Results"></a>Results</h2><p>在3.25,4.25,4.75的断点处，有明显的的截距差异，表明在断点处评分的跳跃式增长(+0.5)导致了广告支出的下降。</p>
-<p>随后，作者又分别检验了在控制广告媒体的类型、酒店类型、市场差异化因素、时间效应（early versus late）的情况下，评分的跳跃式增长与广告支出的关系(因果关系)。</p>
-<p>最后作者进行了鲁棒性检验，包括Placebo test(将断点设在别处，证明之前设置的断点是有效的)、二次多项式估计等</p>
-<blockquote>
-<p>RDD的使用情景、检验方法等还需要进一步学习</p>
-</blockquote>
-<h1 id="Does-Piracy-Create-Online-Word-of-Mouth-An-Empirical-of-Analysis-in-the-Movie-Industry"><a href="#Does-Piracy-Create-Online-Word-of-Mouth-An-Empirical-of-Analysis-in-the-Movie-Industry" class="headerlink" title="Does Piracy Create Online Word of Mouth? An Empirical of Analysis in the Movie Industry"></a>Does Piracy Create Online Word of Mouth? An Empirical of Analysis in the Movie Industry</h1><p>盗版是否会对电影的线上口碑（Word of Mouth, WOM）产生影响呢？<br>WOM volume:</p>
-<p>WOM valence:</p>
-<h2 id="In-a-Word"><a href="#In-a-Word" class="headerlink" title="In a Word"></a>In a Word</h2><h2 id="Motivation-amp-Contributions"><a href="#Motivation-amp-Contributions" class="headerlink" title="Motivation&amp;Contributions"></a>Motivation&amp;Contributions</h2><h2 id="Data-4"><a href="#Data-4" class="headerlink" title="Data"></a>Data</h2><ul>
-<li>Box Office Mojo(票房)</li>
-<li>IMDB</li>
-<li>The Pirate Bay</li>
-<li>The Numbers</li>
-<li>Rotten Toamtoes</li>
-<li>Kantar Media（广告数据）</li>
-</ul>
-<p>WOM volume： 用户评论数<br>WOM valence：用户的平均评分</p>
-<h2 id="Model-1"><a href="#Model-1" class="headerlink" title="Model"></a>Model</h2><p>(1)<br>$$ Box_office_revenue = torrents_volume+reviews+average_rating+theaters+…. for_each_movie $$<br>(2) WOM volume<br>$$ reviews= 前一天的torrents_volume+average rating+theaters+…. for_each_movie $$<br>(3)WOM valence<br>$$ average rating =前一天的torrents volume+reviews+theaters+…. for_each_movie $$<br>内生性分析</p>
-<ol>
-<li>观测不到的需求因素会影响种子数量进而影响到票房<br>需求因素隐藏在模型的误差项中，换句话说，误差项与自变量相关而产生了内生性。<br>问题解决：<br>假设种子上传者会不会上传种子取决于上传种子的成本和获得的收益，即<br>$$ torrent_volume= f(benefit(\epsilon),cost)$$<br>所以只要找到一个可以影响上传种子的成本但是又不影响收益的变量就可以作为工具变量。</li>
-</ol>
-<p>俄罗斯市场与美国市场</p>
-<blockquote>
-<p>工具变量法:<br>对于模型 $y=\beta_1+\beta_2 X+\epsilon$<br>由于 $ X $ 与 $ \epsilon $ 相关，使得估计出的 $ \beta_2 $ 不准确，所以需要找一个工具变量IV，重新估计 $ X $ 使得新的 $ X $ 与 $ \epsilon $ 不相关（第一阶段），再使用新的 $ X $ 进行 OLS 回归(第二阶段)，得到的 $ \beta_2 $ 就是准确的。（两阶段最小二乘法）</p>
-<blockquote>
-<p>IV应该满足的条件<br>$$ Cor(IV,X)\neq 0 $$<br>$$ Cor(IV,\epsilon) = 0$$<br>当 IV与 $ X $ 相关性不强时，IV被称为弱工具变量。</p>
-</blockquote>
-</blockquote>
-<p>俄罗斯两个盗版网站的种子数量作为工具变量，原因：</p>
-<ul>
-<li><strong>外生性条件：</strong> 俄罗斯和美国市场分离，所以俄罗斯的市场需求不会影响美国的市场需求，即与误差项 $ \epsilon $ 不相关</li>
-<li><strong>相关性条件：</strong> 美国人会从俄罗斯网站上下载种子上传到海盗湾上，降低了上传种子的成本，即与自变量 $ torrent_volume $ 相关</li>
-</ul>
-]]></content>
-      <categories>
-        <category>原创</category>
-      </categories>
-      <tags>
-        <tag>paper</tag>
       </tags>
   </entry>
   <entry>
@@ -1255,6 +945,316 @@ end
       </categories>
       <tags>
         <tag>regex</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>论文阅读记录</title>
+    <url>/2020/10/06/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<blockquote>
+<p>管理学顶刊(UTD24、FT50)的的阅读记录</p>
+</blockquote>
+<a id="more"></a>
+
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=1 orderedList=true} -->
+
+<!-- code_chunk_output -->
+
+<ol>
+<li><a href="#when-you-work-with-a-superman-will-you-also-fly-an-empirical-study-of-the-impact-of-coworkers-on-performance">When You Work with a Superman, Will You Also fly? An Empirical Study of the Impact of Coworkers on Performance</a></li>
+<li><a href="#the-value-of-buyonlineandpickupinstore-in-omnichannel-evidence-from-customer-usage-data">The Value of Buy‐Online‐and‐Pickup‐in‐Store in Omni‐Channel: Evidence from Customer Usage Data</a></li>
+<li><a href="#turn-your-online-engagement-in-chronic-disease-management-from-zero-to-hero-a-multi-dimensional-continuous-time-evaluation">Turn Your Online Engagement in Chronic Disease Management from Zero to Hero: A Multi-Dimensional Continuous-Time Evaluation</a></li>
+<li><a href="#advertising-strategy-in-the-presence-of-reviews-an-empirical-analysis">Advertising Strategy in the Presence of Reviews: An Empirical Analysis</a></li>
+<li><a href="#does-piracy-create-online-word-of-mouth-an-empirical-of-analysis-in-the-movie-industry">Does Piracy Create Online Word of Mouth? An Empirical of Analysis in the Movie Industry</a></li>
+</ol>
+<!-- /code_chunk_output -->
+
+
+<h1 id="When-You-Work-with-a-Superman-Will-You-Also-fly-An-Empirical-Study-of-the-Impact-of-Coworkers-on-Performance"><a href="#When-You-Work-with-a-Superman-Will-You-Also-fly-An-Empirical-Study-of-the-Impact-of-Coworkers-on-Performance" class="headerlink" title="When You Work with a Superman, Will You Also fly? An Empirical Study of the Impact of Coworkers on Performance"></a>When You Work with a Superman, Will You Also fly? An Empirical Study of the Impact of Coworkers on Performance</h1><blockquote>
+<p>Tan, T.F., Netessine, S., 2019. When You Work with a Superman, Will You Also Fly? An Empirical Study of the Impact of Coworkers on Performance. Management Science 65, 3495–3517. <a href="https://doi.org/10.1287/mnsc.2018.3135">https://doi.org/10.1287/mnsc.2018.3135</a></p>
+</blockquote>
+<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>尽管服务业在全球经济中发挥着越来越重要的作用，但它们普遍受到劳动生产率低下的困扰。 经济合作与发展组织（OECD）的一项研究表明，经合组织国家/地区的批发和零售贸易，酒店和饭店的劳动生产率通常约为制造业等工业部门的四分之三（Freeman 2008）， 从而为提高生产率创造了机会。 这样的机会之一就是有效的团队管理。</p>
+<h2 id="Literature"><a href="#Literature" class="headerlink" title="Literature"></a>Literature</h2><ol>
+<li>Scheduling/Rostering<br>考虑模型的简化，传统模型往往受以下假设的约束：工人之间是相似且彼此独立的。而最近的运营管理研究已经开发出新方法来管理各个领域的一组异类工人，包括：skill-based routing，hiring and retention, structural….  同样，研究人员也已开始将工人的异质性纳入计划/排班决策中。但是，这些调度/排班方面的论文都没有考虑工人之间的spillover effects。</li>
+<li>Peer Effects<ul>
+<li>Positive ~<ul>
+<li>在实验室环境中，Falk和Ichino（2006）发现，由于同伴压力，同伴效应提高了工人的信封填充生产率。</li>
+<li>生产线上的工人将他们的速度调整为同事的平均速度，因为他们的工作站是相互依赖的。</li>
+<li>在没有外部因素、工人获得计件工资的情况下，采摘水果的人与能力更强的朋友一起工作时生产率会提高，因为工人更愿意与朋友社交</li>
+</ul>
+</li>
+<li>Negative ~<ul>
+<li>在鼓励学生互相学习的学校环境中，Carrell等人发现同伴效应对低成绩的学生产生了负面影响，因为他们倾向于不与高成绩的学生互动。</li>
+</ul>
+</li>
+<li>not even exist<ul>
+<li>分析比赛伙伴的能力是否会影响职业高尔夫球手协会高尔夫球手的表现，并且发现估算值在统计上微不足道。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="Contributions"><a href="#Contributions" class="headerlink" title="Contributions"></a>Contributions</h2><ol>
+<li>大多数同伴效应研究倾向于集中于线性同伴效应，其结果是正的，负的或无声的，而我们的研究则集中于非线性的同伴效应，这可以调和上述矛盾的发现。</li>
+<li>为了弥合经验对等效应研究与服务运营中最佳劳动决策文献之间的差距，我们建立了一个非常现实的调度/排班模型，该模型结合了Peer Effects来做出最优调度决策。</li>
+</ol>
+<h2 id="Hypothesis"><a href="#Hypothesis" class="headerlink" title="Hypothesis"></a>Hypothesis</h2><ol>
+<li>H1：随着coworkers的销售能力的提高，focal woker的销售业绩将首先提高，然后下降：也就是说，同事的能力和销售业绩之间存在倒U型关系。</li>
+<li>H2：离我更近的同事比离我远的同事有更强的peer effects。</li>
+<li>H3：团队中的服务员的异质性（Heterogeneity）会提高销售业绩。</li>
+</ol>
+<h2 id="Data"><a href="#Data" class="headerlink" title="Data"></a>Data</h2><p>detailed transaction-level data from the restaurant chain’s point-of-sales system, which contains pproximately 226,350 check-level observations for three restaurants from January 2011 to June 2012。</p>
+<h2 id="Research-Design"><a href="#Research-Design" class="headerlink" title="Research Design"></a>Research Design</h2><ol>
+<li>an instrumental variable approach</li>
+<li>a counterfactual analysis of the sales impact when managers consider the inverted U peer effects on scheduling</li>
+</ol>
+<h2 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h2><ol>
+<li>the inverted U relationship between the sales performance of the focal employee and coworkers’ sales ability.</li>
+<li>mixing waiters of various ability levels in the same shift is associated with improved financial performance</li>
+<li>when managers consider the inverted U peer effects on  scheduling: a sales increase of approximately 2.48% at no additional cost.</li>
+</ol>
+<h2 id="Limitations"><a href="#Limitations" class="headerlink" title="Limitations"></a>Limitations</h2><ol>
+<li>no social relationships among the coworkers, which have been found in prior work to moderate peer effects.</li>
+<li>lack other service quality data, such as complete tips data and customer satisfaction survey data.</li>
+</ol>
+<h1 id="The-Value-of-Buy‐Online‐and‐Pickup‐in‐Store-in-Omni‐Channel-Evidence-from-Customer-Usage-Data"><a href="#The-Value-of-Buy‐Online‐and‐Pickup‐in‐Store-in-Omni‐Channel-Evidence-from-Customer-Usage-Data" class="headerlink" title="The Value of Buy‐Online‐and‐Pickup‐in‐Store in Omni‐Channel: Evidence from Customer Usage Data"></a>The Value of Buy‐Online‐and‐Pickup‐in‐Store in Omni‐Channel: Evidence from Customer Usage Data</h1><blockquote>
+<p>Song, P., Wang, Q., Liu, H., Li, Q., 2020. The Value of Buy‐Online‐and‐Pickup‐in‐Store in Omni‐Channel: Evidence from Customer Usage Data. Prod Oper Manag 29, 995–1010. <a href="https://doi.org/10.1111/poms.13146">https://doi.org/10.1111/poms.13146</a></p>
+</blockquote>
+<h2 id="Background-1"><a href="#Background-1" class="headerlink" title="Background"></a>Background</h2><p>With the continued growth of sales volumes in online channels, retailers are being pushed to operate omni-channel retailing—that is, the synergetic management of various channels and customer touchpoints—to enrich customer value and improve operational efﬁ-ciency.</p>
+<h2 id="Literature-1"><a href="#Literature-1" class="headerlink" title="Literature"></a>Literature</h2><ul>
+<li>existing literature on the topic has applied retailer perspective or analytical models to investigate the value of BOPS.</li>
+<li><font color='red'> few operations management studies have used customer usage data to quantify the impact of BOPS usage on subsequent customer purchase behaviors, nor xamined the critical role of ofﬂine stores in the value generation of BOPS services. </font></li>
+</ul>
+<h2 id="Contributions-1"><a href="#Contributions-1" class="headerlink" title="Contributions"></a>Contributions</h2><ul>
+<li>Focus on the value of customers’s BOPS usage from a behavioral operations perspective —&gt; <strong>complements literature</strong></li>
+<li>Focus on the moderating effects of offline store factors.</li>
+<li>Provides practitioners with insights.</li>
+</ul>
+<h2 id="Hypotheses"><a href="#Hypotheses" class="headerlink" title="Hypotheses"></a>Hypotheses</h2><ul>
+<li>BOPS has a positive effect on their online purchase frequency and amount.(information，experience, saving delivery fee)</li>
+<li>(tactile interactions, unplanned purchases)BOPS has a positive effect on their offline purchase frequency and amount.</li>
+<li><strong>offline store density</strong> weekens BOPS usage in online purchase frequency and amount.</li>
+<li><strong>offline store density</strong> enhances BOPS usage in offline purchase frequency and amount.</li>
+<li><strong>product variety in pickup stores</strong> has a positive effect on online purchase and amount.</li>
+<li><strong>product variety in pickup stores</strong> has a positive effect on offline purchase and amount.</li>
+<li><strong>store competition density</strong> weakens OPS usage in online purchase frequency and amount.</li>
+<li><strong>store competition density</strong> weakens OPS usage in offline purchase frequency and amount.</li>
+</ul>
+<h2 id="Data-1"><a href="#Data-1" class="headerlink" title="Data"></a>Data</h2><pre class="mermaid" style="text-align: center;">
+            
+            graph LR
+  A[(database)]
+  A-- four cities & monthly agg -->C[(detailed transaction data in the omni-channel)]
+  A-->D[(objective data about the store)]
+          </pre>
+
+
+<h2 id="Research-Design-1"><a href="#Research-Design-1" class="headerlink" title="Research Design"></a>Research Design</h2><ul>
+<li><input disabled="" type="checkbox"> field experiment :x:</li>
+<li><input checked="" disabled="" type="checkbox"> propensity score match and difference-in-difference :heavy_check_mark:</li>
+</ul>
+<p>Customers using BOPS comprised the treatment group, while customers who did not use BOPS comprised the control group.</p>
+<ol>
+<li><p>two models</p>
+<ul>
+<li>DID without moderator variable</li>
+<li>with moderating effects without control group<br>where moderator variable is</li>
+<li>$ StoreDensity $ 5km</li>
+<li>$ StoreProductVariety $ unique products offline</li>
+<li>$ StoreCompetition $ 5km</li>
+</ul>
+</li>
+<li><p>model check</p>
+<ul>
+<li>multi-collineatity 多重共线性<ul>
+<li>Variance Inflation Factors: 方差膨胀因子</li>
+</ul>
+</li>
+<li>series correlation 序列相关性<ul>
+<li>Durbin-Watson test</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="Results-1"><a href="#Results-1" class="headerlink" title="Results"></a>Results</h2><p>with the coefficients of solved models, we get:</p>
+<ul>
+<li>H1,H2 partially supported</li>
+<li>H3 are fully supported</li>
+<li>H4 was partially supported</li>
+<li>H5 was supported</li>
+<li>H6 was not supported<ul>
+<li>potential explanation: product variety online is much larger than that of pickup stores.</li>
+</ul>
+</li>
+<li>H7 fully opposite</li>
+<li>H8 partially supported</li>
+</ul>
+<h2 id="Rubustness-Check"><a href="#Rubustness-Check" class="headerlink" title="Rubustness Check"></a>Rubustness Check</h2><ol>
+<li>time window<ul>
+<li>3 months for pre or post –&gt; 2 months</li>
+</ul>
+</li>
+<li>offline store density<ul>
+<li>5km –&gt; 10km</li>
+</ul>
+</li>
+<li>product variety<ul>
+<li>unique product selling –&gt; number of product categories</li>
+</ul>
+</li>
+<li>propensity score match<ul>
+<li>included pre-period purchase frequency and amount</li>
+</ul>
+</li>
+<li>treatment group<ul>
+<li>only have used BOPS once</li>
+</ul>
+</li>
+<li>store type</li>
+<li>overlap about BOPS usage</li>
+<li>placebo test<ul>
+<li>安慰剂检验？？？</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>“A neutral treatment that has no “real” effect on the dependent variable is called a placebo”<br>i.e. 检测药物是否有效：<br>Plan A: group A 吃药；<br>Plan B: group B 吃糖；（placebo）<br>Plan C: group C 啥都不吃；<br>若吃糖有利于康复(也许是心情好了)，那么就产生了placebo effect.</p>
+</blockquote>
+<h2 id="Additional-Insights"><a href="#Additional-Insights" class="headerlink" title="Additional Insights"></a>Additional Insights</h2><ul>
+<li>channel preference &amp; BOPS experience</li>
+<li>economic impact</li>
+</ul>
+<h2 id="Limitations-1"><a href="#Limitations-1" class="headerlink" title="Limitations"></a>Limitations</h2><ul>
+<li>one hybrid retailer</li>
+<li>time gap</li>
+</ul>
+<ul>
+<li>BOPS service launched in 2013, but the data wo used is in 2015</li>
+</ul>
+<ul>
+<li>how BOPS usage leads to such reactions?</li>
+<li>the secondary data hh.</li>
+</ul>
+<h1 id="Turn-Your-Online-Engagement-in-Chronic-Disease-Management-from-Zero-to-Hero-A-Multi-Dimensional-Continuous-Time-Evaluation"><a href="#Turn-Your-Online-Engagement-in-Chronic-Disease-Management-from-Zero-to-Hero-A-Multi-Dimensional-Continuous-Time-Evaluation" class="headerlink" title="Turn Your Online Engagement in Chronic Disease Management from Zero to Hero: A Multi-Dimensional Continuous-Time Evaluation"></a>Turn Your Online Engagement in Chronic Disease Management from Zero to Hero: A Multi-Dimensional Continuous-Time Evaluation</h1><blockquote>
+<p>Zhou, Tongxin, Lu (Lucy) Yan, Yingfei Wang, and Yong Tan. “Turn Your Online Engagement in Chronic Disease Management from Zero to Hero: A Multi-Dimensional Continuous-Time Evaluation.” SSRN Electronic Journal, 2019. <a href="https://doi.org/10.2139/ssrn.3320076">https://doi.org/10.2139/ssrn.3320076</a>.</p>
+</blockquote>
+<h2 id="In-a-word"><a href="#In-a-word" class="headerlink" title="In a word"></a>In a word</h2><p>The authors research how the engagement levels change with time going given that all kinds of variables will affect some aspects of the model by constructing a CTHMM model.</p>
+<h2 id="Motivations-amp-Contributions"><a href="#Motivations-amp-Contributions" class="headerlink" title="Motivations&amp;Contributions."></a>Motivations&amp;Contributions.</h2><ul>
+<li>Prior studies have focus on only one behavioral dimension of online engagement.</li>
+<li>Timing information should be considered.</li>
+</ul>
+<h2 id="Model-Multi-dimensional-CTHMM"><a href="#Model-Multi-dimensional-CTHMM" class="headerlink" title="Model: Multi-dimensional CTHMM"></a>Model: Multi-dimensional CTHMM</h2><p>连续时间隐马尔科夫模型的组成：</p>
+<ul>
+<li>waiting time</li>
+<li>state-depenent Outcome</li>
+<li>initial hidden state distribution</li>
+<li>嵌入式离散隐马尔科夫模型的状态转移概率</li>
+</ul>
+<h3 id="waiting-time"><a href="#waiting-time" class="headerlink" title="waiting time:"></a>waiting time:</h3><p>exponiential distribution<br>$$ f(\Delta t)=\theta_{sit}e^{\theta_{sit}\cdot \Delta t}$$</p>
+<p>where $ \theta_{sit} =e^{\alpha_s\cdot D_{it}}$, $ s $denotes the staes, $ D_{it} $ denotes the variables affecting individual $ i $’s waiting time at time $ t $,$ \alpha_s $is the coefficients of $ D_{it} $.$ \Delta t $ is the waiting time, $ f(\Delta t) $ is the distribution of $ \Delta t$.</p>
+<h3 id="State-transition-Matrix"><a href="#State-transition-Matrix" class="headerlink" title="State-transition Matrix"></a>State-transition Matrix</h3><blockquote>
+<p>Fill the diagnonal of the state-transiton matrix with $ \theta^{-1} =e^{-\alpha_s \cdot D_{it}}$<br>????</p>
+</blockquote>
+<p>最后也是得到了一个含有待估参数的嵌入式离散隐马尔科夫模型的状态转移概率的表达式。$ R_{it} $ contains the covariates that affect state transitions.</p>
+<h3 id="State-dependent-Outcome"><a href="#State-dependent-Outcome" class="headerlink" title="State-dependent Outcome"></a>State-dependent Outcome</h3><p>Possion distribution</p>
+<p>$$ \Pi(Y_{jit}|s_{it}=s)=\frac{e^{-\lambda_{jsit}}\cdot\lambda_{jsit}^{Y_{jit}}}{Y_{jit}!} $$<br>where $ Y_{jit} $ is multi-dimensional output, $ j $ index activities type, $ i $ index individual, $ t $ index time and $ \lambda_{jsit}=e^{\beta_{js}W_{it}+ \varepsilon_{ji}} $, $ W_{it} $ is the covariables affecting the individual $ i $’s output at time $ t $.</p>
+<h2 id="Data-2"><a href="#Data-2" class="headerlink" title="Data"></a>Data</h2><pre class="mermaid" style="text-align: center;">
+            
+            graph LR
+a[(database)]-->b[social support]
+a-->c[self-monitorning]
+a-->d[short-term goal setting]
+a-->e[user]
+d.->dd[Outcome]
+b.->ww[waiting time]
+b.->cc[state transitions]
+b.->dd
+e.->dd
+e.->ww[waiting time]
+subgraph online weightloss community
+b
+c
+d
+end
+          </pre>
+
+<h2 id="Empirical-Results"><a href="#Empirical-Results" class="headerlink" title="Empirical Results"></a>Empirical Results</h2><p>通过AIC/BIC信息准则选择最好的状态个数，然后估计出模型中的参数($ \beta_{js}, \alpha_s,\rho_s$)(最大似然估计)，分析参数的显著性得到分析结果。</p>
+<h2 id="Limitations-2"><a href="#Limitations-2" class="headerlink" title="Limitations"></a>Limitations</h2><p>没有刻画线下体重管理活动。这是<strong>社交媒体研究的通病</strong></p>
+<h1 id="Advertising-Strategy-in-the-Presence-of-Reviews-An-Empirical-Analysis"><a href="#Advertising-Strategy-in-the-Presence-of-Reviews-An-Empirical-Analysis" class="headerlink" title="Advertising Strategy in the Presence of Reviews: An Empirical Analysis"></a>Advertising Strategy in the Presence of Reviews: An Empirical Analysis</h1><blockquote>
+<p>Hollenbeck, Brett, Sridhar Moorthy, and Davide Proserpio. “Advertising Strategy in the Presence of Reviews: An Empirical Analysis.” Marketing Science, 2019, 20.</p>
+</blockquote>
+<h2 id="In-a-word-1"><a href="#In-a-word-1" class="headerlink" title="In a word"></a>In a word</h2><p>这篇文章通过断点回归(RDD)研究了美国酒店的广告支出与线上评分的关系。</p>
+<h2 id="Motivations-amp-Contributions-1"><a href="#Motivations-amp-Contributions-1" class="headerlink" title="Motivations&amp;Contributions"></a>Motivations&amp;Contributions</h2><p>有很多实证研究是将广告支出和产品质量联系起来的，还没有研究使用线上评分作为产品质量的度量(perceived quality)。并且，这些研究很多是研究相关关系的，没有研究因果关系。</p>
+<h2 id="Data-3"><a href="#Data-3" class="headerlink" title="Data"></a>Data</h2><pre class="mermaid" style="text-align: center;">
+            
+            graph LR
+data[(database)]-->a[TripAdviser]
+data-->b[KantarMedia]
+data-->c[SpyFu]
+data-->d[STR]
+subgraph hotel info
+a-->a1[hotel name]
+a-->a2[hotel address]
+a-->a3[other properties]
+d-->d1[hotel info: name,address,capacity,class,etc]
+d-->d2[连锁酒店]
+d-->d3[panel of hotel prices]
+end
+subgraph advertisement
+b-->b1[tranditional media]
+b-->b2[internet display]
+c-->c1[online search-Google]
+end
+          </pre>
+
+<h2 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h2><p>酒店的的真实评分会进行四舍五入，用户看到的是3.0,3.5,4.0,4.5,5.0类似的评分。所以在四舍五入阈值附近(如3.25,3.75,,4.25,4.75)的值，高于阈值则舍入到高评分，低于阈值则舍入到低评分。</p>
+<p>将断点分别设置在阈值3.25，3.75，4.25，4.75处，设置带宽为0.05颗星，为了减少样本方差，仅使用了酒店的评分数多于20个的。</p>
+<p>因变量为广告支出，自变量包括阈值，平均评分，固定效应变量和随机误差项。</p>
+<p>模型的检验：</p>
+<ul>
+<li>期望广告支出与平均评分的函数关系在断点处是连续的；</li>
+<li>酒店不会操纵平均得分。</li>
+</ul>
+<h2 id="Results-2"><a href="#Results-2" class="headerlink" title="Results"></a>Results</h2><p>在3.25,4.25,4.75的断点处，有明显的的截距差异，表明在断点处评分的跳跃式增长(+0.5)导致了广告支出的下降。</p>
+<p>随后，作者又分别检验了在控制广告媒体的类型、酒店类型、市场差异化因素、时间效应（early versus late）的情况下，评分的跳跃式增长与广告支出的关系(因果关系)。</p>
+<p>最后作者进行了鲁棒性检验，包括Placebo test(将断点设在别处，证明之前设置的断点是有效的)、二次多项式估计等</p>
+<blockquote>
+<p>RDD的使用情景、检验方法等还需要进一步学习</p>
+</blockquote>
+<h1 id="Does-Piracy-Create-Online-Word-of-Mouth-An-Empirical-of-Analysis-in-the-Movie-Industry"><a href="#Does-Piracy-Create-Online-Word-of-Mouth-An-Empirical-of-Analysis-in-the-Movie-Industry" class="headerlink" title="Does Piracy Create Online Word of Mouth? An Empirical of Analysis in the Movie Industry"></a>Does Piracy Create Online Word of Mouth? An Empirical of Analysis in the Movie Industry</h1><p>盗版是否会对电影的线上口碑（Word of Mouth, WOM）产生影响呢？<br>WOM volume:</p>
+<p>WOM valence:</p>
+<h2 id="In-a-Word"><a href="#In-a-Word" class="headerlink" title="In a Word"></a>In a Word</h2><h2 id="Motivation-amp-Contributions"><a href="#Motivation-amp-Contributions" class="headerlink" title="Motivation&amp;Contributions"></a>Motivation&amp;Contributions</h2><h2 id="Data-4"><a href="#Data-4" class="headerlink" title="Data"></a>Data</h2><ul>
+<li>Box Office Mojo(票房)</li>
+<li>IMDB</li>
+<li>The Pirate Bay</li>
+<li>The Numbers</li>
+<li>Rotten Toamtoes</li>
+<li>Kantar Media（广告数据）</li>
+</ul>
+<p>WOM volume： 用户评论数<br>WOM valence：用户的平均评分</p>
+<h2 id="Model-1"><a href="#Model-1" class="headerlink" title="Model"></a>Model</h2><p>(1)<br>$$ Box_office_revenue = torrents_volume+reviews+average_rating+theaters+…. for_each_movie $$<br>(2) WOM volume<br>$$ reviews= 前一天的torrents_volume+average rating+theaters+…. for_each_movie $$<br>(3)WOM valence<br>$$ average rating =前一天的torrents volume+reviews+theaters+…. for_each_movie $$<br>内生性分析</p>
+<ol>
+<li>观测不到的需求因素会影响种子数量进而影响到票房<br>需求因素隐藏在模型的误差项中，换句话说，误差项与自变量相关而产生了内生性。<br>问题解决：<br>假设种子上传者会不会上传种子取决于上传种子的成本和获得的收益，即<br>$$ torrent_volume= f(benefit(\epsilon),cost)$$<br>所以只要找到一个可以影响上传种子的成本但是又不影响收益的变量就可以作为工具变量。</li>
+</ol>
+<p>俄罗斯市场与美国市场</p>
+<blockquote>
+<p>工具变量法:<br>对于模型 $y=\beta_1+\beta_2 X+\epsilon$<br>由于 $ X $ 与 $ \epsilon $ 相关，使得估计出的 $ \beta_2 $ 不准确，所以需要找一个工具变量IV，重新估计 $ X $ 使得新的 $ X $ 与 $ \epsilon $ 不相关（第一阶段），再使用新的 $ X $ 进行 OLS 回归(第二阶段)，得到的 $ \beta_2 $ 就是准确的。（两阶段最小二乘法）</p>
+<blockquote>
+<p>IV应该满足的条件<br>$$ Cor(IV,X)\neq 0 $$<br>$$ Cor(IV,\epsilon) = 0$$<br>当 IV与 $ X $ 相关性不强时，IV被称为弱工具变量。</p>
+</blockquote>
+</blockquote>
+<p>俄罗斯两个盗版网站的种子数量作为工具变量，原因：</p>
+<ul>
+<li><strong>外生性条件：</strong> 俄罗斯和美国市场分离，所以俄罗斯的市场需求不会影响美国的市场需求，即与误差项 $ \epsilon $ 不相关</li>
+<li><strong>相关性条件：</strong> 美国人会从俄罗斯网站上下载种子上传到海盗湾上，降低了上传种子的成本，即与自变量 $ torrent_volume $ 相关</li>
+</ul>
+]]></content>
+      <categories>
+        <category>原创</category>
+      </categories>
+      <tags>
+        <tag>paper</tag>
       </tags>
   </entry>
 </search>
