@@ -1236,7 +1236,11 @@ end
 <li>Rotten Toamtoes</li>
 <li>Kantar Media（广告数据）</li>
 </ul>
-<p>WOM volume： 用户评论数<br>WOM valence：用户的平均评分</p>
+<p>volume和valence常常用来表示数量和</p>
+<ul>
+<li>WOM volume： 用户评论数</li>
+<li>WOM valence：用户的平均评分（高低）</li>
+</ul>
 <h2 id="Model-1"><a href="#Model-1" class="headerlink" title="Model"></a>Model</h2><p>(1)<br>$$ Box_office_revenue = torrents_volume+reviews+average_rating+theaters+…. for_each_movie $$<br>(2) WOM volume<br>$$ reviews= 前一天的torrents_volume+average rating+theaters+…. for_each_movie $$<br>(3)WOM valence<br>$$ average rating =前一天的torrents volume+reviews+theaters+…. for_each_movie $$<br>内生性分析</p>
 <ol>
 <li>观测不到的需求因素会影响种子数量进而影响到票房<br>需求因素隐藏在模型的误差项中，换句话说，误差项与自变量相关而产生了内生性。<br>问题解决：<br>假设种子上传者会不会上传种子取决于上传种子的成本和获得的收益，即<br>$$ torrent_volume= f(benefit(\epsilon),cost)$$<br>所以只要找到一个可以影响上传种子的成本但是又不影响收益的变量就可以作为工具变量。<blockquote>
@@ -1255,11 +1259,11 @@ end
           </div></li>
 </ul>
 <ol start="2">
-<li>市场混合变量<br>线下电影院会根据市场需求 $ \epsilon $ 调整电影场次的多少，即误差项中的观测不到的市场需求变量会影响自变量 $ theaters $，这就是内生性的来源。<br>工具变量：<center>
-log theaters in same studio and genre on time $ t $
-</center></li>
+<li>市场混合变量<br>线下电影院会根据市场需求 $ \epsilon $ 调整电影场次的多少，即误差项中的观测不到的市场需求变量会影响自变量 $ theaters $，这就是内生性的来源。作者根据前人的研究使用了以下工具变量<br>log theaters in same studio and genre on time $ t $<br>原因是同一时间段、同一工作室发布的同一类型的电影在放映上具有相同的量级。</li>
+<li>WOM volume and valence会被潜在的需求因素影响<br>工具变量的选择方法同第2条类似：<br>log average rating in same studio and genre on time $ t $<br>log reviews volume in same studio and genre on time $ t $</li>
+<li>模型2、3中滞后的每日票房<br>IV的确定方法同上<br>laggedbox office revenues of similar movies</li>
 </ol>
-]]></content>
+<h2 id="Results-3"><a href="#Results-3" class="headerlink" title="Results"></a>Results</h2>]]></content>
       <categories>
         <category>原创</category>
       </categories>
