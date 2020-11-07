@@ -185,6 +185,651 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://xuestrange.github.io/2020/11/07/buffer/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.png">
+      <meta itemprop="name" content="Wu Li">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WU Li's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/11/07/buffer/" class="post-title-link" itemprop="url">Untitled</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-11-07 22:41:55 / Modified: 22:43:23" itemprop="dateCreated datePublished" datetime="2020-11-07T22:41:55+08:00">2020-11-07</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2020/11/07/buffer/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/11/07/buffer/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>19k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <!DOCTYPE html><html><head>
+      <title>buffer</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({"extensions":["tex2jax.js"],"jax":["input/TeX","output/HTML-CSS"],"messageStyle":"none","tex2jax":{"processEnvironments":false,"processEscapes":true,"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"TeX":{"extensions":["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]},"HTML-CSS":{"availableFonts":["TeX"]}});
+        </script>
+        <script type="text/javascript" async src="file:///c:\Users\xue\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.5.13\node_modules\@shd101wyy\mume\dependencies\mathjax\MathJax.js" charset="UTF-8"></script>
+        
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+.markdown-preview.markdown-preview {
+  font-size: 11pt;
+}
+.markdown-preview.markdown-preview h1 {
+  font-size: 14pt;
+  color: black;
+}
+.markdown-preview.markdown-preview h3 {
+  font-size: 12pt;
+}
+.markdown-preview.markdown-preview h2 {
+  font-size: 13pt;
+}
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="intertemporal-demand-spillover-effects-on-video-game-platforms">Intertemporal Demand Spillover Effects on Video Game Platforms</h1>
+
+<blockquote>
+<p>Haviv, Avery, Yufeng Huang, and Nan Li. &#x201C;Intertemporal Demand Spillover Effects on Video Game Platforms.&#x201D; Management Science 66, no. 10 (October 2020): 4788&#x2013;4807. <a target="_blank" rel="noopener" href="https://doi.org/10.1287/mnsc.2019.3414">https://doi.org/10.1287/mnsc.2019.3414</a>.</p>
+</blockquote>
+<p>&#x4F5C;&#x8005;&#x901A;&#x8FC7;&#x56DE;&#x5F52;&#x6A21;&#x578B;&#x63A2;&#x7A76;&#x4E86;&#x7535;&#x5B50;&#x6E38;&#x620F;&#x7684;&#x8DE8;&#x65F6;&#x671F;&#x9700;&#x6C42;&#x6EA2;&#x51FA;&#x6548;&#x5E94;(&#x8FC7;&#x53BB;&#x4F1A;&#x5F71;&#x54CD;&#x73B0;&#x5728;)&#xFF0C;&#x901A;&#x8FC7;&#x5DE5;&#x5177;&#x53D8;&#x91CF;&#x6CD5;&#x6D88;&#x9664;&#x4E86;&#x5185;&#x751F;&#x6027;&#xFF0C;&#x7ED3;&#x679C;&#x8868;&#x660E;&#x7535;&#x5B50;&#x6E38;&#x620F;&#x7684;&#x9500;&#x552E;&#x5728;&#x63A5;&#x4E0B;&#x6765;&#x7684;&#x4E00;&#x4E2A;&#x6708;&#x589E;&#x52A0;&#x4E86;&#x5BF9;&#x5176;&#x4ED6;&#x6E38;&#x620F;&#x7684;&#x9700;&#x6C42;&#xFF0C;&#x539F;&#x56E0;&#x53EF;&#x80FD;&#x5728;&#x4E8E;&#x7528;&#x6237;&#x517B;&#x6210;&#x4E86;&#x73A9;&#x7535;&#x5B50;&#x6E38;&#x620F;&#x7684;&#x4E60;&#x60EF;&#xFF0C;&#x4EA7;&#x751F;&#x4E86;&#x989D;&#x5916;&#x8D2D;&#x4E70;&#x7B49;&#x3002;</p>
+<h2 class="mume-header" id="data">Data</h2>
+
+<p>&#x65F6;&#x95F4;&#x533A;&#x95F4;&#xFF1A;2007.1-2012.12&#xFF1B;&#x4E3B;&#x673A;&#x5E73;&#x53F0;&#xFF1A;MS xbox 360 &#x548C; SONY PS4(<span class="mathjax-exps">$k=2$</span> )&#xFF1B;</p>
+<ul>
+<li>NPD sales data: product characteristics(&#x6E38;&#x620F;&#x53D1;&#x5E03;&#x65F6;&#x95F4;&#x3001;&#x7C7B;&#x578B;&#x3001;&#x53D1;&#x5E03;&#x8005;&#x7B49;)and units sold and total revenue.</li>
+<li><a target="_blank" rel="noopener" href="http://VGChartz.com">VGChartz.com</a>: &#x6BCF;&#x5468;&#x7684;&#x4E3B;&#x673A;&#x7684;&#x9500;&#x552E;&#x6570;&#x636E;.</li>
+<li>Product announcement data for the top 100 eclusive games(&#x6E38;&#x620F;&#x53D1;&#x5E03;&#x6570;&#x636E;)</li>
+<li>&#x6E38;&#x620F;&#x7684;&#x4FC3;&#x9500;&#x6570;&#x636E;</li>
+<li>&#x7528;&#x6237;&#x7684;&#x6E38;&#x620F;&#x65F6;&#x95F4;</li>
+</ul>
+<h2 class="mume-header" id="model">Model</h2>
+
+<p></p><div class="mathjax-exps">$$\begin{aligned} \log \left(q_{j k t}\right)=&amp; \gamma \log \left(Q_{k t-1}\right)+\alpha \log \left(p_{j k t}\right)+\delta_{1} \log \left(c_{k t}\right) \\ &amp;+\delta_{2} \log \left(\sum_{\tau \leq t-1} c_{k \tau}\right)+\kappa \log \left(q_{j k t-1}\right)+\beta_{j t} \\ &amp;+\lambda_{j k}+\mu_{k y, m}+\varepsilon_{j k t} \end{aligned}$$</div><br>
+where,<br>
+<div class="mathjax-exps">$$\varepsilon_{j k t}=\rho \varepsilon_{j k t-1}+v_{j k t}$$</div><p></p>
+<p>&#x56E0;&#x53D8;&#x91CF;&#xFF1A;</p>
+<ul>
+<li><span class="mathjax-exps">$q_{jkt}$</span> represents sales of game <span class="mathjax-exps">$j$</span> in <span class="mathjax-exps">$k$</span>  platform in month <span class="mathjax-exps">$t$</span></li>
+</ul>
+<p>&#x81EA;&#x53D8;&#x91CF;&#xFF1A;</p>
+<ul>
+<li><span class="mathjax-exps">$Q_{kt-1}$</span> represents sales of all games without game <span class="mathjax-exps">$j$</span>&#x2026;</li>
+<li><span class="mathjax-exps">$p$</span> price</li>
+<li><span class="mathjax-exps">$v_{jkt}$</span> unobserved demand shock</li>
+<li><span class="mathjax-exps">$c$</span> &#x4E3B;&#x673A;&#x9500;&#x91CF;</li>
+<li><span class="mathjax-exps">$\beta,\lambda,\mu$</span> &#x56FA;&#x5B9A;&#x6548;&#x5E94;</li>
+</ul>
+<h3 class="mume-header" id="%E5%86%85%E7%94%9F%E6%80%A7">&#x5185;&#x751F;&#x6027;</h3>
+
+<p>&#x5DE5;&#x5177;&#x53D8;&#x91CF;&#x7684;&#x5BFB;&#x627E;</p>
+<ol>
+<li>demand shock in <span class="mathjax-exps">$v_{jkt}$</span> will affect &#x6E38;&#x620F;&#x9500;&#x91CF; <span class="mathjax-exps">$Q$</span> and <span class="mathjax-exps">$q$</span> .
+<ol>
+<li>&#x5C06;&#x6E38;&#x620F;&#x6839;&#x636E;&#x53D1;&#x5E03;&#x65F6;&#x95F4;&#x7684;&#x957F;&#x77ED;&#x8FDB;&#x884C;&#x5206;&#x7EC4;</li>
+<li>&#x901A;&#x8FC7;&#x4E4B;&#x524D;&#x5728;&#x540C;&#x4E00;&#x7CFB;&#x5217;&#x4E2D;&#x53D1;&#x884C;&#x7684;&#x5176;&#x4ED6;&#x6E38;&#x620F;&#x7684;&#x5E73;&#x5747;&#x9500;&#x91CF;&#x6765;&#x8861;&#x91CF;&#x8BE5;&#x7CFB;&#x5217;&#x6E38;&#x620F;&#x7684;&#x53D7;&#x6B22;&#x8FCE;&#x7A0B;&#x5EA6;</li>
+<li>&#x901A;&#x8FC7;&#x8BE5;&#x5DE5;&#x4F5C;&#x5BA4;&#x4E4B;&#x524D;&#x5F00;&#x53D1;&#x7684;&#x5176;&#x4ED6;&#x6E38;&#x620F;&#x7684;&#x5E73;&#x5747;&#x9500;&#x91CF;&#x6765;&#x8861;&#x91CF;&#x5DE5;&#x4F5C;&#x5BA4;&#x7684;&#x53D7;&#x6B22;&#x8FCE;&#x7A0B;&#x5EA6;</li>
+<li>&#x4EE5;&#x53D1;&#x5E03;&#x65F6;&#x95F4;&#x4E3A;&#x6743;&#x91CD;&#x8FDB;&#x884C;&#x5BF9;&#x524D;&#x4E24;&#x8005;&#x8FDB;&#x884C;&#x52A0;&#x6743;&#x5E73;&#x5747;&#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x6E38;&#x620F;&#x9500;&#x91CF;</li>
+</ol>
+</li>
+</ol>
+<blockquote>
+<p>&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x8FD9;&#x6837;&#x505A;?<br>
+&#x6709;&#x4E9B;&#x6E38;&#x620F;&#x7279;&#x522B;&#x7545;&#x9500;&#xFF0C;&#x9500;&#x91CF;&#x662F;&#x5E73;&#x5747;&#x503C;&#x7684;&#x597D;&#x591A;&#x500D;&#xFF01;&#x56E0;&#x6B64;&#x5B83;&#x7684;&#x6743;&#x91CD;&#x66F4;&#x5927;&#xFF1B;&#x53CD;&#x4E4B;&#xFF0C;&#x540C;&#x7406;</p>
+</blockquote>
+<ol start="2">
+<li>demand shock in <span class="mathjax-exps">$v_{jkt}$</span> will affect &#x4EF7;&#x683C; <span class="mathjax-exps">$p$</span></li>
+</ol>
+<ul>
+<li>&#x6EDE;&#x540E;&#x7684;&#x4EF7;&#x683C;(lagged price)</li>
+<li>&#x6EDE;&#x540E;&#x7684;&#x4EF7;&#x683C;&#x53D8;&#x5316;( <span class="mathjax-exps">$p_{jkt-1} - p_{jkt-2})$</span></li>
+</ul>
+<ol start="3">
+<li>demand shock in <span class="mathjax-exps">$v_{jkt}$</span> will affect &#x4E3B;&#x673A;&#x9500;&#x91CF; <span class="mathjax-exps">$c$</span></li>
+</ol>
+<ul>
+<li>&#x540C;&#x65F6;&#x671F;&#x5176;&#x5B83;5&#x4E2A;&#x4E3B;&#x673A;&#x5E73;&#x53F0;(a home-gaming console, Nintendo<br>
+Wii, and four handheld consoles)&#x7684;&#x9500;&#x552E;&#x53D8;&#x5316;</li>
+</ul>
+<blockquote>
+<p>&#x539F;&#x56E0;<br>
+&#x4E0D;&#x540C;&#x7684;&#x5E73;&#x53F0;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x66FF;&#x4EE3;&#x4F5C;&#x7528;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;&#x4EFB;&#x5929;&#x5802;&#x7684;&#x6E38;&#x620F;&#x673A;&#x66F4;&#x4FA7;&#x91CD;&#x4E8E;&#x5BB6;&#x5EAD;&#x6E38;&#x620F;&#xFF0C;&#x4EE5;&#x53CA;&gt; &#x7C7B;&#x4F3C;&#x4E8E;Xbox 360&#x7684;&#x9700;&#x8981;&#x8EAB;&#x4F53;&#x6D3B;&#x52A8;&#x7684;&#x6E38;&#x620F;&#xFF0C;&#x5E94;&#x8BE5;&#x662F;&#x66F4;&#x63A5;&#x8FD1;Xbox 360&#x7684;&#x66FF;&#x4EE3;&#x54C1;.</p>
+</blockquote>
+<h2 class="mume-header" id="results">Results</h2>
+
+<p>&#x4E3B;&#x8981;&#x53D1;&#x73B0;</p>
+<ul>
+<li>&#x5176;&#x4ED6;&#x6E38;&#x620F;&#x7684;&#x603B;&#x9500;&#x91CF;&#x4E0E;&#x5F53;&#x524D;&#x6E38;&#x620F;&#x7684;&#x9500;&#x91CF;&#x4E4B;&#x95F4;&#x5B58;&#x5728;&#x7740;&#x5F88;&#x5F3A;&#x7684;&#x6B63;&#x5411;&#x7684;&#x8DE8;&#x65F6;&#x671F;&#x9700;&#x6C42;&#x6EA2;&#x51FA;&#x6548;&#x5E94;</li>
+</ul>
+<p>&#x5176;&#x5B83;&#x53D1;&#x73B0;:</p>
+<ul>
+<li>&#x4EF7;&#x683C;&#x5F39;&#x6027;&#x6BD4;&#x5176;&#x5B83;&#x6587;&#x732E;&#x4F30;&#x8BA1;&#x7684;&#x8981;&#x9AD8;</li>
+<li>&#x4E3B;&#x673A;&#x7684;&#x5B89;&#x88C5;&#x6570;&#x91CF;&#x589E;&#x52A0;&#x4E86;&#x6E38;&#x620F;&#x7684;&#x9500;&#x552E;&#x91CF;</li>
+<li>&#x9700;&#x6C42;&#x51B2;&#x51FB;&#x7684;&#x81EA;&#x76F8;&#x5173;&#x6027;&#x5F88;&#x5F3A; <span class="mathjax-exps">$\rho$</span> is significant,</li>
+</ul>
+<p>&#x89E3;&#x91CA;:</p>
+<ul>
+<li>&#x6D88;&#x8D39;&#x8005;&#x8D2D;&#x4E70;&#x4E60;&#x60EF;&#x7684;&#x5F62;&#x6210;(&#x73A9;&#x7535;&#x5B50;&#x6E38;&#x620F;&#x4F1A;&#x4E0A;&#x763E;)</li>
+<li>&#x6D88;&#x8D39;&#x8005;&#x53EF;&#x80FD;&#x4F1A;&#x4ECE;&#x8FC7;&#x53BB;&#x7684;&#x4F7F;&#x7528;&#x4E2D;&#x4E86;&#x89E3;&#x63A7;&#x5236;&#x53F0;&#x5E73;&#x53F0;&#x4E0A;&#x7684;&#x7279;&#x6027;&#x6216;&#x5176;&#x4ED6;&#x4EA7;&#x54C1;&#xFF0C;&#x4ECE;&#x800C;&#x8D2D;&#x4E70;&#x8BE5;&#x5E73;&#x53F0;&#x4E0A;&#x7684;&#x66F4;&#x591A;&#x4EA7;&#x54C1;</li>
+<li>&#x6D88;&#x8D39;&#x8005;&#x5728;&#x8D2D;&#x4E70;&#x540E;&#x4F1A;&#x5B66;&#x4F1A;&#x67D0;&#x4E00;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x6E38;&#x620F;&#xFF0C;&#x8FDB;&#x800C;&#x53BB;&#x8D2D;&#x4E70;&#x8BE5;&#x7C7B;&#x578B;&#x7684;&#x5176;&#x5B83;&#x6E38;&#x620F;</li>
+<li>&#x6D88;&#x8D39;&#x8005;&#x6CE8;&#x610F;&#x529B;&#x6709;&#x9650;(&#x73A9;&#x548C;&#x8D2D;&#x4E70;&#x53EF;&#x80FD;&#x4F1A;&#x9A71;&#x4F7F;&#x6D88;&#x8D39;&#x8005;&#x5BFB;&#x627E;&#x5176;&#x5B83;&#x6E38;&#x620F;)</li>
+</ul>
+<h2 class="mume-header" id="limitations">Limitations</h2>
+
+<ul>
+<li>&#x6CA1;&#x6709;&#x660E;&#x786E;&#x5730;&#x5728;&#x4E2A;&#x4F53;&#x5C42;&#x9762;&#x63CF;&#x8FF0;&#x6EA2;&#x51FA;&#x6548;&#x5E94;(&#x6D88;&#x8D39;&#x8005;)</li>
+<li>&#x672A;&#x6765;&#x53EF;&#x4EE5;&#x8003;&#x8651;&#x91CF;&#x5316;&#x5E73;&#x53F0;&#x653F;&#x7B56;&#xFF0C;&#x4EE5;&#x5229;&#x7528;&#x9700;&#x6C42;&#x6EA2;&#x51FA;&#x6548;&#x5E94;&#x6FC0;&#x52B1;&#x6D88;&#x8D39;&#x8005;</li>
+</ul>
+
+      </div>
+      <div class="md-sidebar-toc"><ul>
+<li><a href="#intertemporal-demand-spillover-effects-on-video-game-platforms">Intertemporal Demand Spillover Effects on Video Game Platforms</a>
+<ul>
+<li><a href="#data">Data</a></li>
+<li><a href="#model">Model</a>
+<ul>
+<li><a href="#%E5%86%85%E7%94%9F%E6%80%A7">&#x5185;&#x751F;&#x6027;</a></li>
+</ul>
+</li>
+<li><a href="#results">Results</a></li>
+<li><a href="#limitations">Limitations</a></li>
+</ul>
+</li>
+</ul>
+</div>
+      <a id="sidebar-toc-btn">&#x2261;</a>
+    
+    
+    
+    
+    
+    
+    
+    
+<script>
+
+var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+sidebarTOCBtn.addEventListener('click', function(event) {
+  event.stopPropagation()
+  if (document.body.hasAttribute('html-show-sidebar-toc')) {
+    document.body.removeAttribute('html-show-sidebar-toc')
+  } else {
+    document.body.setAttribute('html-show-sidebar-toc', true)
+  }
+})
+</script>
+      
+  
+    </body></html>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://xuestrange.github.io/2020/11/07/buffer/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.png">
+      <meta itemprop="name" content="Wu Li">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WU Li's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/11/07/buffer/" class="post-title-link" itemprop="url">Untitled</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-11-07 21:42:29 / Modified: 22:43:17" itemprop="dateCreated datePublished" datetime="2020-11-07T21:42:29+08:00">2020-11-07</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2020/11/07/buffer/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/11/07/buffer/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>1.9k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Intertemporal-Demand-Spillover-Effects-on-Video-Game-Platforms"><a href="#Intertemporal-Demand-Spillover-Effects-on-Video-Game-Platforms" class="headerlink" title="Intertemporal Demand Spillover Effects on Video Game Platforms"></a>Intertemporal Demand Spillover Effects on Video Game Platforms</h1><blockquote>
+<p>Haviv, Avery, Yufeng Huang, and Nan Li. &#x201C;Intertemporal Demand Spillover Effects on Video Game Platforms.&#x201D; Management Science 66, no. 10 (October 2020): 4788&#x2013;4807. <a target="_blank" rel="noopener" href="https://doi.org/10.1287/mnsc.2019.3414">https://doi.org/10.1287/mnsc.2019.3414</a>.</p>
+</blockquote>
+<p>&#x4F5C;&#x8005;&#x901A;&#x8FC7;&#x56DE;&#x5F52;&#x6A21;&#x578B;&#x63A2;&#x7A76;&#x4E86;&#x7535;&#x5B50;&#x6E38;&#x620F;&#x7684;&#x8DE8;&#x65F6;&#x671F;&#x9700;&#x6C42;&#x6EA2;&#x51FA;&#x6548;&#x5E94;(&#x8FC7;&#x53BB;&#x4F1A;&#x5F71;&#x54CD;&#x73B0;&#x5728;)&#xFF0C;&#x901A;&#x8FC7;&#x5DE5;&#x5177;&#x53D8;&#x91CF;&#x6CD5;&#x6D88;&#x9664;&#x4E86;&#x5185;&#x751F;&#x6027;&#xFF0C;&#x7ED3;&#x679C;&#x8868;&#x660E;&#x7535;&#x5B50;&#x6E38;&#x620F;&#x7684;&#x9500;&#x552E;&#x5728;&#x63A5;&#x4E0B;&#x6765;&#x7684;&#x4E00;&#x4E2A;&#x6708;&#x589E;&#x52A0;&#x4E86;&#x5BF9;&#x5176;&#x4ED6;&#x6E38;&#x620F;&#x7684;&#x9700;&#x6C42;&#xFF0C;&#x539F;&#x56E0;&#x53EF;&#x80FD;&#x5728;&#x4E8E;&#x7528;&#x6237;&#x517B;&#x6210;&#x4E86;&#x73A9;&#x7535;&#x5B50;&#x6E38;&#x620F;&#x7684;&#x4E60;&#x60EF;&#xFF0C;&#x4EA7;&#x751F;&#x4E86;&#x989D;&#x5916;&#x8D2D;&#x4E70;&#x7B49;&#x3002;</p>
+<h2 id="Data"><a href="#Data" class="headerlink" title="Data"></a>Data</h2><p>&#x65F6;&#x95F4;&#x533A;&#x95F4;&#xFF1A;2007.1-2012.12&#xFF1B;&#x4E3B;&#x673A;&#x5E73;&#x53F0;&#xFF1A;MS xbox 360 &#x548C; SONY PS4($ k=2 $ )&#xFF1B;</p>
+<ul>
+<li>NPD sales data: product characteristics(&#x6E38;&#x620F;&#x53D1;&#x5E03;&#x65F6;&#x95F4;&#x3001;&#x7C7B;&#x578B;&#x3001;&#x53D1;&#x5E03;&#x8005;&#x7B49;)and units sold and total revenue.</li>
+<li>VGChartz.com: &#x6BCF;&#x5468;&#x7684;&#x4E3B;&#x673A;&#x7684;&#x9500;&#x552E;&#x6570;&#x636E;.</li>
+<li>Product announcement data for the top 100 eclusive games(&#x6E38;&#x620F;&#x53D1;&#x5E03;&#x6570;&#x636E;)</li>
+<li>&#x6E38;&#x620F;&#x7684;&#x4FC3;&#x9500;&#x6570;&#x636E;</li>
+<li>&#x7528;&#x6237;&#x7684;&#x6E38;&#x620F;&#x65F6;&#x95F4;</li>
+</ul>
+<h2 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h2><p>$$<br>\begin{aligned}<br>\log \left(q_{j k t}\right)=&amp; \gamma \log \left(Q_{k t-1}\right)+\alpha \log \left(p_{j k t}\right)+\delta_{1} \log \left(c_{k t}\right) \<br>&amp;+\delta_{2} \log \left(\sum_{\tau \leq t-1} c_{k \tau}\right)+\kappa \log \left(q_{j k t-1}\right)+\beta_{j t} \<br>&amp;+\lambda_{j k}+\mu_{k y, m}+\varepsilon_{j k t}<br>\end{aligned}<br>$$<br>where,<br>$$<br>\varepsilon_{j k t}=\rho \varepsilon_{j k t-1}+v_{j k t}<br>$$</p>
+<p>&#x56E0;&#x53D8;&#x91CF;&#xFF1A;</p>
+<ul>
+<li> $ q_{jkt} $ represents sales of game $ j $ in $ k $  platform in month $ t $</li>
+</ul>
+<p>&#x81EA;&#x53D8;&#x91CF;&#xFF1A;</p>
+<ul>
+<li>$ Q_{kt-1} $ represents sales of all games without game $ j $&#x2026;&#x2026;</li>
+<li>$ p $ price</li>
+<li>$ v_{jkt} $ unobserved demand shock</li>
+<li>$ c $ &#x4E3B;&#x673A;&#x9500;&#x91CF;</li>
+<li>$ \beta,\lambda,\mu $ &#x56FA;&#x5B9A;&#x6548;&#x5E94;</li>
+</ul>
+<h3 id="&#x5185;&#x751F;&#x6027;"><a href="#&#x5185;&#x751F;&#x6027;" class="headerlink" title="&#x5185;&#x751F;&#x6027;"></a>&#x5185;&#x751F;&#x6027;</h3><p>&#x5DE5;&#x5177;&#x53D8;&#x91CF;&#x7684;&#x5BFB;&#x627E;</p>
+<ol>
+<li>demand shock in $ v_{jkt} $ will affect &#x6E38;&#x620F;&#x9500;&#x91CF; $ Q $ and $ q $ .<ol>
+<li>&#x5C06;&#x6E38;&#x620F;&#x6839;&#x636E;&#x53D1;&#x5E03;&#x65F6;&#x95F4;&#x7684;&#x957F;&#x77ED;&#x8FDB;&#x884C;&#x5206;&#x7EC4;</li>
+<li>&#x901A;&#x8FC7;&#x4E4B;&#x524D;&#x5728;&#x540C;&#x4E00;&#x7CFB;&#x5217;&#x4E2D;&#x53D1;&#x884C;&#x7684;&#x5176;&#x4ED6;&#x6E38;&#x620F;&#x7684;&#x5E73;&#x5747;&#x9500;&#x91CF;&#x6765;&#x8861;&#x91CF;&#x8BE5;&#x7CFB;&#x5217;&#x6E38;&#x620F;&#x7684;&#x53D7;&#x6B22;&#x8FCE;&#x7A0B;&#x5EA6;</li>
+<li>&#x901A;&#x8FC7;&#x8BE5;&#x5DE5;&#x4F5C;&#x5BA4;&#x4E4B;&#x524D;&#x5F00;&#x53D1;&#x7684;&#x5176;&#x4ED6;&#x6E38;&#x620F;&#x7684;&#x5E73;&#x5747;&#x9500;&#x91CF;&#x6765;&#x8861;&#x91CF;&#x5DE5;&#x4F5C;&#x5BA4;&#x7684;&#x53D7;&#x6B22;&#x8FCE;&#x7A0B;&#x5EA6;</li>
+<li>&#x4EE5;&#x53D1;&#x5E03;&#x65F6;&#x95F4;&#x4E3A;&#x6743;&#x91CD;&#x8FDB;&#x884C;&#x5BF9;&#x524D;&#x4E24;&#x8005;&#x8FDB;&#x884C;&#x52A0;&#x6743;&#x5E73;&#x5747;&#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x6E38;&#x620F;&#x9500;&#x91CF;<blockquote>
+<p>&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x8FD9;&#x6837;&#x505A;?<br>&#x6709;&#x4E9B;&#x6E38;&#x620F;&#x7279;&#x522B;&#x7545;&#x9500;&#xFF0C;&#x9500;&#x91CF;&#x662F;&#x5E73;&#x5747;&#x503C;&#x7684;&#x597D;&#x591A;&#x500D;&#xFF01;&#x56E0;&#x6B64;&#x5B83;&#x7684;&#x6743;&#x91CD;&#x66F4;&#x5927;&#xFF1B;&#x53CD;&#x4E4B;&#xFF0C;&#x540C;&#x7406;</p>
+</blockquote>
+</li>
+</ol>
+</li>
+<li>demand shock in $ v_{jkt} $ will affect &#x4EF7;&#x683C; $ p $</li>
+</ol>
+<ul>
+<li>&#x6EDE;&#x540E;&#x7684;&#x4EF7;&#x683C;(lagged price)</li>
+<li>&#x6EDE;&#x540E;&#x7684;&#x4EF7;&#x683C;&#x53D8;&#x5316;( $ p_{jkt-1} - p_{jkt-2}) $</li>
+</ul>
+<ol start="3">
+<li>demand shock in $ v_{jkt} $ will affect &#x4E3B;&#x673A;&#x9500;&#x91CF; $ c $</li>
+</ol>
+<ul>
+<li>&#x540C;&#x65F6;&#x671F;&#x5176;&#x5B83;5&#x4E2A;&#x4E3B;&#x673A;&#x5E73;&#x53F0;(a home-gaming console, Nintendo<br>Wii, and four handheld consoles)&#x7684;&#x9500;&#x552E;&#x53D8;&#x5316;<blockquote>
+<p>&#x539F;&#x56E0;<br>&#x4E0D;&#x540C;&#x7684;&#x5E73;&#x53F0;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x66FF;&#x4EE3;&#x4F5C;&#x7528;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;&#x4EFB;&#x5929;&#x5802;&#x7684;&#x6E38;&#x620F;&#x673A;&#x66F4;&#x4FA7;&#x91CD;&#x4E8E;&#x5BB6;&#x5EAD;&#x6E38;&#x620F;&#xFF0C;&#x4EE5;&#x53CA;&gt; &#x7C7B;&#x4F3C;&#x4E8E;Xbox 360&#x7684;&#x9700;&#x8981;&#x8EAB;&#x4F53;&#x6D3B;&#x52A8;&#x7684;&#x6E38;&#x620F;&#xFF0C;&#x5E94;&#x8BE5;&#x662F;&#x66F4;&#x63A5;&#x8FD1;Xbox 360&#x7684;&#x66FF;&#x4EE3;&#x54C1;.</p>
+</blockquote>
+<h2 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h2></li>
+</ul>
+<p>&#x4E3B;&#x8981;&#x53D1;&#x73B0;</p>
+<ul>
+<li>&#x5176;&#x4ED6;&#x6E38;&#x620F;&#x7684;&#x603B;&#x9500;&#x91CF;&#x4E0E;&#x5F53;&#x524D;&#x6E38;&#x620F;&#x7684;&#x9500;&#x91CF;&#x4E4B;&#x95F4;&#x5B58;&#x5728;&#x7740;&#x5F88;&#x5F3A;&#x7684;&#x6B63;&#x5411;&#x7684;&#x8DE8;&#x65F6;&#x671F;&#x9700;&#x6C42;&#x6EA2;&#x51FA;&#x6548;&#x5E94;</li>
+</ul>
+<p>&#x5176;&#x5B83;&#x53D1;&#x73B0;:</p>
+<ul>
+<li>&#x4EF7;&#x683C;&#x5F39;&#x6027;&#x6BD4;&#x5176;&#x5B83;&#x6587;&#x732E;&#x4F30;&#x8BA1;&#x7684;&#x8981;&#x9AD8;</li>
+<li>&#x4E3B;&#x673A;&#x7684;&#x5B89;&#x88C5;&#x6570;&#x91CF;&#x589E;&#x52A0;&#x4E86;&#x6E38;&#x620F;&#x7684;&#x9500;&#x552E;&#x91CF;</li>
+<li>&#x9700;&#x6C42;&#x51B2;&#x51FB;&#x7684;&#x81EA;&#x76F8;&#x5173;&#x6027;&#x5F88;&#x5F3A; $ \rho $ is significant,</li>
+</ul>
+<p>&#x89E3;&#x91CA;:</p>
+<ul>
+<li>&#x6D88;&#x8D39;&#x8005;&#x8D2D;&#x4E70;&#x4E60;&#x60EF;&#x7684;&#x5F62;&#x6210;(&#x73A9;&#x7535;&#x5B50;&#x6E38;&#x620F;&#x4F1A;&#x4E0A;&#x763E;)</li>
+<li>&#x6D88;&#x8D39;&#x8005;&#x53EF;&#x80FD;&#x4F1A;&#x4ECE;&#x8FC7;&#x53BB;&#x7684;&#x4F7F;&#x7528;&#x4E2D;&#x4E86;&#x89E3;&#x63A7;&#x5236;&#x53F0;&#x5E73;&#x53F0;&#x4E0A;&#x7684;&#x7279;&#x6027;&#x6216;&#x5176;&#x4ED6;&#x4EA7;&#x54C1;&#xFF0C;&#x4ECE;&#x800C;&#x8D2D;&#x4E70;&#x8BE5;&#x5E73;&#x53F0;&#x4E0A;&#x7684;&#x66F4;&#x591A;&#x4EA7;&#x54C1;</li>
+<li>&#x6D88;&#x8D39;&#x8005;&#x5728;&#x8D2D;&#x4E70;&#x540E;&#x4F1A;&#x5B66;&#x4F1A;&#x67D0;&#x4E00;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x6E38;&#x620F;&#xFF0C;&#x8FDB;&#x800C;&#x53BB;&#x8D2D;&#x4E70;&#x8BE5;&#x7C7B;&#x578B;&#x7684;&#x5176;&#x5B83;&#x6E38;&#x620F;</li>
+<li>&#x6D88;&#x8D39;&#x8005;&#x6CE8;&#x610F;&#x529B;&#x6709;&#x9650;(&#x73A9;&#x548C;&#x8D2D;&#x4E70;&#x53EF;&#x80FD;&#x4F1A;&#x9A71;&#x4F7F;&#x6D88;&#x8D39;&#x8005;&#x5BFB;&#x627E;&#x5176;&#x5B83;&#x6E38;&#x620F;)</li>
+</ul>
+<h2 id="Limitations"><a href="#Limitations" class="headerlink" title="Limitations"></a>Limitations</h2><ul>
+<li>&#x6CA1;&#x6709;&#x660E;&#x786E;&#x5730;&#x5728;&#x4E2A;&#x4F53;&#x5C42;&#x9762;&#x63CF;&#x8FF0;&#x6EA2;&#x51FA;&#x6548;&#x5E94;(&#x6D88;&#x8D39;&#x8005;)</li>
+<li>&#x672A;&#x6765;&#x53EF;&#x4EE5;&#x8003;&#x8651;&#x91CF;&#x5316;&#x5E73;&#x53F0;&#x653F;&#x7B56;&#xFF0C;&#x4EE5;&#x5229;&#x7528;&#x9700;&#x6C42;&#x6EA2;&#x51FA;&#x6548;&#x5E94;&#x6FC0;&#x52B1;&#x6D88;&#x8D39;&#x8005;</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://xuestrange.github.io/2020/10/31/to_pdf/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -210,7 +855,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-10-31 00:00:00 / Modified: 16:10:51" itemprop="dateCreated datePublished" datetime="2020-10-31T00:00:00+08:00">2020-10-31</time>
+              <time title="Created: 2020-10-31 00:00:00 / Modified: 16:14:08" itemprop="dateCreated datePublished" datetime="2020-10-31T00:00:00+08:00">2020-10-31</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -381,218 +1026,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://xuestrange.github.io/2020/10/06/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/touxiang.png">
-      <meta itemprop="name" content="Wu Li">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="WU Li's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/10/06/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/" class="post-title-link" itemprop="url">论文阅读记录</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-10-06 00:00:00" itemprop="dateCreated datePublished" datetime="2020-10-06T00:00:00+08:00">2020-10-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-10-31 16:07:36" itemprop="dateModified" datetime="2020-10-31T16:07:36+08:00">2020-10-31</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%8E%9F%E5%88%9B/" itemprop="url" rel="index"><span itemprop="name">原创</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/2020/10/06/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/10/06/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>12k</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <blockquote>
-<p>&#x7BA1;&#x7406;&#x5B66;&#x9876;&#x520A;(UTD24&#x3001;FT50)&#x7684;&#x7684;&#x9605;&#x8BFB;&#x8BB0;&#x5F55;</p>
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/10/06/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://xuestrange.github.io/2020/09/20/Econometrics/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/touxiang.png">
-      <meta itemprop="name" content="Wu Li">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="WU Li's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/09/20/Econometrics/" class="post-title-link" itemprop="url">Ecomometrics</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-09-20 00:00:00" itemprop="dateCreated datePublished" datetime="2020-09-20T00:00:00+08:00">2020-09-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-10-25 13:46:08" itemprop="dateModified" datetime="2020-10-25T13:46:08+08:00">2020-10-25</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%8E%9F%E5%88%9B/" itemprop="url" rel="index"><span itemprop="name">原创</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/2020/09/20/Econometrics/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/09/20/Econometrics/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>2.4k</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <blockquote>
-<p>&#x8BB0;&#x5F55;&#x81EA;&#x5DF1;&#x5B66;&#x4E60;&#x8BA1;&#x91CF;&#x7ECF;&#x6D4E;&#x5B66;&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x66F4;&#x65B0;&#x81F3;&#x7B2C;&#x4E8C;&#x7AE0;</p>
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/09/20/Econometrics/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -660,7 +1097,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
