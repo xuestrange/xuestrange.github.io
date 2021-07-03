@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://xuestrange.github.io">
   <title>Ecomometrics | WU Li&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记录自己学习计量经济学的过程">
+  <meta name="description" content="揭示经济变量之间的定量关系">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ecomometrics">
 <meta property="og:url" content="https://xuestrange.github.io/2020/09/20/Econometrics/index.html">
 <meta property="og:site_name" content="WU Li&#39;s Blog">
-<meta property="og:description" content="记录自己学习计量经济学的过程">
+<meta property="og:description" content="揭示经济变量之间的定量关系">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-09-19T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-02-05T05:41:44.000Z">
+<meta property="article:modified_time" content="2021-07-03T03:50:11.188Z">
 <meta property="article:author" content="Wu Li">
 <meta property="article:tag" content="Econometrics">
 <meta name="twitter:card" content="summary">
@@ -154,123 +154,27 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>记录自己学习计量经济学的过程</p>
+<p>揭示经济变量之间的定量关系</p>
 </blockquote>
 <span id="more"></span>
-<h1 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1 Introduction"></a>1 Introduction</h1><ul>
-<li>数理经济模型：用数学理论解释经济问题，但是并没有解释定量关系</li>
-<li>计量经济学模型：揭示定量关系</li>
-</ul>
-<p>数据质量要求：</p>
+
 <ul>
-<li>完整性</li>
-<li>准确性</li>
-<li>可比性（时间上）</li>
-<li>一致性（样本是否是从总体中随机抽取的）</li>
-</ul>
-<p>模型的检验：</p>
-<ul>
-<li>经济意义的检验</li>
-<li>统计检验<ul>
-<li>拟合优度检验</li>
-<li>总体显著性检验</li>
-<li>变量显著性检验</li>
+<li><a href="#%E5%AE%9E%E9%AA%8C%E7%9A%84%E5%88%86%E7%B1%BB">实验的分类</a><ul>
+<li><a href="#%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%AE%9E%E9%AA%8Claboratory-experiment">实验室实验(Laboratory Experiment)</a></li>
+<li><a href="#%E7%94%B0%E9%87%8E%E7%8E%B0%E5%9C%BA%E5%AE%9E%E9%AA%8Cfield-experiment">田野/现场实验(Field Experiment)</a></li>
+<li><a href="#%E8%87%AA%E7%84%B6%E5%AE%9E%E9%AA%8C%E5%87%86%E5%AE%9E%E9%AA%8Cnatural-experimentquasi-experiment">自然实验/准实验(Natural Experiment/Quasi Experiment)</a><h1 id="实验的分类"><a href="#实验的分类" class="headerlink" title="实验的分类"></a>实验的分类</h1></li>
 </ul>
 </li>
-<li>计量经济学检验<ul>
-<li>异方差检验</li>
-<li>序列相关性检验</li>
-<li>多重共线性检验</li>
 </ul>
-</li>
-<li>模型预测检验</li>
-</ul>
-<h1 id="2-Linear-Regression"><a href="#2-Linear-Regression" class="headerlink" title="2 Linear Regression"></a>2 Linear Regression</h1><p>总体回归线、总体回归函数(Population Regression Function)：条件均值与自变量之间的关系<br>$$ E(y|x) = f(x) $$<br>总体回归模型(PRM)：每一个观察值与自变量之间的关系<br>$$ y = E(y|x) + u = \beta_0 + \beta_1 x+ u $$</p>
-<p>样本回归函数(Sample Regression Function, SRF)</p>
-<p>样本回归线(Sample Regression line)的函数形式：样本回归函数</p>
-<p>$$ \hat{y} = \hat{\beta_0} + \hat{\beta_1} $$<br>样本回归函数的随机形式：样本回归模型：<br>$$ \hat{y} = \hat{\beta_0} + \hat{\beta_1} + e $$</p>
-<center>
-<font color='red'>
-回归分析的主要目的： 根据样本回归函数估计总体回归函数PRF
- </font>
- </center>
-
-
-<h2 id="General-Fomula"><a href="#General-Fomula" class="headerlink" title="General Fomula"></a>General Fomula</h2><p>假设总体中变量之间关系服从：</p>
-<p>$$ y = E(y|x) + u = \beta_0+\beta_1 x+u $$</p>
+<h2 id="实验室实验-Laboratory-Experiment"><a href="#实验室实验-Laboratory-Experiment" class="headerlink" title="实验室实验(Laboratory Experiment)"></a>实验室实验(Laboratory Experiment)</h2><p>顾名思义, 在实验室进行的实验, 可以自由的控制IV的大小和多少, 观察IV的变化对DV的影响, 内部效度高, 外部效度低.</p>
+<blockquote>
 <ul>
-<li>$ y $ named dependent variable, explained variable, response</li>
-<li>$ x $ named independent variable,explainatory variable, predictor</li>
-<li>$ \beta_0 $ intercept parameter，截距</li>
-<li>$ \beta_1 $ slope parameter，斜率</li>
-<li>$ u $ error term， disturbance, 误差项</li>
+<li>内部效度: 结果解释的确定性(唯一性);</li>
+<li>外部效度: 结果解释的迁移拓展能力;</li>
 </ul>
-<p>现在我们得到了一些样本(Sample) $ {x_i,y_i} $来估计模型中的参数，在估计之前，需要对模型做出若干假设，假设如下：</p>
-<p>$$ E(u)=0 $$</p>
-<p>$ u $与 $ x $不相关(不存在线性关系)，即给定 $ x $, $ u $的均值与 $ x $无关，即 <strong>零条件均值假设</strong></p>
-<p>$$ E(u|x)=E(u) $$</p>
-<p>根据以上两条假设，可以推导出 <strong>总体回归函数</strong>(Population Regression Function, PRF),</p>
-<p>$$ E(y|x)=\beta_0+\beta_1 x $$</p>
-<h2 id="Hypotheses"><a href="#Hypotheses" class="headerlink" title="Hypotheses"></a>Hypotheses</h2><ol>
-<li>回归模型是正确设定的<br>总体服从以下关系， $ x,y $都是随机变量<br>$$ y= E(y|x) + u = \beta_0+\beta_1 x+u $$</li>
-</ol>
-<pre><code>- 模型选择了正确的变量
-- 模型选择了正确的函数形式(设立的一元线性回归模型与经济理论一致)
-</code></pre>
-<blockquote>
-<p>当该假设满足时，就说明模型没有 <strong>设定偏误(Specification error)</strong></p>
 </blockquote>
-<ol start="2">
-<li>解释变量在重复抽样中是确定的，非随机的， 且与随机误差项不相关</li>
-<li>观测值变化假设</li>
-<li>无完全共线性假设</li>
-<li>解释变量方差稳定</li>
-<li>随机抽样<br>容量为 $ n $的 随机样本{(x_i,y_i)}是从总体随机抽样得到的<br>. 解释变量的样本有变异<br>$$ {x_i,i=1,2,\dots,n} $$ 不是一样的</li>
-<li>随机误差项 $ u $ 具有在给定 $ X $条件下的零均值、同方差、不序列相关性<br>$$ E(u|x)=0 $$<br>$$ Var(u|x)=\sigma^2 $$</li>
-<li>随机误差项与解释变量间不相关<br>$$ Cov(x,u)=E(xu)-E(x)E(u)=E(xu)=0 $$</li>
-<li>随机误差项服从均值为0，方差为 $ \sigma^2 $的正态分布<br>$$ u \sim N(0，\sigma^2) $$</li>
-</ol>
-<h2 id="Solutions-OLS"><a href="#Solutions-OLS" class="headerlink" title="Solutions(OLS)"></a>Solutions(OLS)</h2><p>零条件均值假设表明 $ x $, $ u $之间的不存在线性关系，即协方差为0，则有：</p>
-<p>$$ Cov(x,u)=E(xu)-E(x)E(u)=0 $$</p>
-<p>即：</p>
-<p>$$ E(xu)=0 $$</p>
-<p>再联合 $ E(u)=0 $可以推导出 $ \beta_0, \beta_1$的估计值 $ \hat{\beta_0}, \hat{\beta_1} $（这两个式子实际上是残差平方和分别求偏导等于0时的结果，因此最小化了残差平方和）, 他们也叫作普通最小二乘估计值(OLS), 得到的拟合值 $ \hat{y} $为：</p>
-<p>$$ \hat{y}=\hat{\beta_0}+\hat{\beta_1} x $$</p>
-<p>它也被叫做<strong>OLS回归线</strong>(OLS Regression Line)或 <strong>样本回归函数</strong>(Sample Regression Function, SRF)：</p>
-<p>残差(residual)为：</p>
-<p>$$ \hat{u}=y-\hat{y} \text{ for each observations}$$</p>
-<h3 id="OLS’s-Properties"><a href="#OLS’s-Properties" class="headerlink" title="OLS’s Properties"></a>OLS’s Properties</h3><p>(1) 残差之和和残差均值为0</p>
-<p>$$ E(\hat{u})=0 $$</p>
-<p>$$ \sum_{i=1}^{n}\hat{u}_i=0 $$</p>
-<p>(2) 自变量的样本 $ x_1,x_2,\dots,x_n $与残差 $ u_1,u_2,\dots,u_n $协方差为0，相关系数为0</p>
-<p>(3) 点 $ (\bar{x},\bar{y}) $总在OSL回归线上。</p>
-<blockquote>
-<p>根据以上四条假设可以得到OLS的无偏性，即：</p>
-</blockquote>
-<p>$$ E(\hat \beta_0)=\beta_0 $$<br>$$ E(\hat \beta_1)=\beta_1 $$</p>
-<blockquote>
-<p>根据以上五条假设可以得到 $ \sigma^2 $的无偏性<br>$$ E(\hat \sigma^2)=\sigma^2 $$</p>
-</blockquote>
-<p><font color='red'> 以上五条假设又叫做简单线性回归的高斯-马尔科夫假定 </font></p>
-<h2 id="Solutions-Maximum-Likilihood"><a href="#Solutions-Maximum-Likilihood" class="headerlink" title="Solutions(Maximum Likilihood)"></a>Solutions(Maximum Likilihood)</h2><p>原理</p>
-<blockquote>
-<p>当从模型总体随机抽取 $ n $组样本观测值后，最合理的参数估计量应该使得从模型中抽取 $ n $组样本观测值的概率最大。样本观测值的概率密度函数的乘积 — 联合概率密度函数就叫做 <strong>似然函数</strong></p>
-</blockquote>
-<p>在满足一系列基本假设的情况下，模型结构参数的最大似然估计量和普通最小二乘法的最大似然估计量是相同的。</p>
-<h2 id="R-2"><a href="#R-2" class="headerlink" title="R^2"></a>R^2</h2><ul>
-<li>总平方和(Total sum of squares,TSS)</li>
-<li>解释平方和(Explained sum of squares, SSE)</li>
-<li>残差平方和(Residual sum of squares, SSR)</li>
-</ul>
-<p>$$ TSS=\sum_{i=1}^{n}(y_i-\bar{y})^2 $$</p>
-<p>$$ SSE=\sum_{i=1}^{n}(\hat{y}_i-bar{y})^2 $$</p>
-<p>$$ SSR=\sum_{i=1}^{n}(y_i-\hat{y_i})^2 $$</p>
-<p>关系：</p>
-<p>$$ TSS=SSE+SSR $$</p>
-<p>拟合优度 $ R^2 $:</p>
-<p>$$ R^2=\frac{SSE}{TSS}=1-\frac{SSR}{TSS} $$</p>
-<p>$ R^2 $越大，表示拟合优度约好。</p>
-<p>$ R^2 $与变量的单位无关。</p>
+<h2 id="田野-现场实验-Field-Experiment"><a href="#田野-现场实验-Field-Experiment" class="headerlink" title="田野/现场实验(Field Experiment)"></a>田野/现场实验(Field Experiment)</h2><p>在实验室环境之外, 大自然环境下进行的实验, 对IV的控制力较弱, 容易受到其他变量的影响, 内部效度低, 外部效度高.</p>
+<h2 id="自然实验-准实验-Natural-Experiment-Quasi-Experiment"><a href="#自然实验-准实验-Natural-Experiment-Quasi-Experiment" class="headerlink" title="自然实验/准实验(Natural Experiment/Quasi Experiment)"></a>自然实验/准实验(Natural Experiment/Quasi Experiment)</h2><p>我们没有做实验, 它是自然发生的, 例如COVID对经济的影响, COVID是一件自然发生的事件, 自然而然构成了一个实验, 因为在2020年有些国家经历了COVID, 有些没有, 构成对比.</p>
 
       
 
@@ -291,17 +195,6 @@
 	</div>
 
       
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/原创//" class="article-tag-list-link color3">原创</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
       
 
@@ -352,7 +245,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-Introduction"><span class="toc-number">1.</span> <span class="toc-text">1 Introduction</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-Linear-Regression"><span class="toc-number">2.</span> <span class="toc-text">2 Linear Regression</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#General-Fomula"><span class="toc-number">2.1.</span> <span class="toc-text">General Fomula</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hypotheses"><span class="toc-number">2.2.</span> <span class="toc-text">Hypotheses</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solutions-OLS"><span class="toc-number">2.3.</span> <span class="toc-text">Solutions(OLS)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#OLS%E2%80%99s-Properties"><span class="toc-number">2.3.1.</span> <span class="toc-text">OLS’s Properties</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solutions-Maximum-Likilihood"><span class="toc-number">2.4.</span> <span class="toc-text">Solutions(Maximum Likilihood)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#R-2"><span class="toc-number">2.5.</span> <span class="toc-text">R^2</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-number">1.</span> <span class="toc-text">实验的分类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%AE%9E%E9%AA%8C-Laboratory-Experiment"><span class="toc-number">1.1.</span> <span class="toc-text">实验室实验(Laboratory Experiment)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%B0%E9%87%8E-%E7%8E%B0%E5%9C%BA%E5%AE%9E%E9%AA%8C-Field-Experiment"><span class="toc-number">1.2.</span> <span class="toc-text">田野&#x2F;现场实验(Field Experiment)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E7%84%B6%E5%AE%9E%E9%AA%8C-%E5%87%86%E5%AE%9E%E9%AA%8C-Natural-Experiment-Quasi-Experiment"><span class="toc-number">1.3.</span> <span class="toc-text">自然实验&#x2F;准实验(Natural Experiment&#x2F;Quasi Experiment)</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -469,10 +362,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Econometrics</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">database</a>
               </li>
              
@@ -482,6 +371,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Econometrics</a>
               </li>
              
               <li class="article-tag-list-item">
