@@ -16,7 +16,7 @@
 <meta property="og:description" content="揭示经济变量之间的定量关系">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-09-19T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-07-04T06:19:47.305Z">
+<meta property="article:modified_time" content="2021-07-04T06:41:13.547Z">
 <meta property="article:author" content="Wu Li">
 <meta property="article:tag" content="Econometrics">
 <meta name="twitter:card" content="summary">
@@ -186,7 +186,7 @@
 <h1 id="潜在因果-potential-outcome"><a href="#潜在因果-potential-outcome" class="headerlink" title="潜在因果(potential outcome)"></a>潜在因果(potential outcome)</h1><p>在现实世界中, 我们观测到的数据往往是某个treatment已经发生后得到的数据, 对于我来说, 读研究生对我找工作的收益有多大, 最好地办法是 <code>穿越时空</code> , 如果能够穿越回过去, 重新走一遍人生, 在大四选择找工作而不是读研, 然后比较三年后读研的我与工作的我的两种人生的薪酬差异, 差异值就是读研带来的收益/损失. 然而我只有一种人生, 我只能做出一个选择(读研), 那个未被做出的选择(工作)带来的结果(薪酬)就是反事实结果(counterfactural outcome). 它是无法观测到的.</p>
 <p>所以在实证中, 我们总是想近似这种穿越时空的过程, 即构造实验组与对照组, 实验组与对照组均包含多个个体, 这些个体都是 <code>大四的我的复制品</code> , 实验组的 <code>我</code> 毕业后去读研, 对照组的 <code>我</code> 毕业后去工作, 三年后,当实验组的我找到工作后, 比较实验组和对照组的我在工作薪水的 <code>平均差异</code> 就是 <code>读研的平均收益</code> .如果实验组的 <code>我</code> 和对照组的 <code>我</code> 不一样, 就会产生 <code>选择偏差(selection bias)</code>, 即实验组和对照组在treatment发生之前不一样的情况.</p>
 <p>这就是 <code>Rubin潜在因果框架</code> 目前应用最广泛的实证分析方法.</p>
-<h1 id="如何构造这么多复制的我呢"><a href="#如何构造这么多复制的我呢" class="headerlink" title="如何构造这么多复制的我呢?"></a>如何构造这么多复制的我呢?</h1><h2 id="随机化实验-randomization-trial"><a href="#随机化实验-randomization-trial" class="headerlink" title="随机化实验(randomization trial)"></a>随机化实验(randomization trial)</h2><p>所谓随机化实验就是在分配实验对象到实验组对照组时采用随机化的方法,</p>
+<h3 id="稳定性假设"><a href="#稳定性假设" class="headerlink" title="稳定性假设"></a>稳定性假设</h3><h3 id="分配机制"><a href="#分配机制" class="headerlink" title="分配机制"></a>分配机制</h3><h1 id="如何构造这么多复制的我呢"><a href="#如何构造这么多复制的我呢" class="headerlink" title="如何构造这么多复制的我呢?"></a>如何构造这么多复制的我呢?</h1><h2 id="随机化实验-randomization-trial"><a href="#随机化实验-randomization-trial" class="headerlink" title="随机化实验(randomization trial)"></a>随机化实验(randomization trial)</h2><p>所谓随机化实验就是在分配实验对象到实验组对照组时采用随机化的方法,</p>
 
       
 
@@ -257,7 +257,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-number">1.</span> <span class="toc-text">实验的分类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%AE%9E%E9%AA%8C-Laboratory-Experiment"><span class="toc-number">1.1.</span> <span class="toc-text">实验室实验(Laboratory Experiment)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%B0%E9%87%8E-%E7%8E%B0%E5%9C%BA%E5%AE%9E%E9%AA%8C-Field-Experiment"><span class="toc-number">1.2.</span> <span class="toc-text">田野&#x2F;现场实验(Field Experiment)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E7%84%B6%E5%AE%9E%E9%AA%8C-%E5%87%86%E5%AE%9E%E9%AA%8C-Natural-Experiment-Quasi-Experiment"><span class="toc-number">1.3.</span> <span class="toc-text">自然实验&#x2F;准实验(Natural Experiment&#x2F;Quasi Experiment)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%BD%9C%E5%9C%A8%E5%9B%A0%E6%9E%9C-potential-outcome"><span class="toc-number">2.</span> <span class="toc-text">潜在因果(potential outcome)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E6%9E%84%E9%80%A0%E8%BF%99%E4%B9%88%E5%A4%9A%E5%A4%8D%E5%88%B6%E7%9A%84%E6%88%91%E5%91%A2"><span class="toc-number">3.</span> <span class="toc-text">如何构造这么多复制的我呢?</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E5%8C%96%E5%AE%9E%E9%AA%8C-randomization-trial"><span class="toc-number">3.1.</span> <span class="toc-text">随机化实验(randomization trial)</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-number">1.</span> <span class="toc-text">实验的分类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%AE%9E%E9%AA%8C-Laboratory-Experiment"><span class="toc-number">1.1.</span> <span class="toc-text">实验室实验(Laboratory Experiment)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%B0%E9%87%8E-%E7%8E%B0%E5%9C%BA%E5%AE%9E%E9%AA%8C-Field-Experiment"><span class="toc-number">1.2.</span> <span class="toc-text">田野&#x2F;现场实验(Field Experiment)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E7%84%B6%E5%AE%9E%E9%AA%8C-%E5%87%86%E5%AE%9E%E9%AA%8C-Natural-Experiment-Quasi-Experiment"><span class="toc-number">1.3.</span> <span class="toc-text">自然实验&#x2F;准实验(Natural Experiment&#x2F;Quasi Experiment)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%BD%9C%E5%9C%A8%E5%9B%A0%E6%9E%9C-potential-outcome"><span class="toc-number">2.</span> <span class="toc-text">潜在因果(potential outcome)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A8%B3%E5%AE%9A%E6%80%A7%E5%81%87%E8%AE%BE"><span class="toc-number">2.0.1.</span> <span class="toc-text">稳定性假设</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E9%85%8D%E6%9C%BA%E5%88%B6"><span class="toc-number">2.0.2.</span> <span class="toc-text">分配机制</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E6%9E%84%E9%80%A0%E8%BF%99%E4%B9%88%E5%A4%9A%E5%A4%8D%E5%88%B6%E7%9A%84%E6%88%91%E5%91%A2"><span class="toc-number">3.</span> <span class="toc-text">如何构造这么多复制的我呢?</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E5%8C%96%E5%AE%9E%E9%AA%8C-randomization-trial"><span class="toc-number">3.1.</span> <span class="toc-text">随机化实验(randomization trial)</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -414,15 +414,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">STATA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
+                <a href="javascript:void(0)" class="js-tag color1">STATA</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -438,11 +434,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Scipy</a>
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Research Tools</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Scipy</a>
               </li>
              
               <li class="article-tag-list-item">
