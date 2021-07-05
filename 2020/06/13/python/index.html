@@ -6,25 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://xuestrange.github.io">
-  <title>Python | WU Li&#39;s Blog</title>
+  <title>Python | Wuli的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="常用编程技巧">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python">
 <meta property="og:url" content="https://xuestrange.github.io/2020/06/13/python/index.html">
-<meta property="og:site_name" content="WU Li&#39;s Blog">
+<meta property="og:site_name" content="Wuli的博客">
 <meta property="og:description" content="常用编程技巧">
-<meta property="og:locale" content="zh_CN">
+<meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://tvax1.sinaimg.cn/large/006z5e4Qgy1ggkhfsn5krj315i0lt4k2.jpg">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/006z5e4Qgy1ggsjt1e7lqj30p30ojgow.jpg">
 <meta property="article:published_time" content="2020-06-12T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-07-05T08:11:14.441Z">
-<meta property="article:author" content="Wu Li">
+<meta property="article:author" content="Wuli">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://tvax1.sinaimg.cn/large/006z5e4Qgy1ggkhfsn5krj315i0lt4k2.jpg">
   
-    <link rel="alternative" href="/atom.xml" title="WU Li&#39;s Blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Wuli的博客" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -168,9 +168,9 @@
 </blockquote>
 <span id="more"></span>
 <h1 id="matplotlib-style"><a href="#matplotlib-style" class="headerlink" title="matplotlib style"></a>matplotlib style</h1><p>matplotlib会自动检测路径下的style文件，路径在这里</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;C:\miniconda\Lib\site-packages\matplotlib\mpl-data\stylelib&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;C:<span class="symbol">\m</span>iniconda<span class="symbol">\L</span>ib<span class="symbol">\s</span>ite-packages<span class="symbol">\m</span>atplotlib<span class="symbol">\m</span>pl-data<span class="symbol">\s</span>tylelib&quot;</span><br></pre></td></tr></table></figure>
 <p>可以通过如下语句，来查看和使用自定义的风格</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">plt.style.avaliable</span><br><span class="line">plt.style.use([&quot;classic&quot;, &quot;colorstyle_2&quot;])</span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">plt<span class="selector-class">.style</span><span class="selector-class">.avaliable</span></span><br><span class="line">plt<span class="selector-class">.style</span><span class="selector-class">.use</span>(<span class="selector-attr">[<span class="string">&quot;classic&quot;</span>, <span class="string">&quot;colorstyle_2&quot;</span>]</span>)</span><br></pre></td></tr></table></figure>
 <p>样式组合可以这样子用：</p>
 <ul>
 <li>一个专门负责配色;</li>
@@ -178,10 +178,10 @@
 <li>一个专门负责除此之外的东西。</li>
 </ul>
 <p><strong>注意！！！</strong><br>style文件中的字体设置后，绘图时可能会出现找不到字体的错误，这是需要删除matplotlib生成的字体索引，路径如下，下次绘图时，matplotlib会自动生成。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;C:\Users\17394\.matplotlib\fontlist-v310.json&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;C:<span class="symbol">\U</span>sers<span class="symbol">\1</span>7394<span class="symbol">\.</span>matplotlib<span class="symbol">\f</span>ontlist-v310.json&quot;</span><br></pre></td></tr></table></figure>
 
 <p><strong>PS：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">axes.unicode_minus  : False # 可以正确显示正负号</span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">axes.unicode_minus  :</span> <span class="literal">False</span> <span class="comment"># 可以正确显示正负号</span></span><br></pre></td></tr></table></figure>
 <h1 id="jupyter-notebook"><a href="#jupyter-notebook" class="headerlink" title="jupyter notebook"></a>jupyter notebook</h1><p>jupyter默认打印出最后一个变量的结果<br>在cell中添加</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> IPython.core.interactiveshell <span class="keyword">import</span> InteractiveShell</span><br><span class="line">InteractiveShell.ast_node_interactivity = <span class="string">&quot;all&quot;</span></span><br></pre></td></tr></table></figure>
 <p>可以输出所有单独一行的变量</p>
@@ -209,7 +209,7 @@
 <p>总结如下：</p>
 <ol>
 <li>安装redis，链接在 <a target="_blank" rel="noopener" href="https://github.com/MicrosoftArchive/redis/releases">这里</a></li>
-<li>下载Github上代理池的源代码<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/Python3WebSpider/ProxyPool.git # 可以使用Gitee</span><br></pre></td></tr></table></figure></li>
+<li>下载Github上代理池的源代码<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:<span class="regexp">//gi</span>thub.com<span class="regexp">/Python3WebSpider/</span>ProxyPool.git <span class="comment"># 可以使用Gitee</span></span><br></pre></td></tr></table></figure></li>
 <li>cd到文件目录中，安装相关模块<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure></li>
 <li>运行<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python run.py</span><br></pre></td></tr></table></figure></li>
 </ol>
@@ -335,7 +335,7 @@ gitment.render('gitment-ctn')
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2021 Wu Li
+    		&copy; 2021 Wuli
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -356,7 +356,7 @@ gitment.render('gitment-ctn')
 		toc_hide_index: true,
 		root: "/",
 		innerArchive: true,
-		showTags: true
+		showTags: false
 	}
 </script>
 
@@ -427,15 +427,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Econometrics</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Latex</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Econometrics</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -447,15 +447,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">STATA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
+                <a href="javascript:void(0)" class="js-tag color1">STATA</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -471,11 +467,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数学</a>
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">科研</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数学</a>
               </li>
              
               <li class="article-tag-list-item">
