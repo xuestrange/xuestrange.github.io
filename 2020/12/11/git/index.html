@@ -37,7 +37,11 @@
 
   
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -164,48 +168,41 @@
 <p>Git学习教程</p>
 </blockquote>
 <span id="more"></span>
-<h1 id="git"><a href="#git" class="headerlink" title="git"></a>git</h1><p>分布式控制，每个人把文件保存在本地电脑上，修改后提交给别人。<br>所以每一个设备需要自报家门：</p>
+<h1 id="git"><a class="markdownIt-Anchor" href="#git"></a> git</h1>
+<p>分布式控制，每个人把文件保存在本地电脑上，修改后提交给别人。<br />
+所以每一个设备需要自报家门：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global use.name &quot;xuestrange&quot; `</span><br><span class="line">git config --global use.email &quot;xjz1cumt@163.com&quot;</span><br></pre></td></tr></table></figure>
 <p>这样一来，这台电脑所有的仓库均使用这一个ID</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd 文件夹路径</span><br><span class="line">git init</span><br></pre></td></tr></table></figure>
 <p>把一个文件夹变成一个git可以管理的仓库，会生成 <code>.git</code>文件夹(windows系统下默认隐藏)。</p>
 <p><font color='red'> git只可以管理文本文件，word、ppt啥的别想了 </font></p>
 <div class="note warning">千万不要使⽤Windows⾃带的记事本编辑任何⽂本⽂件。原因是Microsoft开发记事本的团队使用了一个个非常弱智的⾏为来保存UTF-8编码的⽂件，他们⾃作聪明地在每个⽂件开头添加了0xefbbbf（⼗六进制）的字符。建议你下载Notepad++代替记事本，不但功能强⼤，⽽且免费！记得把Notepad++的默认编码设置为UTF-8 without BOM即可</div>
-
 <p>添加⽂件到Git仓库，分两步：</p>
 <ul>
 <li>第⼀步，使⽤命令git add ，注意，可反复多次使⽤，添加多个⽂件，命令成功后没有提示；</li>
 <li>第⼆步，使⽤命令git commit，提交文件到仓库完成，有提示。</li>
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git add file1.txt</span><br><span class="line">git add file2.cpp</span><br><span class="line"></span><br><span class="line">git commit -m &quot;add 2 files&quot; # message</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git status # 查看仓库的当前状态，哪些文件改动了，哪些未提交，</span><br><span class="line">git diff # 查看修改了什么内容</span><br><span class="line">git log # 查看commit历史，所以写commit的形容是很重要的。</span><br><span class="line">git log --pretty=oneline # 每一次提交的历史显示在一行中</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard commit_id # 回退到过去某一个版本，既可以回退版本，也可以把暂存区的修改回退到⼯作区</span><br><span class="line">git reflog 查看命令历史，获得commit_id # 前进到将来某一个版本。</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout -- file.txt</span><br><span class="line"><span class="meta">#</span><span class="bash"> 让这个⽂件回到最近⼀次git commit或git add时的状态。</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;xjz1cumt@163.com&quot; # 为电脑生成一个秘钥，每台电脑都要弄</span><br></pre></td></tr></table></figure>
+<h1 id="github"><a class="markdownIt-Anchor" href="#github"></a> Github</h1>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;xjz1cumt@163.com&quot; # 为电脑生成一个秘钥，每台电脑都要弄</span><br></pre></td></tr></table></figure>
 <p>主目录下会生成一个文件夹 <code>.ssh</code>, 里边有两个文件 <code>id_rsa</code>, <code>id_rsa.pub</code>, 一个是秘钥，一个是公钥，在浏览器上登录github，添加ssh kay，将公钥的内容粘进去。</p>
 <p>将初始化的本地仓库与github中建立的远程仓库相关联</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git remote rm origin</span><br><span class="line">git remote add origin git@github.com:xuestrange/LearnGit.git</span><br><span class="line">git push -u origin master #第一次推送, 不但推送了内容还建立了关联.</span><br></pre></td></tr></table></figure>
-<p>此后,每次本地提交后,只要有必要,就可以使用用命令 <code>git push origin master</code>  推送最新修<br>改;</p>
+<p>此后,每次本地提交后,只要有必要,就可以使用用命令 <code>git push origin master</code>  推送最新修<br />
+改;</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git branch  dev #创建分支</span><br><span class="line">git branch  -b dev #创建分支dev并且立即切换到dev下</span><br><span class="line">git checkout dev #切换到dev分支</span><br><span class="line">git branch #查看有哪些分支与目前处于哪一个分支</span><br></pre></td></tr></table></figure>
-
 <p>当我切换到dev分支后，修改了file.txt, then</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add file.txt</span><br><span class="line">git commit -m &quot;file.txt modified from dev branch&quot;</span><br><span class="line">git push origin dev</span><br></pre></td></tr></table></figure>
 <p>假设我已经从dev分支切换回了master分支，那么如何将dev分支上的修改合并到master中呢</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br><span class="line">git merge --no-ff -m &quot;merge without fastward&quot; dev # 合并完了之后本地数据库并没有上传到云，可以执行 git push  orgin master</span><br></pre></td></tr></table></figure>
 <p>合并完了之后就可以删除dev分支了</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d dev</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git log --graph #查看分支合并图</span><br><span class="line">git remote -v #查看远程库（github）信息</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull # 从云获取最新的文件并与本地文件进行合并</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag v1.0 给commit的内容打标签</span><br></pre></td></tr></table></figure>
-
 <p>git设置</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git config --global color.ui true # 设置git输出信息显示颜色</span><br><span class="line">git config --global alias.st &quot;status&quot; # 给命令设置别名 status --&gt; st</span><br><span class="line">git config --global alias.unstage &#x27;reset HEAD&#x27;</span><br><span class="line">git config --global alias.lg &quot;log --color --graph --</span><br><span class="line">pretty=format:&#x27;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)</span><br><span class="line"><span class="meta">%</span><span class="bash">C(bold blue)&lt;%an&gt;%Creset<span class="string">&#x27; --abbrev-commit&quot;</span></span></span><br></pre></td></tr></table></figure>
       
@@ -277,7 +274,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#git"><span class="toc-number">1.</span> <span class="toc-text">git</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Github"><span class="toc-number">2.</span> <span class="toc-text">Github</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#git"><span class="toc-number">1.</span> <span class="toc-text"> git</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#github"><span class="toc-number">2.</span> <span class="toc-text"> Github</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -410,11 +407,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+                <a href="javascript:void(0)" class="js-tag color3">Econometrics</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Econometrics</a>
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -442,6 +439,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">MiniConda</a>
               </li>
              
@@ -454,15 +455,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
+                <a href="javascript:void(0)" class="js-tag color3">科研</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">数学</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">科研</a>
               </li>
              
               <li class="article-tag-list-item">

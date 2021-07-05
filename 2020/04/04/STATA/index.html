@@ -16,7 +16,7 @@
 <meta property="og:description" content="记录STATA使用期间遇到的坑。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-04-03T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-07-05T08:11:48.398Z">
+<meta property="article:modified_time" content="2021-07-05T11:20:17.418Z">
 <meta property="article:author" content="Wuli">
 <meta property="article:tag" content="STATA">
 <meta name="twitter:card" content="summary">
@@ -37,7 +37,11 @@
 
   
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -162,9 +166,10 @@
       
         <p>记录STATA使用期间遇到的坑。</p>
 <span id="more"></span>
-
-<h1 id="文件编码问题"><a href="#文件编码问题" class="headerlink" title="文件编码问题"></a>文件编码问题</h1><p>早期STATA版本创建的 <code>.do</code>  <code>.dta</code> 文件中如有中文字体，那么其编码为 <code>gbk</code> ，若用最新版STATA打开，则出现中文字体无法识别的问题，需要将其转换为 <code>UTF_8</code></p>
+<h1 id="文件编码问题"><a class="markdownIt-Anchor" href="#文件编码问题"></a> 文件编码问题</h1>
+<p>早期STATA版本创建的 <code>.do</code>  <code>.dta</code> 文件中如有中文字体，那么其编码为 <code>gbk</code> ，若用最新版STATA打开，则出现中文字体无法识别的问题，需要将其转换为 <code>UTF_8</code></p>
 <figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 使用前内存中不能有变量 */</span></span><br><span class="line"><span class="keyword">clear</span></span><br><span class="line">unicode analyze *.dta`</span><br><span class="line">unicode encoding <span class="keyword">set</span> gbk</span><br><span class="line">unicode   <span class="keyword">translate</span> <span class="string">&quot;*.dta`&quot;</span>, transutf8</span><br></pre></td></tr></table></figure>
+
       
 
       
@@ -234,7 +239,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text">文件编码问题</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text"> 文件编码问题</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -367,11 +372,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+                <a href="javascript:void(0)" class="js-tag color3">Econometrics</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Econometrics</a>
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -399,6 +404,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">MiniConda</a>
               </li>
              
@@ -411,15 +420,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
+                <a href="javascript:void(0)" class="js-tag color3">科研</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">数学</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">科研</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -37,7 +37,11 @@
 
   
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -164,105 +168,151 @@
 <p>Ubuntu 20.04LTS 配置</p>
 </blockquote>
 <span id="more"></span>
-
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>要点：</p>
+<h1 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h1>
+<p>要点：</p>
 <ul>
 <li>安装语言为英语</li>
 <li>不要连接wifi</li>
 <li>最小化安装</li>
-<li>手动分区<ul>
+<li>手动分区
+<ul>
 <li>/boot 1G 逻辑</li>
 <li>/swap 8G 逻辑</li>
 <li>/root 剩余容量 主分区</li>
 </ul>
 </li>
 </ul>
-<h1 id="系统配置"><a href="#系统配置" class="headerlink" title="系统配置"></a>系统配置</h1><h2 id="源"><a href="#源" class="headerlink" title="源"></a>源</h2><p>连接wifi, 系统更新GUI中，找到阿里云，应用，重启。</p>
-<h2 id="nerdfonts"><a href="#nerdfonts" class="headerlink" title="nerdfonts"></a>nerdfonts</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install dos2unix</span><br><span class="line">dos2unix install.sh</span><br><span class="line">./install.sh</span><br></pre></td></tr></table></figure>
-<h2 id="fish"><a href="#fish" class="headerlink" title="fish"></a>fish</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install fish</span><br><span class="line">whereis fish</span><br><span class="line"></span><br><span class="line">chsh -s /usr/bin/fish</span><br></pre></td></tr></table></figure>
-<h2 id="oh-my-fish"><a href="#oh-my-fish" class="headerlink" title="oh-my-fish"></a>oh-my-fish</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install git</span><br><span class="line">sudo apt install curl</span><br></pre></td></tr></table></figure>
-<h2 id="beautify-gnome"><a href="#beautify-gnome" class="headerlink" title="beautify gnome"></a>beautify gnome</h2><ol>
+<h1 id="系统配置"><a class="markdownIt-Anchor" href="#系统配置"></a> 系统配置</h1>
+<h2 id="源"><a class="markdownIt-Anchor" href="#源"></a> 源</h2>
+<p>连接wifi, 系统更新GUI中，找到阿里云，应用，重启。</p>
+<h2 id="nerdfonts"><a class="markdownIt-Anchor" href="#nerdfonts"></a> nerdfonts</h2>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install dos2unix</span><br><span class="line">dos2unix install.sh</span><br><span class="line">./install.sh</span><br></pre></td></tr></table></figure>
+<h2 id="fish"><a class="markdownIt-Anchor" href="#fish"></a> fish</h2>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install fish</span><br><span class="line">whereis fish</span><br><span class="line"></span><br><span class="line">chsh -s /usr/bin/fish</span><br></pre></td></tr></table></figure>
+<h2 id="oh-my-fish"><a class="markdownIt-Anchor" href="#oh-my-fish"></a> oh-my-fish</h2>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install git</span><br><span class="line">sudo apt install curl</span><br></pre></td></tr></table></figure>
+<h2 id="beautify-gnome"><a class="markdownIt-Anchor" href="#beautify-gnome"></a> beautify gnome</h2>
+<ol>
 <li>install firefox extesion : gnome shell integration</li>
 <li>install User themes、Topicons plus by <a target="_blank" rel="noopener" href="https://extensions.gnome.org/">https://extensions.gnome.org/</a></li>
 <li>create folder <code>.themes</code>, <code>.icons</code>  in home dir</li>
 <li>move the related folder to  <code>.themes</code>, <code>.icons</code></li>
 </ol>
-<h2 id="python"><a href="#python" class="headerlink" title="python"></a>python</h2><ol>
-<li>install miniconda<figure class="highlight cos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./..<span class="built_in">..minoconda</span>.sh</span><br></pre></td></tr></table></figure>
-<code>.config/pip/pip.conf</code>  添加<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line">index-url = https://mirrors.aliyun.com/pypi/simple/</span><br><span class="line"></span><br><span class="line">[install]</span><br><span class="line">trusted-host=mirrors.aliyun.com</span><br></pre></td></tr></table></figure></li>
-<li>conda mirrior 北京外国语大学<br><code>.condarc</code> 写入</li>
+<h2 id="python"><a class="markdownIt-Anchor" href="#python"></a> python</h2>
+<ol>
+<li>install miniconda</li>
+</ol>
+<figure class="highlight cos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./..<span class="built_in">..minoconda</span>.sh</span><br></pre></td></tr></table></figure>
+<p><code>.config/pip/pip.conf</code>  添加</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line">index-url = https://mirrors.aliyun.com/pypi/simple/</span><br><span class="line"></span><br><span class="line">[install]</span><br><span class="line">trusted-host=mirrors.aliyun.com</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>conda mirrior 北京外国语大学<br />
+<code>.condarc</code> 写入</li>
 </ol>
  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">channels:</span><br><span class="line">  - defaults</span><br><span class="line">show_channel_urls: true</span><br><span class="line">channel_alias: https://mirrors.bfsu.edu.cn/anaconda</span><br><span class="line">default_channels:</span><br><span class="line">  - https://mirrors.bfsu.edu.cn/anaconda/pkgs/main</span><br><span class="line">  - https://mirrors.bfsu.edu.cn/anaconda/pkgs/free</span><br><span class="line">  - https://mirrors.bfsu.edu.cn/anaconda/pkgs/r</span><br><span class="line">  - https://mirrors.bfsu.edu.cn/anaconda/pkgs/pro</span><br><span class="line">  - https://mirrors.bfsu.edu.cn/anaconda/pkgs/msys2</span><br><span class="line">custom_channels:</span><br><span class="line">  conda-forge: https://mirrors.bfsu.edu.cn/anaconda/cloud</span><br><span class="line">  msys2: https://mirrors.bfsu.edu.cn/anaconda/cloud</span><br><span class="line">  bioconda: https://mirrors.bfsu.edu.cn/anaconda/cloud</span><br><span class="line">  menpo: https://mirrors.bfsu.edu.cn/anaconda/cloud</span><br><span class="line">  pytorch: https://mirrors.bfsu.edu.cn/anaconda/cloud</span><br><span class="line">  simpleitk: https://mirrors.bfsu.edu.cn/anaconda/cloud</span><br></pre></td></tr></table></figure>
-<h2 id="vim"><a href="#vim" class="headerlink" title="vim"></a>vim</h2><p>找个gihub仓库自己拷贝过来吧</p>
-<h2 id="nodejs"><a href="#nodejs" class="headerlink" title="nodejs"></a>nodejs</h2><ol>
-<li><p>官网下载并解压，修改文件夹名称为node</p>
-</li>
-<li><p>移动文件夹至 /opt/</p>
-</li>
-<li><p>编辑  <code>fish_prompt.fish</code></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set PATH /opt/node/bin $PATH</span><br></pre></td></tr></table></figure></li>
-<li><p>查看版本</p>
+<h2 id="vim"><a class="markdownIt-Anchor" href="#vim"></a> vim</h2>
+<p>找个gihub仓库自己拷贝过来吧</p>
+<h2 id="nodejs"><a class="markdownIt-Anchor" href="#nodejs"></a> nodejs</h2>
+<ol>
+<li>官网下载并解压，修改文件夹名称为node</li>
+<li>移动文件夹至 /opt/</li>
+<li>编辑  <code>fish_prompt.fish</code></li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set PATH /opt/node/bin $PATH</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>查看版本</li>
+</ol>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure>
 <p>5  修改npm镜像为cnpm</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-<h2 id="hexo-Blog"><a href="#hexo-Blog" class="headerlink" title="hexo Blog"></a>hexo Blog</h2></li>
-<li><p>github</p>
+<h2 id="hexo-blog"><a class="markdownIt-Anchor" href="#hexo-blog"></a> hexo Blog</h2>
+<ol>
+<li>github</li>
+</ol>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;xuestrange&quot;</span><br><span class="line">git config --global user.email &quot;xjz1cumt@163.com&quot;</span><br><span class="line">ssh-keygen -t rsa -C &quot;xjz1cumt@163.com&quot;</span><br></pre></td></tr></table></figure>
 <p>将密钥中的内容保存到github网页中的SSH key中,then</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure></li>
-<li><p>hexo</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install hexo-cli -g</span><br></pre></td></tr></table></figure></li>
-<li><p>init</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init ~/Documents/xuestrange</span><br></pre></td></tr></table></figure></li>
-<li><p>deploy<br>在博客根目录打开终端</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cnpm install hexo-deploy-git</span><br><span class="line">cnpm install hexo-renderer-pug hexo-renderer-stylus --save</span><br><span class="line">cnpm install cheerio</span><br><span class="line">cnpm install hexo-generator-search  --save</span><br><span class="line">cnpm install hexo-generator-searchdb --save</span><br><span class="line">cnpm install hexo-symbols-count-time</span><br></pre></td></tr></table></figure></li>
-<li><p>创建其它界面</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>hexo</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>init</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init ~/Documents/xuestrange</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>deploy<br />
+在博客根目录打开终端</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cnpm install hexo-deploy-git</span><br><span class="line">cnpm install hexo-renderer-pug hexo-renderer-stylus --save</span><br><span class="line">cnpm install cheerio</span><br><span class="line">cnpm install hexo-generator-search  --save</span><br><span class="line">cnpm install hexo-generator-searchdb --save</span><br><span class="line">cnpm install hexo-symbols-count-time</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>创建其它界面</li>
+</ol>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo new page tags</span><br><span class="line">hexo new page categories</span><br><span class="line">hexo new page about</span><br><span class="line">hexo new page archives</span><br></pre></td></tr></table></figure>
-<p>修改 <code>next/source/tags/</code> 文件夹下的tags.md, 其它同理</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2020-07-11 18:53:02</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">top_img: https://tva2.sinaimg.cn/large/006z5e4Qgy1ggnynhq230j31hc0u0tfp.jpg</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure></li>
-<li><p>文章置顶<br>😄</p>
+<p>修改 <code>next/source/tags/</code> <a target="_blank" rel="noopener" href="http://xn--tags-494fr2co52b7gxo48a.md">文件夹下的tags.md</a>, 其它同理</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2020-07-11 18:53:02</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">top_img: https://tva2.sinaimg.cn/large/006z5e4Qgy1ggnynhq230j31hc0u0tfp.jpg</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<ol start="6">
+<li>文章置顶<br />
+😄</li>
+</ol>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cnpm uninstall hexo-generator-index --save</span><br><span class="line">cnpm install hexo-generator-index-pin-top --save # 文章置顶</span><br></pre></td></tr></table></figure>
 <p>详见 <a target="_blank" rel="noopener" href="https://juejin.cn/post/6844904037465194503">这里</a></p>
-<h2 id="R"><a href="#R" class="headerlink" title="R"></a>R</h2></li>
-<li><p>install</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install dirmngr gnupg apt-transport-https ca-certificates software-properties-common</span><br><span class="line">sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9</span><br><span class="line">sudo add-apt-repository <span class="string">&#x27;deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/&#x27;</span></span><br><span class="line">sudo apt install r-base</span><br><span class="line">R --version</span><br></pre></td></tr></table></figure></li>
-<li><p>修改镜像<br>在home目录下，创建.Rprofile</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">options(repos=&quot;https://mirrors.ustc.edu.cn/CRAN&quot;)</span><br></pre></td></tr></table></figure>
-<h2 id="wechat-QQ-DingDing-talk"><a href="#wechat-QQ-DingDing-talk" class="headerlink" title="wechat QQ DingDing talk"></a>wechat QQ DingDing talk</h2></li>
-<li><p>添加仓库</p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -<span class="keyword">o</span>- http<span class="variable">s:</span>//deepin-wine.i-<span class="keyword">m</span>.dev/setup.<span class="keyword">sh</span> | <span class="keyword">sh</span></span><br></pre></td></tr></table></figure></li>
-<li><p>Install</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install com<span class="selector-class">.qq</span><span class="selector-class">.weixin</span><span class="selector-class">.deepin</span></span><br><span class="line">sudo apt install com<span class="selector-class">.qq</span><span class="selector-class">.im</span><span class="selector-class">.deepin</span></span><br><span class="line">sudo apt install com<span class="selector-class">.dingtalk</span>.deepin</span><br></pre></td></tr></table></figure></li>
-<li><p>logout ang login</p>
-</li>
-<li><p>copy fonts from windows<br>from <code>C:/windows/fonts</code> to <code>/usr/share/fonts</code></p>
-<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">fc-cache -fv</span></span><br></pre></td></tr></table></figure></li>
-<li><p>有问题查仓库issue<br><a target="_blank" rel="noopener" href="https://github.com/zq1997/deepin-wine">https://github.com/zq1997/deepin-wine</a></p>
-</li>
+<h2 id="r"><a class="markdownIt-Anchor" href="#r"></a> R</h2>
+<ol>
+<li>install</li>
 </ol>
-<h2 id="登录界面添加动画"><a href="#登录界面添加动画" class="headerlink" title="登录界面添加动画"></a>登录界面添加动画</h2><p>下载 <code>change-gdm-background</code>, 赋予可执行权限，执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install dirmngr gnupg apt-transport-https ca-certificates software-properties-common</span><br><span class="line">sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9</span><br><span class="line">sudo add-apt-repository <span class="string">&#x27;deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/&#x27;</span></span><br><span class="line">sudo apt install r-base</span><br><span class="line">R --version</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>修改镜像<br />
+在home目录下，创建.Rprofile</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">options(repos=&quot;https://mirrors.ustc.edu.cn/CRAN&quot;)</span><br></pre></td></tr></table></figure>
+<h2 id="wechat-qq-dingding-talk"><a class="markdownIt-Anchor" href="#wechat-qq-dingding-talk"></a> wechat QQ DingDing talk</h2>
+<ol>
+<li>添加仓库</li>
+</ol>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -<span class="keyword">o</span>- http<span class="variable">s:</span>//deepin-wine.i-<span class="keyword">m</span>.dev/setup.<span class="keyword">sh</span> | <span class="keyword">sh</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li>Install</li>
+</ol>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install com<span class="selector-class">.qq</span><span class="selector-class">.weixin</span><span class="selector-class">.deepin</span></span><br><span class="line">sudo apt install com<span class="selector-class">.qq</span><span class="selector-class">.im</span><span class="selector-class">.deepin</span></span><br><span class="line">sudo apt install com<span class="selector-class">.dingtalk</span>.deepin</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>logout ang login</li>
+<li>copy fonts from windows<br />
+from <code>C:/windows/fonts</code> to <code>/usr/share/fonts</code></li>
+</ol>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">fc-cache -fv</span></span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>有问题查仓库issue<br />
+<a target="_blank" rel="noopener" href="https://github.com/zq1997/deepin-wine">https://github.com/zq1997/deepin-wine</a></li>
+</ol>
+<h2 id="登录界面添加动画"><a class="markdownIt-Anchor" href="#登录界面添加动画"></a> 登录界面添加动画</h2>
+<p>下载 <code>change-gdm-background</code>, 赋予可执行权限，执行</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod 777 /Downloads/change-gdm-background</span><br><span class="line">sudo ./Downloads/change-gdm-background /path-to-image</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="开机动画"><a href="#开机动画" class="headerlink" title="开机动画"></a>开机动画</h2><p>下载 <code>dandelion</code>(蒲公英开机动画)，</p>
+<h2 id="开机动画"><a class="markdownIt-Anchor" href="#开机动画"></a> 开机动画</h2>
+<p>下载 <code>dandelion</code>(蒲公英开机动画)，</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cp -r dandelion /usr/share/plymouth/themes/ <span class="comment"># 切换到dandelion上层目录，-r 表示递归复制</span></span><br><span class="line">update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/dandelion/dandelion.plymouth  100</span><br><span class="line">update-alternatives --config default.plymouth <span class="comment">#执行后，会出来一个选单,然后手动输入我们安装的主题的序号。</span></span><br><span class="line">update-initramfs -u <span class="comment"># 执行后要等半分钟左右, 重启后可以看到效果</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="rime"><a href="#rime" class="headerlink" title="rime"></a>rime</h2><ol>
+<h2 id="rime"><a class="markdownIt-Anchor" href="#rime"></a> rime</h2>
+<ol>
 <li>安装 <code>fcitx-rime</code>, 不要使用 <code>ibus-rime</code>, 因为会让WPS打开巨慢</li>
 <li>语言框架设置为 <code>fcitx</code>, 应用到全局,重启</li>
 <li>小键盘图标右键, 设置  <code>rime</code></li>
 <li>将内容同步到 <code>rime</code> 配置文件夹中, 重新部署</li>
 </ol>
-<h2 id="Goldendict"><a href="#Goldendict" class="headerlink" title="Goldendict"></a>Goldendict</h2><ol>
-<li>安装终端翻译<br><code>translator shell</code> 终端翻译器：可以翻译句子，也可以翻译单词，做字典用</li>
+<h2 id="goldendict"><a class="markdownIt-Anchor" href="#goldendict"></a> Goldendict</h2>
+<ol>
+<li>安装终端翻译<br />
+<code>translator shell</code> 终端翻译器：可以翻译句子，也可以翻译单词，做字典用</li>
 </ol>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">trans -shell en:zh example</span><br></pre></td></tr></table></figure>
 <ol start="2">
 <li>Goldendict启用终端翻译和有道来识别长句子</li>
 <li>将词典文件夹拷贝到Goldendict词典配置目录, 扫描词典</li>
 </ol>
-<h2 id="电源管理"><a href="#电源管理" class="headerlink" title="电源管理"></a>电源管理</h2><div class="note info">
+<h2 id="电源管理"><a class="markdownIt-Anchor" href="#电源管理"></a> 电源管理</h2>
+<div class="note info">
 ubuntu打开不算快, 甚至比windows都要慢, 还且耗电, 需要电源管理软件
 </div>
-
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install tlp</span><br><span class="line">sudo tlp start # 下次开机它会自动运行</span><br></pre></td></tr></table></figure>
 
       
@@ -334,7 +384,7 @@ ubuntu打开不算快, 甚至比windows都要慢, 还且耗电, 需要电源管�
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-number">1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE"><span class="toc-number">2.</span> <span class="toc-text">系统配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BA%90"><span class="toc-number">2.1.</span> <span class="toc-text">源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#nerdfonts"><span class="toc-number">2.2.</span> <span class="toc-text">nerdfonts</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#fish"><span class="toc-number">2.3.</span> <span class="toc-text">fish</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#oh-my-fish"><span class="toc-number">2.4.</span> <span class="toc-text">oh-my-fish</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#beautify-gnome"><span class="toc-number">2.5.</span> <span class="toc-text">beautify gnome</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#python"><span class="toc-number">2.6.</span> <span class="toc-text">python</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vim"><span class="toc-number">2.7.</span> <span class="toc-text">vim</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#nodejs"><span class="toc-number">2.8.</span> <span class="toc-text">nodejs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo-Blog"><span class="toc-number">2.9.</span> <span class="toc-text">hexo Blog</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#R"><span class="toc-number">2.10.</span> <span class="toc-text">R</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#wechat-QQ-DingDing-talk"><span class="toc-number">2.11.</span> <span class="toc-text">wechat QQ DingDing talk</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%99%BB%E5%BD%95%E7%95%8C%E9%9D%A2%E6%B7%BB%E5%8A%A0%E5%8A%A8%E7%94%BB"><span class="toc-number">2.12.</span> <span class="toc-text">登录界面添加动画</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E6%9C%BA%E5%8A%A8%E7%94%BB"><span class="toc-number">2.13.</span> <span class="toc-text">开机动画</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rime"><span class="toc-number">2.14.</span> <span class="toc-text">rime</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Goldendict"><span class="toc-number">2.15.</span> <span class="toc-text">Goldendict</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%B5%E6%BA%90%E7%AE%A1%E7%90%86"><span class="toc-number">2.16.</span> <span class="toc-text">电源管理</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-number">1.</span> <span class="toc-text"> 安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE"><span class="toc-number">2.</span> <span class="toc-text"> 系统配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BA%90"><span class="toc-number">2.1.</span> <span class="toc-text"> 源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#nerdfonts"><span class="toc-number">2.2.</span> <span class="toc-text"> nerdfonts</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#fish"><span class="toc-number">2.3.</span> <span class="toc-text"> fish</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#oh-my-fish"><span class="toc-number">2.4.</span> <span class="toc-text"> oh-my-fish</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#beautify-gnome"><span class="toc-number">2.5.</span> <span class="toc-text"> beautify gnome</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#python"><span class="toc-number">2.6.</span> <span class="toc-text"> python</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vim"><span class="toc-number">2.7.</span> <span class="toc-text"> vim</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#nodejs"><span class="toc-number">2.8.</span> <span class="toc-text"> nodejs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo-blog"><span class="toc-number">2.9.</span> <span class="toc-text"> hexo Blog</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#r"><span class="toc-number">2.10.</span> <span class="toc-text"> R</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#wechat-qq-dingding-talk"><span class="toc-number">2.11.</span> <span class="toc-text"> wechat QQ DingDing talk</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%99%BB%E5%BD%95%E7%95%8C%E9%9D%A2%E6%B7%BB%E5%8A%A0%E5%8A%A8%E7%94%BB"><span class="toc-number">2.12.</span> <span class="toc-text"> 登录界面添加动画</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E6%9C%BA%E5%8A%A8%E7%94%BB"><span class="toc-number">2.13.</span> <span class="toc-text"> 开机动画</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rime"><span class="toc-number">2.14.</span> <span class="toc-text"> rime</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#goldendict"><span class="toc-number">2.15.</span> <span class="toc-text"> Goldendict</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%B5%E6%BA%90%E7%AE%A1%E7%90%86"><span class="toc-number">2.16.</span> <span class="toc-text"> 电源管理</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -467,11 +517,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+                <a href="javascript:void(0)" class="js-tag color3">Econometrics</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Econometrics</a>
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -499,6 +549,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">MiniConda</a>
               </li>
              
@@ -511,15 +565,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
+                <a href="javascript:void(0)" class="js-tag color3">科研</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">数学</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">科研</a>
               </li>
              
               <li class="article-tag-list-item">
