@@ -1,0 +1,1274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Ecomometrics</title>
+    <url>/2020/09/20/Econometrics/</url>
+    <content><![CDATA[<blockquote>
+<p>揭示经济变量之间的定量关系</p>
+</blockquote>
+<span id="more"></span>
+<ul>
+<li><a href="#%E5%AE%9E%E9%AA%8C%E7%9A%84%E5%88%86%E7%B1%BB">实验的分类</a>
+<ul>
+<li><a href="#%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%AE%9E%E9%AA%8Claboratory-experiment">实验室实验(Laboratory Experiment)</a></li>
+<li><a href="#%E7%94%B0%E9%87%8E%E7%8E%B0%E5%9C%BA%E5%AE%9E%E9%AA%8Cfield-experiment">田野/现场实验(Field Experiment)</a></li>
+<li><a href="#%E8%87%AA%E7%84%B6%E5%AE%9E%E9%AA%8C%E5%87%86%E5%AE%9E%E9%AA%8Cnatural-experimentquasi-experiment">自然实验/准实验(Natural Experiment/Quasi Experiment)</a></li>
+</ul>
+</li>
+<li><a href="#%E6%BD%9C%E5%9C%A8%E5%9B%A0%E6%9E%9Cpotential-outcome">潜在因果(potential outcome)</a></li>
+<li><a href="#%E9%9A%8F%E6%9C%BA%E5%8C%96%E5%AE%9E%E9%AA%8Crandomization-trial">随机化实验(randomization trial)</a></li>
+</ul>
+<h1 id="实验的分类"><a class="markdownIt-Anchor" href="#实验的分类"></a> 实验的分类</h1>
+<h2 id="实验室实验laboratory-experiment"><a class="markdownIt-Anchor" href="#实验室实验laboratory-experiment"></a> 实验室实验(Laboratory Experiment)</h2>
+<p>顾名思义, 在实验室进行的实验, 可以自由的控制IV的大小和多少, 观察IV的变化对DV的影响, 内部效度高, 外部效度低.</p>
+<blockquote>
+<ul>
+<li>内部效度: 结果解释的确定性(唯一性);</li>
+<li>外部效度: 结果解释的迁移拓展能力;</li>
+</ul>
+</blockquote>
+<h2 id="田野现场实验field-experiment"><a class="markdownIt-Anchor" href="#田野现场实验field-experiment"></a> 田野/现场实验(Field Experiment)</h2>
+<p>在实验室环境之外, 大自然环境下进行的实验, 对IV的控制力较弱, 容易受到其他变量的影响, 内部效度低, 外部效度高.</p>
+<h2 id="自然实验准实验natural-experimentquasi-experiment"><a class="markdownIt-Anchor" href="#自然实验准实验natural-experimentquasi-experiment"></a> 自然实验/准实验(Natural Experiment/Quasi Experiment)</h2>
+<p>我们没有做实验, 它是自然发生的, 例如COVID对经济的影响, COVID是一件自然发生的事件, 自然而然构成了一个实验, 因为在2020年有些国家经历了COVID, 有些没有, 构成对比.</p>
+<h1 id="潜在因果potential-outcome"><a class="markdownIt-Anchor" href="#潜在因果potential-outcome"></a> 潜在因果(potential outcome)</h1>
+<p>在现实世界中, 我们观测到的数据往往是某个treatment已经发生后得到的数据, 对于我来说, 读研究生对我找工作的收益有多大, 最好地办法是 <code>穿越时空</code> , 如果能够穿越回过去, 重新走一遍人生, 在大四选择找工作而不是读研, 然后比较三年后读研的我与工作的我的两种人生的薪酬差异, 差异值就是读研带来的收益/损失. 然而我只有一种人生, 我只能做出一个选择(读研), 那个未被做出的选择(工作)带来的结果(薪酬)就是反事实结果(counterfactural outcome). 它是无法观测到的.</p>
+<p>所以在实证中, 我们总是想近似这种穿越时空的过程, 即构造实验组与对照组, 实验组与对照组均包含多个个体, 这些个体都是 <code>大四的我的复制品</code> , 实验组的 <code>我</code> 毕业后去读研, 对照组的 <code>我</code> 毕业后去工作, 三年后,当实验组的我找到工作后, 比较实验组和对照组的我在工作薪水的 <code>平均差异</code> 就是 <code>读研的平均收益</code> .如果实验组的 <code>我</code> 和对照组的 <code>我</code> 不一样, 就会产生 <code>选择偏差(selection bias)</code>, 即实验组和对照组在treatment发生之前不一样的情况.</p>
+<p>这就是 <code>Rubin潜在因果框架</code> 目前应用最广泛的实证分析方法.</p>
+<h3 id="稳定性假设"><a class="markdownIt-Anchor" href="#稳定性假设"></a> 稳定性假设</h3>
+<ul>
+<li>干预水平对于所有的实验组对象都是相同的;</li>
+<li>不同个体间不会相互影响</li>
+</ul>
+<h3 id="分配机制"><a class="markdownIt-Anchor" href="#分配机制"></a> 分配机制</h3>
+<p>分配机制为分配个体到实验组或者控制组的规则.</p>
+<h1 id="如何构造这么多复制的我呢"><a class="markdownIt-Anchor" href="#如何构造这么多复制的我呢"></a> 如何构造这么多复制的我呢?</h1>
+<h2 id="随机化实验randomization-trial"><a class="markdownIt-Anchor" href="#随机化实验randomization-trial"></a> 随机化实验(randomization trial)</h2>
+<p>所谓随机化实验就是在分配实验对象到实验组对照组时采用随机化的方法,</p>
+]]></content>
+      <tags>
+        <tag>Econometrics</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据库</title>
+    <url>/2021/03/10/Database/</url>
+    <content><![CDATA[<blockquote>
+<p>记录自己读研以来，数据库使用的常用命令</p>
+</blockquote>
+<span id="more"></span>
+<h1 id="mongodb"><a class="markdownIt-Anchor" href="#mongodb"></a> MongoDB</h1>
+<p>Mongo是一个非关系型数据库（NoSQL，同类的还有redis）, 由于网络爬虫需要动态存储json格式的数据，故使用Mongo来存储。</p>
+<h2 id="导入csv数据"><a class="markdownIt-Anchor" href="#导入csv数据"></a> 导入CSV数据</h2>
+<ol>
+<li>mongo命令行执行</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">show dbs</span><br><span class="line">use hospital</span><br><span class="line">show tables</span><br><span class="line">db.createCollections(&quot;orders&quot;)</span><br><span class="line">show tables</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>windows系统命令行执行</li>
+</ol>
+<figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line">mongoimport --db hospital --collection messages_v2_back --type csv --headerline --ignoreBlanks --<span class="keyword">file</span> C:<span class="regexp">/Users/</span><span class="number">17394</span><span class="regexp">/Desktop/</span>Coding<span class="regexp">/Python/</span>省立医院爬虫<span class="regexp">/data/</span>hospital_messages_backup.csv</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>--headline</code>表示是否使用第一行作为字段名</li>
+<li><code>--ignoreBlanks</code>表示是否忽略空白行</li>
+</ul>
+<h2 id="备份表"><a class="markdownIt-Anchor" href="#备份表"></a> 备份表</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">db.messages_v2.find().forEach(function(d)&#123;db.messages_v2_backup.insertOne(d)&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="备份数据库"><a class="markdownIt-Anchor" href="#备份数据库"></a> 备份数据库</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mongodump -h localhost:27017 -d hospital -o E:/back</span><br></pre></td></tr></table></figure>
+<h2 id="恢复数据库"><a class="markdownIt-Anchor" href="#恢复数据库"></a> 恢复数据库</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mongorestore -h 127.0.0.1 -d hospital E:/back/hospital</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Latex&amp;Markcdown</title>
+    <url>/2020/06/13/Latex&amp;Marndown/</url>
+    <content><![CDATA[<p>Latex和Markdown内容不多，合并到一起来写。持续记录中…</p>
+<span id="more"></span>
+<h1 id="html-in-markdown"><a class="markdownIt-Anchor" href="#html-in-markdown"></a> Html in Markdown</h1>
+<h2 id="font"><a class="markdownIt-Anchor" href="#font"></a> font</h2>
+<p><font size=4 color='red' font=黑体>这是4号紫色黑体</font><br />
+<font size=6 color='cyan' font=宋体>这是6号cyan颜色宋体</font></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">size</span>=<span class="string">4</span> <span class="attr">color</span>=<span class="string">&#x27;red&#x27;</span> <span class="attr">font</span>=<span class="string">黑体</span>&gt;</span>这是4号紫色黑体<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">size</span>=<span class="string">6</span> <span class="attr">color</span>=<span class="string">&#x27;cyan&#x27;</span> <span class="attr">font</span>=<span class="string">宋体</span>&gt;</span>这是6号cyan颜色宋体<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="text-align"><a class="markdownIt-Anchor" href="#text-align"></a> text align</h2>
+<p align="left">这是靠左对齐</p>
+<center>这是居中对齐</center>
+<p align="right">这是靠右对齐</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">align</span>=<span class="string">&quot;left&quot;</span>&gt;</span>这是靠左对齐<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">center</span>&gt;</span>这是居中对齐<span class="tag">&lt;/<span class="name">center</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">align</span>=<span class="string">&quot;right&quot;</span>&gt;</span>这是靠右对齐<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="combine"><a class="markdownIt-Anchor" href="#combine"></a> combine</h2>
+<p>别说，还挺好用的<br />
+<font size=6 color='pink' ></p>
+<center>Hey, bitch.</center>
+<p  align="right"> -pinkman </p>
+</font>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">size</span>=<span class="string">5</span> <span class="attr">color</span>=<span class="string">&#x27;pink&#x27;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">center</span>&gt;</span>Hey, bitch.<span class="tag">&lt;/<span class="name">center</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>  <span class="attr">align</span>=<span class="string">&quot;right&quot;</span>&gt;</span> -pinkman <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这就挺够用的了，其它CSS啥的咱也不会用，咱也用不上。</p>
+<h1 id="latex"><a class="markdownIt-Anchor" href="#latex"></a> Latex</h1>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">快捷方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">在线绘制表格生成代码</td>
+<td style="text-align:center"><a href="https://www.tablesgenerator.com/latex_tables">这里</a></td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      <tags>
+        <tag>Latex</tag>
+        <tag>Markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>STATA15</title>
+    <url>/2020/04/04/STATA/</url>
+    <content><![CDATA[<p>记录STATA使用期间遇到的坑。</p>
+<span id="more"></span>
+<h1 id="文件编码问题"><a class="markdownIt-Anchor" href="#文件编码问题"></a> 文件编码问题</h1>
+<p>早期STATA版本创建的 <code>.do</code>  <code>.dta</code> 文件中如有中文字体，那么其编码为 <code>gbk</code> ，若用最新版STATA打开，则出现中文字体无法识别的问题，需要将其转换为 <code>UTF_8</code></p>
+<figure class="highlight stata"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 使用前内存中不能有变量 */</span></span><br><span class="line"><span class="keyword">clear</span></span><br><span class="line">unicode analyze *.dta`</span><br><span class="line">unicode encoding <span class="keyword">set</span> gbk</span><br><span class="line">unicode   <span class="keyword">translate</span> <span class="string">&quot;*.dta`&quot;</span>, transutf8</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>STATA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python&amp;R包收集</title>
+    <url>/2021/01/13/Python&amp;R%E5%8C%85%E6%94%B6%E9%9B%86/</url>
+    <content><![CDATA[<p>长期更新收集的R包和Python包</p>
+<span id="more"></span>
+<h1 id="python"><a class="markdownIt-Anchor" href="#python"></a> Python</h1>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pandas-profiling</td>
+<td>自动生成数据分析报告</td>
+</tr>
+<tr>
+<td>black</td>
+<td>自动格式化</td>
+</tr>
+<tr>
+<td>pybliometrics</td>
+<td>scopus爬虫</td>
+</tr>
+<tr>
+<td>radian</td>
+<td>更智能的R命令行工具</td>
+</tr>
+</tbody>
+</table>
+<h2 id="r"><a class="markdownIt-Anchor" href="#r"></a> R</h2>
+<p><strong>列一个清单, 不同功能的R包(长期更新)</strong></p>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NCA</td>
+<td>必要条件分析</td>
+</tr>
+<tr>
+<td>lavaan</td>
+<td>结构方程模型</td>
+</tr>
+<tr>
+<td>whitestrap::white_test</td>
+<td>怀特(White)检验</td>
+</tr>
+<tr>
+<td>Rsolnp</td>
+<td>非线性约束优化</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      <tags>
+        <tag>Python</tag>
+        <tag>R</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git</title>
+    <url>/2020/12/11/git/</url>
+    <content><![CDATA[<blockquote>
+<p>Git学习教程</p>
+</blockquote>
+<span id="more"></span>
+<h1 id="git"><a class="markdownIt-Anchor" href="#git"></a> git</h1>
+<p>分布式控制，每个人把文件保存在本地电脑上，修改后提交给别人。<br />
+所以每一个设备需要自报家门：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global use.name &quot;xuestrange&quot; `</span><br><span class="line">git config --global use.email &quot;xjz1cumt@163.com&quot;</span><br></pre></td></tr></table></figure>
+<p>这样一来，这台电脑所有的仓库均使用这一个ID</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd 文件夹路径</span><br><span class="line">git init</span><br></pre></td></tr></table></figure>
+<p>把一个文件夹变成一个git可以管理的仓库，会生成 <code>.git</code>文件夹(windows系统下默认隐藏)。</p>
+<p><font color='red'> git只可以管理文本文件，word、ppt啥的别想了 </font></p>
+<div class="note warning">千万不要使⽤Windows⾃带的记事本编辑任何⽂本⽂件。原因是Microsoft开发记事本的团队使用了一个个非常弱智的⾏为来保存UTF-8编码的⽂件，他们⾃作聪明地在每个⽂件开头添加了0xefbbbf（⼗六进制）的字符。建议你下载Notepad++代替记事本，不但功能强⼤，⽽且免费！记得把Notepad++的默认编码设置为UTF-8 without BOM即可</div>
+<p>添加⽂件到Git仓库，分两步：</p>
+<ul>
+<li>第⼀步，使⽤命令git add ，注意，可反复多次使⽤，添加多个⽂件，命令成功后没有提示；</li>
+<li>第⼆步，使⽤命令git commit，提交文件到仓库完成，有提示。</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git add file1.txt</span><br><span class="line">git add file2.cpp</span><br><span class="line"></span><br><span class="line">git commit -m &quot;add 2 files&quot; # message</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git status # 查看仓库的当前状态，哪些文件改动了，哪些未提交，</span><br><span class="line">git diff # 查看修改了什么内容</span><br><span class="line">git log # 查看commit历史，所以写commit的形容是很重要的。</span><br><span class="line">git log --pretty=oneline # 每一次提交的历史显示在一行中</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git reset --hard commit_id # 回退到过去某一个版本，既可以回退版本，也可以把暂存区的修改回退到⼯作区</span><br><span class="line">git reflog 查看命令历史，获得commit_id # 前进到将来某一个版本。</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git checkout -- file.txt</span><br><span class="line"><span class="meta">#</span><span class="bash"> 让这个⽂件回到最近⼀次git commit或git add时的状态。</span></span><br></pre></td></tr></table></figure>
+<h1 id="github"><a class="markdownIt-Anchor" href="#github"></a> Github</h1>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;xjz1cumt@163.com&quot; # 为电脑生成一个秘钥，每台电脑都要弄</span><br></pre></td></tr></table></figure>
+<p>主目录下会生成一个文件夹 <code>.ssh</code>, 里边有两个文件 <code>id_rsa</code>, <code>id_rsa.pub</code>, 一个是秘钥，一个是公钥，在浏览器上登录github，添加ssh kay，将公钥的内容粘进去。</p>
+<p>将初始化的本地仓库与github中建立的远程仓库相关联</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote rm origin</span><br><span class="line">git remote add origin git@github.com:xuestrange/LearnGit.git</span><br><span class="line">git push -u origin master #第一次推送, 不但推送了内容还建立了关联.</span><br></pre></td></tr></table></figure>
+<p>此后,每次本地提交后,只要有必要,就可以使用用命令 <code>git push origin master</code>  推送最新修<br />
+改;</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git branch  dev #创建分支</span><br><span class="line">git branch  -b dev #创建分支dev并且立即切换到dev下</span><br><span class="line">git checkout dev #切换到dev分支</span><br><span class="line">git branch #查看有哪些分支与目前处于哪一个分支</span><br></pre></td></tr></table></figure>
+<p>当我切换到dev分支后，修改了file.txt, then</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git add file.txt</span><br><span class="line">git commit -m &quot;file.txt modified from dev branch&quot;</span><br><span class="line">git push origin dev</span><br></pre></td></tr></table></figure>
+<p>假设我已经从dev分支切换回了master分支，那么如何将dev分支上的修改合并到master中呢</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git checkout master</span><br><span class="line">git merge --no-ff -m &quot;merge without fastward&quot; dev # 合并完了之后本地数据库并没有上传到云，可以执行 git push  orgin master</span><br></pre></td></tr></table></figure>
+<p>合并完了之后就可以删除dev分支了</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git branch -d dev</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git log --graph #查看分支合并图</span><br><span class="line">git remote -v #查看远程库（github）信息</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git pull # 从云获取最新的文件并与本地文件进行合并</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git tag v1.0 给commit的内容打标签</span><br></pre></td></tr></table></figure>
+<p>git设置</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global color.ui true # 设置git输出信息显示颜色</span><br><span class="line">git config --global alias.st &quot;status&quot; # 给命令设置别名 status --&gt; st</span><br><span class="line">git config --global alias.unstage &#x27;reset HEAD&#x27;</span><br><span class="line">git config --global alias.lg &quot;log --color --graph --</span><br><span class="line">pretty=format:&#x27;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)</span><br><span class="line"><span class="meta">%</span><span class="bash">C(bold blue)&lt;%an&gt;%Creset<span class="string">&#x27; --abbrev-commit&quot;</span></span></span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python</title>
+    <url>/2020/06/13/python/</url>
+    <content><![CDATA[<blockquote>
+<p>常用编程技巧</p>
+</blockquote>
+<span id="more"></span>
+<h1 id="matplotlib-style"><a class="markdownIt-Anchor" href="#matplotlib-style"></a> matplotlib style</h1>
+<p>matplotlib会自动检测路径下的style文件，路径在这里</p>
+<figure class="highlight taggerscript"><table><tr><td class="code"><pre><span class="line">&quot;C:<span class="symbol">\m</span>iniconda<span class="symbol">\L</span>ib<span class="symbol">\s</span>ite-packages<span class="symbol">\m</span>atplotlib<span class="symbol">\m</span>pl-data<span class="symbol">\s</span>tylelib&quot;</span><br></pre></td></tr></table></figure>
+<p>可以通过如下语句，来查看和使用自定义的风格</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">plt<span class="selector-class">.style</span><span class="selector-class">.avaliable</span></span><br><span class="line">plt<span class="selector-class">.style</span><span class="selector-class">.use</span>(<span class="selector-attr">[<span class="string">&quot;classic&quot;</span>, <span class="string">&quot;colorstyle_2&quot;</span>]</span>)</span><br></pre></td></tr></table></figure>
+<p>样式组合可以这样子用：</p>
+<ul>
+<li>一个专门负责配色;</li>
+<li>一个专门负责字体;</li>
+<li>一个专门负责除此之外的东西。</li>
+</ul>
+<p><strong>注意！！！</strong><br />
+style文件中的字体设置后，绘图时可能会出现找不到字体的错误，这是需要删除matplotlib生成的字体索引，路径如下，下次绘图时，matplotlib会自动生成。</p>
+<figure class="highlight taggerscript"><table><tr><td class="code"><pre><span class="line">&quot;C:<span class="symbol">\U</span>sers<span class="symbol">\1</span>7394<span class="symbol">\.</span>matplotlib<span class="symbol">\f</span>ontlist-v310.json&quot;</span><br></pre></td></tr></table></figure>
+<p><strong>PS：</strong></p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">axes.unicode_minus  :</span> <span class="literal">False</span> <span class="comment"># 可以正确显示正负号</span></span><br></pre></td></tr></table></figure>
+<h1 id="jupyter-notebook"><a class="markdownIt-Anchor" href="#jupyter-notebook"></a> jupyter notebook</h1>
+<p>jupyter默认打印出最后一个变量的结果<br />
+在cell中添加</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> IPython.core.interactiveshell <span class="keyword">import</span> InteractiveShell</span><br><span class="line">InteractiveShell.ast_node_interactivity = <span class="string">&quot;all&quot;</span></span><br></pre></td></tr></table></figure>
+<p>可以输出所有单独一行的变量</p>
+<h1 id="spyder"><a class="markdownIt-Anchor" href="#spyder"></a> spyder</h1>
+<ul>
+<li><a href="https://www.cnblogs.com/mossbaoo/p/5724065.html#:~:text=HTML%E5%85%83%E7%B4%A0%E7%94%B1%E5%BC%80,%E5%92%8C%E7%BB%93%E6%9D%9F%E6%A0%87%E7%AD%BE%E7%BB%84%E6%88%90%E3%80%82">html简介</a></li>
+<li><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/index.zh.html">BeautifulSoup</a></li>
+<li><a href="">正则表达式</a></li>
+</ul>
+<h2 id="re"><a class="markdownIt-Anchor" href="#re"></a> re</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">s=<span class="string">&#x27;werwrwrew&#x27;</span></span><br><span class="line">reo = re.<span class="built_in">compile</span>(<span class="string">r&#x27;\w&#x27;</span>) <span class="comment">#生成正则表达式对象</span></span><br><span class="line">reo.split(s)<span class="comment">#将所有搜索到结果返回为一个列表</span></span><br><span class="line">reo_search = reo.search(s)</span><br><span class="line">reo_search.group()<span class="comment">#返回找到的第一个</span></span><br></pre></td></tr></table></figure>
+<h2 id="requests"><a class="markdownIt-Anchor" href="#requests"></a> requests</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">````</span><br><span class="line"></span><br><span class="line"><span class="comment">## bs4</span></span><br><span class="line"></span><br><span class="line">Beautiful Soup将复杂HTML文档转换成一个复杂的树形结构,每个节点都是Python对象,所有对象可以归纳为<span class="number">4</span>种: `Tag` , `NavigableString` ,` BeautifulSoup`, `Comment `。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">BeautifulSoup对象表示的是一个文档的全部内容.大部分时候,可以把它当作 `Tag`对象。</span><br><span class="line">例如：</span><br><span class="line"></span><br><span class="line">``` python</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line">html_doc = <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">&lt;html&gt;&lt;head&gt;&lt;title&gt;The Dormouse&#x27;s story&lt;/title&gt;&lt;/head&gt;</span></span><br><span class="line"><span class="string">&lt;body&gt;</span></span><br><span class="line"><span class="string">&lt;p class=&quot;title&quot;&gt;&lt;b&gt;The Dormouse&#x27;s story&lt;/b&gt;&lt;/p&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&lt;p class=&quot;story&quot;&gt;Once upon a time there were three little sisters; and their names were</span></span><br><span class="line"><span class="string">&lt;a href=&quot;http://example.com/elsie&quot; class=&quot;sister&quot; id=&quot;link1&quot;&gt;Elsie&lt;/a&gt;,</span></span><br><span class="line"><span class="string">&lt;a href=&quot;http://example.com/lacie&quot; class=&quot;sister&quot; id=&quot;link2&quot;&gt;Lacie&lt;/a&gt; and</span></span><br><span class="line"><span class="string">&lt;a href=&quot;http://example.com/tillie&quot; class=&quot;sister&quot; id=&quot;link3&quot;&gt;Tillie&lt;/a&gt;;</span></span><br><span class="line"><span class="string">and they lived at the bottom of a well.&lt;/p&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&lt;p class=&quot;story&quot;&gt;...&lt;/p&gt;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">soup = BeautifulSoup(html_doc)</span><br><span class="line"><span class="built_in">print</span>(soup.prettify())</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span></span><br><span class="line">   The Dormouse&#x27;s story</span><br><span class="line">  <span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;title&quot;</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">b</span>&gt;</span></span><br><span class="line">    The Dormouse&#x27;s story</span><br><span class="line">   <span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;story&quot;</span>&gt;</span></span><br><span class="line">   Once upon a time there were three little sisters; and their names were</span><br><span class="line">   <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">&quot;sister&quot;</span> <span class="attr">href</span>=<span class="string">&quot;http://example.com/elsie&quot;</span> <span class="attr">id</span>=<span class="string">&quot;link1&quot;</span>&gt;</span></span><br><span class="line">    Elsie</span><br><span class="line">   <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">   ,</span><br><span class="line">   <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">&quot;sister&quot;</span> <span class="attr">href</span>=<span class="string">&quot;http://example.com/lacie&quot;</span> <span class="attr">id</span>=<span class="string">&quot;link2&quot;</span>&gt;</span></span><br><span class="line">    Lacie</span><br><span class="line">   <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">   and</span><br><span class="line">   <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">&quot;sister&quot;</span> <span class="attr">href</span>=<span class="string">&quot;http://example.com/tillie&quot;</span> <span class="attr">id</span>=<span class="string">&quot;link2&quot;</span>&gt;</span></span><br><span class="line">    Tillie</span><br><span class="line">   <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">   ; and they lived at the bottom of a well.</span><br><span class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;story&quot;</span>&gt;</span></span><br><span class="line">   ...</span><br><span class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><code>soup.pretty()</code>方法将 <code>html</code>转化成结构化的文档。</p>
+<ol>
+<li><code>.tag</code></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">soup.p</span><br><span class="line">soup.p[<span class="string">&#x27;class]</span></span><br><span class="line"><span class="string">soup.p[&#x27;</span>hre<span class="string">f&#x27;]</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><code>tag.find</code>：找到匹配的第一项</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">soup.find(<span class="string">&#x27;p&#x27;</span>,class_=<span class="string">&#x27;title&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li><code>tag.find_all</code>: 找到匹配的所有项，返回一个列表</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">soup.find_all(<span class="string">&#x27;a&#x27;</span>,class_=<span class="string">&#x27;story&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="json"><a class="markdownIt-Anchor" href="#json"></a> json</h2>
+<h2 id="example"><a class="markdownIt-Anchor" href="#example"></a> example</h2>
+<h3 id="dangdangtop250"><a class="markdownIt-Anchor" href="#dangdangtop250"></a> DangDangTOP250</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> tabulate <span class="keyword">import</span> tabulate</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">page_generate</span>(<span class="params">num</span>):</span></span><br><span class="line">    url = <span class="string">&quot;http://bang.dangdang.com/books/fivestars/01.00.00.00.00.00-recent30-0-0-1-&quot;</span> + <span class="built_in">str</span>(num)</span><br><span class="line">    <span class="keyword">return</span> url</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">url = page_generate(num=<span class="number">2</span>)</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    response = requests.get(url)</span><br><span class="line">    <span class="keyword">if</span> response.status_code == <span class="number">200</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;连接成功&quot;</span>)</span><br><span class="line"><span class="keyword">except</span> requests.RequestException:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;连接失败&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">连接成功后，接下来分析获取到的html源码</span></span><br><span class="line"><span class="string">通过Chrome开发者模式对网页的元素进行分析</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">soup = BeautifulSoup(response.text, <span class="string">&quot;lxml&quot;</span>)</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">注意，find可以用来减小查找范围，属性中，不能写class，这和Python的自带的语法冲突了，所以用class_，但是其他的照常使用</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">ul_soup = soup.find(<span class="string">&quot;ul&quot;</span>, class_=<span class="string">&quot;bang_list clearfix bang_list_mode&quot;</span>)</span><br><span class="line"></span><br><span class="line">li_soup = ul_soup.find_all(<span class="string">&quot;li&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">extract</span>(<span class="params">element</span>):</span></span><br><span class="line">    l = []</span><br><span class="line">    <span class="keyword">for</span> tag <span class="keyword">in</span> li_soup:</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            s = tag.find(<span class="string">&quot;div&quot;</span>, class_=element).a[<span class="string">&quot;title&quot;</span>]</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            s = tag.find(<span class="string">&quot;div&quot;</span>, class_=element).a.string</span><br><span class="line">        l.append(s)</span><br><span class="line">    <span class="keyword">return</span> l</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>(<span class="params">elements</span>):</span></span><br><span class="line">    df = pd.DataFrame()</span><br><span class="line">    <span class="keyword">for</span> element <span class="keyword">in</span> elements:</span><br><span class="line">        res = extract(element)</span><br><span class="line">        df[element] = res</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    <span class="keyword">return</span> df</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    elements = [<span class="string">&quot;name&quot;</span>, <span class="string">&quot;star&quot;</span>]</span><br><span class="line">    df = main(elements)</span><br><span class="line">    <span class="built_in">print</span>(tabulate(df, tablefmt=<span class="string">&quot;pretty&quot;</span>))</span><br></pre></td></tr></table></figure>
+<h3 id="doubantop250"><a class="markdownIt-Anchor" href="#doubantop250"></a> DouBanTOP250</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">from</span> fake_useragent <span class="keyword">import</span> UserAgent</span><br><span class="line"></span><br><span class="line">ua = UserAgent()</span><br><span class="line"></span><br><span class="line">url_num = [<span class="number">0</span>, <span class="number">25</span>, <span class="number">50</span>, <span class="number">75</span>, <span class="number">100</span>, <span class="number">125</span>, <span class="number">150</span>, <span class="number">175</span>, <span class="number">200</span>, <span class="number">225</span>]</span><br><span class="line"></span><br><span class="line">headers = &#123;<span class="string">&quot;User-Agent&quot;</span>: ua.chrome&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">url_generate</span>(<span class="params">num</span>):</span></span><br><span class="line">    url = <span class="string">&quot;https://movie.douban.com/top250?start=&#123;&#125;&amp;filter=&quot;</span>.<span class="built_in">format</span>(<span class="built_in">str</span>(num))</span><br><span class="line">    <span class="keyword">return</span> url</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_text</span>(<span class="params">num</span>):</span></span><br><span class="line">    url = url_generate(num)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        response = requests.get(url, headers=headers)</span><br><span class="line">        <span class="keyword">if</span> response.status_code == <span class="number">200</span>:</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">    <span class="keyword">except</span> requests.RequestException:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;连接失败&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> response</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">print_film</span>(<span class="params">response</span>):</span></span><br><span class="line">    soup = BeautifulSoup(response.text, <span class="string">&quot;lxml&quot;</span>)</span><br><span class="line">    soup_ol = soup.find(<span class="string">&quot;ol&quot;</span>, class_=<span class="string">&quot;grid_view&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> soup_li <span class="keyword">in</span> soup_ol.find_all(<span class="string">&quot;li&quot;</span>):</span><br><span class="line"></span><br><span class="line">        name = soup_li.find(<span class="string">&quot;img&quot;</span>)[<span class="string">&quot;alt&quot;</span>]</span><br><span class="line">        rating = soup_li.find(<span class="string">&quot;span&quot;</span>, class_=<span class="string">&quot;rating_num&quot;</span>).string</span><br><span class="line">        index = soup_li.find(<span class="string">&quot;em&quot;</span>).string</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            quoto = soup_li.find(<span class="string">&quot;span&quot;</span>, class_=<span class="string">&quot;inq&quot;</span>).string</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            quoto = <span class="literal">None</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;正在爬取第&#123;&#125;个电影：《&#123;&#125;》，评分为&#123;&#125;，      “&#123;&#125;”&quot;</span>.<span class="built_in">format</span>(index, name, rating, quoto))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    <span class="keyword">for</span> num <span class="keyword">in</span> url_num:</span><br><span class="line">        response = get_text(num)</span><br><span class="line">        print_film(response)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">main()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="fengniao"><a class="markdownIt-Anchor" href="#fengniao"></a> Fengniao</h3>
+<h4 id="proxypool"><a class="markdownIt-Anchor" href="#proxypool"></a> ProxyPool</h4>
+<p>之前试爬了一次，被封了IP（第二天又好了），所以使用代理池来操作, <strong>IP代理池的配置方法点<a href="https://mp.weixin.qq.com/s?__biz=MzU2ODYzNTkwMg==&amp;mid=2247484261&amp;idx=1&amp;sn=2d839d004d592be3c98d1356d6710a69&amp;scene=19#wechat_redirect">这里</a></strong></p>
+<p>总结如下：</p>
+<ol>
+<li>安装redis，链接在 <a href="https://github.com/MicrosoftArchive/redis/releases">这里</a></li>
+<li>下载Github上代理池的源代码</li>
+</ol>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">git clone https:<span class="regexp">//gi</span>thub.com<span class="regexp">/Python3WebSpider/</span>ProxyPool.git <span class="comment"># 可以使用Gitee</span></span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>cd到文件目录中，安装相关模块</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>运行</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python run.py</span><br></pre></td></tr></table></figure>
+<h4 id="program"><a class="markdownIt-Anchor" href="#program"></a> program</h4>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">from</span> fake_useragent <span class="keyword">import</span> UserAgent</span><br><span class="line"></span><br><span class="line">ua = UserAgent()</span><br><span class="line">headers = &#123;<span class="string">&quot;User-Agent&quot;</span>: ua.chrome&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_proxy</span>():</span></span><br><span class="line">    PROXY_POOL_URL = <span class="string">&quot;http://localhost:5555/random&quot;</span></span><br><span class="line">    <span class="keyword">return</span> requests.get(PROXY_POOL_URL).content</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">proxy = get_proxy()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">url_generate</span>(<span class="params">num</span>):</span></span><br><span class="line">    url = <span class="string">&quot;https://photo.fengniao.com/f_101_1_&#123;&#125;.html&quot;</span>.<span class="built_in">format</span>(num)</span><br><span class="line">    <span class="keyword">return</span> url</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_all_miniurl</span>(<span class="params">url</span>):</span></span><br><span class="line">    main_url = <span class="string">&quot;https://photo.fengniao.com&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        response = requests.get(url, headers=headers, proxies=&#123;<span class="string">&quot;http&quot;</span>: <span class="string">&quot;http://&#123;&#125;&quot;</span>.<span class="built_in">format</span>(proxy)&#125;)</span><br><span class="line">        <span class="keyword">if</span> response.status_code == <span class="number">200</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;第一步连接成功&quot;</span>)</span><br><span class="line">    <span class="keyword">except</span> requests.RequestException:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;连接失败&quot;</span>)</span><br><span class="line">    response.encoding = <span class="string">&quot;utf-8&quot;</span></span><br><span class="line">    soup = BeautifulSoup(response.text, <span class="string">&quot;lxml&quot;</span>)</span><br><span class="line">    miniurl = []</span><br><span class="line">    <span class="keyword">for</span> soup_li <span class="keyword">in</span> soup.find_all(<span class="string">&quot;li&quot;</span>, class_=<span class="string">&quot;noRight&quot;</span>):</span><br><span class="line">        url_ = soup_li.a[<span class="string">&quot;href&quot;</span>]</span><br><span class="line">        miniurl.append(main_url + url_)</span><br><span class="line">    <span class="keyword">return</span> miniurl</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_picture</span>(<span class="params">miniurl, <span class="built_in">dir</span></span>):</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        response = requests.get(miniurl, headers=headers, proxies=&#123;<span class="string">&quot;http&quot;</span>: <span class="string">&quot;http://&#123;&#125;&quot;</span>.<span class="built_in">format</span>(proxy)&#125;)</span><br><span class="line">    <span class="keyword">except</span> requests.RequestException:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;第二步连接失败&quot;</span>)</span><br><span class="line">    soup = BeautifulSoup(response.text, <span class="string">&quot;lxml&quot;</span>)</span><br><span class="line">    title = soup.find(<span class="string">&quot;h3&quot;</span>, class_=<span class="string">&quot;title overOneTxt&quot;</span>).string</span><br><span class="line">    imgurl = soup.find(<span class="string">&quot;div&quot;</span>, class_=<span class="string">&quot;imgBig&quot;</span>).img[<span class="string">&quot;src&quot;</span>]</span><br><span class="line">    r = requests.get(imgurl, headers=headers, proxies=&#123;<span class="string">&quot;http&quot;</span>: <span class="string">&quot;http://&#123;&#125;&quot;</span>.<span class="built_in">format</span>(proxy)&#125;)</span><br><span class="line">    path = <span class="built_in">dir</span> + title + <span class="string">&quot;.jpg&quot;</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(path, <span class="string">&quot;wb&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">            f.write(r.content)</span><br><span class="line">            f.close()</span><br><span class="line">            <span class="built_in">print</span>(title, <span class="string">&quot;  图片下载成功&quot;</span>)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="built_in">print</span>(title, <span class="string">&quot;  图片已存在&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>(<span class="params">num</span>):</span></span><br><span class="line">    url = url_generate(num)</span><br><span class="line">    miniurllist = get_all_miniurl(url)</span><br><span class="line">    <span class="built_in">dir</span> = <span class="string">&quot;C:/Users/17394/Desktop/蜂鸟/&quot;</span></span><br><span class="line">    <span class="keyword">for</span> miniurl <span class="keyword">in</span> miniurllist:</span><br><span class="line">        get_picture(miniurl, <span class="built_in">dir</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">5</span>):</span><br><span class="line">    main(i)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="results"><a class="markdownIt-Anchor" href="#results"></a> results</h4>
+<p><img src="https://tvax1.sinaimg.cn/large/006z5e4Qgy1ggkhfsn5krj315i0lt4k2.jpg" alt="爬取结果展示" /></p>
+<h3 id="zhihu-reviews"><a class="markdownIt-Anchor" href="#zhihu-reviews"></a> Zhihu Reviews</h3>
+<p>知乎评论是采用Ajax动态加载(Chrome XHR)评论，实际上，每获得一定数量的新的评论，发出请求的url也在发生变化。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">url = &quot;https://www.zhihu.com/api/v4/answers/608904604/root_comments?limit=10&amp;offset=1&amp;order=normal&amp;status=open&quot;</span><br></pre></td></tr></table></figure>
+<p>url中有个<code>offset</code>参数，每加载一些评论，<code>offset+1</code>，由此可以得到请求的真实地址，通过分析<code>response</code>发现，评论是以json的格式存储的，使用 <code>json</code>模块可以获取到评论的所有数据，但是评论中包含的表情包，url等显示不正确。<br />
+<img src="https://tva1.sinaimg.cn/large/006z5e4Qgy1ggsjt1e7lqj30p30ojgow.jpg" alt="知乎网页调试获取评论数据" /></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> fake_useragent <span class="keyword">import</span> UserAgent</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">ua = UserAgent()</span><br><span class="line"></span><br><span class="line">headers = &#123;</span><br><span class="line">    <span class="string">&quot;User-Agent&quot;</span>: ua.chrome,</span><br><span class="line">    <span class="string">&quot;Cookie&quot;</span>: <span class="string">&#x27;&#x27;</span>, <span class="comment">#此处放你的cookie</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">url_generate</span>(<span class="params">offset</span>):</span></span><br><span class="line">    url = <span class="string">&quot;https://www.zhihu.com/api/v4/answers/608904604/root_comments?limit=10&amp;offset=&#123;&#125;&amp;order=normal&amp;status=open&quot;</span>.<span class="built_in">format</span>(</span><br><span class="line">        offset</span><br><span class="line">    )</span><br><span class="line">    <span class="keyword">return</span> url</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_text</span>(<span class="params">url</span>):</span></span><br><span class="line">    response = requests.get(url, headers=headers,)</span><br><span class="line">    response.encoding = <span class="string">&quot;utf-8&quot;</span></span><br><span class="line">    data = json.loads(response.text)[<span class="string">&quot;data&quot;</span>]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(data)):</span><br><span class="line">        <span class="built_in">print</span>(data[i][<span class="string">&quot;content&quot;</span>])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    offset_list = np.arange(<span class="number">10</span>, <span class="number">2100</span>, step=<span class="number">10</span>)</span><br><span class="line">    <span class="keyword">for</span> offset <span class="keyword">in</span> offset_list:</span><br><span class="line">        url = url_generate(offset)</span><br><span class="line">        get_text(url)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    main()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu安装及配置</title>
+    <url>/2020/11/17/ubuntu/</url>
+    <content><![CDATA[<blockquote>
+<p>Ubuntu 20.04LTS 配置</p>
+</blockquote>
+<span id="more"></span>
+<h1 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h1>
+<p>要点：</p>
+<ul>
+<li>安装语言为英语</li>
+<li>不要连接wifi</li>
+<li>最小化安装</li>
+<li>手动分区
+<ul>
+<li>/boot 1G 逻辑</li>
+<li>/swap 8G 逻辑</li>
+<li>/root 剩余容量 主分区</li>
+</ul>
+</li>
+</ul>
+<h1 id="系统配置"><a class="markdownIt-Anchor" href="#系统配置"></a> 系统配置</h1>
+<h2 id="源"><a class="markdownIt-Anchor" href="#源"></a> 源</h2>
+<p>连接wifi, 系统更新GUI中，找到阿里云，应用，重启。</p>
+<h2 id="nerdfonts"><a class="markdownIt-Anchor" href="#nerdfonts"></a> nerdfonts</h2>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt install dos2unix</span><br><span class="line">dos2unix install.sh</span><br><span class="line">./install.sh</span><br></pre></td></tr></table></figure>
+<h2 id="fish"><a class="markdownIt-Anchor" href="#fish"></a> fish</h2>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt install fish</span><br><span class="line">whereis fish</span><br><span class="line"></span><br><span class="line">chsh -s /usr/bin/fish</span><br></pre></td></tr></table></figure>
+<h2 id="oh-my-fish"><a class="markdownIt-Anchor" href="#oh-my-fish"></a> oh-my-fish</h2>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt install git</span><br><span class="line">sudo apt install curl</span><br></pre></td></tr></table></figure>
+<h2 id="beautify-gnome"><a class="markdownIt-Anchor" href="#beautify-gnome"></a> beautify gnome</h2>
+<ol>
+<li>install firefox extesion : gnome shell integration</li>
+<li>install User themes、Topicons plus by <a href="https://extensions.gnome.org/">https://extensions.gnome.org/</a></li>
+<li>create folder <code>.themes</code>, <code>.icons</code>  in home dir</li>
+<li>move the related folder to  <code>.themes</code>, <code>.icons</code></li>
+</ol>
+<h2 id="python"><a class="markdownIt-Anchor" href="#python"></a> python</h2>
+<ol>
+<li>install miniconda</li>
+</ol>
+<figure class="highlight cos"><table><tr><td class="code"><pre><span class="line">./..<span class="built_in">..minoconda</span>.sh</span><br></pre></td></tr></table></figure>
+<p><code>.config/pip/pip.conf</code>  添加</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[global]</span><br><span class="line">index-url = https://mirrors.aliyun.com/pypi/simple/</span><br><span class="line"></span><br><span class="line">[install]</span><br><span class="line">trusted-host=mirrors.aliyun.com</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>conda mirrior 北京外国语大学<br />
+<code>.condarc</code> 写入</li>
+</ol>
+ <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">channels:</span><br><span class="line">  - defaults</span><br><span class="line">show_channel_urls: true</span><br><span class="line">channel_alias: https://mirrors.bfsu.edu.cn/anaconda</span><br><span class="line">default_channels:</span><br><span class="line">  - https://mirrors.bfsu.edu.cn/anaconda/pkgs/main</span><br><span class="line">  - https://mirrors.bfsu.edu.cn/anaconda/pkgs/free</span><br><span class="line">  - https://mirrors.bfsu.edu.cn/anaconda/pkgs/r</span><br><span class="line">  - https://mirrors.bfsu.edu.cn/anaconda/pkgs/pro</span><br><span class="line">  - https://mirrors.bfsu.edu.cn/anaconda/pkgs/msys2</span><br><span class="line">custom_channels:</span><br><span class="line">  conda-forge: https://mirrors.bfsu.edu.cn/anaconda/cloud</span><br><span class="line">  msys2: https://mirrors.bfsu.edu.cn/anaconda/cloud</span><br><span class="line">  bioconda: https://mirrors.bfsu.edu.cn/anaconda/cloud</span><br><span class="line">  menpo: https://mirrors.bfsu.edu.cn/anaconda/cloud</span><br><span class="line">  pytorch: https://mirrors.bfsu.edu.cn/anaconda/cloud</span><br><span class="line">  simpleitk: https://mirrors.bfsu.edu.cn/anaconda/cloud</span><br></pre></td></tr></table></figure>
+<h2 id="vim"><a class="markdownIt-Anchor" href="#vim"></a> vim</h2>
+<p>找个gihub仓库自己拷贝过来吧</p>
+<h2 id="nodejs"><a class="markdownIt-Anchor" href="#nodejs"></a> nodejs</h2>
+<ol>
+<li>官网下载并解压，修改文件夹名称为node</li>
+<li>移动文件夹至 /opt/</li>
+<li>编辑  <code>fish_prompt.fish</code></li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">set PATH /opt/node/bin $PATH</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>查看版本</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure>
+<p>5  修改npm镜像为cnpm</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+<h2 id="hexo-blog"><a class="markdownIt-Anchor" href="#hexo-blog"></a> hexo Blog</h2>
+<ol>
+<li>github</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;xuestrange&quot;</span><br><span class="line">git config --global user.email &quot;xjz1cumt@163.com&quot;</span><br><span class="line">ssh-keygen -t rsa -C &quot;xjz1cumt@163.com&quot;</span><br></pre></td></tr></table></figure>
+<p>将密钥中的内容保存到github网页中的SSH key中,then</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>hexo</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cnpm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>init</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo init ~/Documents/xuestrange</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>deploy<br />
+在博客根目录打开终端</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cnpm install hexo-deploy-git</span><br><span class="line">cnpm install hexo-renderer-pug hexo-renderer-stylus --save</span><br><span class="line">cnpm install cheerio</span><br><span class="line">cnpm install hexo-generator-search  --save</span><br><span class="line">cnpm install hexo-generator-searchdb --save</span><br><span class="line">cnpm install hexo-symbols-count-time</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>创建其它界面</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new page tags</span><br><span class="line">hexo new page categories</span><br><span class="line">hexo new page about</span><br><span class="line">hexo new page archives</span><br></pre></td></tr></table></figure>
+<p>修改 <code>next/source/tags/</code> <a href="http://xn--tags-494fr2co52b7gxo48a.md">文件夹下的tags.md</a>, 其它同理</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2020-07-11 18:53:02</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">top_img: https://tva2.sinaimg.cn/large/006z5e4Qgy1ggnynhq230j31hc0u0tfp.jpg</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<ol start="6">
+<li>文章置顶<br />
+😄</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cnpm uninstall hexo-generator-index --save</span><br><span class="line">cnpm install hexo-generator-index-pin-top --save # 文章置顶</span><br></pre></td></tr></table></figure>
+<p>详见 <a href="https://juejin.cn/post/6844904037465194503">这里</a></p>
+<h2 id="r"><a class="markdownIt-Anchor" href="#r"></a> R</h2>
+<ol>
+<li>install</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt install dirmngr gnupg apt-transport-https ca-certificates software-properties-common</span><br><span class="line">sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9</span><br><span class="line">sudo add-apt-repository <span class="string">&#x27;deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/&#x27;</span></span><br><span class="line">sudo apt install r-base</span><br><span class="line">R --version</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>修改镜像<br />
+在home目录下，创建.Rprofile</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">options(repos=&quot;https://mirrors.ustc.edu.cn/CRAN&quot;)</span><br></pre></td></tr></table></figure>
+<h2 id="wechat-qq-dingding-talk"><a class="markdownIt-Anchor" href="#wechat-qq-dingding-talk"></a> wechat QQ DingDing talk</h2>
+<ol>
+<li>添加仓库</li>
+</ol>
+<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">wget -<span class="keyword">o</span>- http<span class="variable">s:</span>//deepin-wine.i-<span class="keyword">m</span>.dev/setup.<span class="keyword">sh</span> | <span class="keyword">sh</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li>Install</li>
+</ol>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">sudo apt install com<span class="selector-class">.qq</span><span class="selector-class">.weixin</span><span class="selector-class">.deepin</span></span><br><span class="line">sudo apt install com<span class="selector-class">.qq</span><span class="selector-class">.im</span><span class="selector-class">.deepin</span></span><br><span class="line">sudo apt install com<span class="selector-class">.dingtalk</span>.deepin</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>logout ang login</li>
+<li>copy fonts from windows<br />
+from <code>C:/windows/fonts</code> to <code>/usr/share/fonts</code></li>
+</ol>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">fc-cache -fv</span></span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>有问题查仓库issue<br />
+<a href="https://github.com/zq1997/deepin-wine">https://github.com/zq1997/deepin-wine</a></li>
+</ol>
+<h2 id="登录界面添加动画"><a class="markdownIt-Anchor" href="#登录界面添加动画"></a> 登录界面添加动画</h2>
+<p>下载 <code>change-gdm-background</code>, 赋予可执行权限，执行</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo chmod 777 /Downloads/change-gdm-background</span><br><span class="line">sudo ./Downloads/change-gdm-background /path-to-image</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="开机动画"><a class="markdownIt-Anchor" href="#开机动画"></a> 开机动画</h2>
+<p>下载 <code>dandelion</code>(蒲公英开机动画)，</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cp -r dandelion /usr/share/plymouth/themes/ <span class="comment"># 切换到dandelion上层目录，-r 表示递归复制</span></span><br><span class="line">update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/dandelion/dandelion.plymouth  100</span><br><span class="line">update-alternatives --config default.plymouth <span class="comment">#执行后，会出来一个选单,然后手动输入我们安装的主题的序号。</span></span><br><span class="line">update-initramfs -u <span class="comment"># 执行后要等半分钟左右, 重启后可以看到效果</span></span><br></pre></td></tr></table></figure>
+<h2 id="rime"><a class="markdownIt-Anchor" href="#rime"></a> rime</h2>
+<ol>
+<li>安装 <code>fcitx-rime</code>, 不要使用 <code>ibus-rime</code>, 因为会让WPS打开巨慢</li>
+<li>语言框架设置为 <code>fcitx</code>, 应用到全局,重启</li>
+<li>小键盘图标右键, 设置  <code>rime</code></li>
+<li>将内容同步到 <code>rime</code> 配置文件夹中, 重新部署</li>
+</ol>
+<h2 id="goldendict"><a class="markdownIt-Anchor" href="#goldendict"></a> Goldendict</h2>
+<ol>
+<li>安装终端翻译<br />
+<code>translator shell</code> 终端翻译器：可以翻译句子，也可以翻译单词，做字典用</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">trans -shell en:zh example</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>Goldendict启用终端翻译和有道来识别长句子</li>
+<li>将词典文件夹拷贝到Goldendict词典配置目录, 扫描词典</li>
+</ol>
+<h2 id="电源管理"><a class="markdownIt-Anchor" href="#电源管理"></a> 电源管理</h2>
+<div class="note info">
+ubuntu打开不算快, 甚至比windows都要慢, 还且耗电, 需要电源管理软件
+</div>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt install tlp</span><br><span class="line">sudo tlp start # 下次开机它会自动运行</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>编程工具配置</title>
+    <url>/2020/03/13/%E5%B7%A5%E5%85%B7%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<blockquote>
+<p>包括Python、R、VScode、Jupyter的配置，我的文章全部是在vsc中写的</p>
+</blockquote>
+<span id="more"></span>
+<h1 id="miniconda"><a class="markdownIt-Anchor" href="#miniconda"></a> MiniConda</h1>
+<h2 id="pip-mirrors"><a class="markdownIt-Anchor" href="#pip-mirrors"></a> pip mirrors</h2>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple</span><br></pre></td></tr></table></figure>
+<h2 id="conda-mirrors"><a class="markdownIt-Anchor" href="#conda-mirrors"></a> conda mirrors</h2>
+<p>conda的默认源在国外比较慢，可以使用国内清华源，链接在<a href="https://mirror.tuna.tsinghua.edu.cn/help/anaconda/">这里</a>，清华源用的人比较多了已经，也可以用其他学校的，例如bju<br />
+操作如下：</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">conda config --<span class="built_in">set</span> show_channel_urls yes #生成配置文件.condarc一般在用户目录下</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">channels:</span><br><span class="line">  - defaults</span><br><span class="line">show_channel_urls: true</span><br><span class="line">channel_alias: https://mirrors.tuna.tsinghua.edu.cn/anaconda</span><br><span class="line">default_channels:</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/pro</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2</span><br><span class="line">custom_channels:</span><br><span class="line">  conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line">  msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line">  bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line">  menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line">  pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line">  simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br></pre></td></tr></table></figure>
+<p>将以上内容写入到文件中，重启命令行后，可以正常使用</p>
+<h2 id="jupyter-add-in"><a class="markdownIt-Anchor" href="#jupyter-add-in"></a> jupyter add-in</h2>
+<figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line">conda <span class="keyword">install </span>-c conda-forge <span class="keyword">jupyter_contrib_nbextensions</span></span><br><span class="line"><span class="keyword"></span><span class="keyword">jupyter </span>contrib nbextension <span class="keyword">install </span>--user</span><br></pre></td></tr></table></figure>
+<h2 id="default-config"><a class="markdownIt-Anchor" href="#default-config"></a> default config</h2>
+<ol>
+<li></li>
+</ol>
+<figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line">jupyter notebook --<span class="keyword">generate</span>-<span class="keyword">config</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>在生成的文件中搜索：</li>
+</ol>
+<figure class="highlight autoit"><table><tr><td class="code"><pre><span class="line">The directory <span class="keyword">to</span> use <span class="keyword">for</span> notebooks <span class="literal">and</span> kernels.</span><br><span class="line"><span class="meta"># c.NotebookApp.notebook_dir = <span class="string">&#x27;&#x27;</span></span></span><br></pre></td></tr></table></figure>
+<p>把文件夹路径填进去，去掉#号，保存<br />
+3. 在开始菜单找到“Jupyte Notebook”快捷键，鼠标右击 – 更多 – 打开文件位置<br />
+4. 找到对应的“Jupyte Notebook”快捷图标，鼠标右击 – 属性 – 目标，去掉后面的 “%USERPROFILE%/”（很重要），然后点击“应用”，“确定”　　<br />
+5. 重新启动Jupyte Notebook即可</p>
+<p>这是我的配置</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">c.NotebookApp.notebook_dir = <span class="string">&quot;path/to/dir&quot;</span></span><br></pre></td></tr></table></figure>
+<h2 id="jupytertext"><a class="markdownIt-Anchor" href="#jupytertext"></a> jupytertext</h2>
+<p>将ipynb转化为plain text，可以方便的在其他编辑器的查看和运行</p>
+<figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line">pip <span class="keyword">install </span><span class="keyword">jupytext </span>--upgrade</span><br><span class="line"><span class="keyword">jupyter </span>nbextension <span class="keyword">install </span>--py <span class="keyword">jupytext </span>[--user]</span><br><span class="line"><span class="keyword">jupyter </span>nbextension enable --py <span class="keyword">jupytext </span>[--user] <span class="comment">#activate</span></span><br></pre></td></tr></table></figure>
+<p>具体使用方法看<a href="https://github.com/mwouts/jupytext">这里</a></p>
+<h2 id="black"><a class="markdownIt-Anchor" href="#black"></a> black</h2>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">jupyter nbextension install https://github.com/drillan/jupyter-black/archive/master.zip --user</span><br><span class="line">jupyter nbextension enable jupyter-black-master/jupyter-black</span><br></pre></td></tr></table></figure>
+<p>快捷键：<code>ctrl-B</code></p>
+<h2 id="r-kernel"><a class="markdownIt-Anchor" href="#r-kernel"></a> R kernel</h2>
+<ol>
+<li>安装R</li>
+<li>安装Rtools<a href="https://mirrors.tuna.tsinghua.edu.cn/CRAN/bin/windows/Rtools/">清华镜像</a></li>
+<li>R命令行中执行：</li>
+</ol>
+<figure class="highlight isbl"><table><tr><td class="code"><pre><span class="line"><span class="variable">install.packages</span>(<span class="string">&#x27;devtools&#x27;</span>)</span><br><span class="line"><span class="variable">devtools</span>::<span class="function"><span class="title">install_github</span>(<span class="string">&#x27;IRkernel/IRkernel&#x27;</span>)</span></span><br><span class="line"><span class="variable">IRkernel</span>::<span class="function"><span class="title">installspec</span>()</span></span><br></pre></td></tr></table></figure>
+<p>若显示网络不通，将第二条命令替换成：</p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">devtools::install<span class="constructor">_local(&#x27;IRkernel-<span class="params">master</span>.<span class="params">tar</span>.<span class="params">gz</span>&#x27;)</span></span><br></pre></td></tr></table></figure>
+<p>本地文件从github仓库的release界面上下载。<br />
+除devtools，也可以用remotes进行安装，注意：安装时弹出的更新选项，选择不要更新。<br />
+4. 安装 <code>formatR</code></p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">install.packages(<span class="string">&#x27;formatR&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果不会用rpy2，请不要使用</p>
+</blockquote>
+<h1 id="r"><a class="markdownIt-Anchor" href="#r"></a> R</h1>
+<h2 id="install-packages-and-remove"><a class="markdownIt-Anchor" href="#install-packages-and-remove"></a> install packages and remove</h2>
+<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line">remove.packages(<span class="string">&#x27;xxx&#x27;</span>)</span><br><span class="line">remotes::install_github(<span class="string">&quot;GuangchuangYu/nCov2019&quot;</span>)</span><br><span class="line"><span class="comment">#也可以用devtools</span></span><br></pre></td></tr></table></figure>
+<h2 id="r-in-jupyter"><a class="markdownIt-Anchor" href="#r-in-jupyter"></a> R in jupyter</h2>
+<figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">install</span><span class="selector-class">.packages</span>(c(<span class="string">&#x27;repr&#x27;</span>, <span class="string">&#x27;IRdisplay&#x27;</span>, <span class="string">&#x27;evaluate&#x27;</span>, <span class="string">&#x27;crayon&#x27;</span>, <span class="string">&#x27;pbdZMQ&#x27;</span>, <span class="string">&#x27;devtools&#x27;</span>, <span class="string">&#x27;uuid&#x27;</span>, <span class="string">&#x27;digest&#x27;</span>))</span><br><span class="line">#安装<span class="selector-tag">Rtools</span></span><br><span class="line"><span class="selector-tag">install</span><span class="selector-class">.packages</span>(<span class="string">&#x27;IRkernel&#x27;</span>)</span><br><span class="line"><span class="selector-tag">IRkernel</span>::<span class="selector-tag">installspec</span>(user = FALSE)</span><br></pre></td></tr></table></figure>
+<h2 id="jupyter-kernels"><a class="markdownIt-Anchor" href="#jupyter-kernels"></a> jupyter kernels</h2>
+<figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line"><span class="keyword">jupyter </span>kernelspec list</span><br><span class="line"><span class="keyword">jupyter </span>kernelspec remove ir</span><br></pre></td></tr></table></figure>
+<h1 id="vscode"><a class="markdownIt-Anchor" href="#vscode"></a> VScode</h1>
+<h2 id="debug"><a class="markdownIt-Anchor" href="#debug"></a> debug</h2>
+<ul>
+<li><code>单步跳过</code>：一步一步的执行，循环内也是一步一步的执行，调用函数时<strong>不会进入函数内部</strong>；</li>
+<li><code>单步调试</code>：一步一步的执行，循环内也是一步一步的执行，调用函数时<strong>会进入函数内部</strong>；</li>
+<li><code>单步跳出</code>：执行这个断点和下一个断点之间的语句，要是这是最后一个断点，那么完成程序的执行；</li>
+</ul>
+<h2 id="r-in-vscode"><a class="markdownIt-Anchor" href="#r-in-vscode"></a> R in vscode</h2>
+<p>step:</p>
+<ol>
+<li>自己安装R和Rtools</li>
+<li>安装包<code>languageserver</code></li>
+<li>安装R language support插件</li>
+<li>使用<code>pip install radian</code>，安装好R console</li>
+<li>在vsc中，将<code>r.term.window</code>设置成<code>radian.exe</code>的路径</li>
+<li>勾选<code>always use active terminal</code></li>
+<li>每次写R时，要手动在vsc的终端中启动radian</li>
+</ol>
+<p><strong>话说VS code可以把<code>=</code>恰当的转化为<code>&lt;-</code>，有点优秀啊（只转化该转化的）</strong></p>
+<blockquote>
+<p>code runner中文会乱码，<code>print</code>图表会不显示，但是radian中不存在这&gt; 样的问题。</p>
+</blockquote>
+<h2 id="keyboards-of-snippets"><a class="markdownIt-Anchor" href="#keyboards-of-snippets"></a> keyboards of snippets</h2>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;key&quot;</span>: <span class="string">&quot;ctrl+&#x27;&quot;</span>,</span><br><span class="line">    <span class="string">&quot;command&quot;</span>: <span class="string">&quot;editor.action.insertSnippet&quot;</span>,</span><br><span class="line">    <span class="string">&quot;when&quot;</span>: <span class="string">&quot;editorTextFocus&quot;</span>,</span><br><span class="line">    <span class="string">&quot;args&quot;</span>: &#123;</span><br><span class="line">        <span class="string">&quot;langId&quot;</span>: <span class="string">&quot;markdown&quot;</span>,</span><br><span class="line">        <span class="string">&quot;name&quot;</span>: <span class="string">&quot;symbol&quot;</span> <span class="comment"># snippet 的名字</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><code>jetbrains</code>真香</p>
+]]></content>
+      <tags>
+        <tag>R</tag>
+        <tag>MiniConda</tag>
+        <tag>Java</tag>
+        <tag>Vscode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>统计分布</title>
+    <url>/2020/07/02/%E7%BB%9F%E8%AE%A1%E5%88%86%E5%B8%83/</url>
+    <content><![CDATA[<blockquote>
+<p>不断补充中</p>
+</blockquote>
+<span id="more"></span>
+<h1 id="defination"><a class="markdownIt-Anchor" href="#defination"></a> Defination</h1>
+<h2 id="probability-distribution"><a class="markdownIt-Anchor" href="#probability-distribution"></a> Probability Distribution</h2>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mo>∗</mo></msub><mo stretchy="false">)</mo><mo>=</mo><mi>P</mi><mo stretchy="false">{</mo><mi>x</mi><mo>≤</mo><msub><mi>x</mi><mo>∗</mo></msub><mo stretchy="false">}</mo></mrow><annotation encoding="application/x-tex">F(x_*)=P\{x\leq x_*\} 
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.175696em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∗</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">{</span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.175696em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∗</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">}</span></span></span></span></span></p>
+<p>对于离散型随机变量：</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false">)</mo><mo>=</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mi>P</mi><mo stretchy="false">{</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">}</mo></mrow><annotation encoding="application/x-tex">F(x_n)=\sum_{i=1}^n P\{x_i\} 
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.929066em;vertical-align:-1.277669em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.6513970000000002em;"><span style="top:-1.872331em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.050005em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.3000050000000005em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.277669em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">{</span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">}</span></span></span></span></span></p>
+<p>对于连续型随机变量：</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi>x</mi></msubsup><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>d</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">F(x)=\int_{-\infty}^x f(x)dx 
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.384573em;vertical-align:-0.970281em;"></span><span class="mop"><span class="mop op-symbol large-op" style="margin-right:0.44445em;position:relative;top:-0.0011249999999999316em;">∫</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.414292em;"><span style="top:-1.7880500000000001em;margin-left:-0.44445em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">∞</span></span></span></span><span style="top:-3.8129000000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.970281em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mord mathdefault">d</span><span class="mord mathdefault">x</span></span></span></span></span></p>
+<p>其中，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span></span></span></span>为概率密度函数，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">F(x)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span></span></span></span>也叫作累积概率密度函数</p>
+<h2 id="pdf"><a class="markdownIt-Anchor" href="#pdf"></a> PDF</h2>
+<p>连续型随机变量的概率密度函数在某一区间上的积分，表示取值在这一区间以内的概率，但是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(x_0)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>并不表示<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">x_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>这一点的概率，<strong>！！！</strong>。</p>
+<h1 id="离散性随机变量"><a class="markdownIt-Anchor" href="#离散性随机变量"></a> 离散性随机变量</h1>
+<h2 id="bernoulli-distribution"><a class="markdownIt-Anchor" href="#bernoulli-distribution"></a> Bernoulli Distribution</h2>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo stretchy="false">{</mo><mi>x</mi><mo>=</mo><mi>k</mi><mo stretchy="false">}</mo><mo>=</mo><msup><mi>p</mi><mi>k</mi></msup><mo>∗</mo><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi>p</mi><msup><mo stretchy="false">)</mo><mrow><mn>1</mn><mo>−</mo><mi>k</mi></mrow></msup><mo separator="true">,</mo><mi>k</mi><mo>=</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">p\{x=k\}=p^k*(1-p)^{1-k},k=0,1
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">p</span><span class="mopen">{</span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mclose">}</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.093548em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8991079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.149108em;vertical-align:-0.25em;"></span><span class="mord mathdefault">p</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8991079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mbin mtight">−</span><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span></span></span></span></span></p>
+<p>一个实验只有两种可能的结果，如抛一个硬币，非正即反，这也叫做1重伯努利实验。</p>
+<h2 id="binomial-distribution"><a class="markdownIt-Anchor" href="#binomial-distribution"></a> Binomial Distribution</h2>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo stretchy="false">{</mo><mi>x</mi><mo>=</mo><mi>k</mi><mo stretchy="false">}</mo><mo>=</mo><msubsup><mi>C</mi><mi>n</mi><mi>k</mi></msubsup><msup><mi>p</mi><mi>k</mi></msup><mo>∗</mo><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi>p</mi><msup><mo stretchy="false">)</mo><mrow><mi>n</mi><mo>−</mo><mi>k</mi></mrow></msup><mo separator="true">,</mo><mi>k</mi><mo>=</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mo>…</mo></mrow><annotation encoding="application/x-tex">p\{x=k\}=C_n^kp^k*(1-p)^{n-k},k=0,1,2,\dots
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">p</span><span class="mopen">{</span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mclose">}</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.146108em;vertical-align:-0.247em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8991079999999998em;"><span style="top:-2.4530000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8991079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.149108em;vertical-align:-0.25em;"></span><span class="mord mathdefault">p</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8991079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span><span class="mbin mtight">−</span><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">…</span></span></span></span></span></p>
+<p>将伯努利试验重复<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>次，例：抛<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>的硬币，出现<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mo>…</mo><mo separator="true">,</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">1,2,\dots,k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span>次正面朝上的的概率服从二项分布，简写为：</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi><mo>∼</mo><mi>b</mi><mo stretchy="false">(</mo><mi>n</mi><mo separator="true">,</mo><mi>k</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">X \sim b(n,k)
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∼</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">b</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mclose">)</span></span></span></span></span></p>
+<p>当 $ n=1 $时，二项分布就是伯努利分布。</p>
+<p><strong>均值：$ E(X)=np $ 方差：$ D(X)=np(1-p) $</strong></p>
+<h2 id="possion-distribution"><a class="markdownIt-Anchor" href="#possion-distribution"></a> Possion Distribution</h2>
+<blockquote>
+<p>Poisson分布主要用于描述在单位时间(空间)中稀有事件的发生数，例如：</p>
+<ol>
+<li>放射性物质在单位时间内的放射次数；</li>
+<li>野外单位空间中的某种昆虫数等。</li>
+</ol>
+</blockquote>
+<p>假设平均每小时诞生 <code>3</code> 个婴儿,</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo stretchy="false">{</mo><mi>N</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>=</mo><mi>k</mi><mo stretchy="false">}</mo><mo>=</mo><mfrac><mrow><msup><mi>e</mi><mrow><mo>−</mo><mi>λ</mi><mi>t</mi></mrow></msup><mo stretchy="false">(</mo><mi>λ</mi><mi>t</mi><msup><mo stretchy="false">)</mo><mi>k</mi></msup></mrow><mrow><mi>k</mi><mo stretchy="false">!</mo></mrow></mfrac><mo separator="true">,</mo><mi>k</mi><mo>=</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mo>…</mo></mrow><annotation encoding="application/x-tex">P\{N(t)=k\}=\frac{e^{-\lambda t}(\lambda t)^k}{k!},k=0,1,2,\dots
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">{</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mopen">(</span><span class="mord mathdefault">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mclose">}</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.212108em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.526108em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mclose">!</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mathdefault mtight">λ</span><span class="mord mathdefault mtight">t</span></span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault">λ</span><span class="mord mathdefault">t</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.849108em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">…</span></span></span></span></span></p>
+<p>它表示 <code>t</code> 时间内一个事件发生 <code>k</code> 次的概率, 那么 <code>3</code> 小时内, 诞生 <code>4</code> 个婴儿的概率为:</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo stretchy="false">{</mo><mi>N</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>=</mo><mn>3</mn><mo stretchy="false">}</mo><mo>=</mo><mfrac><mrow><msup><mi>e</mi><mrow><mo>−</mo><mn>3</mn><mo>∗</mo><mn>3</mn></mrow></msup><mo>∗</mo><mo stretchy="false">(</mo><mn>3</mn><mo>∗</mo><mn>3</mn><msup><mo stretchy="false">)</mo><mn>4</mn></msup></mrow><mrow><mn>4</mn><mo stretchy="false">!</mo></mrow></mfrac><mo>=</mo><mn>0.034</mn></mrow><annotation encoding="application/x-tex">P\{N(t) = 3\}  = \frac{e^{-3 * 3} * (3 * 3)^4}{4!} =  0.034
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">{</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mopen">(</span><span class="mord mathdefault">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">3</span><span class="mclose">}</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.177108em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.491108em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">4</span><span class="mclose">!</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">3</span><span class="mbin mtight">∗</span><span class="mord mtight">3</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mopen">(</span><span class="mord">3</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">3</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">0</span><span class="mord">3</span><span class="mord">4</span></span></span></span></span></p>
+<p>其中,  <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">λ</span></span></span></span> 表示单位时间事件发生的数量</p>
+<h1 id="连续型随机变量"><a class="markdownIt-Anchor" href="#连续型随机变量"></a> 连续型随机变量</h1>
+<h2 id="exponential-distribution"><a class="markdownIt-Anchor" href="#exponential-distribution"></a> Exponential Distribution</h2>
+<p>指数分布由泊松分布推导而来, 它表示在接下来时间间隔 <code>t</code> 里,  <code>有事件发生的概率</code>, 从泊松分布推导.<br />
+公式一,</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo stretchy="false">{</mo><mi>N</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>=</mo><mn>0</mn><mo stretchy="false">}</mo><mo>=</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>λ</mi><mi>t</mi></mrow></msup></mrow><annotation encoding="application/x-tex">P\{N(t) = 0 \} = e^{- \lambda t}  
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">{</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mopen">(</span><span class="mord mathdefault">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">0</span><span class="mclose">}</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8991079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8991079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mathdefault mtight">λ</span><span class="mord mathdefault mtight">t</span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p>那么在 <code>t</code> 时间内, 事件发生的概率为,<br />
+公式二,</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>=</mo><mi>P</mi><mo stretchy="false">{</mo><mi>N</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mi mathvariant="normal">≠</mi><mn>0</mn><mo stretchy="false">}</mo><mo>=</mo><mn>1</mn><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>λ</mi><mi>t</mi></mrow></msup></mrow><annotation encoding="application/x-tex">P(t) = P\{N(t) \ne 0\} = 1 - e^{- \lambda t}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathdefault">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">{</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mopen">(</span><span class="mord mathdefault">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel"><span class="mrel"><span class="mord"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="rlap"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="inner"><span class="mrel"></span></span><span class="fix"></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span></span><span class="mrel">=</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">0</span><span class="mclose">}</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8991079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8991079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mathdefault mtight">λ</span><span class="mord mathdefault mtight">t</span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p>到底是使用哪一种形势的指数分布呢(<strong>公式一 or 公式二</strong>), 取决于具体问题.<br />
+对于公式二的指数分布的累计概率密度函数(CDF), 其概率密度函数(PDF), 通过求导可得</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>=</mo><mrow><mo fence="true">{</mo><mtable rowspacing="0.15999999999999992em" columnalign="left left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mn>0</mn><mo separator="true">,</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>t</mi><mo>&lt;</mo><mn>0</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>λ</mi><msup><mi>e</mi><mrow><mo>−</mo><mi>λ</mi><mi>t</mi></mrow></msup><mo separator="true">,</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>t</mi><mo>≥</mo><mn>0</mn></mrow></mstyle></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">f(t) = \left\{
+    \begin{array}{ll}
+        0, &amp; t &lt; 0 \\
+        \lambda e^{- \lambda t},  &amp; t \ge 0
+    \end{array}
+    \right.
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.409108em;vertical-align:-0.9545539999999999em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size3">{</span></span><span class="mord"><span class="mtable"><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.454554em;"><span style="top:-3.6145539999999996em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span><span class="mpunct">,</span></span></span><span style="top:-2.405446em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">λ</span><span class="mord"><span class="mord mathdefault">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mathdefault mtight">λ</span><span class="mord mathdefault mtight">t</span></span></span></span></span></span></span></span></span><span class="mpunct">,</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.9545539999999999em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.454554em;"><span style="top:-3.6145539999999996em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">t</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">0</span></span></span><span style="top:-2.405446em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">t</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.9545539999999999em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+<p>公式一同理.<br />
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">λ</span></span></span></span>与泊松分布的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">λ</span></span></span></span>意思一致, 称为 <code>scaled parameter</code></p>
+<blockquote>
+<p>TODO: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">λ</span></span></span></span>的含义的理解.</p>
+</blockquote>
+<p>接婴儿出生的案例, 在接下来的1个小时里, 有婴儿出生的概率为,</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mtable rowspacing="0.15999999999999992em" columnalign="left left left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>P</mi><mo stretchy="false">(</mo><mn>0</mn><mo>&lt;</mo><mi>t</mi><mo>&lt;</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mo>=</mo></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>P</mi><mo stretchy="false">(</mo><mi>t</mi><mo>&lt;</mo><mn>1</mn><mo stretchy="false">)</mo><mo>−</mo><mi>P</mi><mo stretchy="false">(</mo><mi>t</mi><mo>&lt;</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mo>=</mo></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><mn>3</mn><mo>∗</mo><mn>1</mn></mrow></msup><mo stretchy="false">)</mo><mo>−</mo><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><mn>3</mn><mo>∗</mo><mn>0</mn></mrow></msup><mo stretchy="false">)</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mo>=</mo></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0.95</mn></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{array}{lll}
+P(0&lt;t&lt;1)&amp; = &amp; P(t&lt;1) - P(t&lt;0) \\
+        &amp; = &amp; (1 - e^{ - 3 * 1}) - (1 - e^{ - 3 * 0}) \\
+        &amp; = &amp; 0.95
+\end{array}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:3.6000000000000005em;vertical-align:-1.5500000000000007em;"></span><span class="mord"><span class="mtable"><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathdefault">t</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mrel">=</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mrel">=</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mrel">=</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathdefault">t</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathdefault">t</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">0</span><span class="mclose">)</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathdefault">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">3</span><span class="mbin mtight">∗</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathdefault">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">3</span><span class="mbin mtight">∗</span><span class="mord mtight">0</span></span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span><span class="mord">.</span><span class="mord">9</span><span class="mord">5</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span></span></span></span></span></span></span></p>
+<h2 id="uniform-distribution"><a class="markdownIt-Anchor" href="#uniform-distribution"></a> Uniform Distribution</h2>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mrow><mo fence="true">{</mo><mtable rowspacing="0.15999999999999992em" columnalign="left center" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mfrac><mn>1</mn><mrow><mi>b</mi><mo>−</mo><mi>a</mi></mrow></mfrac></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>a</mi><mo>&lt;</mo><mi>x</mi><mo>&lt;</mo><mi>b</mi></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>e</mi><mi>l</mi><mi>s</mi><mi>e</mi></mrow></mstyle></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex"> f(x)=\left\{
+\begin{array}{lc}
+\frac{1}{b-a} &amp; a&lt;x&lt;b \\
+0 &amp; else\\
+\end{array}
+\right.
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.448439em;vertical-align:-0.9742195000000002em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size3">{</span></span><span class="mord"><span class="mtable"><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.4742194999999998em;"><span style="top:-3.6291115em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">b</span><span class="mbin mtight">−</span><span class="mord mathdefault mtight">a</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.403331em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span><span style="top:-2.3857804999999996em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.9742195000000002em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.4742194999999998em;"><span style="top:-3.6291115em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathdefault">b</span></span></span><span style="top:-2.3857804999999996em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">s</span><span class="mord mathdefault">e</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.9742195000000002em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi><mo>∼</mo><mi>U</mi><mo stretchy="false">(</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">X\sim U(a,b) 
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∼</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">U</span><span class="mopen">(</span><span class="mord mathdefault">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">b</span><span class="mclose">)</span></span></span></span></span></p>
+<h2 id="normal-distribution"><a class="markdownIt-Anchor" href="#normal-distribution"></a> Normal Distribution</h2>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mn>1</mn><msqrt><mrow><mn>2</mn><mi>π</mi></mrow></msqrt></mfrac><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>−</mo><mi>μ</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup></mrow><mrow><mn>2</mn><msup><mi>σ</mi><mn>2</mn></msup></mrow></mfrac></mrow></msup><mo separator="true">,</mo><mo>−</mo><mi mathvariant="normal">∞</mi><mo>&lt;</mo><mi>x</mi><mo>&lt;</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">f(x)=\frac{1}{\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}},-\infty&lt;x&lt; \infty 
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.25909em;vertical-align:-0.93em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.2027799999999997em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.90722em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord">2</span><span class="mord mathdefault" style="margin-right:0.03588em;">π</span></span></span><span style="top:-2.86722em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg width='400em' height='1.08em' viewBox='0 0 400000 1080' preserveAspectRatio='xMinYMin slice'><path d='M95,702c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,
+-10,-9.5,-14c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54c44.2,-33.3,65.8,
+-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10s173,378,173,378c0.7,0,
+35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429c69,-144,104.5,-217.7,106.5,
+-221c5.3,-9.3,12,-14,20,-14H400000v40H845.2724s-225.272,467,-225.272,467
+s-235,486,-235,486c-2.7,4.7,-9,7,-19,7c-6,0,-10,-1,-12,-3s-194,-422,-194,-422
+s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.13278em;"><span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.93em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord"><span class="mord mathdefault">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:1.32909em;"><span style="top:-3.4534200000000004em;margin-right:0.05em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight"><span class="mopen nulldelimiter sizing reset-size3 size6"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.250957142857143em;"><span style="top:-2.5061857142857145em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9384399999999999em;"><span style="top:-2.93844em;margin-right:0.1em;"><span class="pstrut" style="height:2.64444em;"></span><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span><span style="top:-3.2255000000000003em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line mtight" style="border-bottom-width:0.049em;"></span></span><span style="top:-3.5020714285714285em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mathdefault mtight">x</span><span class="mbin mtight">−</span><span class="mord mathdefault mtight">μ</span><span class="mclose mtight"><span class="mclose mtight">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:1.04844em;"><span style="top:-3.04844em;margin-right:0.1em;"><span class="pstrut" style="height:2.64444em;"></span><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.49381428571428565em;"><span></span></span></span></span></span><span class="mclose nulldelimiter sizing reset-size3 size6"></span></span></span></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">−</span><span class="mord">∞</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord">∞</span></span></span></span></span></p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi><mo>∼</mo><mi>N</mi><mo stretchy="false">(</mo><mi>μ</mi><mo separator="true">,</mo><msup><mi>σ</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">X\sim N(\mu,\sigma^2) 
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∼</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.1141079999999999em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mopen">(</span><span class="mord mathdefault">μ</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn><mi>σ</mi></mrow><annotation encoding="application/x-tex">3\sigma</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span><span class="mord mathdefault" style="margin-right:0.03588em;">σ</span></span></span></span> 原则：</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mi>σ</mi><mspace width="1em"/><mn>0.6826</mn></mrow><annotation encoding="application/x-tex">1\sigma \quad 0.6826
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord mathdefault" style="margin-right:0.03588em;">σ</span><span class="mspace" style="margin-right:1em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">6</span><span class="mord">8</span><span class="mord">2</span><span class="mord">6</span></span></span></span></span></p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mi>σ</mi><mspace width="1em"/><mn>0.9544</mn></mrow><annotation encoding="application/x-tex">2\sigma \quad 0.9544
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord mathdefault" style="margin-right:0.03588em;">σ</span><span class="mspace" style="margin-right:1em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">9</span><span class="mord">5</span><span class="mord">4</span><span class="mord">4</span></span></span></span></span></p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn><mi>σ</mi><mspace width="1em"/><mn>0.9974</mn></mrow><annotation encoding="application/x-tex">3\sigma \quad 0.9974
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span><span class="mord mathdefault" style="margin-right:0.03588em;">σ</span><span class="mspace" style="margin-right:1em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">9</span><span class="mord">9</span><span class="mord">7</span><span class="mord">4</span></span></span></span></span></p>
+<p>尽管正态变量的取值是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><mo>−</mo><mi mathvariant="normal">∞</mi><mo separator="true">,</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">( -\infty,\infty )</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">−</span><span class="mord">∞</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">∞</span><span class="mclose">)</span></span></span></span>，但是它的值落在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><mi>μ</mi><mo>−</mo><mn>3</mn><mi>σ</mi><mo separator="true">,</mo><mi>μ</mi><mo>+</mo><mn>3</mn><mi>σ</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(\mu-3\sigma,\mu+3\sigma)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">μ</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">3</span><span class="mord mathdefault" style="margin-right:0.03588em;">σ</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">μ</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">3</span><span class="mord mathdefault" style="margin-right:0.03588em;">σ</span><span class="mclose">)</span></span></span></span>内几乎是肯定的事。</p>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>科研相关</title>
+    <url>/2020/07/15/%E7%A7%91%E7%A0%94%E7%9B%B8%E5%85%B3/</url>
+    <content><![CDATA[<blockquote>
+<p>管理科学研究方面 需要的一些知识和工具</p>
+</blockquote>
+<span id="more"></span>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">install.packages(<span class="string">&#x27;NCA&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h1 id="research"><a class="markdownIt-Anchor" href="#research"></a> Research</h1>
+<h2 id="database"><a class="markdownIt-Anchor" href="#database"></a> database</h2>
+<ul>
+<li>Web of Science: SCI，历史悠久，期刊全，人文社科啥的全都有</li>
+<li>Engineering villiage: EI</li>
+<li>Scopus: 摘要数据库，比较新，荷兰出版商2004年搞得，收录的期刊种类比Web of Science多，但是老一点的期刊少</li>
+</ul>
+<h2 id="tools"><a class="markdownIt-Anchor" href="#tools"></a> tools</h2>
+<ul>
+<li><code>Scival</code>： 爱思唯尔搞得论文检索平台，以Scopus数据库为基础，提供了各种高级检索功能（不是搜论文，例如： topic search, 研究热点等等。）</li>
+</ul>
+<h2 id="others"><a class="markdownIt-Anchor" href="#others"></a> others</h2>
+<ul>
+<li>IF: Impact Factor, 影响因子</li>
+<li>JCR： Journal Citation Reports期刊引文报告</li>
+</ul>
+<p>目前国际上有中科院分区和汤森路透分区（科睿唯安），汤森路透每年会发布期刊引用报告（Journal Citation Reports, JCR），搞分区的目的是对个学科领域进行划分，根据影响因子，对某一学科领域的期刊进行排序分类。</p>
+<p>汤森路透分区：</p>
+<ul>
+<li>Q1: 0~25%</li>
+<li>Q2：26%~50%</li>
+<li>Q3: 51~75%</li>
+<li>Q4: 76%~100%</li>
+</ul>
+<p>中科院分区：</p>
+<ul>
+<li>SCI 一区：5% TOP</li>
+<li>SCI 二区：6%~20% selected TOP</li>
+<li>SCI 三区：21%~50%</li>
+<li>SCI 四区：51%~100%</li>
+</ul>
+<blockquote>
+<p>国内说SCI 一区，应该是中科院分区，汤森路透分区（科睿唯安分区、JCR分区）一般说Q1</p>
+</blockquote>
+<p><font color=#cf2f89 size=5 font="黑体">貌似中科院分区风评不太好，好多领域的顶级期刊给放到了SCI 二区，三区</font></p>
+<h1 id="paper"><a class="markdownIt-Anchor" href="#paper"></a> Paper</h1>
+<blockquote>
+<p>The Institute for Operations Research and Management Sciences<br />
+运筹学与管理学协会。</p>
+</blockquote>
+<h2 id="utd-24"><a class="markdownIt-Anchor" href="#utd-24"></a> UTD 24</h2>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">The Accounting Review</span><br><span class="line">Journal of Accounting and Economics</span><br><span class="line">Journal of Accounting Research</span><br><span class="line">Journal of Finance</span><br><span class="line">Journal of Financial Economics</span><br><span class="line">The Review of Financial Studies</span><br><span class="line">Information Systems Research</span><br><span class="line">Informs Journal on Computing*</span><br><span class="line">MIS Quarterly*</span><br><span class="line">Journal of Consumer Research</span><br><span class="line">Journal of Marketing</span><br><span class="line">Journal of Marketing Research</span><br><span class="line">Marketing Science</span><br><span class="line">Management Science</span><br><span class="line">Operations Research</span><br><span class="line">Journal of Operations Management</span><br><span class="line">Manufacturing &amp; Service Operations Management*</span><br><span class="line">Production and Operations Management</span><br><span class="line">Academy of Management Journal</span><br><span class="line">Academy of Management Review</span><br><span class="line">Administrative Science Quarterly</span><br><span class="line">Organization Science</span><br><span class="line">Journal of International Business Studies</span><br><span class="line">Strategic Management Journal</span><br></pre></td></tr></table></figure>
+<h2 id="ft-50"><a class="markdownIt-Anchor" href="#ft-50"></a> FT 50</h2>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Academy of Management Journal</span><br><span class="line">Academy of Management Review</span><br><span class="line">Accounting, Organizations and Society</span><br><span class="line">Administrative Science Quarterly</span><br><span class="line">American Economic Review</span><br><span class="line">Contemporary Accounting Research</span><br><span class="line">Econometrica</span><br><span class="line">Entrepreneurship Theory and Practice</span><br><span class="line">Harvard Business Review</span><br><span class="line">Human Relations*</span><br><span class="line">Human Resource Management</span><br><span class="line">Information Systems Research</span><br><span class="line">Journal of Accounting and Economics</span><br><span class="line">Journal of Accounting Research</span><br><span class="line">Journal of Applied Psychology</span><br><span class="line">Journal of Business Ethics</span><br><span class="line">Journal of Business Venturing</span><br><span class="line">Journal of Consumer Psychology</span><br><span class="line">Journal of Consumer Research</span><br><span class="line">Journal of Finance</span><br><span class="line">Journal of Financial and Quantitative Analysis</span><br><span class="line">Journal of Financial Economics</span><br><span class="line">Journal of International Business Studies</span><br><span class="line">Journal of Management*</span><br><span class="line">Journal of Management Information Systems*</span><br><span class="line">Journal of Management Studies</span><br><span class="line">Journal of Marketing</span><br><span class="line">Journal of Marketing Research</span><br><span class="line">Journal of Operations Management</span><br><span class="line">Journal of Political Economy</span><br><span class="line">Journal of the Academy of Marketing Science*</span><br><span class="line">Management Science</span><br><span class="line">Manufacturing and Service Operations Management*</span><br><span class="line">Marketing Science</span><br><span class="line">MIS Quarterly</span><br><span class="line">Operations Research</span><br><span class="line">Organization Science</span><br><span class="line">Organization Studies</span><br><span class="line">Organizational Behavior and Human Decision Processes</span><br><span class="line">Production and Operations Management</span><br><span class="line">Quarterly Journal of Economics</span><br><span class="line">Research Policy*</span><br><span class="line">Review of Accounting Studies</span><br><span class="line">Review of Economic Studies*</span><br><span class="line">Review of Finance*</span><br><span class="line">Review of Financial Studies</span><br><span class="line">Sloan Management Review</span><br><span class="line">Strategic Entrepreneurship Journal*</span><br><span class="line">Strategic Management Journal</span><br><span class="line">The Accounting Review</span><br></pre></td></tr></table></figure>
+<h1 id="empirical-study"><a class="markdownIt-Anchor" href="#empirical-study"></a> Empirical Study</h1>
+<p>与之对应的是 <strong>理论研究</strong>(Conceptual Study, Theoretical Study)</p>
+<blockquote>
+<p>实证研究是目前为止社会科学领域最被广泛接受、最流行、最常见的研究类型。<br />
+简言之，容易发文章。</p>
+</blockquote>
+<p>一般步骤(持续更新)：</p>
+<ol>
+<li>确定一个研究问题<br />
+e.g.</li>
+</ol>
+<ul>
+<li>养狗的人比养猫的人更愿意跟其他人社交吗？</li>
+<li>学生自发上知乎的频率跟学习成绩成相关性吗？</li>
+</ul>
+<ol start="2">
+<li>设计实验与收集数据</li>
+<li>统计分析<br />
+利用各种各样的统计学工具进行 Data Analysis</li>
+<li>结论与评价</li>
+</ol>
+<blockquote>
+<p>notes<br />
+务必保留原始数据和数据处理(规范化)的程序，Raw Data–Don’t Touch!</p>
+</blockquote>
+<h1 id="talk"><a class="markdownIt-Anchor" href="#talk"></a> Talk</h1>
+<p><a href="https://www.bilibili.com/video/BV1Nx41147gc?from=search&amp;seid=15203410503206147670">易中天《历史的底牌》</a></p>
+<h1 id="references"><a class="markdownIt-Anchor" href="#references"></a> References</h1>
+<h2 id="apa"><a class="markdownIt-Anchor" href="#apa"></a> APA</h2>
+<p>APA格式是指美国心理学会（American Psychological Association）出版的《美国心理协会刊物准则》，是一个被广泛接受的研究论文撰写格式，特别针对社会科学领域的研究，规范学术文献的引用和参考文献的撰写方法，以及表格、图表、注脚和附录的编排方式。其“作者和日期”的引用范式和“括号内引用法”相当著名。</p>
+<h2 id="mla"><a class="markdownIt-Anchor" href="#mla"></a> MLA</h2>
+<p>MLA（Modern Language Association）为美国现代语言协会制定的论文指导格式，在一般书写英语论文时应当使用MLA格式来保证学术著作的完整。MLA多用在英语语言与文学等人文学科的学术论文写作中。</p>
+<h2 id="chicago"><a class="markdownIt-Anchor" href="#chicago"></a> Chicago</h2>
+<p>Chicago格式由芝加哥大学出版社于1906年首次发行，广泛应用于图书、杂志、报纸以及人文科学领域。 这一格式的标准是《芝加哥引注格式使用指南》（The Chicago Manual of Style）。但是也有很多用户把凯特•杜拉宾（Kate Turabian）为学生编写的《学期、学位、学术论文写作指南》（A Manual for Writers of Term Papers, Theses and Dissertations）作为参考。所以，芝加哥引注格式也称为杜拉宾引注格式。</p>
+<p>Chicago引注格式主要用脚注（Footnotes）形式引注，这种引注形式常用于人文学科，如文学、历史和艺术学科等。另一种形式是用作者和年份的引注格式。这种引注形式常于科学学科，如历史、在自然和社会科学等。同样，根据引用内容不同，在引用时的具体表示方式也不同。</p>
+<h2 id="harvard"><a class="markdownIt-Anchor" href="#harvard"></a> Harvard</h2>
+<p>Harvard引用体系，也叫“作者－日期法”(Author-date method)。Harvard引用体系在英国和澳洲等国家运用得比较多，尤其在物理和自然科学领域。</p>
+<h2 id="gbt-7714"><a class="markdownIt-Anchor" href="#gbt-7714"></a> GB/T 7714</h2>
+<p>中国国家标准</p>
+<h1 id="引文分析"><a class="markdownIt-Anchor" href="#引文分析"></a> 引文分析</h1>
+<p>文献引文分析软件，导出时务必导出为纯文本以及要有参考文献信息，尽量从<code>webofscience</code>中导出（核心文集、纯文本格式，包含参考文献）<br />
+如果是<code>scopus</code>则需要选中所有选项（包含参考文献），导出为<code>RIS</code>格式，导出后，需要进行字符串处理，</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">python scopus2hist.py scopus.ris</span><br></pre></td></tr></table></figure>
+<p>将生成的txt文件，放到<code>HistCite Pro2</code>的<code>TXT</code>文件夹下，执行<code>main.exe</code>，就可以<code>make graph</code>，生成引文网络了。</p>
+<div class="note info">
+本地数据集：txt文件中的参考文献
+</div>
+<p>英文缩写：</p>
+<ul>
+<li>GCS（global citation score）: 这篇文章的总引用数</li>
+<li>LCS（Local citation score）: 这篇文章在本地数据库中的总引用数</li>
+<li>LCR（Local citation references）: 这篇文章引用本地数据库中参考文献的数目</li>
+<li>CR（citation references）: 这篇文章的引用的所有参考文献的数量</li>
+</ul>
+<p>我们主要关注 <code>LCS</code>, <code>LCR</code></p>
+<p>引文分析的作用：</p>
+<ul>
+<li>发现topic的发展源头，最初的论文是哪一篇；</li>
+<li>搞清楚这个领域发展脉络；</li>
+</ul>
+<h1 id="zotero"><a class="markdownIt-Anchor" href="#zotero"></a> Zotero</h1>
+<h2 id="参考文献导出到word"><a class="markdownIt-Anchor" href="#参考文献导出到word"></a> 参考文献导出到word</h2>
+<p>如果使用 <code>zotero</code> 导入参考文献到 <code>word</code> , 当英文作者的数量超过三个是会显示为 <code>等</code> ，可以按照以下步骤将 <code>等</code> 还原为 <code>et al</code> :</p>
+<ol>
+<li>创建 <code>宏（按键）</code>；</li>
+<li>编辑宏文件删除全部代码；</li>
+<li>写入以下代码</li>
+</ol>
+<figure class="highlight plaintext"><figcaption><span>basic</span></figcaption><table><tr><td class="code"><pre><span class="line">Sub deng2etal()</span><br><span class="line">&#x27;</span><br><span class="line">&#x27; deng2etal macro</span><br><span class="line">&#x27; English等 -&gt; english, et al</span><br><span class="line">&#x27;</span><br><span class="line">    With Selection.Find</span><br><span class="line">        .Forward = True</span><br><span class="line">        .ClearFormatting</span><br><span class="line">        .Text = &quot;(&lt;[A-z]@, )等&quot;</span><br><span class="line">        With .Replacement</span><br><span class="line">            .ClearFormatting</span><br><span class="line">            .Text = &quot;\1et al&quot;</span><br><span class="line">        End With</span><br><span class="line">        .Wrap = wdFindStop</span><br><span class="line">        .Execute Replace:=wdReplaceAll, MatchWildcards:=True</span><br><span class="line">    End With</span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>保存<br />
+每次通过 <code>zotero</code> 导入到 <code>word</code> 后, 可以通过该  <code>宏</code> 替换 <code>等</code> 为 <code>et al</code> , 而不会影响到其它情况下 <code>等</code> 的使用。</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>科研</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>正则表达式</title>
+    <url>/2020/06/17/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
+    <content><![CDATA[<p>转载自：<a href="https://github.com/cdoco/learn-regex-zh">github</a>，讲的实在是太棒</p>
+<span id="more"></span>
+<br/>
+<p align="center">
+<img src="https://i.imgur.com/bYwl7Vf.png" alt="Learn Regex">
+</p><br/>
+<h2 id="什么是正则表达式"><a class="markdownIt-Anchor" href="#什么是正则表达式"></a> 什么是正则表达式 ？</h2>
+<blockquote>
+<p>正则表达式是一种被用于从文本中检索符合某些特定模式的文本。</p>
+</blockquote>
+<p>正则表达式是从左到右来匹配一个字符串的。“Regular Expression” 这个词太长了，我们通常使用它的缩写 “regex” 或者 “regexp”。<br />
+正则表达式可以被用来替换字符串中的文本、验证表单、基于模式匹配从一个字符串中提取字符串等等。<br />
+<br /></p>
+<p>想象一下，您正在编写应用程序，并且您希望在用户选择用户名时设置规则。我们希望用户名可以包含字母，数字，下划线和连字符。<br />
+为了让它看起来不丑，我们还想限制用户名中的字符数量。我们可以使用以下正则表达式来验证用户名:</p>
+<p align="center">
+<img src="https://i.imgur.com/UrDb9qc.png" alt="Regular expression">
+</p>
+<p>上面这个正则表达式可以匹配 <code>john_doe</code>，<code>jo-hn\_doe</code> 和 <code>john12\_as</code>。但是它不能匹配 <code>Jo</code>，因为该字符串里面包含了大写字符，并且它太短了。</p>
+<h2 id="目录"><a class="markdownIt-Anchor" href="#目录"></a> 目录</h2>
+<ul>
+<li><a href="#1-%E5%9F%BA%E6%9C%AC%E5%8C%B9%E9%85%8D">基本匹配</a></li>
+<li><a href="#2-%E5%85%83%E5%AD%97%E7%AC%A6">元字符</a>
+<ul>
+<li><a href="#21-%E8%8B%B1%E6%96%87%E5%8F%A5%E5%8F%B7">英文句号</a></li>
+<li><a href="#22-%E5%AD%97%E7%AC%A6%E9%9B%86">字符集</a>
+<ul>
+<li><a href="#221-%E5%90%A6%E5%AE%9A%E5%AD%97%E7%AC%A6%E9%9B%86">否定字符集</a></li>
+</ul>
+</li>
+<li><a href="#23-%E9%87%8D%E5%A4%8D">重复</a>
+<ul>
+<li><a href="#231-%E6%98%9F%E5%8F%B7">星号</a></li>
+<li><a href="#232-%E5%8A%A0%E5%8F%B7">加号</a></li>
+<li><a href="#233-%E9%97%AE%E5%8F%B7">问号</a></li>
+</ul>
+</li>
+<li><a href="#24-%E8%8A%B1%E6%8B%AC%E5%8F%B7">花括号</a></li>
+<li><a href="#25-%E5%AD%97%E7%AC%A6%E7%BB%84">字符组</a></li>
+<li><a href="#26-%E5%88%86%E6%94%AF%E7%BB%93%E6%9E%84">分支结构</a></li>
+<li><a href="#27-%E8%BD%AC%E4%B9%89%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6">转义特殊字符</a></li>
+<li><a href="#28-%E5%AE%9A%E4%BD%8D%E7%AC%A6">定位符</a>
+<ul>
+<li><a href="#281-%E6%8F%92%E5%85%A5%E7%AC%A6%E5%8F%B7">插入符号</a></li>
+<li><a href="#282-%E7%BE%8E%E5%85%83%E7%AC%A6%E5%8F%B7">美元符号</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#3-%E7%AE%80%E5%86%99%E5%AD%97%E7%AC%A6%E9%9B%86">简写字符集</a></li>
+<li><a href="#4-%E6%96%AD%E8%A8%80">断言</a>
+<ul>
+<li><a href="#41-%E6%AD%A3%E5%90%91%E5%85%88%E8%A1%8C%E6%96%AD%E8%A8%80">正向先行断言</a></li>
+<li><a href="#42-%E8%B4%9F%E5%90%91%E5%85%88%E8%A1%8C%E6%96%AD%E8%A8%80">负向先行断言</a></li>
+<li><a href="#43-%E6%AD%A3%E5%90%91%E5%90%8E%E8%A1%8C%E6%96%AD%E8%A8%80">正向后行断言</a></li>
+<li><a href="#44-%E8%B4%9F%E5%90%91%E5%90%8E%E8%A1%8C%E6%96%AD%E8%A8%80">负向后行断言</a></li>
+</ul>
+</li>
+<li><a href="#5-%E6%A0%87%E8%AE%B0">标记</a>
+<ul>
+<li><a href="#51-%E4%B8%8D%E5%8C%BA%E5%88%86%E5%A4%A7%E5%B0%8F%E5%86%99">不区分大小写</a></li>
+<li><a href="#52-%E5%85%A8%E5%B1%80%E6%90%9C%E7%B4%A2">全局搜索</a></li>
+<li><a href="#53-%E5%A4%9A%E8%A1%8C%E5%8C%B9%E9%85%8D">多行匹配</a></li>
+</ul>
+</li>
+<li><a href="#%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F">常用正则表达式</a></li>
+</ul>
+<h2 id="1-基本匹配"><a class="markdownIt-Anchor" href="#1-基本匹配"></a> 1. 基本匹配</h2>
+<p>正则表达式只是我们用于在文本中检索字母和数字的模式。例如正则表达式 <code>cat</code>，表示: 字母 <code>c</code> 后面跟着一个字母 <code>a</code>，再后面跟着一个字母 <code>t</code>。</p>
+<pre>
+"cat" => The <a href="#learn-regex"><strong>cat</strong></a> sat on the mat
+</pre>
+<p>正则表达式 <code>123</code> 会匹配字符串 “123”。通过将正则表达式中的每个字符逐个与要匹配的字符串中的每个字符进行比较，来完成正则匹配。<br />
+正则表达式通常区分大小写，因此正则表达式 <code>Cat</code> 与字符串 “cat” 不匹配。</p>
+<pre>
+"Cat" => The cat sat on the <a href="#learn-regex"><strong>Cat</strong></a>
+</pre>
+<h2 id="2-元字符"><a class="markdownIt-Anchor" href="#2-元字符"></a> 2. 元字符</h2>
+<p>元字符是正则表达式的基本组成元素。元字符在这里跟它通常表达的意思不一样，而是以某种特殊的含义去解释。有些元字符写在方括号内的时候有特殊含义。<br />
+元字符如下:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">元字符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">.</td>
+<td>匹配除换行符以外的任意字符。</td>
+</tr>
+<tr>
+<td style="text-align:center">[ ]</td>
+<td>字符类，匹配方括号中包含的任意字符。</td>
+</tr>
+<tr>
+<td style="text-align:center">[^ ]</td>
+<td>否定字符类。匹配方括号中不包含的任意字符</td>
+</tr>
+<tr>
+<td style="text-align:center">*</td>
+<td>匹配前面的子表达式零次或多次</td>
+</tr>
+<tr>
+<td style="text-align:center">+</td>
+<td>匹配前面的子表达式一次或多次</td>
+</tr>
+<tr>
+<td style="text-align:center">?</td>
+<td>匹配前面的子表达式零次或一次，或指明一个非贪婪限定符。</td>
+</tr>
+<tr>
+<td style="text-align:center">{n,m}</td>
+<td>花括号，匹配前面字符至少 n 次，但是不超过 m 次。</td>
+</tr>
+<tr>
+<td style="text-align:center">(xyz)</td>
+<td>字符组，按照确切的顺序匹配字符xyz。</td>
+</tr>
+<tr>
+<td style="text-align:center">|</td>
+<td>分支结构，匹配符号之前的字符或后面的字符。</td>
+</tr>
+<tr>
+<td style="text-align:center">\</td>
+<td>转义符，它可以还原元字符原来的含义，允许你匹配保留字符 <code>[ ] ( ) &#123; &#125; . * + ? ^ $ \ |</code></td>
+</tr>
+<tr>
+<td style="text-align:center">^</td>
+<td>匹配行的开始</td>
+</tr>
+<tr>
+<td style="text-align:center">$</td>
+<td>匹配行的结束</td>
+</tr>
+</tbody>
+</table>
+<h2 id="21-英文句号"><a class="markdownIt-Anchor" href="#21-英文句号"></a> 2.1 英文句号</h2>
+<p>英文句号 <code>.</code> 是元字符的最简单的例子。元字符 <code>.</code> 可以匹配任意单个字符。它不会匹配换行符和新行的字符。例如正则表达式 <code>.ar</code>，表示: 任意字符后面跟着一个字母 <code>a</code>，<br />
+再后面跟着一个字母 <code>r</code>。</p>
+<pre>
+".ar" => The <a href="#learn-regex"><strong>car</strong></a> <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
+</pre>
+<h2 id="22-字符集"><a class="markdownIt-Anchor" href="#22-字符集"></a> 2.2 字符集</h2>
+<p>字符集也称为字符类。方括号被用于指定字符集。使用字符集内的连字符来指定字符范围。方括号内的字符范围的顺序并不重要。<br />
+例如正则表达式 <code>[Tt]he</code>，表示: 大写 <code>T</code> 或小写 <code>t</code> ，后跟字母 <code>h</code>，再后跟字母 <code>e</code>。</p>
+<pre>
+"[Tt]he" => <a href="#learn-regex"><strong>The</strong></a> car parked in <a href="#learn-regex"><strong>the</strong></a> garage.
+</pre>
+<p>然而，字符集中的英文句号表示它字面的含义。正则表达式 <code>ar[.]</code>，表示小写字母 <code>a</code>，后面跟着一个字母 <code>r</code>，再后面跟着一个英文句号 <code>.</code> 字符。</p>
+<pre>
+"ar[.]" => A garage is a good place to park a c<a href="#learn-regex"><strong>ar.</strong></a>
+</pre>
+<h3 id="221-否定字符集"><a class="markdownIt-Anchor" href="#221-否定字符集"></a> 2.2.1 否定字符集</h3>
+<p>一般来说插入字符 <code>^</code> 表示一个字符串的开始，但是当它在方括号内出现时，它会取消字符集。例如正则表达式 <code>[^c]ar</code>，表示: 除了字母 <code>c</code> 以外的任意字符，后面跟着字符 <code>a</code>，<br />
+再后面跟着一个字母 <code>r</code>。</p>
+<pre>
+"[^c]ar" => The car <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
+</pre>
+<h2 id="23-重复"><a class="markdownIt-Anchor" href="#23-重复"></a> 2.3 重复</h2>
+<p>以下元字符 <code>+</code>，<code>*</code> 或 <code>?</code> 用于指定子模式可以出现多少次。这些元字符在不同情况下的作用不同。</p>
+<h3 id="231-星号"><a class="markdownIt-Anchor" href="#231-星号"></a> 2.3.1 星号</h3>
+<p>该符号 <code>*</code> 表示匹配上一个匹配规则的零次或多次。正则表达式 <code>a*</code> 表示小写字母 <code>a</code> 可以重复零次或者多次。但是它如果出现在字符集或者字符类之后，它表示整个字符集的重复。<br />
+例如正则表达式 <code>[a-z]*</code>，表示: 一行中可以包含任意数量的小写字母。</p>
+<pre>
+"[a-z]*" => T<a href="#learn-regex"><strong>he</strong></a> <a href="#learn-regex"><strong>car</strong></a> <a href="#learn-regex"><strong>parked</strong></a> <a href="#learn-regex"><strong>in</strong></a> <a href="#learn-regex"><strong>the</strong></a> <a href="#learn-regex"><strong>garage</strong></a> #21.
+</pre>
+<p>该 <code>*</code> 符号可以与元符号 <code>.</code> 用在一起，用来匹配任意字符串 <code>.*</code>。该 <code>*</code> 符号可以与空格符 <code>\s</code> 一起使用，用来匹配一串空格字符。<br />
+例如正则表达式 <code>\s*cat\s*</code>，表示: 零个或多个空格，后面跟小写字母 <code>c</code>，再后面跟小写字母 <code>a</code>，再再后面跟小写字母 <code>t</code>，后面再跟零个或多个空格。</p>
+<pre>
+"\s*cat\s*" => The fat<a href="#learn-regex"><strong> cat </strong></a>sat on the <a href="#learn-regex"><strong>cat</strong></a>.
+</pre>
+<h3 id="232-加号"><a class="markdownIt-Anchor" href="#232-加号"></a> 2.3.2 加号</h3>
+<p>该符号 <code>+</code> 匹配上一个字符的一次或多次。例如正则表达式 <code>c.+t</code>，表示: 一个小写字母 <code>c</code>，后跟任意数量的字符，后跟小写字母 <code>t</code>。</p>
+<pre>
+"c.+t" => The fat <a href="#learn-regex"><strong>cat sat on the mat</strong></a>.
+</pre>
+<h3 id="233-问号"><a class="markdownIt-Anchor" href="#233-问号"></a> 2.3.3 问号</h3>
+<p>在正则表达式中，元字符 <code>?</code> 用来表示前一个字符是可选的。该符号匹配前一个字符的零次或一次。<br />
+例如正则表达式 <code>[T]?he</code>，表示: 可选的大写字母 <code>T</code>，后面跟小写字母 <code>h</code>，后跟小写字母 <code>e</code>。</p>
+<pre>
+"[T]he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in the garage.
+</pre>
+<pre>
+"[T]?he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in t<a href="#learn-regex"><strong>he</strong></a> garage.
+</pre>
+<h2 id="24-花括号"><a class="markdownIt-Anchor" href="#24-花括号"></a> 2.4 花括号</h2>
+<p>在正则表达式中花括号(也被称为量词 ?)用于指定字符或一组字符可以重复的次数。例如正则表达式 <code>[0-9]&#123;2,3&#125;</code>，表示: 匹配至少2位数字但不超过3位(0到9范围内的字符)。</p>
+<pre>
+"[0-9]{2,3}" => The number was 9.<a href="#learn-regex"><strong>999</strong></a>7 but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.0.
+</pre>
+<p>我们可以省略第二个数字。例如正则表达式 <code>[0-9]&#123;2,&#125;</code>，表示: 匹配2个或更多个数字。如果我们也删除逗号，则正则表达式 <code>[0-9]&#123;2&#125;</code>，表示: 匹配正好为2位数的数字。</p>
+<pre>
+"[0-9]{2,}" => The number was 9.<a href="#learn-regex"><strong>9997</strong></a> but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.0.
+</pre>
+<pre>
+"[0-9]{2}" => The number was 9.<a href="#learn-regex"><strong>99</strong></a><a href="#learn-regex"><strong>97</strong></a> but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.0.
+</pre>
+<h2 id="25-字符组"><a class="markdownIt-Anchor" href="#25-字符组"></a> 2.5 字符组</h2>
+<p>字符组是一组写在圆括号内的子模式 <code>(...)</code>。正如我们在正则表达式中讨论的那样，如果我们把一个量词放在一个字符之后，它会重复前一个字符。<br />
+但是，如果我们把量词放在一个字符组之后，它会重复整个字符组。<br />
+例如正则表达式 <code>(ab)*</code> 表示匹配零个或多个的字符串 “ab”。我们还可以在字符组中使用元字符 <code>|</code>。例如正则表达式 <code>(c|g|p)ar</code>，表示: 小写字母 <code>c</code>、<code>g</code> 或 <code>p</code> 后面跟字母 <code>a</code>，后跟字母 <code>r</code>。</p>
+<pre>
+"(c|g|p)ar" => The <a href="#learn-regex"><strong>car</strong></a> is <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
+</pre>
+<h2 id="26-分支结构"><a class="markdownIt-Anchor" href="#26-分支结构"></a> 2.6 分支结构</h2>
+<p>在正则表达式中垂直条 <code>|</code> 用来定义分支结构，分支结构就像多个表达式之间的条件。现在你可能认为这个字符集和分支机构的工作方式一样。<br />
+但是字符集和分支结构巨大的区别是字符集只在字符级别上有作用，然而分支结构在表达式级别上依然可以使用。<br />
+例如正则表达式 <code>(T|t)he|car</code>，表示: 大写字母 <code>T</code> 或小写字母 <code>t</code>，后面跟小写字母 <code>h</code>，后跟小写字母 <code>e</code> 或小写字母 <code>c</code>，后跟小写字母 <code>a</code>，后跟小写字母 <code>r</code>。</p>
+<pre>
+"(T|t)he|car" => <a href="#learn-regex"><strong>The</strong></a> <a href="#learn-regex"><strong>car</strong></a> is parked in <a href="#learn-regex"><strong>the</strong></a> garage.
+</pre>
+<h2 id="27-转义特殊字符"><a class="markdownIt-Anchor" href="#27-转义特殊字符"></a> 2.7 转义特殊字符</h2>
+<p>| 正则表达式中使用反斜杠 <code>\</code> 来转义下一个字符。这将允许你使用保留字符来作为匹配字符 <code>&#123; &#125; [ ] / \ + * . $ ^ | ?</code>。在特殊字符前面加 <code>\</code>，就可以使用它来做匹配字符。 |                                                                                                      |<br />
+| 例如正则表达式 <code>.</code> 是用来匹配除了换行符以外的任意字符。现在要在输入字符串中匹配 <code>.</code> 字符，正则表达式 <code>(f | c | m)at\.?</code>，表示: 小写字母 <code>f</code>、<code>c</code> 或者 <code>m</code> 后跟小写字母 <code>a</code>，后跟小写字母 <code>t</code>，后跟可选的 <code>.</code> 字符。 |</p>
+<pre>
+"(f|c|m)at\.?" => The <a href="#learn-regex"><strong>fat</strong></a> <a href="#learn-regex"><strong>cat</strong></a> sat on the <a href="#learn-regex"><strong>mat.</strong></a>
+</pre>
+<h2 id="28-定位符"><a class="markdownIt-Anchor" href="#28-定位符"></a> 2.8 定位符</h2>
+<p>在正则表达式中，为了检查匹配符号是否是起始符号或结尾符号，我们使用定位符。<br />
+定位符有两种类型: 第一种类型是 <code>^</code> 检查匹配字符是否是起始字符，第二种类型是 <code>$</code>，它检查匹配字符是否是输入字符串的最后一个字符。</p>
+<h3 id="281-插入符号"><a class="markdownIt-Anchor" href="#281-插入符号"></a> 2.8.1 插入符号</h3>
+<p>插入符号 <code>^</code> 符号用于检查匹配字符是否是输入字符串的第一个字符。如果我们使用正则表达式 <code>^a</code> (如果a是起始符号)匹配字符串 <code>abc</code>，它会匹配到 <code>a</code>。<br />
+但是如果我们使用正则表达式 <code>^b</code>，它是匹配不到任何东西的，因为在字符串 <code>abc</code> 中 “b” 不是起始字符。<br />
+让我们来看看另一个正则表达式 <code>^(T|t)he</code>，这表示: 大写字母 <code>T</code> 或小写字母 <code>t</code> 是输入字符串的起始符号，后面跟着小写字母 <code>h</code>，后跟小写字母 <code>e</code>。</p>
+<pre>
+"(T|t)he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in <a href="#learn-regex"><strong>the</strong></a> garage.
+</pre>
+<pre>
+"^(T|t)he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in the garage.
+</pre>
+<h3 id="282-美元符号"><a class="markdownIt-Anchor" href="#282-美元符号"></a> 2.8.2 美元符号</h3>
+<p>美元 <code>$</code> 符号用于检查匹配字符是否是输入字符串的最后一个字符。例如正则表达式 <code>(at\.)$</code>，表示: 小写字母 <code>a</code>，后跟小写字母 <code>t</code>，后跟一个 <code>.</code> 字符，且这个匹配器必须是字符串的结尾。</p>
+<pre>
+"(at\.)" => The fat c<a href="#learn-regex"><strong>at.</strong></a> s<a href="#learn-regex"><strong>at.</strong></a> on the m<a href="#learn-regex"><strong>at.</strong></a>
+</pre>
+<pre>
+"(at\.)$" => The fat cat sat on the m<a href="#learn-regex"><strong>at.</strong></a>
+</pre>
+<h2 id="3-简写字符集"><a class="markdownIt-Anchor" href="#3-简写字符集"></a> 3. 简写字符集</h2>
+<p>正则表达式为常用的字符集和常用的正则表达式提供了简写。简写字符集如下:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">简写</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">.</td>
+<td>匹配除换行符以外的任意字符</td>
+</tr>
+<tr>
+<td style="text-align:center">\w</td>
+<td>匹配所有字母和数字的字符: <code>[a-zA-Z0-9_]</code></td>
+</tr>
+<tr>
+<td style="text-align:center">\W</td>
+<td>匹配非字母和数字的字符: <code>[^\w]</code></td>
+</tr>
+<tr>
+<td style="text-align:center">\d</td>
+<td>匹配数字: <code>[0-9]</code></td>
+</tr>
+<tr>
+<td style="text-align:center">\D</td>
+<td>匹配非数字: <code>[^\d]</code></td>
+</tr>
+<tr>
+<td style="text-align:center">\s</td>
+<td>匹配空格符: <code>[\t\n\f\r\p&#123;Z&#125;]</code></td>
+</tr>
+<tr>
+<td style="text-align:center">\S</td>
+<td>匹配非空格符: <code>[^\s]</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-断言"><a class="markdownIt-Anchor" href="#4-断言"></a> 4. 断言</h2>
+<p>后行断言和先行断言有时候被称为断言，它们是特殊类型的 <em><strong>非捕获组</strong></em> (用于匹配模式，但不包括在匹配列表中)。当我们在一种特定模式之前或者之后有这种模式时，会优先使用断言。<br />
+例如我们想获取输入字符串 <code>$4.44 and $10.88</code> 中带有前缀 <code>$</code> 的所有数字。我们可以使用这个正则表达式 <code>(?&lt;=\$)[0-9\.]*</code>，表示: 获取包含 <code>.</code> 字符且前缀为 <code>$</code> 的所有数字。<br />
+以下是正则表达式中使用的断言:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">符号</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">?=</td>
+<td>正向先行断言</td>
+</tr>
+<tr>
+<td style="text-align:center">?!</td>
+<td>负向先行断言</td>
+</tr>
+<tr>
+<td style="text-align:center">?&lt;=</td>
+<td>正向后行断言</td>
+</tr>
+<tr>
+<td style="text-align:center">?&lt;!</td>
+<td>负向后行断言</td>
+</tr>
+</tbody>
+</table>
+<h3 id="41-正向先行断言"><a class="markdownIt-Anchor" href="#41-正向先行断言"></a> 4.1 正向先行断言</h3>
+<p>正向先行断言认为第一部分的表达式必须是先行断言表达式。返回的匹配结果仅包含与第一部分表达式匹配的文本。<br />
+要在一个括号内定义一个正向先行断言，在括号中问号和等号是这样使用的 <code>(?=...)</code>。先行断言表达式写在括号中的等号后面。<br />
+例如正则表达式 <code>(T|t)he(?=\sfat)</code>，表示: 匹配大写字母 <code>T</code> 或小写字母 <code>t</code>，后面跟字母 <code>h</code>，后跟字母 <code>e</code>。<br />
+在括号中，我们定义了正向先行断言，它会引导正则表达式引擎匹配 <code>The</code> 或 <code>the</code> 后面跟着 <code>fat</code>。</p>
+<pre>
+"(T|t)he(?=\sfat)" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
+</pre>
+<h3 id="42-负向先行断言"><a class="markdownIt-Anchor" href="#42-负向先行断言"></a> 4.2 负向先行断言</h3>
+<p>当我们需要从输入字符串中获取不匹配表达式的内容时，使用负向先行断言。负向先行断言的定义跟我们定义的正向先行断言一样，<br />
+唯一的区别是不是等号 <code>=</code>，我们使用否定符号 <code>!</code>，例如 <code>(?!...)</code>。<br />
+我们来看看下面的正则表达式 <code>(T|t)he(?!\sfat)</code>，表示: 从输入字符串中获取全部 <code>The</code> 或者 <code>the</code> 且不匹配 <code>fat</code> 前面加上一个空格字符。</p>
+<pre>
+"(T|t)he(?!\sfat)" => The fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
+</pre>
+<h3 id="43-正向后行断言"><a class="markdownIt-Anchor" href="#43-正向后行断言"></a> 4.3 正向后行断言</h3>
+<p>正向后行断言是用于获取在特定模式之前的所有匹配内容。正向后行断言表示为 <code>(?&lt;=...)</code>。例如正则表达式 <code>(?&lt;=(T|t)he\s)(fat|mat)</code>，表示: 从输入字符串中获取在单词 <code>The</code> 或 <code>the</code> 之后的所有 <code>fat</code> 和 <code>mat</code> 单词。</p>
+<pre>
+"(?<=(T|t)he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
+</pre>
+<h3 id="44-负向后行断言"><a class="markdownIt-Anchor" href="#44-负向后行断言"></a> 4.4 负向后行断言</h3>
+<p>负向后行断言是用于获取不在特定模式之前的所有匹配的内容。负向后行断言表示为 <code>(?&lt;!...)</code>。例如正则表达式 <code>(?&lt;!(T|t)he\s)(cat)</code>，表示: 在输入字符中获取所有不在 <code>The</code> 或 <code>the</code> 之后的所有单词 <code>cat</code>。</p>
+<pre>
+"(?&lt;!(T|t)he\s)(cat)" => The cat sat on <a href="#learn-regex"><strong>cat</strong></a>.
+</pre>
+<h2 id="5-标记"><a class="markdownIt-Anchor" href="#5-标记"></a> 5. 标记</h2>
+<p>标记也称为修饰符，因为它会修改正则表达式的输出。这些标志可以以任意顺序或组合使用，并且是正则表达式的一部分。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">标记</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">i</td>
+<td>不区分大小写: 将匹配设置为不区分大小写。</td>
+</tr>
+<tr>
+<td style="text-align:center">g</td>
+<td>全局搜索: 搜索整个输入字符串中的所有匹配。</td>
+</tr>
+<tr>
+<td style="text-align:center">m</td>
+<td>多行匹配: 会匹配输入字符串每一行。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="51-不区分大小写"><a class="markdownIt-Anchor" href="#51-不区分大小写"></a> 5.1 不区分大小写</h3>
+<p><code>i</code> 修饰符用于执行不区分大小写匹配。例如正则表达式 <code>/The/gi</code>，表示: 大写字母 <code>T</code>，后跟小写字母 <code>h</code>，后跟字母 <code>e</code>。<br />
+但是在正则匹配结束时 <code>i</code> 标记会告诉正则表达式引擎忽略这种情况。正如你所看到的，我们还使用了 <code>g</code> 标记，因为我们要在整个输入字符串中搜索匹配。</p>
+<pre>
+"The" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
+</pre>
+<pre>
+"/The/gi" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
+</pre>
+<h3 id="52-全局搜索"><a class="markdownIt-Anchor" href="#52-全局搜索"></a> 5.2 全局搜索</h3>
+<p><code>g</code> 修饰符用于执行全局匹配 (会查找所有匹配，不会在查找到第一个匹配时就停止)。<br />
+例如正则表达式 <code>/.(at)/g</code>，表示: 除换行符之外的任意字符，后跟小写字母 <code>a</code>，后跟小写字母 <code>t</code>。<br />
+因为我们在正则表达式的末尾使用了 <code>g</code> 标记，它会从整个输入字符串中找到每个匹配项。</p>
+<pre>
+".(at)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the mat.
+</pre>
+<pre>
+"/.(at)/g" => The <a href="#learn-regex"><strong>fat</strong></a> <a href="#learn-regex"><strong>cat</strong></a> <a href="#learn-regex"><strong>sat</strong></a> on the <a href="#learn-regex"><strong>mat</strong></a>.
+</pre>
+<h3 id="53-多行匹配"><a class="markdownIt-Anchor" href="#53-多行匹配"></a> 5.3 多行匹配</h3>
+<p><code>m</code> 修饰符被用来执行多行的匹配。正如我们前面讨论过的 <code>(^, $)</code>，使用定位符来检查匹配字符是输入字符串开始或者结束。但是我们希望每一行都使用定位符，所以我们就使用 <code>m</code> 修饰符。<br />
+例如正则表达式 <code>/at(.)?$/gm</code>，表示: 小写字母 <code>a</code>，后跟小写字母 <code>t</code>，匹配除了换行符以外任意字符零次或一次。而且因为 <code>m</code> 标记，现在正则表达式引擎匹配字符串中每一行的末尾。</p>
+<pre>
+"/.at(.)?$/" => The fat
+                cat sat
+                on the <a href="#learn-regex"><strong>mat.</strong></a>
+</pre>
+<pre>
+"/.at(.)?$/gm" => The <a href="#learn-regex"><strong>fat</strong></a>
+                  cat <a href="#learn-regex"><strong>sat</strong></a>
+                  on the <a href="#learn-regex"><strong>mat.</strong></a>
+</pre>
+<h2 id="常用正则表达式"><a class="markdownIt-Anchor" href="#常用正则表达式"></a> 常用正则表达式</h2>
+<ul>
+<li><strong>正整数</strong>: <code>^\d+$</code></li>
+<li><strong>负整数</strong>: <code>^-\d+$</code></li>
+<li><strong>电话号码</strong>: <code>^+?[\d\s]&#123;3,&#125;$</code></li>
+<li><strong>电话代码</strong>: <code>^+?[\d\s]+(?[\d\s]&#123;10,&#125;$</code></li>
+<li><strong>整数</strong>: <code>^-?\d+$</code></li>
+<li><strong>用户名</strong>: <code>^[\w\d_.]&#123;4,16&#125;$</code></li>
+<li><strong>字母数字字符</strong>: <code>^[a-zA-Z0-9]*$</code></li>
+<li><strong>带空格的字母数字字符</strong>: <code>^[a-zA-Z0-9 ]*$</code></li>
+<li><strong>密码</strong>: <code>^(?=^.&#123;6,&#125;$)((?=.*[A-Za-z0-9])(?=.*[A-Z])(?=.*[a-z]))^.*$</code></li>
+<li><strong>电子邮件</strong>: <code>^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]&#123;2,4&#125;)*$</code></li>
+<li><strong>IPv4 地址</strong>: <code>^((?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.)&#123;3&#125;(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))*$</code></li>
+<li><strong>小写字母</strong>: <code>^([a-z])*$</code></li>
+<li><strong>大写字母</strong>: <code>^([A-Z])*$</code></li>
+<li><strong>网址</strong>: <code>^(((http|https|ftp):\/\/)?([[a-zA-Z0-9]\-\.])+(\.)([[a-zA-Z0-9]])&#123;2,4&#125;([[a-zA-Z0-9]\/+=%&amp;_\.~?\-]*))*$</code></li>
+<li><strong>VISA 信用卡号码</strong>: <code>^(4[0-9]&#123;12&#125;(?:[0-9]&#123;3&#125;)?)*$</code><br />
+| * <strong>日期 (MM/DD/YYYY)</strong>: <code>^(0?[1-9] | 1[012])[- /.](0?[1-9] | [12][0-9] | 3[01])[- /.](19 | 20)?[0-9]&#123;2&#125;$</code> |<br />
+| * <strong>日期 (YYYY/MM/DD)</strong>: <code>^(19 | 20)?[0-9]&#123;2&#125;[- /.](0?[1-9] | 1[012])[- /.](0?[1-9] | [12][0-9] | 3[01])$</code>       |</li>
+<li><strong>万事达信用卡号码</strong>: <code>^(5[1-5][0-9]&#123;14&#125;)*$</code></li>
+</ul>
+<h2 id="contribution"><a class="markdownIt-Anchor" href="#contribution"></a> Contribution</h2>
+<ul>
+<li>Report issues</li>
+<li>Open pull request with improvements</li>
+<li>Spread the word</li>
+</ul>
+<h2 id="license"><a class="markdownIt-Anchor" href="#license"></a> License</h2>
+<p>MIT © <a href="mailto:ziishaned@gmail.com">Zeeshan Ahmed</a></p>
+<hr />
+<p><strong><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F-">⬆ top</a></strong></p>
+]]></content>
+      <tags>
+        <tag>regex</tag>
+      </tags>
+  </entry>
+</search>
