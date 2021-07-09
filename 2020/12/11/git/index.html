@@ -230,8 +230,8 @@
 <p>Git学习教程</p>
 </blockquote>
 <span id="more"></span>
-<h1>git</h1>
-<p>分布式控制，每个人把文件保存在本地电脑上，修改后提交给别人。<br>
+<h1 id="git"><a class="markdownIt-Anchor" href="#git"></a> git</h1>
+<p>分布式控制，每个人把文件保存在本地电脑上，修改后提交给别人。<br />
 所以每一个设备需要自报家门：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global use.name &quot;xuestrange&quot; `</span><br><span class="line">git config --global use.email &quot;xjz1cumt@163.com&quot;</span><br></pre></td></tr></table></figure>
 <p>这样一来，这台电脑所有的仓库均使用这一个ID</p>
@@ -248,12 +248,12 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git status # 查看仓库的当前状态，哪些文件改动了，哪些未提交，</span><br><span class="line">git diff # 查看修改了什么内容</span><br><span class="line">git log # 查看commit历史，所以写commit的形容是很重要的。</span><br><span class="line">git log --pretty=oneline # 每一次提交的历史显示在一行中</span><br></pre></td></tr></table></figure>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard commit_id # 回退到过去某一个版本，既可以回退版本，也可以把暂存区的修改回退到⼯作区</span><br><span class="line">git reflog 查看命令历史，获得commit_id # 前进到将来某一个版本。</span><br></pre></td></tr></table></figure>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout -- file.txt</span><br><span class="line"><span class="meta">#</span><span class="bash"> 让这个⽂件回到最近⼀次git commit或git add时的状态。</span></span><br></pre></td></tr></table></figure>
-<h1>Github</h1>
+<h1 id="github"><a class="markdownIt-Anchor" href="#github"></a> Github</h1>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;xjz1cumt@163.com&quot; # 为电脑生成一个秘钥，每台电脑都要弄</span><br></pre></td></tr></table></figure>
 <p>主目录下会生成一个文件夹 <code>.ssh</code>, 里边有两个文件 <code>id_rsa</code>, <code>id_rsa.pub</code>, 一个是秘钥，一个是公钥，在浏览器上登录github，添加ssh kay，将公钥的内容粘进去。</p>
 <p>将初始化的本地仓库与github中建立的远程仓库相关联</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git remote rm origin</span><br><span class="line">git remote add origin git@github.com:xuestrange/LearnGit.git</span><br><span class="line">git push -u origin master #第一次推送, 不但推送了内容还建立了关联.</span><br></pre></td></tr></table></figure>
-<p>此后,每次本地提交后,只要有必要,就可以使用用命令 <code>git push origin master</code>  推送最新修<br>
+<p>此后,每次本地提交后,只要有必要,就可以使用用命令 <code>git push origin master</code>  推送最新修<br />
 改;</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git branch  dev #创建分支</span><br><span class="line">git branch  -b dev #创建分支dev并且立即切换到dev下</span><br><span class="line">git checkout dev #切换到dev分支</span><br><span class="line">git branch #查看有哪些分支与目前处于哪一个分支</span><br></pre></td></tr></table></figure>
 <p>当我切换到dev分支后，修改了file.txt, then</p>
@@ -349,7 +349,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">git</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">Github</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#git"><span class="nav-number">1.</span> <span class="nav-text"> git</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#github"><span class="nav-number">2.</span> <span class="nav-text"> Github</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
