@@ -228,7 +228,7 @@
       
         <p>记录STATA使用期间遇到的坑。</p>
 <span id="more"></span>
-<h1 id="文件编码问题"><a class="markdownIt-Anchor" href="#文件编码问题"></a> 文件编码问题</h1>
+<h1>文件编码问题</h1>
 <p>早期STATA版本创建的 <code>.do</code>  <code>.dta</code> 文件中如有中文字体，那么其编码为 <code>gbk</code> ，若用最新版STATA打开，则出现中文字体无法识别的问题，需要将其转换为 <code>UTF_8</code></p>
 <figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 使用前内存中不能有变量 */</span></span><br><span class="line"><span class="keyword">clear</span></span><br><span class="line">unicode analyze *.dta`</span><br><span class="line">unicode encoding <span class="keyword">set</span> gbk</span><br><span class="line">unicode   <span class="keyword">translate</span> <span class="string">&quot;*.dta`&quot;</span>, transutf8</span><br></pre></td></tr></table></figure>
 
@@ -314,7 +314,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text"> 文件编码问题</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">文件编码问题</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
