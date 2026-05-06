@@ -5,12 +5,10 @@ title: Junzhi - Home
 
 # Junzhi Xue (薛俊志)
 
-Assistant Professor  
+Assistant Professor of Infomation Management
 Shanghai University of Finance and Economics  
-Office: 信息管理与工程学院409  
-Email: [xuejunzhi@mail.shufe.edu.cn](mailto:xuejunzhi@mail.shufe.edu.cn)   
-Google Scholar: [https://scholar.google.com/citations?user=diEHYA4AAAAJ&hl=en](https://scholar.google.com/citations?user=diEHYA4AAAAJ&hl=en)    
-SSRN: [https://papers.ssrn.com/id=4395465](https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=4395465)
+Email: xuejunzhi@mail.shufe.edu.cn   
+[Google Scholar](https://scholar.google.com/citations?user=diEHYA4AAAAJ&hl=en) | [SSRN](https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=4395465)
 
 ## Biography
 
