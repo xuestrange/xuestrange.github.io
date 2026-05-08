@@ -4,7 +4,7 @@ Personal Website.
 
 ## Edit Content
 
-Most homepage updates should happen in `index.md`. Use Markdown headings and lists instead of writing HTML:
+Most homepage updates should happen in `index.md`. The Links page can be edited in `links.md`. Use Markdown headings and lists instead of writing HTML:
 
 ```md
 ## Teaching
@@ -17,6 +17,8 @@ Most homepage updates should happen in `index.md`. Use Markdown headings and lis
 ```
 
 Use two spaces at the end of a line when you want a line break inside the contact block.
+
+The left navigation is defined in `_layouts/default.html`. Add a new Markdown page first, then add its link to the navigation.
 
 ## Local Preview
 

@@ -8,8 +8,17 @@
     <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
 </head>
 <body>
-    <main class="container">
-        {{ content }}
-    </main>
+    <div class="site-shell">
+        <aside class="site-sidebar" aria-label="Site navigation">
+            <nav class="site-nav">
+                <a class="{% if page.url == '/' %}active{% endif %}" href="{{ '/' | relative_url }}">HOME</a>
+                <a class="{% if page.url == '/links.html' %}active{% endif %}" href="{{ '/links.html' | relative_url }}">links</a>
+            </nav>
+        </aside>
+
+        <main class="container">
+            {{ content }}
+        </main>
+    </div>
 </body>
 </html>
