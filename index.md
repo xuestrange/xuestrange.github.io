@@ -14,7 +14,8 @@ Email: xuejunzhi@mail.shufe.edu.cn
 
 I am currently an Assistant Professor at Shanghai University of Finance and Economics. I am doing empirical studies, focusing on Generative AI, Blockchain, and Digital Content Platforms, harnessing both the reduced-form and structural models. 
 
-Previously, I was a visiting student at University of Washington. I hold a Ph.D. in Management Science and Engineering from the University of Science and Technology of China and a B.E. in Industrial Engineering from the China University of Mining and Technology.
+I received my Ph.D. in Management Science and Engineering from the University of Science and Technology of China in 2025, and my B.E. in Industrial Engineering from the China University of Mining and Technology in 2020. Prior to completing my doctorate, I was a visiting student at the University of Washington from 2024 to 2025.
+
 ## Working Papers
 
 - Optimizing Paywall Design in Freemium Alongside Pay-Per-Use Premium Access
@@ -24,6 +25,7 @@ Previously, I was a visiting student at University of Washington. I hold a Ph.D.
 
 ## Service
 
-- Reviewer: Decision Sciences (1), POMS (1)
-- Reviewer: Hawaii International Conference on System Sciences (2023), INFORMS Data Science Workshop (2024 - 2025), PACIS (2026)
+- Reviewer:
+  + Decision Sciences (1), POMS (1)
+  + Hawaii International Conference on System Sciences (2023), INFORMS Data Science Workshop (2024 - 2025), PACIS (2026)
 - Conference volunteer: CIST 2024, Seattle
