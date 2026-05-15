@@ -22,7 +22,6 @@ I received my Ph.D. in Management Science and Engineering from the University of
 
 - Optimizing Paywall Design in Freemium Alongside Pay-Per-Use Premium Access
 - A Structural Analysis of Bitcoin Cash's Emergency Difficulty Adjustment Algorithm
-- Can ChatGPT Kill User-Generated Q&A Platforms
 - Exploration vs. Exploitation: Navigating Consumer Behavior Dynamics on Digital Content Platforms
 
 ## Service
