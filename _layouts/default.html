@@ -18,6 +18,10 @@
 
         <main class="container">
             {{ content }}
+
+            <footer class="page-footer" aria-label="Page update information">
+                Last updated: <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: "%B %-d, %Y" }}</time>
+            </footer>
         </main>
     </div>
 </body>
