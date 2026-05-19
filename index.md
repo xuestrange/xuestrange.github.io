@@ -28,5 +28,5 @@ I received my Ph.D. in Management Science and Engineering from the University of
 
 - Reviewer:
   + Decision Sciences (1), POMS (1)
-  + Hawaii International Conference on System Sciences (2023), INFORMS Data Science Workshop (2024 - 2025), PACIS (2026)
-- Conference volunteer: CIST 2024, Seattle
+  + HICSS (2023), INFORMS Workshop on Data Science (2024 - 2025), PACIS (2026)
+- Conference volunteer: CIST (Seattle, 2024)
