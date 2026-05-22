@@ -116,6 +116,7 @@ h2 {
 .profile-links a {
     display: inline-flex;
     align-items: center;
+    gap: 6px;
     color: var(--link);
     font-weight: 600;
     text-decoration: none;
@@ -125,6 +126,30 @@ h2 {
     color: var(--link-hover);
     text-decoration: underline;
     text-decoration-thickness: 1px;
+}
+
+.profile-links svg,
+.profile-icon {
+    width: 17px;
+    height: 17px;
+}
+
+.profile-links svg {
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.8;
+}
+
+.profile-icon {
+    display: inline-grid;
+    place-items: center;
+    border: 1.6px solid currentColor;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
 }
 
 p {
