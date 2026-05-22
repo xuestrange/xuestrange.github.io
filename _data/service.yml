@@ -9,7 +9,7 @@ journals:
 conferences:
   - name: ICIS
     year: 2026
-    sort_key: 202602
+    sort_key: 202606
   - name: PACIS
     year: 2026
     sort_key: 202601
