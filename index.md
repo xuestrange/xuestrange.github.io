@@ -27,6 +27,12 @@ I received my Ph.D. in Management Science and Engineering from the University of
 ## Service
 
 - Reviewer:
-  + Decision Sciences (1), POMS (1)
-  + HICSS (2023), INFORMS Workshop on Data Science (2024 - 2025), PACIS (2026)
+  + Journal:
+    - Decision Sciences (1)
+    - POMS (1)
+  + Conference:
+    - ICIS (2026)
+    - PACIS (2026)
+    - INFORMS Workshop on Data Science (2024 - 2025)
+    - HICSS (2023)
 - Conference volunteer: CIST (Seattle, 2024)
