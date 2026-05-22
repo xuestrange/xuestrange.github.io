@@ -8,7 +8,7 @@ title: Junzhi - Home
 Assistant Professor of Infomation Management    
 Shanghai University of Finance and Economics  
 Email: xuejunzhi@mail.shufe.edu.cn   
-[Google Scholar](https://scholar.google.com/citations?user=diEHYA4AAAAJ&hl=en) | [SSRN](https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=4395465)
+[Google Scholar](https://scholar.google.com/citations?user=diEHYA4AAAAJ&hl=en) | [SSRN](https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=4395465) | [GitHub](https://github.com/xuestrange)
 
 ## Biography
 
@@ -26,13 +26,4 @@ I received my Ph.D. in Management Science and Engineering from the University of
 
 ## Service
 
-- Reviewer:
-  + Journal:
-    - Decision Sciences (1)
-    - POMS (1)
-  + Conference:
-    - ICIS (2026)
-    - PACIS (2026)
-    - INFORMS Workshop on Data Science (2024 - 2025)
-    - HICSS (2023)
-- Conference volunteer: CIST (Seattle, 2024)
+{% include service.html %}

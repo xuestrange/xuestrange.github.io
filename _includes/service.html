@@ -1,0 +1,24 @@
+<ul class="service-list">
+  <li>Reviewer:
+    <ul>
+      <li>Journal:
+        <ul>
+          {% for journal in site.data.service.journals %}
+          <li>{{ journal.name }} ({{ journal.count }})</li>
+          {% endfor %}
+        </ul>
+      </li>
+      <li>Conference:
+        {% assign conferences = site.data.service.conferences | sort: "sort_key" | reverse %}
+        <ul>
+          {% for conference in conferences %}
+          <li>
+            {{ conference.name }} ({% if conference.start_year %}{{ conference.start_year }} - {{ conference.end_year }}{% else %}{{ conference.year }}{% endif %})
+          </li>
+          {% endfor %}
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Conference volunteer: CIST (Seattle, 2024)</li>
+</ul>

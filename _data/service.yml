@@ -1,0 +1,22 @@
+# Journal counts display without years. Conference entries sort by sort_key
+# in descending order while displaying only the public year or year range.
+journals:
+  - name: Decision Sciences
+    count: 1
+  - name: POMS
+    count: 1
+
+conferences:
+  - name: ICIS
+    year: 2026
+    sort_key: 202602
+  - name: PACIS
+    year: 2026
+    sort_key: 202601
+  - name: INFORMS Workshop on Data Science
+    start_year: 2024
+    end_year: 2025
+    sort_key: 202500
+  - name: HICSS
+    year: 2023
+    sort_key: 202300

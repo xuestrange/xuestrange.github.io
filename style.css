@@ -120,6 +120,15 @@ li + li {
     margin-top: 6px;
 }
 
+.service-list ul {
+    list-style-type: circle;
+    margin-top: 4px;
+}
+
+.service-list ul ul {
+    list-style-type: square;
+}
+
 a {
     color: var(--link);
     text-decoration-thickness: 1px;
