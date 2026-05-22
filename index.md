@@ -16,7 +16,7 @@ I am currently an Assistant Professor at Shanghai University of Finance and Econ
 
 I received my Ph.D. in Management Science and Engineering from the University of Science and Technology of China in 2025, and my B.E. in Industrial Engineering from the China University of Mining and Technology in 2020. Prior to completing my doctorate, I was a visiting student at the University of Washington from 2024 to 2025.
 ## Publications
-- **Can ChatGPT Kill User-Generated Q&A Platforms?** with L. Wang, J. Zheng, Y. Li and Y. Tan, *Information Systems Research*, forthcoming.
+- **Can ChatGPT Kill User-Generated Q&A Platforms?** with L. Wang, J. Zheng, Y. Li and Y. Tan, *Information Systems Research*, 2026.
 
 ## Working Papers
 
