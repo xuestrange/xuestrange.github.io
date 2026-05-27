@@ -1,0 +1,8 @@
+{% assign publications = site.data.publications.publications | sort: "sort_key" | reverse %}
+<ul class="publication-list">
+  {% for publication in publications %}
+  <li>
+    <strong>{{ publication.title }}</strong>{% if publication.coauthors %} with {{ publication.coauthors }}{% endif %}, <em>{{ publication.venue }}</em>, {{ publication.year }}.
+  </li>
+  {% endfor %}
+</ul>

@@ -1,0 +1,7 @@
+# Publication entries sort by sort_key in descending order.
+publications:
+  - title: Can ChatGPT Kill User-Generated Q&A Platforms?
+    coauthors: L. Wang, J. Zheng, Y. Li and Y. Tan
+    venue: Information Systems Research
+    year: 2026
+    sort_key: 202600

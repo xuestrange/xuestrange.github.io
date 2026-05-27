@@ -8,7 +8,9 @@ This is a small Jekyll site for a personal academic homepage. GitHub Pages build
 
 - `index.md` is the homepage content.
 - `links.md` is the links page content.
+- `_data/publications.yml` stores publication entries rendered on the homepage.
 - `_data/service.yml` stores service entries rendered on the homepage.
+- `_includes/publications.html` renders the homepage Publications section from the data file.
 - `_includes/service.html` renders the homepage Service section from the data file.
 - `_layouts/default.html` defines the shared page shell, navigation, and footer.
 - `style.css` contains all site styling.
@@ -21,6 +23,7 @@ This is a small Jekyll site for a personal academic homepage. GitHub Pages build
 - Use Markdown headings, paragraphs, and lists instead of inline HTML unless the layout cannot be expressed cleanly in Markdown.
 - Preserve YAML front matter at the top of Markdown pages.
 - Use two trailing spaces when a hard line break is needed inside the contact block.
+- Edit `_data/publications.yml` for publication updates. Entries use `sort_key` for reverse chronological ordering.
 - Edit `_data/service.yml` for reviewer service updates. Journal entries display counts without years; conference entries use `sort_key` for reverse chronological ordering.
 - When adding a new page, create the Markdown file first, then add the navigation link in `_layouts/default.html`.
 

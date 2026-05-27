@@ -18,6 +18,8 @@ Most homepage updates should happen in `index.md`. The Links page can be edited 
 
 Use two spaces at the end of a line when you want a line break inside the contact block.
 
+Publication entries are stored in `_data/publications.yml` and rendered automatically on the homepage in reverse chronological order by `sort_key`.
+
 Reviewer service entries are stored in `_data/service.yml` and rendered automatically on the homepage. Journal entries display paper counts without years. Conference entries are sorted in reverse chronological order by `sort_key`.
 
 The left navigation is defined in `_layouts/default.html`. Add a new Markdown page first, then add its link to the navigation.
