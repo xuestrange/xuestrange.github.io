@@ -5,7 +5,8 @@ title: Junzhi - Home
 
 # Junzhi Xue (薛俊志)
 
-Assistant Professor of Infomation Management    
+Assistant Professor of Infomation Systems
+
 Shanghai University of Finance and Economics  
 
 <div class="profile-links" aria-label="Profile links">
