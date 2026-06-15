@@ -7,10 +7,10 @@ title: Junzhi - Links
 
 ## LaTeX Templates
 
-- [Manuscript](https://scholar.google.com/citations?user=diEHYA4AAAAJ&hl=en)
+- [Manuscript](https://github.com/xuestrange/Manuscript.git)
 - [Appendix](https://github.com/xuestrange/Appendix.git)
-- [Response Letter](https://github.com/xuestrange)
+- [Response Letter](https://github.com/xuestrange/ResponseLetter.git)
 
 ## Julia
-- [Julia Notes]()
-- [Log2file.jl]()
+- [Julia Notes](https://github.com/xuestrange/JuliaNotes.git)
+- [Log2file.jl](https://github.com/xuestrange/Log2file.jl)
