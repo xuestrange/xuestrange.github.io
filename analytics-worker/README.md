@@ -2,12 +2,11 @@
 
 Production endpoint: `https://xuestrange-site-analytics.xuestrange.workers.dev`
 
-This Cloudflare Worker collects privacy-limited visit counts for the Jekyll
-site. Its analytics database never stores a raw IP address. The IP is used in
-Worker memory to create keyed rate-limit, daily, and monthly HMAC identifiers;
-those identifiers rotate or expire automatically.
-Daily identifiers are retained for 31 days, monthly identifiers for two months,
-and only country plus first-level region are attached to monthly identifiers.
+This Cloudflare Worker collects privacy-limited visits for the Jekyll site.
+Its analytics database never stores a raw IP address. The IP is used only in
+Worker memory to create a keyed rate-limit identifier. The database stores a
+cumulative count for each country or region and only the ten latest visits,
+each with its UTC date, estimated city, and country or region code.
 
 ## One-time deployment
 
@@ -40,15 +39,16 @@ and only country plus first-level region are attached to monthly identifiers.
    npx wrangler@latest secret put ADMIN_TOKEN
    ```
 
-5. Deploy:
+5. Apply any pending schema migrations, then deploy:
 
    ```bash
+   npx wrangler@latest d1 migrations apply xuestrange-site-analytics --remote
    npx wrangler@latest deploy
    ```
 
 6. Copy the resulting `https://...workers.dev` URL into `analytics_endpoint`
    in the site's `_config.yml`, rebuild the site, and publish it. The private
-   dashboard is then available at `/visitors-8f4c2a71/` and accepts the
+   dashboard is then available at `/visit/` and accepts the
    `ADMIN_TOKEN` value as its password.
 
 The public `/collect` endpoint only accepts normal browser requests whose

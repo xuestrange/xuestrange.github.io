@@ -15,6 +15,7 @@ ALLOWED_PATHS = "/,/index.html,/links.html,/links/"
 binding = "DB"
 database_name = "xuestrange-site-analytics"
 database_id = "0bb29950-15f7-4922-a15e-6dee0f7e0559"
+migrations_dir = "migrations"
 
 [[ratelimits]]
 name = "COLLECT_RATE_LIMITER"

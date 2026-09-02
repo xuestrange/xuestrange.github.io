@@ -96,54 +96,37 @@ async function collectVisit(request, env, origin) {
         return emptyResponse(204, origin, env);
     }
 
-    const ip = clientIp(request);
-    if (!ip) {
-        return emptyResponse(204, origin, env);
-    }
-
     const now = new Date();
     const nowIso = now.toISOString();
-    const keys = localDateKeys(now, env.TIME_ZONE || "UTC");
     const location = requestLocation(request);
-    const hmacKey = await importHmacKey(env.HASH_SECRET);
-    const [dailyHash, monthlyHash] = await Promise.all([
-        hmacHex(hmacKey, keys.day + "\u0000" + ip),
-        hmacHex(hmacKey, keys.month + "\u0000" + ip)
-    ]);
 
     try {
         await env.DB.batch([
             env.DB.prepare(`
-                INSERT INTO totals (id, page_views, first_seen, last_seen)
-                VALUES (1, 1, ?, ?)
-                ON CONFLICT(id) DO UPDATE SET
-                    page_views = totals.page_views + 1,
-                    first_seen = COALESCE(totals.first_seen, excluded.first_seen),
-                    last_seen = excluded.last_seen
-            `).bind(nowIso, nowIso),
-            env.DB.prepare(`
-                INSERT OR IGNORE INTO daily_visitors (day_key, visitor_hash)
-                VALUES (?, ?)
-            `).bind(keys.day, dailyHash),
-            env.DB.prepare(`
-                INSERT INTO monthly_visitors
-                    (month_key, visitor_hash, country_code, region)
-                VALUES (?, ?, ?, ?)
-                ON CONFLICT(month_key, visitor_hash) DO UPDATE SET
-                    country_code = excluded.country_code,
-                    region = excluded.region
+                INSERT INTO country_visit_totals
+                    (country_code, visits, first_visited_at, last_visited_at)
+                VALUES (?, 1, ?, ?)
+                ON CONFLICT(country_code) DO UPDATE SET
+                    visits = country_visit_totals.visits + 1,
+                    last_visited_at = excluded.last_visited_at
             `).bind(
-                keys.month,
-                monthlyHash,
                 location.countryCode,
-                location.region
+                nowIso,
+                nowIso
             ),
             env.DB.prepare(`
-                INSERT INTO daily_pages (day_key, path, page_views)
-                VALUES (?, ?, 1)
-                ON CONFLICT(day_key, path) DO UPDATE SET
-                    page_views = daily_pages.page_views + 1
-            `).bind(keys.day, path)
+                INSERT INTO recent_visits (visited_at, country_code, city)
+                VALUES (?, ?, ?)
+            `).bind(nowIso, location.countryCode, location.city),
+            env.DB.prepare(`
+                DELETE FROM recent_visits
+                WHERE id NOT IN (
+                    SELECT id
+                    FROM recent_visits
+                    ORDER BY visited_at DESC, id DESC
+                    LIMIT 10
+                )
+            `)
         ]);
     } catch (error) {
         console.error("Analytics write failed", error);
@@ -165,105 +148,33 @@ async function serveStats(request, env, origin) {
     }
 
     const now = new Date();
-    const keys = localDateKeys(now, env.TIME_ZONE || "UTC");
 
     try {
         const queryResults = await env.DB.batch([
             env.DB.prepare(`
-                SELECT page_views, first_seen, last_seen
-                FROM totals
-                WHERE id = 1
+                SELECT country_code, visits
+                FROM country_visit_totals
+                ORDER BY visits DESC, country_code
             `),
             env.DB.prepare(`
-                SELECT
-                    (SELECT COUNT(*) FROM daily_visitors WHERE day_key = ?) AS visitors,
-                    (SELECT COALESCE(SUM(page_views), 0) FROM daily_pages WHERE day_key = ?) AS page_views
-            `).bind(keys.day, keys.day),
-            env.DB.prepare(`
-                SELECT COUNT(*) AS visitors
-                FROM monthly_visitors
-                WHERE month_key = ?
-            `).bind(keys.month),
-            env.DB.prepare(`
-                SELECT
-                    country_code,
-                    region,
-                    COUNT(*) AS visitors
-                FROM monthly_visitors
-                WHERE month_key = ?
-                GROUP BY country_code, region
-                ORDER BY visitors DESC, country_code, region
-                LIMIT 100
-            `).bind(keys.month),
-            env.DB.prepare(`
-                WITH dates AS (
-                    SELECT day_key FROM daily_visitors WHERE day_key >= date(?, '-29 days')
-                    UNION
-                    SELECT day_key FROM daily_pages WHERE day_key >= date(?, '-29 days')
-                ),
-                visitor_counts AS (
-                    SELECT day_key, COUNT(*) AS visitors
-                    FROM daily_visitors
-                    WHERE day_key >= date(?, '-29 days')
-                    GROUP BY day_key
-                ),
-                page_counts AS (
-                    SELECT day_key, SUM(page_views) AS page_views
-                    FROM daily_pages
-                    WHERE day_key >= date(?, '-29 days')
-                    GROUP BY day_key
-                )
-                SELECT
-                    dates.day_key,
-                    COALESCE(visitor_counts.visitors, 0) AS visitors,
-                    COALESCE(page_counts.page_views, 0) AS page_views
-                FROM dates
-                LEFT JOIN visitor_counts USING (day_key)
-                LEFT JOIN page_counts USING (day_key)
-                ORDER BY dates.day_key DESC
-            `).bind(keys.day, keys.day, keys.day, keys.day),
-            env.DB.prepare(`
-                SELECT path, SUM(page_views) AS page_views
-                FROM daily_pages
-                WHERE substr(day_key, 1, 7) = ?
-                GROUP BY path
-                ORDER BY page_views DESC, path
-                LIMIT 20
-            `).bind(keys.month)
+                SELECT visited_at, country_code, city
+                FROM recent_visits
+                ORDER BY visited_at DESC, id DESC
+                LIMIT 10
+            `)
         ]);
 
-        const totals = firstRow(queryResults[0]) || {};
-        const today = firstRow(queryResults[1]) || {};
-        const month = firstRow(queryResults[2]) || {};
-
         return jsonResponse({
-            summary: {
-                totalPageViews: numberValue(totals.page_views),
-                monthVisitors: numberValue(month.visitors),
-                todayVisitors: numberValue(today.visitors),
-                todayPageViews: numberValue(today.page_views)
-            },
-            period: {
-                day: keys.day,
-                month: keys.month,
-                timeZone: env.TIME_ZONE || "UTC",
-                firstSeenAt: totals.first_seen || null,
-                lastSeenAt: totals.last_seen || null
-            },
-            regions: rows(queryResults[3]).map((row) => ({
+            countries: rows(queryResults[0]).map((row) => ({
                 countryCode: row.country_code,
-                region: row.region,
-                visitors: numberValue(row.visitors)
+                visits: numberValue(row.visits)
             })),
-            trend: rows(queryResults[4]).map((row) => ({
-                day: row.day_key,
-                visitors: numberValue(row.visitors),
-                pageViews: numberValue(row.page_views)
+            latestVisits: rows(queryResults[1]).map((row) => ({
+                visitedAt: row.visited_at,
+                city: row.city,
+                countryCode: row.country_code
             })),
-            pages: rows(queryResults[5]).map((row) => ({
-                path: row.path,
-                pageViews: numberValue(row.page_views)
-            })),
+            timeZone: env.TIME_ZONE || "UTC",
             generatedAt: now.toISOString()
         }, 200, origin, env);
     } catch (error) {
@@ -388,15 +299,20 @@ function clientIp(request) {
     return "";
 }
 
-function requestLocation(request) {
+export function requestLocation(request) {
     const cf = request.cf || {};
     return {
-        countryCode: cleanText(cf.country || request.headers.get("CF-IPCountry") || "XX", 2).toUpperCase(),
-        region: cleanText(cf.region || cf.regionCode || "Unknown", 80)
+        countryCode: normalizeCountryCode(cf.country || request.headers.get("CF-IPCountry")),
+        city: cleanLocationText(cf.city, 100)
     };
 }
 
-function cleanText(value, maxLength) {
+export function normalizeCountryCode(value) {
+    const code = String(value || "").trim().toUpperCase();
+    return /^(?:[A-Z]{2}|T1)$/.test(code) ? code : "XX";
+}
+
+export function cleanLocationText(value, maxLength) {
     const text = String(value || "").replace(/[\u0000-\u001f\u007f]/g, "").trim();
     return (text || "Unknown").slice(0, maxLength);
 }
@@ -481,10 +397,6 @@ function jsonResponse(body, status, origin, env) {
 
 function emptyResponse(status, origin, env) {
     return new Response(null, { status, headers: responseHeaders(origin, env) });
-}
-
-function firstRow(result) {
-    return rows(result)[0];
 }
 
 function rows(result) {

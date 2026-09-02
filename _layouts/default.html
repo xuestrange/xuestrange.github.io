@@ -28,7 +28,7 @@
             <footer class="page-footer" aria-label="Page update information">
                 Last updated: <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: "%B %-d, %Y" }}</time>
                 {% if site.analytics_endpoint != "" %}
-                    <span class="privacy-disclosure">This site uses cookie-free visit statistics. Its analytics database stores rotating keyed summaries and coarse regions, not raw IP addresses.</span>
+                    <span class="privacy-disclosure">This site uses cookie-free visit statistics. Its analytics database stores visit dates and estimated cities and countries, never raw IP addresses.</span>
                 {% endif %}
             </footer>
         </main>
