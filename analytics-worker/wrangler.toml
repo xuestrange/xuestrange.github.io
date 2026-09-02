@@ -1,0 +1,28 @@
+name = "xuestrange-site-analytics"
+main = "src/worker.js"
+compatibility_date = "2026-08-20"
+workers_dev = true
+preview_urls = false
+
+[vars]
+SITE_ORIGIN = "https://xuestrange.github.io"
+TIME_ZONE = "Asia/Shanghai"
+DATA_RETENTION_DAYS = "31"
+MONTH_RETENTION = "2"
+ALLOWED_PATHS = "/,/index.html,/links.html,/links/"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "xuestrange-site-analytics"
+database_id = "0bb29950-15f7-4922-a15e-6dee0f7e0559"
+
+[[ratelimits]]
+name = "COLLECT_RATE_LIMITER"
+namespace_id = "1001"
+
+[ratelimits.simple]
+limit = 10
+period = 60
+
+[triggers]
+crons = ["17 3 * * *"]

@@ -2,3 +2,10 @@
 title: Junzhi Xue
 description: Personal website for Junzhi Xue
 markdown: kramdown
+
+# Deployed private analytics service, without a trailing slash.
+analytics_endpoint: "https://xuestrange-site-analytics.xuestrange.workers.dev"
+
+# The Worker source is deployed separately and must not be copied into the site.
+exclude:
+  - analytics-worker

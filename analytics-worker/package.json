@@ -1,0 +1,9 @@
+{
+  "name": "xuestrange-site-analytics",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node --check src/worker.js",
+    "test": "node --test"
+  }
+}

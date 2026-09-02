@@ -6,3 +6,11 @@ _site/
 
 # Bundler local install directory, if you ever use `bundle install --path vendor/bundle`.
 vendor/bundle/
+
+# Local Cloudflare Worker state and secrets.
+analytics-worker/.wrangler/
+analytics-worker/.dev.vars*
+analytics-worker/.env*
+analytics-worker/.admin-token
+!analytics-worker/.dev.vars.example
+!analytics-worker/.env.example

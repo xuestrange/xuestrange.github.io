@@ -1,11 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ page.lang | default: 'en' }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title | default: site.title }}</title>
-    <!-- Keep the site fast: one static CSS file, no client-side JavaScript. -->
+    {% if page.robots %}<meta name="robots" content="{{ page.robots }}">{% endif %}
+    <!-- Keep the site fast: one static CSS file and only the requested analytics script. -->
     <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+    {% unless page.analytics == false %}
+        {% if site.analytics_endpoint != "" %}
+            <script defer src="{{ '/assets/js/visit-tracker.js' | relative_url }}" data-endpoint="{{ site.analytics_endpoint | escape }}"></script>
+        {% endif %}
+    {% endunless %}
 </head>
 <body>
     <div class="site-shell">
@@ -21,6 +27,9 @@
 
             <footer class="page-footer" aria-label="Page update information">
                 Last updated: <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: "%B %-d, %Y" }}</time>
+                {% if site.analytics_endpoint != "" %}
+                    <span class="privacy-disclosure">This site uses cookie-free visit statistics. Its analytics database stores rotating keyed summaries and coarse regions, not raw IP addresses.</span>
+                {% endif %}
             </footer>
         </main>
     </div>
