@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Junzhi - Links
+page_class: resources-page
 ---
 
 # Links

@@ -2,7 +2,12 @@
 <ul class="publication-list">
   {% for publication in publications %}
   <li>
-    <strong>{{ publication.title }}</strong>{% if publication.coauthors %} with {{ publication.coauthors }}{% endif %}, <em>{{ publication.venue }}</em>, {{ publication.year }}.
+    <span class="publication-year">{{ publication.year }}</span>
+    <div class="publication-detail">
+      <h3>{{ publication.title }}</h3>
+      {% if publication.coauthors %}<p class="publication-authors">with {{ publication.coauthors }}</p>{% endif %}
+      <p class="publication-venue"><em>{{ publication.venue }}</em></p>
+    </div>
   </li>
   {% endfor %}
 </ul>

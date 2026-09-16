@@ -1,24 +1,20 @@
-<ul class="service-list">
-  <li>Reviewer:
-    <ul>
-      <li>Journal:
-        <ul>
-          {% for journal in site.data.service.journals %}
-          <li>{{ journal.name }} ({{ journal.count }})</li>
-          {% endfor %}
-        </ul>
-      </li>
-      <li>Conference:
-        {% assign conferences = site.data.service.conferences | sort: "sort_key" | reverse %}
-        <ul>
-          {% for conference in conferences %}
-          <li>
-            {{ conference.name }} ({% if conference.start_year %}{{ conference.start_year }} - {{ conference.end_year }}{% else %}{{ conference.year }}{% endif %})
-          </li>
-          {% endfor %}
-        </ul>
-      </li>
+<div class="service-grid">
+  <section aria-labelledby="journal-service">
+    <h3 id="journal-service">Journal reviewer</h3>
+    <ul class="service-entries">
+      {% for journal in site.data.service.journals %}
+      <li><span>{{ journal.name }}</span><span class="service-detail">({{ journal.count }})</span></li>
+      {% endfor %}
     </ul>
-  </li>
-  <li>Conference volunteer: CIST (Seattle, 2024)</li>
-</ul>
+  </section>
+  <section aria-labelledby="conference-service">
+    <h3 id="conference-service">Conference reviewer</h3>
+    <ul class="service-entries">
+      {% assign conferences = site.data.service.conferences | sort: "sort_key" | reverse %}
+      {% for conference in conferences %}
+      <li><span>{{ conference.name }}</span><span class="service-detail">{% if conference.start_year %}{{ conference.start_year }}–{{ conference.end_year }}{% else %}{{ conference.year }}{% endif %}</span></li>
+      {% endfor %}
+    </ul>
+  </section>
+</div>
+<p class="service-volunteer"><span>Conference volunteer</span> CIST · Seattle, 2024</p>

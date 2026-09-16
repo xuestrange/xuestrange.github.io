@@ -14,15 +14,16 @@
     {% endunless %}
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <div class="site-shell">
         <aside class="site-sidebar" aria-label="Site navigation">
-            <nav class="site-nav">
-                <a class="{% if page.url == '/' %}active{% endif %}" href="{{ '/' | relative_url }}">HOME</a>
-                <a class="{% if page.url == '/links.html' %}active{% endif %}" href="{{ '/links.html' | relative_url }}">links</a>
+            <nav class="site-nav" aria-label="Main navigation">
+                <a class="{% if page.url == '/' %}active{% endif %}" {% if page.url == '/' %}aria-current="page"{% endif %} href="{{ '/' | relative_url }}">Home</a>
+                <a class="{% if page.url == '/links.html' %}active{% endif %}" {% if page.url == '/links.html' %}aria-current="page"{% endif %} href="{{ '/links.html' | relative_url }}">Links</a>
             </nav>
         </aside>
 
-        <main class="container">
+        <main id="main-content" class="container {{ page.page_class }}" tabindex="-1">
             {{ content }}
 
             <footer class="page-footer" aria-label="Page update information">
