@@ -1,4 +1,4 @@
-{% assign dated_meetings = include.meetings | where_exp: "meeting", "meeting.start_date != nil and meeting.start_date != '' and meeting.end_date != nil and meeting.end_date != ''" %}
+{% assign dated_meetings = include.meetings | where_exp: "meeting", "meeting.start_date != nil" | where_exp: "meeting", "meeting.start_date != ''" | where_exp: "meeting", "meeting.end_date != nil" | where_exp: "meeting", "meeting.end_date != ''" %}
 {% assign date_groups = dated_meetings | group_by: "start_date" %}
 {% assign reference_shown = false %}
 <nav class="conference-timeline" aria-label="Conference timeline, ordered by start date" tabindex="0">

@@ -32,6 +32,8 @@ Verify dates and locations on official conference, association, or host-universi
 
 The compact timeline above the table shows past and upcoming meetings in date order, with clickable entries that jump to their table rows. Upcoming rows are bold and past rows are dimmed but remain legible. Meeting status is calculated by `_includes/conference-status.html` using the site build date, which appears as the timeline's as-of date; `checked_on` records the separate date when official sources were last verified. Meetings remain ongoing through their end date, inclusive. Use `null` for both dates when an edition has been announced without exact dates; editions missing either date are shown separately as pending, without inventing a position on the timeline. This is a manually maintained snapshot: statuses refresh when the site is rebuilt, and the website does not automatically fetch new announcements or send notifications.
 
+Keep the templates compatible with GitHub Pages' bundled Jekyll version. Use chained single-condition `where_exp` filters; compound expressions in this filter require Jekyll 4 and fail with the current GitHub Pages builder. A successful local build with a newer Jekyll does not replace checking the GitHub Pages deployment.
+
 ## Local Preview
 
 Start the local preview server:
