@@ -2,6 +2,7 @@
 layout: default
 title: Junzhi - Links
 page_class: resources-page
+conference_dates: true
 ---
 
 # Links

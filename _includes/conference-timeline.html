@@ -13,7 +13,7 @@
         {% capture meeting_status %}{% include conference-status.html meeting=meeting as_of=include.as_of %}{% endcapture %}
         {% unless meeting_status == "past" %}{% assign all_past = false %}{% endunless %}
       {% endfor %}
-    <li class="conference-milestone{% if all_past %} conference-milestone-past{% endif %}">
+    <li class="conference-milestone{% if all_past %} conference-milestone-past{% endif %}" data-start-date="{{ date_group.name }}">
       <time class="conference-milestone-date" datetime="{{ date_group.name }}">{{ date_group.name | date: "%b %-d" }}<span>{{ date_group.name | date: "%Y" }}</span></time>
       <div class="conference-milestone-links">
         {% for meeting in date_group.items %}
