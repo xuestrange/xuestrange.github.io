@@ -6,6 +6,10 @@ page_class: resources-page
 
 # Links
 
+## Conferences
+
+{% include conferences.html %}
+
 ## LaTeX Templates
 
 - [Manuscript](https://github.com/xuestrange/Manuscript.git)

@@ -1,0 +1,180 @@
+# Next announced meeting per series, or latest verified past edition.
+# Dates are quoted ISO strings; null means the organizer has not announced dates.
+checked_on: "2026-09-22"
+meetings:
+  - id: icis
+    acronym: ICIS
+    name: International Conference on Information Systems
+    name_zh: 国际信息系统大会
+    year: 2026
+    start_date: "2026-12-13"
+    end_date: "2026-12-16"
+    location: Lisbon, Portugal
+    city: Lisbon
+    country: Portugal
+    venue: Lisbon Congress Centre
+    url: https://icis2026.aisconferences.org/
+    additional_source:
+      label: Venue
+      url: https://icis2026.aisconferences.org/hotel-travel/venues/
+
+  - id: ecis
+    acronym: ECIS
+    name: European Conference on Information Systems
+    name_zh: 欧洲信息系统大会
+    year: 2027
+    start_date: "2027-05-24"
+    end_date: "2027-05-26"
+    location: Luxembourg City, Luxembourg
+    city: Luxembourg City
+    country: Luxembourg
+    venue: European Convention Center Luxembourg
+    url: https://ecis2027.uni.lu/
+    note: Main conference May 24–26; doctoral consortium May 21–23.
+    additional_source:
+      label: Venue
+      url: https://ecis2027.uni.lu/venue/
+
+  - id: pacis
+    acronym: PACIS
+    name: Pacific Asia Conference on Information Systems
+    name_zh: 亚太信息系统大会
+    year: 2027
+    start_date: "2027-07-05"
+    end_date: "2027-07-09"
+    location: Auckland, New Zealand
+    city: Auckland
+    country: New Zealand
+    url: https://pacis2027.aisconferences.org/
+
+  - id: amcis
+    acronym: AMCIS
+    name: Americas Conference on Information Systems
+    name_zh: 美洲信息系统大会
+    year: 2027
+    start_date: "2027-07-28"
+    end_date: "2027-07-30"
+    location: São Paulo, Brazil
+    city: São Paulo
+    country: Brazil
+    url: https://amcis2027.aisconferences.org/
+
+  - id: cist
+    acronym: CIST
+    name: Conference on Information Systems and Technology
+    name_zh: 信息系统与技术会议
+    year: 2026
+    start_date: "2026-10-31"
+    end_date: "2026-11-01"
+    location: San Francisco, California, USA
+    city: San Francisco
+    country: USA
+    venue: Hilton San Francisco Union Square
+    url: https://cist2026.github.io/
+
+  - id: wise
+    acronym: WISE
+    name: Workshop on Information Systems and Economics
+    name_zh: 信息系统与经济学研讨会
+    year: 2026
+    start_date: "2026-12-16"
+    end_date: "2026-12-18"
+    location: Lisbon, Portugal
+    city: Lisbon
+    country: Portugal
+    venue: Venue to be announced
+    url: https://wiseconf2026.github.io/
+    note: Welcome reception December 16; paper presentations December 17–18.
+
+  - id: wits
+    acronym: WITS
+    name: Workshop on Information Technologies and Systems
+    name_zh: 信息技术与系统研讨会
+    year: 2026
+    start_date: "2026-12-16"
+    end_date: "2026-12-18"
+    location: Carcavelos (near Lisbon), Portugal
+    city: Carcavelos
+    country: Portugal
+    venue: Nova School of Business and Economics, Carcavelos Campus
+    url: https://witsconf.org/wits2026-call-for-papers/
+    source_label: call for papers
+    additional_source:
+      label: Venue
+      url: https://witsconf.org/wits2026-venue/
+
+  - id: hicss
+    acronym: HICSS
+    name: Hawaii International Conference on System Sciences
+    name_zh: 夏威夷系统科学国际会议
+    year: 2027
+    start_date: "2027-01-05"
+    end_date: "2027-01-08"
+    location: Waikoloa, Hawaii Island, USA
+    city: Waikoloa
+    country: USA
+    venue: Hilton Waikoloa Village
+    url: https://hicss.hawaii.edu/
+    note: Main conference January 5–8; doctoral consortium January 4.
+    additional_source:
+      label: Venue
+      url: https://hicss.hawaii.edu/accommodation/
+
+  - id: scecr
+    acronym: SCECR
+    name: Symposium on Statistical Challenges in Electronic Commerce Research
+    name_zh: 电子商务研究中的统计挑战研讨会
+    year: 2027
+    start_date: null
+    end_date: null
+    location: Rabat, Morocco
+    city: Rabat
+    country: Morocco
+    venue: Venue to be announced
+    url: https://scecr.com/
+
+  - id: cnais
+    acronym: CNAIS
+    name: CNAIS Academic Annual Conference
+    name_zh: 中国系统工程学会信息系统工程专业委员会学术年会
+    year: 2026
+    start_date: "2026-10-16"
+    end_date: "2026-10-19"
+    location: Hefei, Anhui, China
+    city: Hefei
+    country: China
+    venue: 合肥施柏阁大观酒店
+    url: https://www.paperfox.ai/conference/cnais2026
+    note: October 16 is the registration and check-in day.
+    additional_source:
+      label: Organizer notice
+      url: https://fbs.ustc.edu.cn/2026/0903/c37242a752033/page.htm
+
+  - id: cswim
+    acronym: CSWIM
+    name: China Summer Workshop on Information Management
+    name_zh: 信息管理中国夏季研讨会
+    year: 2026
+    start_date: "2026-06-27"
+    end_date: "2026-06-28"
+    location: Haikou, Hainan, China
+    city: Haikou
+    country: China
+    url: https://www.paperfox.ai/conference/cswim2026
+    additional_source:
+      label: Conference series
+      url: https://cswimworkshop.org/
+
+  - id: swaib
+    acronym: SWAIB
+    name: Summer Workshop on AI for Business
+    year: 2026
+    start_date: "2026-07-04"
+    end_date: "2026-07-05"
+    location: Dalian, China
+    city: Dalian
+    country: China
+    url: https://swaib.diggg.cn/2026
+    additional_source:
+      label: INFORMS announcement
+      url: https://connect.informs.org/discussion/cfp-the-third-summer-workshop-on-ai-for-business-1

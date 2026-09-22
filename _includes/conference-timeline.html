@@ -1,0 +1,31 @@
+{% assign dated_meetings = include.meetings | where_exp: "meeting", "meeting.start_date != nil and meeting.start_date != '' and meeting.end_date != nil and meeting.end_date != ''" %}
+{% assign date_groups = dated_meetings | group_by: "start_date" %}
+{% assign reference_shown = false %}
+<nav class="conference-timeline" aria-label="Conference timeline, ordered by start date" tabindex="0">
+  <ol>
+    {% for date_group in date_groups %}
+      {% if reference_shown == false and date_group.name >= include.as_of %}
+        {% include conference-timeline-reference.html as_of=include.as_of %}
+        {% assign reference_shown = true %}
+      {% endif %}
+      {% assign all_past = true %}
+      {% for meeting in date_group.items %}
+        {% capture meeting_status %}{% include conference-status.html meeting=meeting as_of=include.as_of %}{% endcapture %}
+        {% unless meeting_status == "past" %}{% assign all_past = false %}{% endunless %}
+      {% endfor %}
+    <li class="conference-milestone{% if all_past %} conference-milestone-past{% endif %}">
+      <time class="conference-milestone-date" datetime="{{ date_group.name }}">{{ date_group.name | date: "%b %-d" }}<span>{{ date_group.name | date: "%Y" }}</span></time>
+      <div class="conference-milestone-links">
+        {% for meeting in date_group.items %}
+          {% capture meeting_status %}{% include conference-status.html meeting=meeting as_of=include.as_of %}{% endcapture %}
+        <a class="conference-milestone-{{ meeting_status }}" href="#{{ meeting.id }}">{{ meeting.acronym | escape }}<span class="sr-only"> — {{ meeting_status }}</span></a>
+        {% endfor %}
+      </div>
+    </li>
+    {% endfor %}
+    {% unless reference_shown %}{% include conference-timeline-reference.html as_of=include.as_of %}{% endunless %}
+  </ol>
+</nav>
+{% capture pending_links %}{% for meeting in include.meetings %}{% capture meeting_status %}{% include conference-status.html meeting=meeting as_of=include.as_of %}{% endcapture %}{% if meeting_status == "pending" %}<a href="#{{ meeting.id }}">{{ meeting.acronym | escape }} {{ meeting.year }}</a> {% endif %}{% endfor %}{% endcapture %}
+{% assign pending_links = pending_links | strip %}
+{% if pending_links != "" %}<p class="conference-timeline-pending">Dates TBA: {{ pending_links }}</p>{% endif %}

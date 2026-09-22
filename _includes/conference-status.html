@@ -1,0 +1,11 @@
+{%- assign start_date = include.meeting.start_date | default: "" -%}
+{%- assign end_date = include.meeting.end_date | default: "" -%}
+{%- if start_date == empty or end_date == empty -%}
+pending
+{%- elsif end_date < include.as_of -%}
+past
+{%- elsif start_date <= include.as_of -%}
+ongoing
+{%- else -%}
+upcoming
+{%- endif -%}

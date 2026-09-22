@@ -1,0 +1,29 @@
+{% assign checked_on = site.data.conferences.checked_on %}
+{% assign as_of = site.time | date: "%Y-%m-%d" %}
+{% assign meetings = site.data.conferences.meetings | sort: "start_date" %}
+{% include conference-timeline.html meetings=meetings as_of=as_of %}
+<table class="conference-table" role="table">
+  <caption class="sr-only">Conference dates, cities, countries, and official websites. Bold rows are upcoming or in progress; faded rows are past. Status as of {{ as_of | date: "%B %-d, %Y" }}. Sources verified {{ checked_on | date: "%B %-d, %Y" }}.</caption>
+  <thead role="rowgroup">
+    <tr role="row">
+      <th scope="col" role="columnheader">Conference</th>
+      <th scope="col" role="columnheader">Date</th>
+      <th scope="col" role="columnheader">City &amp; country</th>
+    </tr>
+  </thead>
+  <tbody role="rowgroup">
+    {% assign groups = "ongoing,upcoming,pending,past" | split: "," %}
+    {% for group in groups %}
+      {% for meeting in meetings %}
+        {% capture meeting_group %}{% include conference-status.html meeting=meeting as_of=as_of %}{% endcapture %}
+        {% if group == meeting_group %}
+    <tr id="{{ meeting.id }}" class="conference-row-{{ meeting_group }}" role="row">
+      <th scope="row" role="rowheader"><a href="{{ meeting.url | escape }}">{{ meeting.acronym | escape }} — {% if meeting.id == "cnais" %}{{ meeting.name | remove_first: "CNAIS " | escape }}{% else %}{{ meeting.name | escape }}{% endif %}</a>{% if group == "upcoming" %}<span class="sr-only"> — upcoming</span>{% elsif group == "ongoing" %}<span class="sr-only"> — in progress</span>{% endif %}</th>
+      <td class="conference-date" role="cell">{% if group != "pending" %}<time datetime="{{ meeting.start_date }}">{{ meeting.start_date | date: "%b %-d" }}</time>–<time datetime="{{ meeting.end_date }}">{% assign start_month = meeting.start_date | date: "%Y-%m" %}{% assign end_month = meeting.end_date | date: "%Y-%m" %}{% if start_month == end_month %}{{ meeting.end_date | date: "%-d" }}{% else %}{{ meeting.end_date | date: "%b %-d" }}{% endif %}</time>, {{ meeting.year }}{% else %}{{ meeting.year }} · TBA{% endif %}{% if group == "past" %}<span class="conference-past"> (past)</span>{% elsif group == "ongoing" %}<span class="conference-ongoing"> (in progress)</span>{% endif %}</td>
+      <td role="cell">{{ meeting.city | escape }}, {{ meeting.country | escape }}</td>
+    </tr>
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  </tbody>
+</table>
