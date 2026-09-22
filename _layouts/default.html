@@ -6,7 +6,7 @@
     <title>{{ page.title | default: site.title }}</title>
     {% if page.robots %}<meta name="robots" content="{{ page.robots }}">{% endif %}
     <!-- Keep the site fast: one static CSS file and only the requested analytics script. -->
-    <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
     {% unless page.analytics == false %}
         {% if site.analytics_endpoint != "" %}
             <script defer src="{{ '/assets/js/visit-tracker.js' | relative_url }}" data-endpoint="{{ site.analytics_endpoint | escape }}"></script>
