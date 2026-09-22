@@ -72,6 +72,21 @@ meetings:
     venue: Hilton San Francisco Union Square
     url: https://cist2026.github.io/
 
+  - id: informs
+    acronym: INFORMS
+    name: Annual Meeting
+    year: 2026
+    start_date: "2026-11-01"
+    end_date: "2026-11-04"
+    location: San Francisco, California, USA
+    city: San Francisco
+    country: USA
+    venue: Moscone Center South and San Francisco Marriott Marquis
+    url: https://meetings.informs.org/wordpress/annual/
+    additional_source:
+      label: INFORMS conference calendar
+      url: https://www.informs.org/Meetings-Conferences/INFORMS-Conference-Calendar/2026-INFORMS-Annual-Meeting
+
   - id: wise
     acronym: WISE
     name: Workshop on Information Systems and Economics
