@@ -1,6 +1,6 @@
 # Next announced meeting per series, or latest verified past edition.
 # Dates are quoted ISO strings; null means the organizer has not announced dates.
-checked_on: "2026-09-22"
+checked_on: "2026-10-04"
 meetings:
   - id: icis
     acronym: ICIS
@@ -94,10 +94,10 @@ meetings:
     year: 2026
     start_date: "2026-12-16"
     end_date: "2026-12-18"
-    location: Lisbon, Portugal
-    city: Lisbon
+    location: Carcavelos (near Lisbon), Portugal
+    city: Carcavelos
     country: Portugal
-    venue: Venue to be announced
+    venue: Nova School of Business and Economics, Carcavelos Campus
     url: https://wiseconf2026.github.io/
     note: Welcome reception December 16; paper presentations December 17–18.
 
