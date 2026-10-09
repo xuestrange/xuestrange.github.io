@@ -34,6 +34,18 @@ The compact timeline above the table shows past and upcoming meetings in date or
 
 Keep the templates compatible with GitHub Pages' bundled Jekyll version. Use chained single-condition `where_exp` filters; compound expressions in this filter require Jekyll 4 and fail with the current GitHub Pages builder. A successful local build with a newer Jekyll does not replace checking the GitHub Pages deployment.
 
+### Hidden visitor map
+
+The password-protected `/visit/` page stays out of the site navigation and search indexing. Its local SVG map supports mouse dragging, wheel or double-click zoom, touch dragging and pinch zoom, zoom buttons, a world reset, and fitting the countries with visits. Keyboard users can focus the map and use arrow keys to pan, `+` / `-` to zoom, and `Home` to reset. Visited countries can be selected with Enter or Space; entries in the expandable country summary also focus that country on the map.
+
+Country color shows cumulative visit counts: darker blue means more visits, and neutral gray means zero visits. A continuous logarithmic color scale keeps low counts visible alongside larger totals; the legend shows 1 and the largest mapped count. The display buttons independently control color and count labels. Labels use anchors inside each country's largest map polygon and move when needed to avoid overlaps and frame clipping. Crowded labels remain hidden until more space is available, while tooltips and the text summary retain every exact count. Unlocatable visits remain in the total and the text summary. The map uses the existing bundled boundaries and makes no requests to a map, tile, or geocoding provider. Admin authentication and the statistics API remain unchanged; view and display choices stay in the current page session.
+
+Map interaction geometry, country anchors, and color scaling can be checked without dependencies:
+
+```bash
+node --test tests/visitor-map.test.cjs
+```
+
 ## Local Preview
 
 Start the local preview server:

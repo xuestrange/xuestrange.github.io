@@ -37,15 +37,45 @@ analytics: false
 
         <section class="analytics-section analytics-map-section" aria-labelledby="map-heading">
             <h2 id="map-heading">全球访问地图</h2>
+            <div class="visit-map-overview" aria-label="累计访问概况">
+                <p><strong id="map-total-visits">0</strong><span>累计访问</span></p>
+                <p><strong id="map-country-count">0</strong><span>国家或地区</span></p>
+                <p><strong id="map-leading-country">—</strong><span>访问最多</span></p>
+            </div>
             <figure class="visit-map-figure">
+                <div class="visit-map-toolbar" aria-label="地图控制">
+                    <div class="visit-map-controls" role="group" aria-label="地图视图">
+                        <button type="button" id="map-zoom-in" aria-label="放大地图">＋</button>
+                        <button type="button" id="map-zoom-out" aria-label="缩小地图">−</button>
+                        <button type="button" id="map-reset">全球视图</button>
+                        <button type="button" id="map-fit">适应访问范围</button>
+                        <output id="map-zoom-level" aria-label="当前缩放">1×</output>
+                    </div>
+                    <div class="visit-map-controls" role="group" aria-label="数据展示">
+                        <button type="button" id="map-toggle-heat" aria-pressed="true">访问热度</button>
+                        <button type="button" id="map-toggle-labels" aria-pressed="false">次数标签</button>
+                    </div>
+                </div>
                 <div class="visit-map-frame" id="visit-map-frame">
                     {% include world-visit-map.svg %}
                     <div class="visit-map-tooltip" id="visit-map-tooltip" role="tooltip" hidden></div>
                 </div>
-                <figcaption>颜色越深，累计访问次数越多。地图边界仅用于可视化，IP 地理位置为近似结果。</figcaption>
+                <div class="visit-map-key" aria-label="地图图例">
+                    <span id="map-heat-legend">
+                        <span class="visit-map-legend-range"><span class="visit-map-zero-key" aria-hidden="true"></span>0 次</span>
+                        <span class="visit-map-legend-range"><span id="map-scale-min">1</span><span class="visit-map-color-scale" aria-hidden="true"></span><span class="sr-only"> 至 </span><span id="map-scale-max">—</span>次</span>
+                        <span>颜色越深，访问越多（对数色阶）</span>
+                    </span>
+                </div>
+                <figcaption id="visit-map-help">拖动平移，滚轮或双指缩放；点击国家或地区查看详情。键盘聚焦地图后，方向键平移，＋ / − 缩放，Home 恢复全球视图。颜色表示国家或地区累计访问次数。地图边界仅用于可视化，IP 地理位置为近似结果。</figcaption>
             </figure>
+            <p class="visit-map-selection" id="map-selection" role="status" aria-live="polite">选择国家或地区查看累计访问。</p>
+            <p class="analytics-help" id="map-unmapped" hidden></p>
             <p class="analytics-empty" id="map-empty" hidden>还没有可显示在地图上的访问。</p>
-            <ol class="sr-only" id="map-summary" aria-label="各国家或地区访问汇总"></ol>
+            <details class="visit-map-details">
+                <summary>查看各国家或地区访问汇总</summary>
+                <ol id="map-summary" aria-label="各国家或地区访问汇总"></ol>
+            </details>
         </section>
 
         <section class="analytics-section" aria-labelledby="latest-heading">
@@ -69,4 +99,6 @@ analytics: false
     </div>
 </section>
 
-<script defer src="{{ '/assets/js/visitor-dashboard.js' | relative_url }}"></script>
+<link rel="stylesheet" href="{{ '/assets/css/visitor-map.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+<script defer src="{{ '/assets/js/visitor-map.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
+<script defer src="{{ '/assets/js/visitor-dashboard.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>

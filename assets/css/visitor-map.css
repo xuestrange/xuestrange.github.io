@@ -1,0 +1,236 @@
+/* Loaded only by /visit/. All selectors remain inside its dashboard. */
+#analytics-dashboard .visit-map-overview {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    padding: 14px 0 20px;
+}
+
+#analytics-dashboard .visit-map-overview p {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin: 0;
+}
+
+#analytics-dashboard .visit-map-overview strong {
+    color: var(--heading);
+    font-size: clamp(18px, 2.8vw, 26px);
+    font-weight: 600;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+}
+
+#analytics-dashboard .visit-map-overview span {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+#analytics-dashboard .visit-map-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px 16px;
+    padding-bottom: 12px;
+}
+
+#analytics-dashboard .visit-map-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+}
+
+#analytics-dashboard .visit-map-controls button,
+#analytics-dashboard .visit-map-details button {
+    min-height: 34px;
+    padding: 5px 10px;
+    border: 1px solid var(--border-strong);
+    border-radius: 3px;
+    background: var(--page);
+    color: var(--text);
+    font: inherit;
+    font-size: 12px;
+    line-height: 1.4;
+    cursor: pointer;
+}
+
+#analytics-dashboard .visit-map-controls button[aria-pressed="true"] {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+    color: var(--accent);
+}
+
+#analytics-dashboard .visit-map-controls button:hover,
+#analytics-dashboard .visit-map-details button:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+#analytics-dashboard .visit-map-controls button:focus-visible,
+#analytics-dashboard .visit-map-details button:focus-visible,
+#analytics-dashboard .visit-map-details summary:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+#analytics-dashboard .visit-map-controls button:disabled {
+    opacity: 0.45;
+    cursor: default;
+}
+
+#analytics-dashboard #map-zoom-level {
+    min-width: 3em;
+    padding-inline: 4px;
+    color: var(--muted);
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
+}
+
+#analytics-dashboard .visit-map-frame {
+    background: #f7fafb;
+}
+
+#analytics-dashboard .visit-world-map {
+    aspect-ratio: 960 / 500;
+    overflow: hidden;
+    touch-action: none;
+    user-select: none;
+    cursor: grab;
+}
+
+#analytics-dashboard .visit-world-map:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: -3px;
+}
+
+#analytics-dashboard .is-dragging .visit-world-map,
+#analytics-dashboard .is-dragging .world-country {
+    cursor: grabbing;
+}
+
+#analytics-dashboard .world-map-sphere {
+    fill: #eef4f7;
+    stroke: #cedce3;
+    vector-effect: non-scaling-stroke;
+}
+
+#analytics-dashboard .world-map-graticule {
+    stroke: #d5e0e6;
+    vector-effect: non-scaling-stroke;
+}
+
+#analytics-dashboard .world-country {
+    fill: var(--visit-fill, #dde5e8);
+    cursor: pointer;
+}
+
+#analytics-dashboard .map-heat-hidden .world-country {
+    fill: #dde5e8;
+}
+
+#analytics-dashboard .world-country.is-selected,
+#analytics-dashboard .world-country:focus-visible {
+    stroke: #123f5a;
+    stroke-width: 2;
+}
+
+#analytics-dashboard .visit-map-labels text {
+    fill: #173e55;
+    stroke: #fff;
+    stroke-width: 3px;
+    stroke-linejoin: round;
+    paint-order: stroke fill;
+    font-weight: 600;
+    pointer-events: none;
+}
+
+#analytics-dashboard .visit-map-tooltip {
+    transform: translateX(-50%);
+    max-width: calc(100% - 16px);
+    white-space: normal;
+}
+
+#analytics-dashboard .visit-map-key {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 20px;
+    padding-top: 10px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+#analytics-dashboard .visit-map-key > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#analytics-dashboard .visit-map-key > span[hidden] { display: none; }
+
+#analytics-dashboard #map-heat-legend { flex-wrap: wrap; gap: 6px 14px; }
+#analytics-dashboard .visit-map-legend-range {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+}
+
+#analytics-dashboard .visit-map-color-scale {
+    display: inline-block;
+    width: 70px;
+    height: 9px;
+    background: linear-gradient(to right, var(--scale-start, #c4dbe5), #1f5a7b);
+}
+
+#analytics-dashboard .visit-map-zero-key {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #dde5e8;
+}
+
+#analytics-dashboard .visit-map-selection {
+    min-height: 1.6em;
+    margin: 12px 0 8px;
+    font-size: 13px;
+    color: var(--heading);
+}
+
+#analytics-dashboard .visit-map-details {
+    padding: 10px 0;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+}
+
+#analytics-dashboard .visit-map-details summary {
+    width: fit-content;
+    cursor: pointer;
+    color: var(--muted);
+}
+
+#analytics-dashboard .visit-map-details ol {
+    columns: 2;
+    margin: 12px 0 4px;
+    padding-left: 24px;
+}
+
+#analytics-dashboard .visit-map-details li {
+    break-inside: avoid;
+    margin-bottom: 4px;
+}
+
+#analytics-dashboard .visit-map-details button {
+    padding: 3px 5px;
+    border-color: transparent;
+    background: transparent;
+    text-align: left;
+}
+
+@media (max-width: 560px) {
+    #analytics-dashboard .visit-map-overview { gap: 10px; }
+    #analytics-dashboard .visit-map-controls button { min-height: 40px; }
+    #analytics-dashboard .visit-map-details ol { columns: 1; }
+    #analytics-dashboard .visit-map-figure figcaption { font-size: 11px; }
+}

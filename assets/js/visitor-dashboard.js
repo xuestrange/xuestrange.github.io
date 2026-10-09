@@ -21,6 +21,13 @@
     var countryNames = typeof Intl.DisplayNames === "function"
         ? new Intl.DisplayNames(["zh-CN"], { type: "region" })
         : null;
+    var visitMap = window.VisitMap.create({
+        map: map,
+        frame: mapFrame,
+        tooltip: mapTooltip,
+        countryName: countryName,
+        numberFormat: numberFormat
+    });
 
     function setStatus(message, state) {
         status.textContent = message;
@@ -49,60 +56,6 @@
         var cell = document.createElement("td");
         cell.textContent = value;
         row.appendChild(cell);
-    }
-
-    function visitLabel(code, visits) {
-        return countryName(code) + "：" + numberFormat.format(visits) + " 次访问";
-    }
-
-    function colorLevel(visits, maximum) {
-        if (!visits || !maximum) {
-            return 0;
-        }
-        return Math.max(1, Math.ceil((Math.log1p(visits) / Math.log1p(maximum)) * 5));
-    }
-
-    function renderMap(countries) {
-        var totals = new Map();
-        countries.forEach(function (country) {
-            var code = String(country.countryCode || "").toUpperCase();
-            var visits = Number(country.visits) || 0;
-            if (/^[A-Z]{2}$/.test(code) && code !== "XX" && code !== "T1" && visits > 0) {
-                totals.set(code, (totals.get(code) || 0) + visits);
-            }
-        });
-
-        var maximum = Math.max.apply(null, Array.from(totals.values()).concat([0]));
-        var summary = document.getElementById("map-summary");
-        var plottableCodes = new Set();
-        clearChildren(summary);
-
-        map.querySelectorAll(".world-country").forEach(function (path) {
-            var code = path.dataset.country || "";
-            var visits = totals.get(code) || 0;
-            path.classList.remove("visit-level-1", "visit-level-2", "visit-level-3", "visit-level-4", "visit-level-5");
-            path.removeAttribute("data-visits");
-            path.removeAttribute("aria-label");
-            path.setAttribute("tabindex", "-1");
-
-            if (visits > 0) {
-                path.classList.add("visit-level-" + colorLevel(visits, maximum));
-                path.dataset.visits = String(visits);
-                path.setAttribute("aria-label", visitLabel(code, visits));
-                path.setAttribute("tabindex", "0");
-                plottableCodes.add(code);
-            }
-        });
-
-        Array.from(totals.entries())
-            .sort(function (left, right) { return right[1] - left[1] || left[0].localeCompare(right[0]); })
-            .forEach(function (entry) {
-                var item = document.createElement("li");
-                item.textContent = visitLabel(entry[0], entry[1]);
-                summary.appendChild(item);
-            });
-
-        document.getElementById("map-empty").hidden = plottableCodes.size !== 0;
     }
 
     function formatVisitDate(value, timeZone) {
@@ -148,44 +101,10 @@
         var timeZone = data.timeZone || "Asia/Shanghai";
         document.getElementById("analytics-updated").textContent =
             "统计时区：" + timeZone + " · 更新于 " + formatVisitDate(data.generatedAt, timeZone);
-        renderMap(Array.isArray(data.countries) ? data.countries : []);
+        visitMap.render(Array.isArray(data.countries) ? data.countries : []);
         renderLatestVisits(Array.isArray(data.latestVisits) ? data.latestVisits : [], timeZone);
         results.hidden = false;
     }
-
-    function showMapTooltip(path, clientX, clientY) {
-        if (!path || !path.dataset.visits) {
-            mapTooltip.hidden = true;
-            return;
-        }
-
-        var frameRect = mapFrame.getBoundingClientRect();
-        var pathRect = path.getBoundingClientRect();
-        var x = Number.isFinite(clientX) ? clientX - frameRect.left : pathRect.left + pathRect.width / 2 - frameRect.left;
-        var y = Number.isFinite(clientY) ? clientY - frameRect.top : pathRect.top - frameRect.top;
-        var horizontalInset = Math.min(120, frameRect.width / 2);
-        mapTooltip.textContent = visitLabel(path.dataset.country, Number(path.dataset.visits));
-        mapTooltip.style.left = Math.max(horizontalInset, Math.min(x, frameRect.width - horizontalInset)) + "px";
-        mapTooltip.style.top = Math.max(40, y) + "px";
-        mapTooltip.hidden = false;
-    }
-
-    function mapPathFromEvent(event) {
-        return event.target && event.target.closest ? event.target.closest(".world-country[data-visits]") : null;
-    }
-
-    map.addEventListener("pointermove", function (event) {
-        showMapTooltip(mapPathFromEvent(event), event.clientX, event.clientY);
-    });
-    map.addEventListener("pointerleave", function () {
-        mapTooltip.hidden = true;
-    });
-    map.addEventListener("focusin", function (event) {
-        showMapTooltip(mapPathFromEvent(event));
-    });
-    map.addEventListener("focusout", function () {
-        mapTooltip.hidden = true;
-    });
 
     async function loadStats() {
         if (!activeToken) {
