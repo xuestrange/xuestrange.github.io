@@ -5,3 +5,8 @@ publications:
     venue: Information Systems Research
     year: 2026
     sort_key: 202600
+  - title: A Structural Analysis of Bitcoin Cash’s Emergency Difficulty Adjustment Algorithm
+    coauthors: V. Aggarwal, L. Ma, and Y. Tan
+    venue: Information Systems Research
+    year: 2026
+    sort_key: 202601
