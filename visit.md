@@ -84,7 +84,7 @@ analytics: false
                 <table>
                     <thead>
                         <tr>
-                            <th scope="col">日期</th>
+                            <th scope="col">访问时间（北京时间）</th>
                             <th scope="col">城市</th>
                             <th scope="col">国家或地区</th>
                         </tr>

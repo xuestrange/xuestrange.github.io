@@ -18,6 +18,16 @@
     var mapTooltip = document.getElementById("visit-map-tooltip");
     var activeToken = "";
     var numberFormat = new Intl.NumberFormat("zh-CN");
+    var dateFormat = new Intl.DateTimeFormat("zh-CN", {
+        timeZone: "Asia/Shanghai",
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hourCycle: "h23"
+    });
     var countryNames = typeof Intl.DisplayNames === "function"
         ? new Intl.DisplayNames(["zh-CN"], { type: "region" })
         : null;
@@ -58,36 +68,23 @@
         row.appendChild(cell);
     }
 
-    function formatVisitDate(value, timeZone) {
+    function formatVisitDate(value) {
         var date = new Date(value);
         if (Number.isNaN(date.getTime())) {
             return value || "未知";
         }
 
-        try {
-            return new Intl.DateTimeFormat("zh-CN", {
-                timeZone: timeZone || "Asia/Shanghai",
-                year: "numeric",
-                month: "2-digit",
-                day: "2-digit",
-                hour: "2-digit",
-                minute: "2-digit",
-                second: "2-digit",
-                hour12: false
-            }).format(date);
-        } catch (_error) {
-            return date.toLocaleString("zh-CN");
-        }
+        return dateFormat.format(date);
     }
 
-    function renderLatestVisits(visits, timeZone) {
+    function renderLatestVisits(visits) {
         var body = document.getElementById("latest-visit-rows");
         var empty = document.getElementById("latest-visits-empty");
         clearChildren(body);
 
         visits.slice(0, 10).forEach(function (visit) {
             var row = document.createElement("tr");
-            appendCell(row, formatVisitDate(visit.visitedAt, timeZone));
+            appendCell(row, formatVisitDate(visit.visitedAt));
             appendCell(row, visit.city || "未知");
             appendCell(row, countryName(visit.countryCode));
             body.appendChild(row);
@@ -98,11 +95,10 @@
     }
 
     function render(data) {
-        var timeZone = data.timeZone || "Asia/Shanghai";
         document.getElementById("analytics-updated").textContent =
-            "统计时区：" + timeZone + " · 更新于 " + formatVisitDate(data.generatedAt, timeZone);
+            "更新于 " + formatVisitDate(data.generatedAt) + "（北京时间）";
         visitMap.render(Array.isArray(data.countries) ? data.countries : []);
-        renderLatestVisits(Array.isArray(data.latestVisits) ? data.latestVisits : [], timeZone);
+        renderLatestVisits(Array.isArray(data.latestVisits) ? data.latestVisits : []);
         results.hidden = false;
     }
 
