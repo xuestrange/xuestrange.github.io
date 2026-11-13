@@ -22,7 +22,7 @@ Publication entries are stored in `_data/publications.yml` and rendered automati
 
 Reviewer service entries are stored in `_data/service.yml` and rendered automatically on the homepage. Journal entries display paper counts without years. Conference entries are sorted in reverse chronological order by `sort_key`.
 
-The left navigation is defined in `_layouts/default.html`. Add a new Markdown page first, then add its link to the navigation.
+The site navigation is defined in `_layouts/default.html`. Add a new Markdown page first, then add its link to the navigation.
 
 ### Conference reminders
 

@@ -1,13 +1,13 @@
 {% assign publications = site.data.publications.publications | sort: "sort_key" | reverse %}
-<ul class="publication-list">
+<ul class="publication-list" role="list">
   {% for publication in publications %}
   <li>
-    <span class="publication-year">{{ publication.year }}</span>
     <div class="publication-detail">
       <h3>{{ publication.title }}</h3>
       {% if publication.coauthors %}<p class="publication-authors">with {{ publication.coauthors }}</p>{% endif %}
       <p class="publication-venue"><em>{{ publication.venue }}</em></p>
     </div>
+    <time class="publication-year" datetime="{{ publication.year }}">{{ publication.year }}</time>
   </li>
   {% endfor %}
 </ul>

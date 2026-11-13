@@ -18,24 +18,25 @@
 </head>
 <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
-    <div class="site-shell">
-        <aside class="site-sidebar" aria-label="Site navigation">
+    <header class="site-header">
+        <div class="site-width site-header-inner">
+            <a class="site-name" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a>
             <nav class="site-nav" aria-label="Main navigation">
-                <a class="{% if page.url == '/' %}active{% endif %}" {% if page.url == '/' %}aria-current="page"{% endif %} href="{{ '/' | relative_url }}">Home</a>
-                <a class="{% if page.url == '/links.html' %}active{% endif %}" {% if page.url == '/links.html' %}aria-current="page"{% endif %} href="{{ '/links.html' | relative_url }}">Links</a>
+                <a {% if page.url == '/' %}aria-current="page"{% endif %} href="{{ '/' | relative_url }}">Home</a>
+                <a {% if page.url == '/links.html' %}aria-current="page"{% endif %} href="{{ '/links.html' | relative_url }}">Links</a>
             </nav>
-        </aside>
+        </div>
+    </header>
 
-        <main id="main-content" class="container {{ page.page_class }}" tabindex="-1">
-            {{ content }}
+    <main id="main-content" class="site-width page-content {{ page.page_class }}" tabindex="-1">
+        {{ content }}
+    </main>
 
-            <footer class="page-footer" aria-label="Page update information">
-                Last updated: <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: "%B %-d, %Y" }}</time>
-                {% if site.analytics_endpoint != "" %}
-                    <span class="privacy-disclosure">This site uses cookie-free visit statistics. Its analytics database stores visit dates and estimated cities and countries, never raw IP addresses.</span>
-                {% endif %}
-            </footer>
-        </main>
-    </div>
+    <footer class="site-width page-footer" aria-label="Page update information">
+        <p>Last updated: <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: "%B %-d, %Y" }}</time></p>
+        {% if site.analytics_endpoint != "" %}
+            <p class="privacy-disclosure">This site uses cookie-free visit statistics. Its analytics database stores visit dates and estimated cities and countries, never raw IP addresses.</p>
+        {% endif %}
+    </footer>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <div class="service-grid">
   <section aria-labelledby="journal-service">
     <h3 id="journal-service">Journal reviewer</h3>
-    <ul class="service-entries">
+    <ul class="service-entries" role="list">
       {% for journal in site.data.service.journals %}
       <li><span>{{ journal.name }}</span><span class="service-detail">({{ journal.count }})</span></li>
       {% endfor %}
@@ -9,7 +9,7 @@
   </section>
   <section aria-labelledby="conference-service">
     <h3 id="conference-service">Conference reviewer</h3>
-    <ul class="service-entries">
+    <ul class="service-entries" role="list">
       {% assign conferences = site.data.service.conferences | sort: "sort_key" | reverse %}
       {% for conference in conferences %}
       <li><span>{{ conference.name }}</span><span class="service-detail">{% if conference.start_year %}{{ conference.start_year }}–{{ conference.end_year }}{% else %}{{ conference.year }}{% endif %}</span></li>

@@ -25,7 +25,7 @@ Shanghai University of Finance and Economics
             <path d="M6.8 13.6v2.2c0 2.1 2.3 3.8 5.2 3.8s5.2-1.7 5.2-3.8v-2.2L12 17.4l-5.2-3.8Z"/>
             <path d="M20.1 11.2v5.3h1.4v-6.3l-1.4 1Z"/>
         </svg>
-        <span>Scholar</span>
+        <span>Google Scholar</span>
     </a>
     <a class="profile-icon" href="https://github.com/xuestrange" aria-label="GitHub">
         <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -37,22 +37,44 @@ Shanghai University of Finance and Economics
 
 </header>
 
+<section class="home-section" aria-labelledby="biography" markdown="1">
+
 ## Biography
 
-I am currently an Assistant Professor at Shanghai University of Finance and Economics. I am doing empirical studies, focusing on Generative AI, Blockchain, and Digital Content Platforms, harnessing both the reduced-form and structural models. 
+<div class="section-content" markdown="1">
+
+I am currently an Assistant Professor at Shanghai University of Finance and Economics. I am doing empirical studies, focusing on Generative AI, Blockchain, and Digital Content Platforms, harnessing both the reduced-form and structural models.
 
 I received my Ph.D. in Management Science and Engineering from the University of Science and Technology of China in 2025, and my B.E. in Industrial Engineering from the China University of Mining and Technology in 2020. Prior to completing my doctorate, I was a visiting student at the University of Washington from 2024 to 2025.
+
+</div>
+</section>
+
+<section class="home-section" aria-labelledby="publications" markdown="1">
+
 ## Publications
 
 {% include publications.html %}
+
+</section>
+
+<section class="home-section" aria-labelledby="working-papers" markdown="1">
 
 ## Working Papers
 
 - Optimizing Paywall Design in Freemium Alongside Pay-Per-Use Premium Access
 - A Structural Analysis of Bitcoin Cash's Emergency Difficulty Adjustment Algorithm
 - Exploration vs. Exploitation: Navigating Consumer Behavior Dynamics on Digital Content Platforms
-{: .working-paper-list}
+{: .working-paper-list role="list"}
+
+</section>
+
+<section class="home-section" aria-labelledby="service" markdown="1">
 
 ## Service
 
+<div class="section-content">
 {% include service.html %}
+</div>
+
+</section>
