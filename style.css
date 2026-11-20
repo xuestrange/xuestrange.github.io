@@ -94,7 +94,7 @@ p + p { margin-top: 0.9em; }
 .page-content { padding-top: clamp(2rem, 6vw, 4rem); }
 .page-content > h1 + p { max-width: 66ch; margin-top: 1rem; }
 
-/* Profile and research sections. */
+/* Shared typography and section layout for the public pages. */
 @font-face {
     font-family: "Source Serif 4";
     src: url("assets/fonts/source-serif-4/source-serif-4-latin-standard-normal.woff2") format("woff2");
@@ -109,38 +109,34 @@ p + p { margin-top: 0.9em; }
     font-weight: 200 900;
     font-display: swap;
 }
-body:has(> .home-page) {
+.academic-site {
     --site-width: 64rem;
     --gutter: clamp(1rem, 3vw, 2rem);
-    --page: #e8edf3;
+    --page: #e8eef8;
     --surface: #fbfcfe;
-    --border: #cbd4df;
+    --heading: #192f56;
+    --border: #c5d2e5;
     --serif-font: "Source Serif 4", Georgia, "Songti SC", "Noto Serif CJK SC", SimSun, serif;
-    --accent: #23596a;
+    --accent: #2454b0;
+    --accent-soft: #d2e2fb;
     --link: var(--accent);
+    --link-hover: #183b83;
+    scrollbar-gutter: stable;
+}
+.academic-site body {
     font-family: var(--serif-font);
-    font-size: 1.0625rem;
     line-height: 1.65;
 }
-.home-page {
-    --card-padding: clamp(1.125rem, 3vw, 2rem);
-    --card-line: rgb(23 43 62 / 11%);
-    --section-ink: #294f70;
-    --section-wash: #e6edf5;
+.academic-page {
+    --section-ink: var(--accent);
+    --section-wash: var(--accent-soft);
     --contours: url("assets/img/profile-contours.svg");
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 1rem;
     padding-top: clamp(1.5rem, 4vw, 3rem);
 }
-.home-card {
-    min-width: 0;
-    padding: var(--card-padding);
-    border: 1px solid var(--card-line);
-    border-radius: 1rem;
-    background: var(--surface);
+.academic-page > section {
+    margin-top: clamp(2rem, 4vw, 3rem);
 }
-.home-card h2 {
+.academic-page h2 {
     margin-bottom: 1rem;
     font-size: 1.625rem;
     font-weight: 520;
@@ -165,22 +161,27 @@ body:has(> .home-page) {
     flex: 1;
     height: 1px;
     margin-left: 0.25rem;
-    background: linear-gradient(to right, var(--section-wash), transparent);
+    background: linear-gradient(to right, currentColor, transparent 85%);
+    opacity: 0.35;
 }
-.home-card[aria-labelledby="working-papers"] {
-    --section-ink: #285e62;
-    --section-wash: #e4efed;
+.section-teal {
+    --section-ink: #006b62;
+    --section-wash: #c7e9e1;
 }
-.home-card[aria-labelledby="service"] {
-    --section-ink: #5b5275;
-    --section-wash: #ece9f3;
+.section-violet {
+    --section-ink: #703ca6;
+    --section-wash: #e5d9f7;
 }
-.profile-card {
+.page-intro h1 {
+    font-size: clamp(2.75rem, 6vw, 3.5rem);
+    line-height: 1.08;
+    font-weight: 500;
+}
+.profile-intro {
     display: grid;
     grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.6fr);
     align-items: start;
-    gap: var(--card-padding);
-    background: linear-gradient(115deg, #d6e5eb, #e6edf4 45%, #f4f6fa);
+    gap: clamp(1.5rem, 4vw, 3rem);
 }
 .profile-bio h2 {
     color: var(--section-ink);
@@ -190,9 +191,6 @@ body:has(> .home-page) {
     display: flex;
     flex-direction: column;
     gap: 0.125em 0.34em;
-    font-size: clamp(2.75rem, 6vw, 3.5rem);
-    line-height: 1.08;
-    font-weight: 500;
 }
 .name-cn {
     color: var(--muted);
@@ -220,7 +218,6 @@ body:has(> .home-page) {
     min-height: 2.125rem;
     font-size: 0.9375rem;
     font-weight: 600;
-    text-decoration-color: rgb(35 89 106 / 45%);
 }
 .profile-icon svg { width: 1rem; height: 1rem; fill: currentColor; }
 
@@ -234,7 +231,7 @@ body:has(> .home-page) {
 .publication-list > li + li {
     margin-top: 1rem;
     padding-top: 1rem;
-    border-top: 1px solid var(--card-line);
+    border-top: 1px solid var(--border);
 }
 .publication-detail { min-width: 0; }
 .publication-detail h3 { font-size: 1.125rem; line-height: 1.45; }
@@ -256,7 +253,7 @@ body:has(> .home-page) {
     justify-content: space-between;
     gap: 0.75rem;
     padding-block: 0.35rem;
-    border-bottom: 1px solid var(--card-line);
+    border-bottom: 1px solid var(--border);
     font-size: 0.9375rem;
 }
 .service-detail {
@@ -268,21 +265,17 @@ body:has(> .home-page) {
 .service-volunteer { margin-top: 1rem; color: var(--muted); font-size: 0.9375rem; }
 .service-volunteer > span { margin-right: 0.4em; color: var(--heading); font-weight: 650; }
 
-.resources-page > h2 {
-    margin: 2rem 0 0.875rem;
-    padding-top: 1.25rem;
-    border-top: 1px solid var(--border);
+.resources-page .page-intro h1 {
+    background: var(--contours) right center / auto 95% no-repeat;
 }
-.resources-page > ul { padding-left: 1.25em; }
-.resources-page > ul > li { margin-bottom: 0.25rem; }
+.resource-list { padding-left: 1.05em; }
+.resource-list li + li { margin-top: 0.25rem; }
+.resource-list li::marker { color: var(--section-ink); font-size: 0.68em; }
 
 /* Each milestone shows the date and links to the corresponding table rows. */
 .conference-timeline {
     overflow-x: auto;
     margin-bottom: 0.65rem;
-    background: var(--surface-subtle);
-    border: 1px solid var(--border);
-    border-radius: 0.375rem;
     scrollbar-width: thin;
 }
 .conference-timeline ol {
@@ -292,7 +285,7 @@ body:has(> .home-page) {
     width: max-content;
     min-width: 100%;
     margin: 0;
-    padding: 0.8rem 0.5rem 0.6rem;
+    padding: 0.5rem 0 0.6rem;
     list-style: none;
 }
 .conference-milestone {
@@ -655,7 +648,7 @@ body:has(> .home-page) {
 }
 
 @media (max-width: 46rem) {
-    .profile-card { grid-template-columns: minmax(0, 1fr); }
+    .profile-intro { grid-template-columns: minmax(0, 1fr); }
     .profile-bio h2 { background: var(--contours) right center / auto 100% no-repeat; }
     .profile-hero h1 { flex-flow: row wrap; align-items: baseline; }
     .profile-links { flex-flow: row wrap; gap: 0 1rem; margin-top: 0.5rem; background: none; }

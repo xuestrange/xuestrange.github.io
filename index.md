@@ -1,11 +1,11 @@
 ---
 layout: default
 title: Junzhi - Home
-page_class: home-page
+page_class: academic-page home-page
 ---
 
-<div class="home-card profile-card" markdown="1">
-{% include home-icons.html %}
+<div class="page-intro profile-intro" markdown="1">
+{% include section-icons.html %}
 
 <header class="profile-hero" markdown="1">
 
@@ -51,23 +51,17 @@ I received my Ph.D. in Management Science and Engineering from the University of
 </section>
 </div>
 
-<section class="home-card" aria-labelledby="publications" markdown="1">
+<section aria-labelledby="publications" markdown="1">
 
-<h2 id="publications" class="section-heading">
-  <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="#icon-publications"></use></svg>
-  Publications
-</h2>
+{% include section-heading.html id="publications" title="Publications" %}
 
 {% include publications.html %}
 
 </section>
 
-<section class="home-card" aria-labelledby="working-papers" markdown="1">
+<section class="section-teal" aria-labelledby="working-papers" markdown="1">
 
-<h2 id="working-papers" class="section-heading">
-  <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="#icon-working-papers"></use></svg>
-  Working Papers
-</h2>
+{% include section-heading.html id="working-papers" title="Working Papers" %}
 
 - Optimizing Paywall Design in Freemium Alongside Pay-Per-Use Premium Access
 - Exploration vs. Exploitation: Navigating Consumer Behavior Dynamics on Digital Content Platforms
@@ -75,12 +69,9 @@ I received my Ph.D. in Management Science and Engineering from the University of
 
 </section>
 
-<section class="home-card" aria-labelledby="service" markdown="1">
+<section class="section-violet" aria-labelledby="service" markdown="1">
 
-<h2 id="service" class="section-heading">
-  <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="#icon-service"></use></svg>
-  Service
-</h2>
+{% include section-heading.html id="service" title="Service" %}
 
 {% include service.html %}
 

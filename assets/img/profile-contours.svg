@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="240" height="95" viewBox="0 0 240 95" fill="none">
   <defs>
     <linearGradient id="ink" x1="5" y1="60" x2="235" y2="35" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#698a93" stop-opacity=".12"/>
-      <stop offset=".28" stop-color="#698a93" stop-opacity=".7"/>
-      <stop offset=".67" stop-color="#5b7890" stop-opacity=".64"/>
-      <stop offset="1" stop-color="#5b7890" stop-opacity=".12"/>
+      <stop stop-color="#078c85" stop-opacity=".15"/>
+      <stop offset=".28" stop-color="#078c85" stop-opacity=".8"/>
+      <stop offset=".67" stop-color="#4169bd" stop-opacity=".76"/>
+      <stop offset="1" stop-color="#4169bd" stop-opacity=".15"/>
     </linearGradient>
   </defs>
   <g stroke="url(#ink)" stroke-width="1.1" stroke-linecap="round">
