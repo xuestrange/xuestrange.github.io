@@ -4,6 +4,9 @@ title: Junzhi - Home
 page_class: home-page
 ---
 
+<div class="home-card profile-card" markdown="1">
+{% include home-icons.html %}
+
 <header class="profile-hero" markdown="1">
 
 # Junzhi Xue <span class="name-cn" lang="zh-CN">薛俊志</span>
@@ -37,30 +40,34 @@ Shanghai University of Finance and Economics
 
 </header>
 
-<section class="home-section" aria-labelledby="biography" markdown="1">
+<section class="profile-bio" aria-labelledby="biography" markdown="1">
 
 ## Biography
-
-<div class="section-content" markdown="1">
 
 I am currently an Assistant Professor at Shanghai University of Finance and Economics. I am doing empirical studies, focusing on Generative AI, Blockchain, and Digital Content Platforms, harnessing both the reduced-form and structural models.
 
 I received my Ph.D. in Management Science and Engineering from the University of Science and Technology of China in 2025, and my B.E. in Industrial Engineering from the China University of Mining and Technology in 2020. Prior to completing my doctorate, I was a visiting student at the University of Washington from 2024 to 2025.
 
-</div>
 </section>
+</div>
 
-<section class="home-section" aria-labelledby="publications" markdown="1">
+<section class="home-card" aria-labelledby="publications" markdown="1">
 
-## Publications
+<h2 id="publications" class="section-heading">
+  <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="#icon-publications"></use></svg>
+  Publications
+</h2>
 
 {% include publications.html %}
 
 </section>
 
-<section class="home-section" aria-labelledby="working-papers" markdown="1">
+<section class="home-card" aria-labelledby="working-papers" markdown="1">
 
-## Working Papers
+<h2 id="working-papers" class="section-heading">
+  <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="#icon-working-papers"></use></svg>
+  Working Papers
+</h2>
 
 - Optimizing Paywall Design in Freemium Alongside Pay-Per-Use Premium Access
 - Exploration vs. Exploitation: Navigating Consumer Behavior Dynamics on Digital Content Platforms
@@ -68,12 +75,13 @@ I received my Ph.D. in Management Science and Engineering from the University of
 
 </section>
 
-<section class="home-section" aria-labelledby="service" markdown="1">
+<section class="home-card" aria-labelledby="service" markdown="1">
 
-## Service
+<h2 id="service" class="section-heading">
+  <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="#icon-service"></use></svg>
+  Service
+</h2>
 
-<div class="section-content">
 {% include service.html %}
-</div>
 
 </section>
