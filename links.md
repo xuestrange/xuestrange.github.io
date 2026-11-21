@@ -46,6 +46,7 @@ conference_dates: true
 {% include section-heading.html id="vibe-coding" title="Vibe Coding" %}
 
 - [This website](https://github.com/xuestrange/xuestrange.github.io)
+- [ParquetViewer](https://github.com/xuestrange/ParquetViewer)
 {: .resource-list}
 
 </section>
