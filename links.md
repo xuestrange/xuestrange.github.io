@@ -40,3 +40,12 @@ conference_dates: true
 {: .resource-list}
 
 </section>
+
+<section aria-labelledby="vibe-coding" markdown="1">
+
+{% include section-heading.html id="vibe-coding" title="Vibe Coding" %}
+
+- [Academic Homepage](https://github.com/xuestrange/xuestrange.github.io)
+{: .resource-list}
+
+</section>
