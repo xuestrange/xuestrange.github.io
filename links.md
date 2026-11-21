@@ -45,7 +45,7 @@ conference_dates: true
 
 {% include section-heading.html id="vibe-coding" title="Vibe Coding" %}
 
-- [Academic Homepage](https://github.com/xuestrange/xuestrange.github.io)
+- [This website](https://github.com/xuestrange/xuestrange.github.io)
 {: .resource-list}
 
 </section>
