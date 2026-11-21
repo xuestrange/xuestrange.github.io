@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Junzhi - Miscellaneous
-page_class: academic-page resources-page
+page_class: academic-page miscellaneous-page
 conference_dates: true
 ---
 

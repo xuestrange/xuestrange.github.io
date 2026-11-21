@@ -9,7 +9,7 @@ SITE_ORIGIN = "https://xuestrange.github.io"
 TIME_ZONE = "Asia/Shanghai"
 DATA_RETENTION_DAYS = "31"
 MONTH_RETENTION = "2"
-ALLOWED_PATHS = "/,/index.html,/links.html,/links/"
+ALLOWED_PATHS = "/,/index.html,/miscellaneous.html,/miscellaneous/"
 
 [[d1_databases]]
 binding = "DB"

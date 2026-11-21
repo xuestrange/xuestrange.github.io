@@ -14,7 +14,7 @@ import {
 } from "../src/worker.js";
 
 test("normalizePath keeps a safe site path", () => {
-    assert.equal(normalizePath("/links.html"), "/links.html");
+    assert.equal(normalizePath("/miscellaneous.html"), "/miscellaneous.html");
     assert.equal(normalizePath(" /research/paper/ "), "/research/paper/");
 });
 
@@ -48,9 +48,9 @@ test("localDateKeys falls back to UTC for an invalid time zone", () => {
 });
 
 test("isAllowedPath only accepts configured public pages", () => {
-    const configured = "/,/index.html,/links.html,/links/";
+    const configured = "/,/index.html,/miscellaneous.html,/miscellaneous/";
     assert.equal(isAllowedPath("/", configured), true);
-    assert.equal(isAllowedPath("/links.html", configured), true);
+    assert.equal(isAllowedPath("/miscellaneous.html", configured), true);
     assert.equal(isAllowedPath("/made-up-page", configured), false);
 });
 

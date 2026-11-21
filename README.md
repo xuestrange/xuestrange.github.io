@@ -4,7 +4,7 @@ Personal Website.
 
 ## Edit Content
 
-Most homepage updates should happen in `index.md`. The Miscellaneous page can be edited in `links.md`. Use Markdown headings and lists instead of writing HTML:
+Most homepage updates should happen in `index.md`. The Miscellaneous page can be edited in `miscellaneous.md`. Use Markdown headings and lists instead of writing HTML:
 
 ```md
 ## Teaching
@@ -26,7 +26,7 @@ The site navigation is defined in `_layouts/default.html`. Add a new Markdown pa
 
 ### Conference reminders
 
-The Miscellaneous page (`links.md`) embeds a compact conference table from `_data/conferences.yml` through `_includes/conferences.html`. Keep one entry per conference series: its next announced meeting, or its latest verified past edition when a future meeting has not been confirmed. There is no separate Conferences page.
+The Miscellaneous page (`miscellaneous.md`) embeds a compact conference table from `_data/conferences.yml` through `_includes/conferences.html`. Keep one entry per conference series: its next announced meeting, or its latest verified past edition when a future meeting has not been confirmed. There is no separate Conferences page.
 
 Verify dates and locations on official conference, association, or host-university websites before editing. Update `checked_on` after reviewing the complete list. Quote ISO dates (`YYYY-MM-DD`) so they stay strings in YAML. The table has three columns: Conference, Date, and City & country. Each conference name appears as `ABBR — Full name` and links directly to its official website; dates include the year, and the City & country column combines `city` and `country`. Other data fields retain source context; use `note` and `additional_source` to explain date differences or event naming. Dates are meeting dates, not paper deadlines.
 

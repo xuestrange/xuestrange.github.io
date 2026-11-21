@@ -265,7 +265,7 @@ p + p { margin-top: 0.9em; }
 .service-volunteer { margin-top: 1rem; color: var(--muted); font-size: 0.9375rem; }
 .service-volunteer > span { margin-right: 0.4em; color: var(--heading); font-weight: 650; }
 
-.resources-page .page-intro h1 {
+.miscellaneous-page .page-intro h1 {
     background: var(--contours) right center / auto 95% no-repeat;
 }
 .resource-list { padding-left: 1.05em; }
