@@ -7,7 +7,7 @@ This is a small Jekyll site for a personal academic homepage. GitHub Pages build
 ## Repository Structure
 
 - `index.md` is the homepage content.
-- `links.md` is the links page content.
+- `links.md` is the Miscellaneous page content.
 - `_data/publications.yml` stores publication entries rendered on the homepage.
 - `_data/service.yml` stores service entries rendered on the homepage.
 - `_includes/publications.html` renders the homepage Publications section from the data file.

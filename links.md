@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Junzhi - Links
+title: Junzhi - Miscellaneous
 page_class: academic-page resources-page
 conference_dates: true
 ---
@@ -8,7 +8,7 @@ conference_dates: true
 <header class="page-intro" markdown="1">
 {% include section-icons.html %}
 
-# Links
+# Miscellaneous
 
 </header>
 
