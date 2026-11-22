@@ -3,7 +3,7 @@
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 16px;
-    padding: 14px 0 20px;
+    padding-bottom: 1.25rem;
 }
 
 #analytics-dashboard .visit-map-overview p {
@@ -23,7 +23,7 @@
 
 #analytics-dashboard .visit-map-overview span {
     color: var(--muted);
-    font-size: 12px;
+    font-size: 0.875rem;
 }
 
 #analytics-dashboard .visit-map-toolbar {
@@ -47,10 +47,10 @@
     padding: 5px 10px;
     border: 1px solid var(--border-strong);
     border-radius: 3px;
-    background: var(--page);
+    background: var(--surface);
     color: var(--text);
     font: inherit;
-    font-size: 12px;
+    font-size: 0.875rem;
     line-height: 1.4;
     cursor: pointer;
 }
@@ -83,12 +83,12 @@
     min-width: 3em;
     padding-inline: 4px;
     color: var(--muted);
-    font-size: 12px;
+    font-size: 0.8125rem;
     font-variant-numeric: tabular-nums;
 }
 
 #analytics-dashboard .visit-map-frame {
-    background: #f7fafb;
+    background: var(--surface);
 }
 
 #analytics-dashboard .visit-world-map {
@@ -158,7 +158,7 @@
     gap: 6px 20px;
     padding-top: 10px;
     color: var(--muted);
-    font-size: 11px;
+    font-size: 0.8125rem;
 }
 
 #analytics-dashboard .visit-map-key > span {
@@ -194,14 +194,14 @@
 #analytics-dashboard .visit-map-selection {
     min-height: 1.6em;
     margin: 12px 0 8px;
-    font-size: 13px;
+    font-size: 0.9375rem;
     color: var(--heading);
 }
 
 #analytics-dashboard .visit-map-details {
     padding: 10px 0;
     border-top: 1px solid var(--border);
-    font-size: 13px;
+    font-size: 0.9375rem;
 }
 
 #analytics-dashboard .visit-map-details summary {
@@ -232,5 +232,4 @@
     #analytics-dashboard .visit-map-overview { gap: 10px; }
     #analytics-dashboard .visit-map-controls button { min-height: 40px; }
     #analytics-dashboard .visit-map-details ol { columns: 1; }
-    #analytics-dashboard .visit-map-figure figcaption { font-size: 11px; }
 }

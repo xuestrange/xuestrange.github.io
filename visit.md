@@ -1,6 +1,7 @@
 ---
 layout: default
 title: 访问统计
+page_class: academic-page visit-page
 permalink: /visit/
 lang: zh-CN
 robots: noindex, nofollow, noarchive
@@ -8,18 +9,23 @@ sitemap: false
 analytics: false
 ---
 
+<header class="page-intro" markdown="1">
+{% include visit-icons.html %}
+
 # 访问统计
 
 这是站点的受口令保护统计入口。地图汇总自城市统计启用以来的访问，最近记录仅显示日期、估算城市和国家或地区。本站不保存或展示完整 IP 地址。
 
-<section class="analytics-panel" id="analytics-dashboard" data-endpoint="{{ site.analytics_endpoint | escape }}">
+</header>
+
+<section id="analytics-dashboard" data-endpoint="{{ site.analytics_endpoint | escape }}">
     <div class="analytics-setup" id="analytics-setup" hidden>
         <h2>尚未连接统计服务</h2>
         <p>部署统计服务后，在站点配置中填入服务地址即可启用。</p>
     </div>
 
     <form class="analytics-login" id="analytics-login" action="{{ page.url | relative_url }}" method="get">
-        <label for="analytics-token">管理员口令</label>
+        {% include section-heading.html id="admin-access" title="管理员口令" label_for="analytics-token" %}
         <div class="analytics-login-row">
             <input id="analytics-token" type="password" autocomplete="off" spellcheck="false" required>
             <button type="submit">查看统计</button>
@@ -36,7 +42,7 @@ analytics: false
         </div>
 
         <section class="analytics-section analytics-map-section" aria-labelledby="map-heading">
-            <h2 id="map-heading">全球访问地图</h2>
+            {% include section-heading.html id="map-heading" title="全球访问地图" %}
             <div class="visit-map-overview" aria-label="累计访问概况">
                 <p><strong id="map-total-visits">0</strong><span>累计访问</span></p>
                 <p><strong id="map-country-count">0</strong><span>国家或地区</span></p>
@@ -78,8 +84,8 @@ analytics: false
             </details>
         </section>
 
-        <section class="analytics-section" aria-labelledby="latest-heading">
-            <h2 id="latest-heading">最近 10 次访问</h2>
+        <section class="analytics-section section-teal" aria-labelledby="latest-heading">
+            {% include section-heading.html id="latest-heading" title="最近 10 次访问" %}
             <div class="analytics-table-wrap">
                 <table>
                     <thead>

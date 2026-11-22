@@ -94,7 +94,7 @@ p + p { margin-top: 0.9em; }
 .page-content { padding-top: clamp(2rem, 6vw, 4rem); }
 .page-content > h1 + p { max-width: 66ch; margin-top: 1rem; }
 
-/* Shared typography and section layout for the public pages. */
+/* Shared typography and section layout for the academic site. */
 @font-face {
     font-family: "Source Serif 4";
     src: url("assets/fonts/source-serif-4/source-serif-4-latin-standard-normal.woff2") format("woff2");
@@ -265,7 +265,8 @@ p + p { margin-top: 0.9em; }
 .service-volunteer { margin-top: 1rem; color: var(--muted); font-size: 0.9375rem; }
 .service-volunteer > span { margin-right: 0.4em; color: var(--heading); font-weight: 650; }
 
-.miscellaneous-page .page-intro h1 {
+.miscellaneous-page .page-intro h1,
+.visit-page .page-intro h1 {
     background: var(--contours) right center / auto 95% no-repeat;
 }
 .resource-list { padding-left: 1.05em; }
@@ -381,37 +382,16 @@ p + p { margin-top: 0.9em; }
     border: 0;
 }
 
-.analytics-panel {
-    margin-top: 28px;
-}
-
-.analytics-login,
-.analytics-setup {
-    padding: 22px;
-    border: 1px solid var(--border);
-    background: var(--page);
-}
-
-.analytics-setup h2 {
-    margin: 0 0 8px;
-    padding: 0;
-    border: 0;
-}
-
-.analytics-setup p {
-    margin-bottom: 0;
-}
-
-.analytics-login label {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 14px;
-    font-weight: 700;
+.visit-page .page-intro p {
+    max-width: 42rem;
+    margin-top: 1rem;
+    color: var(--muted);
 }
 
 .analytics-login-row {
     display: flex;
-    gap: 10px;
+    gap: 0.625rem;
+    max-width: 32rem;
 }
 
 .analytics-login input {
@@ -440,8 +420,8 @@ p + p { margin-top: 0.9em; }
     color: #fff;
     cursor: pointer;
     font: inherit;
-    font-size: 14px;
-    font-weight: 700;
+    font-size: 0.9375rem;
+    font-weight: 600;
 }
 
 .analytics-login button:hover,
@@ -469,15 +449,17 @@ p + p { margin-top: 0.9em; }
 .analytics-help,
 .analytics-note,
 .analytics-empty {
-    margin: 10px 0 0;
+    margin: 0.625rem 0 0;
     color: var(--muted);
-    font-size: 13px;
+    font-size: 0.875rem;
 }
 
 .analytics-status {
-    min-height: 1.5em;
-    margin: 14px 0;
-    font-size: 14px;
+    font-size: 0.9375rem;
+}
+
+.analytics-status:not(:empty) {
+    margin-block: 0.875rem;
 }
 
 .analytics-status[data-state="error"] {
@@ -488,18 +470,18 @@ p + p { margin-top: 0.9em; }
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
     gap: 16px;
-    margin-bottom: 18px;
 }
 
 .analytics-toolbar p {
     margin: 0;
     color: var(--muted);
-    font-size: 13px;
+    font-size: 0.875rem;
 }
 
-.analytics-section h2 {
-    margin-top: 30px;
+.analytics-section {
+    margin-top: clamp(2rem, 4vw, 3rem);
 }
 
 .visit-map-figure {
@@ -607,39 +589,39 @@ p + p { margin-top: 0.9em; }
 .visit-map-figure figcaption {
     margin-top: 8px;
     color: var(--muted);
-    font-size: 12px;
+    font-size: 0.8125rem;
 }
 
 .analytics-table-wrap {
     overflow-x: auto;
-    border: 1px solid var(--border);
 }
 
 .analytics-table-wrap table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 14px;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    font-variant-numeric: tabular-nums;
 }
 
 .analytics-table-wrap th,
 .analytics-table-wrap td {
-    padding: 10px 12px;
+    padding: 0.75rem;
     border-bottom: 1px solid var(--border);
     text-align: left;
-    white-space: nowrap;
+    vertical-align: top;
+    overflow-wrap: anywhere;
 }
 
 .analytics-table-wrap th {
-    background: var(--page);
+    border-bottom-color: var(--border-strong);
     color: var(--muted);
-    font-size: 12px;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
+    font-size: 0.875rem;
+    font-weight: 650;
 }
 
-.analytics-table-wrap tr:last-child td {
-    border-bottom: 0;
-}
+.analytics-table-wrap :is(th, td):first-child { padding-left: 0; }
+.analytics-table-wrap :is(th, td):last-child { padding-right: 0; }
 
 .analytics-note {
     margin-top: 24px;
@@ -677,8 +659,7 @@ p + p { margin-top: 0.9em; }
     .conference-table th, .conference-table td { padding: 0; border: 0; }
     .conference-table tbody th:first-child { grid-column: 1 / -1; width: auto; }
     .conference-table td { font-size: 0.875rem; }
-    .analytics-login-row, .analytics-toolbar { align-items: stretch; flex-direction: column; }
-    .analytics-login button, .secondary-button { width: 100%; }
+    .analytics-login-row { flex-direction: column; }
 }
 
 @media (max-width: 32rem) {
